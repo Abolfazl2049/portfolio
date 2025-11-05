@@ -2,96 +2,165 @@
 
 # Nuxt UI Portfolio · Ali Arghyani
 
-A bilingual portfolio powered by Nuxt 4, Nuxt UI, Tailwind4, and TypeScript. The site highlights projects, experience, and recommendations with a focus on performance, accessibility, and developer experience. Dark mode is the default theme, with automatic RTL support for Persian content.
+A modern, bilingual portfolio built with Nuxt 4, Nuxt UI, Tailwind CSS 4, and TypeScript. Features English and Persian (RTL) support with dark mode as default.
 
-## Features
-- Nuxt 4 application using the `app/` source directory structure
-- Nuxt UI component library with custom theme tokens and chip variants
-- Tailwind CSS 4 utility pipeline with custom variants and shared utilities
-- Nuxt Image integration for hero and project thumbnails with responsive formats
-- `@nuxtjs/i18n` for English (`en`) and Persian (`fa`) locales, including RTL switching
-- `@nuxtjs/color-mode` for light/dark themes (dark is the default)
-- VueUse utilities for scroll observation, reduced motion checks, and lazy mounting
-- Local Roobert font preloads delivered from `public/fonts`
-- Ready for deployment to Vercel (Nitro preset) or any static/edge host
+🔗 **Live Demo**: [aliarghyani.vercel.app](https://aliarghyani.vercel.app)
 
-## Tech Stack
-- **Framework**: Nuxt 4 (Vue 3 + Vite)
-- **UI Library**: Nuxt UI 4
-- **Styling**: Tailwind CSS 4, custom CSS utilities
-- **Language**: TypeScript
-- **Internationalization**: `@nuxtjs/i18n`
-- **Theme & Color Mode**: `@nuxtjs/color-mode`
-- **Images**: `@nuxt/image`
-- **Composables**: VueUse
+## ✨ Features
 
-## Quick Start
+- **Nuxt 4** - Latest framework with `app/` directory structure
+- **Nuxt UI 4** - Modern component library with custom theming
+- **Tailwind CSS 4** - Utility-first styling with custom variants
+- **TypeScript** - Full type safety
+- **i18n** - English & Persian with automatic RTL switching
+- **Dark Mode** - Default theme with light mode option
+- **Responsive Images** - Optimized with `@nuxt/image`
+- **Performance** - Lazy loading, font preloading, reduced motion support
+
+## � Quick StaTrt
+
 ```bash
+# Install dependencies
 pnpm install
+
+# Start development server
 pnpm dev
 ```
-- Node.js 18.20.0 or newer (up to 22.x) is required.
-- Nuxt dev server runs on http://localhost:3000 by default.
 
-### Project Scripts
-- `pnpm dev` – Start the Nuxt development server with HMR.
-- `pnpm build` – Create a production build.
-- `pnpm preview` – Preview the production build locally.
-- `pnpm generate` – Generate a fully static build (optional).
-- `pnpm typecheck` – Run Vue TSC for type analysis.
-- `pnpm format` – Check formatting with Prettier.
-- `pnpm format:write` – Apply Prettier formatting fixes.
+Visit: http://localhost:3000
 
-## Project Structure (excerpt)
-```
-app/
-  app.vue                # Root shell, head configuration, font preloads
-  app.config.ts          # Nuxt UI tokens, component defaults
-  assets/css/main.css    # Tailwind entrypoint, base styles, chip utilities
-  components/            # UI components (TopNav, Hero, Projects, etc.)
-  composables/           # Reusable logic (useSectionObserver, useSocialText)
-  data/                  # Portfolio data (localized TypeScript modules)
-  pages/                 # Route components (index, blog placeholder)
-  utils/                 # chipTones and other helpers
+### Requirements
+- Node.js 18.20.0 or newer (up to 22.x)
+- pnpm (recommended) or npm
 
-public/
-  fonts/                 # Roobert font files served directly
-  img/                   # Static imagery consumed by Nuxt Image
+### Available Scripts
 
-i18n/
-  locales/               # en.json and fa.json dictionaries
+```bash
+pnpm dev              # Start dev server
+pnpm build            # Build for production
+pnpm preview          # Preview production build
+pnpm generate         # Generate static site
+pnpm typecheck        # Run TypeScript checks
+pnpm format           # Check code formatting
+pnpm format:write     # Fix code formatting
 ```
 
-## Internationalization
-- `@nuxtjs/i18n` is configured with `strategy: 'prefix_except_default'`.
-- Locale metadata (language, dir, name) is defined in `nuxt.config.ts`.
-- Dynamic `lang` and `dir` attributes are applied in `app/app.vue`, so toggling locales updates both SSR and client output.
-- Portfolio content lives in typed modules (`app/data/portfolio.ts` for EN, `app/data/portfolio.fa.ts` for FA).
+## 📁 Project Structure
 
-## Styling & Theming
-- Tailwind CSS is initialized through `app/assets/css/main.css` with a reusable chip utility, hover states, and dark mode variant.
-- Nuxt UI theme tokens (`app/app.config.ts`) unify colors, typography, chip variants, and button defaults.
-- Local Roobert fonts are preloaded and combined with Fraunces, Inter, and Outfit using `@nuxt/fonts`.
-- Dark mode is the default preference; color mode state is stored under `nuxt-color-mode`.
+```
+app/                    # Source directory (srcDir)
+  ├── app.vue           # Root component
+  ├── app.config.ts     # Nuxt UI theme tokens
+  ├── error.vue         # Error page (404, 500)
+  ├── assets/css/       # Tailwind & global styles
+  ├── components/       # Auto-imported components
+  │   ├── common/       # Shared UI (TopNav, Footer)
+  │   └── portfolio/    # Portfolio components
+  ├── composables/      # Auto-imported composables
+  ├── data/             # Static content (EN/FA)
+  ├── layouts/          # Layout components
+  ├── middleware/       # Route middleware
+  ├── pages/            # File-based routing
+  ├── plugins/          # Nuxt plugins
+  ├── types/            # TypeScript definitions
+  └── utils/            # Helper functions
 
-## Performance Notes
-- Hero and project images use `<NuxtImg>` with responsive sizes and modern formats.
-- Recommendations carousel mounts lazily once visible and respects `prefers-reduced-motion`.
-- Fonts are preloaded in `app/app.vue` to stabilize LCP, and assets are served from `public/fonts`.
-- Additional caching, route rules, or SWR headers can be added via `nuxt.config.ts` when deploying.
+server/                 # Server-side code
+  └── api/              # API endpoints
+      └── health.get.ts # Health check (/api/health)
 
-## Deployment
-### Vercel
-- Set the build command to `pnpm build`.
-- Output directory remains Nuxt's default (`.output`).
-- Optional Plausible analytics is controlled by `runtimeConfig.public.loadPlausible`.
+public/                 # Static assets
+  ├── favicon/          # Favicon files
+  ├── fonts/            # Local fonts (Roobert, Vazirmatn)
+  └── img/              # Images
+
+i18n/                   # Internationalization
+  └── locales/          # Translation files (en.json, fa.json)
+```
+
+## 🌐 Internationalization
+
+- **Strategy**: `prefix_except_default` (English is default, Persian uses `/fa` prefix)
+- **Locales**: English (`en`) and Persian (`fa`) with RTL support
+- **Content**: Separate data files for each language in `app/data/`
+- **Switching**: Automatic `lang` and `dir` attributes update on locale change
+
+## 🎨 Styling & Theming
+
+- **Tailwind CSS 4** with custom utilities and variants
+- **Nuxt UI tokens** in `app.config.ts` for consistent theming
+- **Dark mode** as default with `@nuxtjs/color-mode`
+- **Local fonts**: Roobert (EN) and Vazirmatn (FA) preloaded for performance
+- **Custom chip utility** for tags and badges
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
 
 ### Static Hosting
-- Run `pnpm generate`.
-- Serve the contents of `.output/public`.
+```bash
+# Generate static files
+pnpm generate
 
-## Contributing
-Issues and pull requests are welcome. Please run `pnpm typecheck` and `pnpm format` before submitting changes to keep the project consistent.
+# Deploy .output/public to any static host
+```
 
-## License
-This project is open source under the MIT License. See [`LICENSE`](./LICENSE) for details.
+### Environment Variables
+- `NUXT_PUBLIC_LOAD_PLAUSIBLE` - Enable/disable Plausible analytics (optional)
+
+## 🧪 Testing the Structure
+
+```bash
+# Homepage
+http://localhost:3000
+
+# Persian version
+http://localhost:3000/fa
+
+# Health check API
+http://localhost:3000/api/health
+
+# 404 error page
+http://localhost:3000/non-existent-page
+```
+
+## 🛠️ Tech Stack
+
+- **Framework**: Nuxt 4 (Vue 3 + Vite)
+- **UI Library**: Nuxt UI 4
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
+- **i18n**: @nuxtjs/i18n
+- **Theme**: @nuxtjs/color-mode
+- **Images**: @nuxt/image
+- **Utilities**: VueUse
+
+## 📝 Auto-imports
+
+Nuxt automatically imports:
+- Components from `app/components/`
+- Composables from `app/composables/`
+- Utils from `app/utils/`
+
+No explicit imports needed!
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome. Please run `pnpm typecheck` and `pnpm format` before submitting changes.
+
+## 📄 License
+
+MIT License - See [LICENSE](./LICENSE) for details.
+
+---
+
+**Made with ❤️ by Ali Arghyani**

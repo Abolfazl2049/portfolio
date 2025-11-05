@@ -3,8 +3,8 @@
     "work": "سوابق کاری",
     "education": "تحصیلات",
     "recommendations": "توصیه‌نامه‌ها",
-    "projects": " پروژه ها ",
-    "blog": "بلاگ",
+    "projects": "پروژه‌ها",
+    "blog": "وبلاگ",
     "contact": "ارتباط",
     "mainTools": "ابزارهای اصلی",
     "roles": "نقش‌ها",
@@ -17,7 +17,7 @@
     "expert": "حرفه‌ای",
     "proficient": "مسلط",
     "usedBefore": "تجربه قبلی",
-    "aiStack": "پشته هوش مصنوعی"
+    "aiStack": "استک هوش مصنوعی"
   },
   "softSkills": {
     "problemSolving": {
@@ -58,7 +58,7 @@
     }
   },
   "buttons": {
-    "blog": "نوشته‌ها",
+    "blog": "مقالات",
     "contact": "ارتباط",
     "website": "وب‌سایت",
     "switchToEnglish": "English",
@@ -67,7 +67,7 @@
   "nav": {
     "home": "خانه",
     "skills": "مهارت‌ها",
-    "blog": "بلاگ",
+    "blog": "وبلاگ",
     "contact": "ارتباط",
     "theme": "تم"
   },
@@ -77,13 +77,29 @@
     "readMore": "مطالعه"
   },
   "common": {
-    "present": "اکنون"
+    "present": "اکنون",
+    "backToHome": "بازگشت به خانه",
+    "goBack": "بازگشت"
+  },
+  "error": {
+    "notFoundTitle": "صفحه یافت نشد",
+    "notFoundMessage": "صفحه‌ای که به دنبال آن هستید وجود ندارد یا منتقل شده است.",
+    "forbiddenTitle": "دسترسی رد شد",
+    "forbiddenMessage": "شما اجازه دسترسی به این منبع را ندارید.",
+    "serverErrorTitle": "خطای سرور",
+    "serverErrorMessage": "مشکلی از سمت ما پیش آمده است. لطفاً بعداً دوباره تلاش کنید.",
+    "defaultTitle": "اوه! مشکلی پیش آمد",
+    "defaultMessage": "یک خطای غیرمنتظره رخ داد. لطفاً دوباره تلاش کنید.",
+    "helpTitle": "نیاز به کمک دارید؟",
+    "suggestion1": "آدرس URL را برای اشتباه تایپی بررسی کنید",
+    "suggestion2": "از منوی ناوبری برای یافتن آنچه می‌خواهید استفاده کنید",
+    "suggestion3": "به صفحه اصلی بازگردید و از نو شروع کنید"
   },
   "meta": {
-    "portfolioTitleSuffix": "پورتفولیو"
+    "portfolioTitleSuffix": "نمونه‌کارها"
   },
   "projectLabels": {
-    "openSource": "متن‌باز"
+    "openSource": "اوپن‌سورس"
   },
   "theme": {
     "customizer": "سفارشی‌سازی تم",
@@ -132,16 +148,16 @@
     }
   },
   "ai_stack": {
-    "title": "پشته هوش مصنوعی",
+    "title": "استک هوش مصنوعی",
     "subtitle": "محیط‌های توسعه، پروتکل‌ها، مفاهیم و رویکردهایی که جریان کاری هوش مصنوعی من را توانمند می‌کنند",
     "filter": {
       "all": "همه",
       "methods": "روش‌ها",
-      "ides": "IDEها",
+      "ides": "محیط‌های توسعه",
       "assistants": "دستیارها",
       "rules": "قوانین",
-      "mcps": "MCPها",
-      "extensions": "افزونه‌ها",
+      "mcps": "پروتکل‌های MCP",
+      "extensions": "اکستنشن‌ها",
       "infra": "زیرساخت",
       "evaluation": "ارزیابی"
     },
@@ -164,6 +180,6 @@
   "projectCategories": {
     "current": "جاری",
     "freelance": "پروژه‌های فریلنسری",
-    "public": "مخازن عمومی"
+    "public": "پروژه‌های عمومی"
   }
 }
