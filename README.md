@@ -17,7 +17,7 @@ A modern, bilingual portfolio built with Nuxt 4, Nuxt UI, Tailwind CSS 4, and Ty
 - **Responsive Images** - Optimized with `@nuxt/image`
 - **Performance** - Lazy loading, font preloading, reduced motion support
 
-## � Quick StaTrt
+## � Quick Start
 
 ```bash
 # Install dependencies
