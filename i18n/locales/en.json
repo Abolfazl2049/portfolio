@@ -102,9 +102,24 @@
     "theme": "Theme"
   },
   "blog": {
+    "title": "Blog",
     "explore": "Stories & notes",
     "empty": "No posts yet. Check back soon!",
-    "readMore": "Read article"
+    "readMore": "Read article",
+    "readingTime": "{minutes} min read",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated on",
+    "backToBlog": "Back to Blog",
+    "previousPost": "Previous",
+    "nextPost": "Next",
+    "tableOfContents": "Table of Contents",
+    "searchPlaceholder": "Search posts...",
+    "filterByTag": "Filter by tag",
+    "allPosts": "All posts",
+    "noResults": "No posts found matching your search",
+    "copyCode": "Copy code",
+    "codeCopied": "Copied!",
+    "subscribe": "Subscribe via RSS"
   },
   "common": {
     "present": "Present",

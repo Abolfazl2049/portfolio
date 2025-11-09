@@ -72,9 +72,24 @@
     "theme": "تم"
   },
   "blog": {
+    "title": "وبلاگ",
     "explore": "داستان‌ها و یادداشت‌ها",
     "empty": "فعلاً نوشته‌ای وجود ندارد.",
-    "readMore": "مطالعه"
+    "readMore": "مطالعه",
+    "readingTime": "{minutes} دقیقه مطالعه",
+    "publishedOn": "منتشر شده در",
+    "updatedOn": "به‌روزرسانی شده در",
+    "backToBlog": "بازگشت به وبلاگ",
+    "previousPost": "قبلی",
+    "nextPost": "بعدی",
+    "tableOfContents": "فهرست مطالب",
+    "searchPlaceholder": "جستجوی مقالات...",
+    "filterByTag": "فیلتر بر اساس برچسب",
+    "allPosts": "همه مقالات",
+    "noResults": "نتیجه‌ای یافت نشد",
+    "copyCode": "کپی کد",
+    "codeCopied": "کپی شد!",
+    "subscribe": "اشتراک از طریق RSS"
   },
   "common": {
     "present": "اکنون",

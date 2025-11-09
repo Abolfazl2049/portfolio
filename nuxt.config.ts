@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   srcDir: 'app',
   modules: [
+    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxtjs/i18n',
@@ -92,7 +93,29 @@ export default defineNuxtConfig({
     storageKey: "nuxt-color-mode",
   },
 
-  //
+  // Nuxt Content configuration
+  content: {
+    // Highlight code blocks with Shiki
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark'
+      },
+      preload: ['typescript', 'javascript', 'vue', 'css', 'bash', 'json', 'markdown']
+    },
+    // Enable MDC syntax for Vue components in markdown
+    markdown: {
+      mdc: true,
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      }
+    },
+    // Document-driven mode disabled (we use custom pages)
+    documentDriven: false,
+    // Respect path case
+    respectPathCase: true
+  },
 
 
   i18n: {
@@ -119,6 +142,15 @@ export default defineNuxtConfig({
       crawlLinks: false,
       routes: [],
     },
+  },
+
+  // Route rules for caching and optimization
+  routeRules: {
+    // Blog routes caching
+    '/blog': { swr: 3600 },
+    '/fa/blog': { swr: 3600 },
+    '/blog/**': { swr: 3600 },
+    '/fa/blog/**': { swr: 3600 }
   },
 
   devtools: { enabled: false },
