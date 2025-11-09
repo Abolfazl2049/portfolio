@@ -3,7 +3,6 @@ title: "راهنمای Composition API در Vue 3"
 description: "آموزش کامل Composition API در Vue 3 با مثال‌های کاربردی و بهترین روش‌های پیاده‌سازی."
 date: "2024-11-07"
 tags: ["vue", "composition-api", "آموزش", "فارسی"]
-image: "/img/blog/vue-composition.jpg"
 author: "علی ارغیانی"
 draft: false
 ---

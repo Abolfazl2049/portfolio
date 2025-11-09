@@ -95,14 +95,6 @@ export default defineNuxtConfig({
 
   // Nuxt Content configuration
   content: {
-    // Highlight code blocks with Shiki
-    highlight: {
-      theme: {
-        default: 'github-light',
-        dark: 'github-dark'
-      },
-      preload: ['typescript', 'javascript', 'vue', 'css', 'bash', 'json', 'markdown']
-    },
     // Enable MDC syntax for Vue components in markdown
     markdown: {
       mdc: true,
@@ -115,7 +107,7 @@ export default defineNuxtConfig({
     documentDriven: false,
     // Respect path case
     respectPathCase: true
-  },
+  } as any,
 
 
   i18n: {
@@ -136,13 +128,15 @@ export default defineNuxtConfig({
     vueI18n: '~/i18n.config.ts'
   },
 
-  // Avoid Windows prerender issues and speed up local builds
+  // Prerender blog routes
   nitro: {
     prerender: {
-      crawlLinks: false,
-      routes: [],
+      crawlLinks: true,
+      routes: ['/blog', '/fa/blog'],
     },
   },
+
+
 
   // Route rules for caching and optimization
   routeRules: {

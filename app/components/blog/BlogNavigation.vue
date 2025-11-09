@@ -6,16 +6,22 @@ const props = defineProps<{
   next: BlogPost | null
 }>()
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()
+
+// Convert collection path to route path (remove locale prefix)
+const getRoutePath = (path: string) => {
+  // Remove locale prefix from path: /en/blog/... -> /blog/...
+  return path.replace(`/${locale.value}`, '')
+}
 
 // Keyboard navigation
 const handleKeydown = (event: KeyboardEvent) => {
   if (event.key === 'ArrowLeft' && props.prev) {
-    router.push(localePath(props.prev._path))
+    router.push(localePath(getRoutePath((props.prev as any).path)))
   } else if (event.key === 'ArrowRight' && props.next) {
-    router.push(localePath(props.next._path))
+    router.push(localePath(getRoutePath((props.next as any).path)))
   }
 }
 
@@ -32,7 +38,7 @@ onUnmounted(() => {
   <nav class="flex justify-between items-center gap-4 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
     <!-- Previous Post -->
     <div class="flex-1">
-      <NuxtLink v-if="prev" :to="localePath(prev._path)" class="group block">
+      <NuxtLink v-if="prev" :to="localePath(getRoutePath((prev as any).path))" class="group block">
         <UButton color="neutral" variant="ghost" size="lg" class="w-full justify-start">
           <template #leading>
             <UIcon name="i-heroicons-arrow-left" class="w-5 h-5" />
@@ -52,7 +58,7 @@ onUnmounted(() => {
 
     <!-- Next Post -->
     <div class="flex-1">
-      <NuxtLink v-if="next" :to="localePath(next._path)" class="group block">
+      <NuxtLink v-if="next" :to="localePath(getRoutePath((next as any).path))" class="group block">
         <UButton color="neutral" variant="ghost" size="lg" class="w-full justify-end">
           <div class="text-right">
             <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">

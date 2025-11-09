@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import type { BlogPost } from '~/types/blog'
-
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
 const slug = Array.isArray(route.params.slug) ? route.params.slug : [route.params.slug]
 
 // Fetch current post
-const { data: post } = await useAsyncData<BlogPost>(`blog-post-${slug.join('/')}`, () =>
-  queryContent<BlogPost>(`/${locale.value}/blog`)
-    .where({ _path: `/${locale.value}/blog/${slug.join('/')}` })
-    .findOne()
-)
+const { data: post } = await useAsyncData(`blog-post-${slug.join('/')}`, async () => {
+  const posts = await queryCollection('blog')
+    .where('path', '=', `/${locale.value}/blog/${slug.join('/')}`)
+    .first()
+  return posts
+})
 
 if (!post.value) {
   throw createError({
@@ -22,26 +21,31 @@ if (!post.value) {
 }
 
 // Fetch all posts for prev/next navigation
-const { data: allPosts } = await useAsyncData<BlogPost[]>(`blog-posts-nav-${locale.value}`, () =>
-  queryContent<BlogPost>(`/${locale.value}/blog`)
-    .where({ draft: { $ne: true } })
-    .sort({ date: -1 })
-    .only(['title', '_path', 'date'])
-    .find()
-)
+const { data: allPosts } = await useAsyncData(`blog-posts-nav-${locale.value}`, async () => {
+  const posts = await queryCollection('blog')
+    .where('draft', '<>', true)
+    .order('date', 'DESC')
+    .all()
+
+  // Filter by locale and posts without draft field
+  return posts.filter((p: any) =>
+    p.path?.startsWith(`/${locale.value}/blog/`) &&
+    (p.draft === false || p.draft === undefined)
+  )
+})
 
 // Calculate adjacent posts
 const currentIndex = computed(() => {
   if (!allPosts.value || !post.value) return -1
-  return allPosts.value.findIndex((p: BlogPost) => p._path === post.value!._path)
+  return allPosts.value.findIndex((p: any) => p.path === post.value!.path)
 })
 
-const prevPost = computed<BlogPost | null>(() => {
+const prevPost = computed(() => {
   if (currentIndex.value === -1 || !allPosts.value) return null
   return allPosts.value[currentIndex.value + 1] || null
 })
 
-const nextPost = computed<BlogPost | null>(() => {
+const nextPost = computed(() => {
   if (currentIndex.value === -1 || !allPosts.value) return null
   return allPosts.value[currentIndex.value - 1] || null
 })
@@ -49,29 +53,26 @@ const nextPost = computed<BlogPost | null>(() => {
 // SEO meta tags
 const siteUrl = 'https://aliarghyani.com' // TODO: Move to runtime config
 
-// Use Nuxt Content's built-in SEO helper
+// Custom meta tags
 if (post.value) {
-  useContentHead(post as any)
-}
+  const postData = post.value as any
 
-// Additional custom meta tags
-if (post.value) {
   useSeoMeta({
-    title: `${post.value.title} | ${t('blog.title')}`,
-    description: post.value.description,
-    ogTitle: post.value.title,
-    ogDescription: post.value.description,
-    ogImage: post.value.image || '/img/blog/default-cover.jpg',
+    title: `${postData.title} | ${t('blog.title')}`,
+    description: postData.description,
+    ogTitle: postData.title,
+    ogDescription: postData.description,
+    ogImage: postData.image || '/img/blog/default-cover.jpg',
     ogType: 'article',
-    ogUrl: `${siteUrl}${post.value._path}`,
+    ogUrl: `${siteUrl}${postData.path}`,
     twitterCard: 'summary_large_image',
-    twitterTitle: post.value.title,
-    twitterDescription: post.value.description,
-    twitterImage: post.value.image || '/img/blog/default-cover.jpg',
-    articlePublishedTime: post.value.date,
-    articleModifiedTime: post.value.updatedAt || post.value.date,
-    articleAuthor: post.value.author || 'Ali Arghyani',
-    articleTag: post.value.tags
+    twitterTitle: postData.title,
+    twitterDescription: postData.description,
+    twitterImage: postData.image || '/img/blog/default-cover.jpg',
+    articlePublishedTime: postData.date,
+    articleModifiedTime: postData.updatedAt || postData.date,
+    articleAuthor: [postData.author || 'Ali Arghyani'],
+    articleTag: postData.tags
   })
 
   // JSON-LD structured data
@@ -82,14 +83,14 @@ if (post.value) {
         textContent: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'BlogPosting',
-          headline: post.value.title,
-          description: post.value.description,
-          image: post.value.image ? `${siteUrl}${post.value.image}` : `${siteUrl}/img/blog/default-cover.jpg`,
-          datePublished: post.value.date,
-          dateModified: post.value.updatedAt || post.value.date,
+          headline: postData.title,
+          description: postData.description,
+          image: postData.image ? `${siteUrl}${postData.image}` : `${siteUrl}/img/blog/default-cover.jpg`,
+          datePublished: postData.date,
+          dateModified: postData.updatedAt || postData.date,
           author: {
             '@type': 'Person',
-            name: post.value.author || 'Ali Arghyani'
+            name: postData.author || 'Ali Arghyani'
           },
           publisher: {
             '@type': 'Person',
@@ -109,7 +110,7 @@ if (post.value) {
       <UBreadcrumb :links="[
         { label: t('nav.home'), to: localePath('/') },
         { label: t('blog.title'), to: localePath('/blog') },
-        { label: post.title }
+        { label: (post as any).title }
       ]" class="mb-6" />
 
       <!-- Back to Blog Link -->
@@ -128,7 +129,7 @@ if (post.value) {
 
           <!-- Content Renderer -->
           <article :dir="locale === 'fa' ? 'rtl' : 'ltr'" class="prose prose-lg dark:prose-invert max-w-none mt-8">
-            <ContentRenderer :value="post" />
+            <ContentRenderer v-if="(post as any).body" :value="(post as any).body" />
           </article>
 
           <!-- Blog Navigation (Prev/Next) -->
@@ -137,7 +138,7 @@ if (post.value) {
 
         <!-- Sidebar: Table of Contents -->
         <aside class="lg:col-span-4">
-          <BlogTableOfContents v-if="post.body?.toc" :toc="post.body.toc" />
+          <BlogTableOfContents v-if="(post as any).body?.toc" :toc="(post as any).body.toc" />
         </aside>
       </div>
     </div>
@@ -150,31 +151,5 @@ article[dir="rtl"] :deep(pre),
 article[dir="rtl"] :deep(code) {
   direction: ltr;
   text-align: left;
-}
-
-/* Ensure proper spacing and readability */
-.prose {
-  @apply text-gray-700 dark:text-gray-300;
-}
-
-.prose :deep(h1),
-.prose :deep(h2),
-.prose :deep(h3),
-.prose :deep(h4),
-.prose :deep(h5),
-.prose :deep(h6) {
-  @apply text-gray-900 dark:text-gray-100 font-semibold;
-}
-
-.prose :deep(a) {
-  @apply text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300;
-}
-
-.prose :deep(code) {
-  @apply text-sm;
-}
-
-.prose :deep(pre) {
-  @apply rounded-lg;
 }
 </style>

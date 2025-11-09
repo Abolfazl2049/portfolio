@@ -3,7 +3,6 @@ title: "TypeScript Best Practices for Vue 3"
 description: "Discover essential TypeScript patterns and best practices for building type-safe Vue 3 applications with Composition API."
 date: "2024-11-08"
 tags: ["typescript", "vue", "best-practices", "composition-api"]
-image: "/img/blog/typescript-vue.jpg"
 author: "Ali Arghyani"
 draft: false
 ---

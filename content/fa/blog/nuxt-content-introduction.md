@@ -3,7 +3,6 @@ title: "آشنایی با Nuxt Content"
 description: "یاد بگیرید چگونه با Nuxt Content یک وبلاگ قدرتمند بسازید که از مارک‌داون، هایلایت کد و کامپوننت‌های Vue پشتیبانی می‌کند."
 date: "2024-11-09"
 tags: ["nuxt", "vue", "آموزش", "فارسی"]
-image: "/img/blog/nuxt-content-cover.jpg"
 author: "علی ارغیانی"
 draft: false
 ---

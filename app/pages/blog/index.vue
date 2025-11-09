@@ -13,7 +13,7 @@
       <BlogTagFilter v-model="selectedTag" :tags="allTags" class="my-6" />
 
       <div v-if="filteredPosts.length > 0" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <BlogCard v-for="post in filteredPosts" :key="(post as any)._path" :post="post" />
+        <BlogCard v-for="post in filteredPosts" :key="(post as any).path" :post="post" />
       </div>
 
       <BlogEmpty v-else />

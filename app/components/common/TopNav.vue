@@ -56,6 +56,22 @@
                   {{ t('sections.projects') }}
                 </button>
               </div>
+
+              <!-- Blog -->
+              <div class="flex items-center gap-1.5">
+                <UTooltip :text="t('sections.blog')">
+                  <NuxtLink :to="localePath('/blog')">
+                    <UButton class="cursor-pointer" :class="[isBlogActive ? activeClass : inactiveClass]" variant="soft"
+                      square icon="i-twemoji-memo" :aria-label="t('sections.blog')" />
+                  </NuxtLink>
+                </UTooltip>
+                <NuxtLink :to="localePath('/blog')">
+                  <button type="button" class="hidden lg:inline-flex text-sm font-medium transition-colors"
+                    :class="[isBlogActive ? labelActiveClass : labelInactiveClass]">
+                    {{ t('sections.blog') }}
+                  </button>
+                </NuxtLink>
+              </div>
             </div>
 
             <div class="flex items-center gap-2">
@@ -88,6 +104,7 @@ const sectionIds = ['hero', 'skills', 'work', 'projects'] as const
 type Target = typeof sectionIds[number]
 
 const isHome = computed(() => route.path === localePath('/'))
+const isBlogActive = computed(() => route.path.includes('/blog'))
 
 const { activeSection, scrollToSection } = useSectionObserver({
   ids: [...sectionIds] as SectionId[],

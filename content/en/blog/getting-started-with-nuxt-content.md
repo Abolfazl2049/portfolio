@@ -3,7 +3,6 @@ title: "Getting Started with Nuxt Content"
 description: "Learn how to build a powerful blog with Nuxt Content v3, featuring markdown support, syntax highlighting, and Vue component integration."
 date: "2024-11-09"
 tags: ["nuxt", "vue", "typescript", "tutorial"]
-image: "/img/blog/nuxt-content-cover.jpg"
 author: "Ali Arghyani"
 draft: false
 ---

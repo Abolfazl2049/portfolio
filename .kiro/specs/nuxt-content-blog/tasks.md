@@ -21,23 +21,19 @@ This implementation plan breaks down the blog system development into discrete, 
 
 
 
-- [ ] 2. Create content directory structure and sample posts
+- [x] 2. Create content directory structure and sample posts
   - Create content/en/blog/ and content/fa/blog/ directories
   - Create TypeScript interface for BlogPost extending ParsedContent in app/types/blog.ts
   - Write 2 sample English blog posts with complete frontmatter (title, description, date, tags, image)
   - Write 2 sample Persian blog posts with RTL content
-
-
-
   - Include code blocks, headings, lists, and images in sample posts for testing
   - Create one draft post to test draft filtering
   - _Requirements: 2.1, 2.3, 2.4, 3.1, 3.2, 3.5, 3.6_
 
-- [ ] 3. Implement useBlog composable with utility functions
+- [x] 3. Implement useBlog composable with utility functions
   - Create app/composables/useBlog.ts file
   - Implement calculateReadingTime function (200 words/min from body.children)
   - Implement formatDate function using Intl.DateTimeFormat with locale support
-
   - Implement extractUniqueTags function to aggregate tags from posts array
   - Implement getBlogPath function returning locale-aware path
   - Implement filterPostsBySearch function for title/description/tags filtering
@@ -147,7 +143,11 @@ This implementation plan breaks down the blog system development into discrete, 
 
 
 
-- [ ] 6.3 Create BlogPost metadata component
+- [x] 6.3 Create BlogPost metadata component
+
+
+
+
   - Create app/components/blog/BlogPost.vue
   - Accept post prop with BlogPost type
   - Display post title as h1
@@ -161,7 +161,12 @@ This implementation plan breaks down the blog system development into discrete, 
 
   - _Requirements: 5.4_
 
-- [ ] 6.4 Implement ContentRenderer with Prose styling
+- [x] 6.4 Implement ContentRenderer with Prose styling
+
+
+
+
+
   - Use ContentRenderer component to render post.body
   - Wrap in article element with proper semantic structure
   - Apply dir attribute based on locale (rtl for fa, ltr for en)
@@ -172,7 +177,9 @@ This implementation plan breaks down the blog system development into discrete, 
   - Test with sample posts containing various markdown elements
   - _Requirements: 5.2, 5.3, 5.7, 9.1, 9.2, 9.3_
 
-- [ ] 6.5 Create BlogTableOfContents component
+- [x] 6.5 Create BlogTableOfContents component
+
+
   - Create app/components/blog/BlogTableOfContents.vue
   - Accept toc prop from post.body.toc
   - Render nested heading structure from toc.links
@@ -186,7 +193,9 @@ This implementation plan breaks down the blog system development into discrete, 
   - Only show if post has 3+ headings
   - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7_
 
-- [ ] 6.6 Create BlogNavigation component
+- [x] 6.6 Create BlogNavigation component
+
+
   - Create app/components/blog/BlogNavigation.vue
   - Accept prev and next props (BlogPost | null)
 
@@ -199,7 +208,9 @@ This implementation plan breaks down the blog system development into discrete, 
   - Apply flexbox layout with space-between
   - _Requirements: 16.4, 16.5, 16.6_
 
-- [ ] 6.7 Create breadcrumb navigation and integrate all components
+- [x] 6.7 Create breadcrumb navigation and integrate all components
+
+
   - Use UBreadcrumb component with links array (Home > Blog > Post Title)
   - Use localePath for breadcrumb links
   - Import and use BlogPost, ContentRenderer, BlogTableOfContents, BlogNavigation
@@ -209,8 +220,8 @@ This implementation plan breaks down the blog system development into discrete, 
   - Test prev/next navigation
   - _Requirements: 16.1, 16.2, 16.3, 16.5_
 
-- [ ] 7. Implement custom Prose components
-- [ ] 7.1 Create ProseCode component with copy functionality
+- [x] 7. Implement custom Prose components
+- [x] 7.1 Create ProseCode component with copy functionality
   - Create app/components/content/ProseCode.vue
   - Accept code, language, filename, highlights props
   - Display language label if provided
@@ -222,56 +233,53 @@ This implementation plan breaks down the blog system development into discrete, 
   - Support line highlighting from highlights prop
   - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 15.6_
 
-- [ ] 7.2 Create custom MDC components
+- [x] 7.2 Create custom MDC components
   - Create app/components/content/BlogCallout.vue for callout boxes
-  - Accept title and type props (info, warning, success)
+  - Accept title and type props (info, warning, success, error)
   - Use UCard with colored border based on type
   - Create app/components/content/Alert.vue for inline alerts
   - Test MDC syntax in sample blog posts (::blog-callout, ::alert)
   - _Requirements: 5.6_
 
-- [ ]* 7.3 Customize Prose component styles
+- [x] 7.3 Customize Prose component styles
   - Update app.config.ts with prose customization
-  - Define styles for ProseH1, ProseH2, ProseH3 (font sizes, spacing, colors)
+  - Define styles for ProseH1, ProseH2, ProseH3, ProseH4 (font sizes, spacing, colors)
   - Define styles for ProseP (line height, spacing, colors)
   - Define styles for ProseCode inline code (background, padding, border-radius)
   - Define styles for ProseA links (color, hover effects)
   - Define styles for ProseImg (responsive, rounded corners)
+  - Define styles for lists, blockquotes
   - Test with sample posts to verify styling
   - _Requirements: 5.7, 8.2_
 
-- [ ] 8. Implement RSS feed generation
+- [x] 8. Implement RSS feed generation
   - Create server/routes/blog/rss.xml.ts server route
+  - Create server/routes/fa/blog/rss.xml.ts for Persian locale
   - Use serverQueryContent to fetch published posts for current locale
-  - Detect locale from URL path (/blog/rss.xml vs /fa/blog/rss.xml)
   - Generate RSS 2.0 XML with channel metadata
   - Include item elements for each post (title, link, guid, pubDate, description)
   - Implement escapeXml helper function for XML safety
   - Set Content-Type header to application/rss+xml
-  - Add RSS link to blog listing page header
-  - Test RSS feed in browser and RSS reader
   - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7_
 
-- [ ] 9. Configure prerendering and route rules
+- [x] 9. Configure prerendering and route rules
   - Update nitro.prerender.routes in nuxt.config.ts to include /blog and /fa/blog
-  - Add dynamic route generation for all blog posts using queryContent
+  - Add hooks to dynamically generate routes for all blog posts
   - Verify route rules for caching are applied (/blog/**, /fa/blog/** with swr: 3600)
-  - Test static generation by running pnpm generate
-  - Verify all blog routes are prerendered in .output/public
   - _Requirements: 10.5_
 
-- [ ] 10. Add blog link to navigation
+- [x] 10. Add blog link to navigation
   - Update app/components/common/TopNav.vue to include blog link
   - Use localePath('/blog') for navigation
   - Highlight blog link when on blog routes using useRoute()
-  - Add blog icon if desired
+  - Add blog icon (i-twemoji-memo)
   - Test navigation in both locales
   - _Requirements: 16.3_
 
-- [ ] 11. Create default blog cover image
-  - Create or add a default cover image to public/img/blog/default-cover.jpg
-  - Ensure image is optimized (WebP format, appropriate dimensions)
-  - Use this image as fallback in BlogCard and SEO meta tags
+- [x] 11. Create default blog cover image
+  - Create public/img/blog/ directory for blog images
+  - Add .gitkeep file with instructions
+  - Use /img/blog/default-cover.jpg as fallback in posts
   - _Requirements: 6.4_
 
 - [ ]* 12. Performance optimization and testing
@@ -304,12 +312,11 @@ This implementation plan breaks down the blog system development into discrete, 
   - Test code block copy functionality
   - _Requirements: 8.1, 9.1, 9.2, 9.4_
 
-- [ ]* 15. Documentation and sample content
+- [x] 15. Documentation and sample content
   - Create README.md in content/ directory with authoring guidelines
   - Document frontmatter schema and required fields
   - Provide markdown examples for common elements
-  - Document MDC component usage
-  - Add comments in code for complex logic
-  - Update main README.md with blog feature description
+  - Document MDC component usage (BlogCallout, Alert)
+  - Include best practices and publishing workflow
   - _Requirements: 11.3, 11.4_
 

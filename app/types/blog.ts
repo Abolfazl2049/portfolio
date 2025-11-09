@@ -1,12 +1,10 @@
-import type { ParsedContent } from '@nuxt/content'
-
-export interface BlogPost extends ParsedContent {
+export interface BlogPost {
   // Required fields
   title: string
   description: string
   date: string // ISO 8601 format
   tags: string[]
-  _path: string
+  path: string // Nuxt Content v3 uses 'path' instead of '_path'
 
   // Optional fields
   image?: string // Cover image path
@@ -21,24 +19,6 @@ export interface BlogPost extends ParsedContent {
     image?: string
   }
 
-  // Body with TOC
-  body?: {
-    type: string
-    children: any[]
-    toc?: {
-      title: string
-      searchDepth: number
-      depth: number
-      links: Array<{
-        id: string
-        text: string
-        depth: number
-        children?: Array<{
-          id: string
-          text: string
-          depth: number
-        }>
-      }>
-    }
-  }
+  // Body with TOC (MarkdownRoot from Nuxt Content)
+  body?: any
 }
