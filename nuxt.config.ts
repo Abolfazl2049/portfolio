@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   },
   
   modules: [
+    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxtjs/i18n',
@@ -132,6 +133,24 @@ export default defineNuxtConfig({
 
 
 
+
+  // Nuxt Content configuration
+  content: {
+    // Disable experimental features that require native dependencies
+    experimental: {
+      clientDB: false,
+      cacheContents: false
+    },
+    markdown: {
+      mdc: true,
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      }
+    },
+    documentDriven: false,
+    respectPathCase: true
+  },
 
   i18n: {
     defaultLocale: 'en',
