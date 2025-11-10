@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   },
   
   modules: [
-    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxtjs/i18n',
@@ -131,21 +130,7 @@ export default defineNuxtConfig({
     storageKey: "nuxt-color-mode",
   },
 
-  // Nuxt Content configuration
-  content: {
-    // Enable MDC syntax for Vue components in markdown
-    markdown: {
-      mdc: true,
-      toc: {
-        depth: 3,
-        searchDepth: 3
-      }
-    },
-    // Document-driven mode disabled (we use custom pages)
-    documentDriven: false,
-    // Respect path case
-    respectPathCase: true
-  },
+
 
 
   i18n: {
