@@ -144,12 +144,8 @@ export default defineNuxtConfig({
     // Document-driven mode disabled (we use custom pages)
     documentDriven: false,
     // Respect path case
-    respectPathCase: true,
-    // Experimental: Improve hydration
-    experimental: {
-      clientDB: true
-    }
-  } as any,
+    respectPathCase: true
+  },
 
 
   i18n: {
