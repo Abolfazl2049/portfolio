@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "./transitions.css";
 
 @source "../../components/**/*.{vue,js,ts}";
 @source "../../layouts/**/*.vue";

@@ -51,7 +51,7 @@ const nextPost = computed(() => {
 })
 
 // SEO meta tags
-const siteUrl = 'https://aliarghyani.com' // TODO: Move to runtime config
+const siteUrl = 'https://aliarghyani.vercel.app' // TODO: Move to runtime config
 
 // Custom meta tags
 if (post.value) {
@@ -105,7 +105,7 @@ if (post.value) {
 
 <template>
   <UContainer>
-    <div v-if="post" class="py-8">
+    <div v-if="post" class="pt-24 pb-12">
       <!-- Breadcrumb Navigation -->
       <UBreadcrumb :links="[
         { label: t('nav.home'), to: localePath('/') },
@@ -128,7 +128,8 @@ if (post.value) {
           <BlogPost :post="post" />
 
           <!-- Content Renderer -->
-          <article :dir="locale === 'fa' ? 'rtl' : 'ltr'" class="prose prose-lg dark:prose-invert max-w-none mt-8">
+          <article :dir="locale === 'fa' ? 'rtl' : 'ltr'" class="prose prose-lg dark:prose-invert max-w-none mt-8"
+            suppressHydrationWarning>
             <ContentRenderer v-if="(post as any).body" :value="(post as any).body" />
           </article>
 
@@ -151,5 +152,50 @@ article[dir="rtl"] :deep(pre),
 article[dir="rtl"] :deep(code) {
   direction: ltr;
   text-align: left;
+}
+
+/* Better spacing for prose elements */
+article :deep(h1) {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+article :deep(h2) {
+  margin-top: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+article :deep(h3) {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+article :deep(p) {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+article :deep(ul),
+article :deep(ol) {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+article :deep(li) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+article :deep(pre) {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+article :deep(blockquote) {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 4px solid rgba(99, 102, 241, 0.5);
 }
 </style>

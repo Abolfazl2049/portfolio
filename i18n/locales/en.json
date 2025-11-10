@@ -99,7 +99,8 @@
     "skills": "Skills",
     "blog": "Blog",
     "contact": "Contact",
-    "theme": "Theme"
+    "theme": "Theme",
+    "languageSelector": "Language selector"
   },
   "blog": {
     "title": "Blog",

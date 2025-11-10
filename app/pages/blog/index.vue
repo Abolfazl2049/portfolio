@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10">
+  <section class="pt-24 pb-10">
     <UContainer>
       <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
         <div>

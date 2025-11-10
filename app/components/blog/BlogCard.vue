@@ -59,7 +59,7 @@ const handleImageError = () => {
 
 // Convert collection path to route path (remove locale prefix)
 const getRoutePath = (path: string) => {
-  // Remove locale prefix from path: /en/blog/... -> /blog/...
-  return path.replace(`/${locale.value}`, '')
+  // Remove any locale prefix from path: /en/blog/... or /fa/blog/... -> /blog/...
+  return path.replace(/^\/(en|fa)/, '')
 }
 </script>

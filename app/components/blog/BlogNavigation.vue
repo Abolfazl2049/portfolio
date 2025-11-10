@@ -12,8 +12,8 @@ const router = useRouter()
 
 // Convert collection path to route path (remove locale prefix)
 const getRoutePath = (path: string) => {
-  // Remove locale prefix from path: /en/blog/... -> /blog/...
-  return path.replace(`/${locale.value}`, '')
+  // Remove any locale prefix from path: /en/blog/... or /fa/blog/... -> /blog/...
+  return path.replace(/^\/(en|fa)/, '')
 }
 
 // Keyboard navigation
@@ -39,9 +39,11 @@ onUnmounted(() => {
     <!-- Previous Post -->
     <div class="flex-1">
       <NuxtLink v-if="prev" :to="localePath(getRoutePath((prev as any).path))" class="group block">
-        <UButton color="neutral" variant="ghost" size="lg" class="w-full justify-start">
+        <UButton color="neutral" variant="ghost" size="lg"
+          class="w-full justify-start hover:scale-105 transition-transform duration-200">
           <template #leading>
-            <UIcon name="i-heroicons-arrow-left" class="w-5 h-5" />
+            <UIcon name="i-heroicons-arrow-left"
+              class="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
           </template>
           <div class="text-left">
             <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">
@@ -59,7 +61,8 @@ onUnmounted(() => {
     <!-- Next Post -->
     <div class="flex-1">
       <NuxtLink v-if="next" :to="localePath(getRoutePath((next as any).path))" class="group block">
-        <UButton color="neutral" variant="ghost" size="lg" class="w-full justify-end">
+        <UButton color="neutral" variant="ghost" size="lg"
+          class="w-full justify-end hover:scale-105 transition-transform duration-200">
           <div class="text-right">
             <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">
               {{ t('blog.nextPost') }}
@@ -70,7 +73,8 @@ onUnmounted(() => {
             </div>
           </div>
           <template #trailing>
-            <UIcon name="i-heroicons-arrow-right" class="w-5 h-5" />
+            <UIcon name="i-heroicons-arrow-right"
+              class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </template>
         </UButton>
       </NuxtLink>

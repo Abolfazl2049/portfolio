@@ -95,6 +95,21 @@ i18n/                   # Internationalization
 
 ## 🚀 Deployment
 
+### Static Site Generation (SSG)
+
+This project is configured for full Static Site Generation with automatic blog post pre-rendering:
+
+```bash
+# Generate static files with pre-rendered blog posts
+pnpm generate
+```
+
+The build process will:
+- Pre-render all blog posts (English & Persian)
+- Generate sitemap.xml automatically
+- Create RSS feeds for both languages
+- Output static files to `.output/public`
+
 ### Vercel (Recommended)
 ```bash
 # Install Vercel CLI
@@ -106,16 +121,20 @@ vercel
 
 Or connect your GitHub repository to Vercel for automatic deployments.
 
-### Static Hosting
-```bash
-# Generate static files
-pnpm generate
+### Other Static Hosting Platforms
 
-# Deploy .output/public to any static host
-```
+Compatible with any static hosting service:
+- **Netlify**: Deploy `.output/public` directory
+- **Cloudflare Pages**: Connect GitHub repo or upload `.output/public`
+- **GitHub Pages**: Deploy `.output/public` contents
+- **AWS S3 + CloudFront**: Upload `.output/public` to S3 bucket
+
+**Build Command**: `pnpm generate`  
+**Output Directory**: `.output/public`
 
 ### Environment Variables
 - `NUXT_PUBLIC_LOAD_PLAUSIBLE` - Enable/disable Plausible analytics (optional)
+- `NUXT_PUBLIC_SITE_URL` - Site URL for sitemap and RSS (default: https://aliarghyani.vercel.app)
 
 ## 🧪 Testing the Structure
 

@@ -1,13 +1,35 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'app',
+  
+  // Enable View Transitions API for smooth page transitions
+  experimental: {
+    viewTransition: true
+  },
+  
+  // Configure page and layout transitions
+  app: {
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/',
+    cdnURL: '/',
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    },
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in'
+    }
+  },
+  
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
   css: [
     '~/assets/css/main.css'
@@ -56,8 +78,24 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       loadPlausible: "", // overrided by env,
+      siteUrl: 'https://aliarghyani.vercel.app' // Used for sitemap and RSS generation
     },
   },
+
+  // Site configuration for sitemap
+  site: {
+    url: 'https://aliarghyani.vercel.app'
+  } as any,
+
+  // Sitemap configuration
+  sitemap: {
+    gzip: true,
+    exclude: [],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.8
+    }
+  } as any,
 
   image: {
     quality: 80,
@@ -106,7 +144,11 @@ export default defineNuxtConfig({
     // Document-driven mode disabled (we use custom pages)
     documentDriven: false,
     // Respect path case
-    respectPathCase: true
+    respectPathCase: true,
+    // Experimental: Improve hydration
+    experimental: {
+      clientDB: true
+    }
   } as any,
 
 
@@ -132,7 +174,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/blog', '/fa/blog'],
+      routes: ['/', '/blog', '/fa/blog'],
     },
   },
 
