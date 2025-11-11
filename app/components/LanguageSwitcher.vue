@@ -54,7 +54,7 @@ const selectedIcon = computed<string>(() => items.value.find(i => i.value === mo
 const { startLocaleSwitching } = useLocaleSwitching()
 const loading = useLoadingIndicator()
 
-// On selection change, update locale and navigate
+// On selection change, navigate first then update locale
 watch(model, async (val, oldVal) => {
   if (val === oldVal) return
 
@@ -66,25 +66,39 @@ watch(model, async (val, oldVal) => {
     loading.start()
   }
 
-  // Update locale
-  await setLocale(val)
-
   // Get the current route path without locale prefix
   const currentPath = router.currentRoute.value.path
   const pathWithoutLocale = currentPath.replace(/^\/(en|fa)/, '')
 
-  // Build new path with new locale
-  const newLocalePrefix = val === 'en' ? '' : `/${val}`
-  const newPath = `${newLocalePrefix}${pathWithoutLocale || '/'}`
+  // Check if we're on a blog post page
+  const isBlogPost = pathWithoutLocale.startsWith('/blog/') && pathWithoutLocale !== '/blog' && pathWithoutLocale !== '/blog/'
 
-  // Navigate to new path
+  let newPath: string
+
+  if (isBlogPost) {
+    // If on a blog post, redirect to blog listing page in the new locale
+    newPath = val === 'en' ? '/blog' : `/${val}/blog`
+  } else {
+    // For other pages, try to navigate to the equivalent page
+    const newLocalePrefix = val === 'en' ? '' : `/${val}`
+    newPath = `${newLocalePrefix}${pathWithoutLocale || '/'}`
+  }
+
+  // Navigate to new path FIRST (before setLocale to avoid RTL/LTR flash)
   if (newPath !== currentPath) {
     await router.push(newPath)
   }
 
-  // Restore scroll position after navigation
+  // Update locale AFTER navigation
+  await setLocale(val)
+
+  // Restore scroll position after navigation (only if not redirecting from blog post)
   await nextTick()
-  window.scrollTo(0, scrollY)
+  if (!isBlogPost) {
+    window.scrollTo(0, scrollY)
+  } else {
+    window.scrollTo(0, 0) // Scroll to top when redirecting to blog listing
+  }
 
   if (loading) {
     setTimeout(() => loading.finish(), 600)

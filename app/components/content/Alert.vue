@@ -1,7 +1,8 @@
 <template>
-  <div :class="alertClass" class="my-4 flex items-center gap-2 rounded-lg px-4 py-3">
+  <div :class="alertClass"
+    class="my-6 flex items-center gap-3 rounded-xl px-4 py-3.5 ring-1 ring-inset backdrop-blur-sm">
     <UIcon :name="icon" class="h-5 w-5 flex-shrink-0" />
-    <div class="flex-1 text-sm">
+    <div class="flex-1 text-sm leading-relaxed">
       <slot />
     </div>
   </div>

@@ -120,15 +120,21 @@ if (post.value) {
         {{ t('blog.backToBlog') }}
       </NuxtLink>
 
+      <!-- Mobile TOC -->
+      <div v-if="(post as any).body?.toc?.links?.length" class="lg:hidden mb-8">
+        <BlogTableOfContents :toc="(post as any).body.toc" :mobile="true" />
+      </div>
+
       <!-- Main Content Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-8 lg:gap-12">
         <!-- Main Content -->
-        <div class="lg:col-span-8">
+        <div class="min-w-0 overflow-x-hidden">
           <!-- Blog Post Metadata -->
           <BlogPost :post="post" />
 
           <!-- Content Renderer -->
-          <article :dir="locale === 'fa' ? 'rtl' : 'ltr'" class="prose prose-lg dark:prose-invert max-w-none mt-8"
+          <article :dir="locale === 'fa' ? 'rtl' : 'ltr'"
+            :class="['blog-content', locale === 'fa' ? 'blog-content-rtl' : 'blog-content-ltr']"
             suppressHydrationWarning>
             <ContentRenderer v-if="(post as any).body" :value="(post as any).body" />
           </article>
@@ -137,65 +143,15 @@ if (post.value) {
           <BlogNavigation :prev="prevPost" :next="nextPost" />
         </div>
 
-        <!-- Sidebar: Table of Contents -->
-        <aside class="lg:col-span-4">
-          <BlogTableOfContents v-if="(post as any).body?.toc" :toc="(post as any).body.toc" />
+        <!-- Sidebar: Table of Contents (Desktop) -->
+        <aside v-if="(post as any).body?.toc?.links?.length" class="hidden lg:block">
+          <UContentToc :links="(post as any).body.toc.links" :title="t('blog.tableOfContents')" color="primary"
+            highlight :ui="{
+              root: 'sticky top-24',
+              container: 'bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-4'
+            }" />
         </aside>
       </div>
     </div>
   </UContainer>
 </template>
-
-<style scoped>
-/* Force LTR for code blocks in RTL context */
-article[dir="rtl"] :deep(pre),
-article[dir="rtl"] :deep(code) {
-  direction: ltr;
-  text-align: left;
-}
-
-/* Better spacing for prose elements */
-article :deep(h1) {
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-article :deep(h2) {
-  margin-top: 2.25rem;
-  margin-bottom: 1.25rem;
-}
-
-article :deep(h3) {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-article :deep(p) {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-article :deep(ul),
-article :deep(ol) {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding-left: 1.75rem;
-}
-
-article :deep(li) {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-article :deep(pre) {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-article :deep(blockquote) {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-  border-left: 4px solid rgba(99, 102, 241, 0.5);
-}
-</style>

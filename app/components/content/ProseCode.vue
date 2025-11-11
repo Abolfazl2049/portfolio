@@ -69,31 +69,31 @@ const languageLabel = computed(() => {
 .code-block-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
   background: rgba(30, 41, 59, 0.8);
   border-bottom: 1px solid rgba(71, 85, 105, 0.3);
   backdrop-filter: blur(8px);
-  min-height: 3rem;
+  min-height: 2.75rem;
 }
 
 .code-filename {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: #e2e8f0;
   font-family: 'Courier New', monospace;
   font-weight: 500;
 }
 
 .code-language {
-  font-size: 0.8125rem;
-  color: #94a3b8;
+  font-size: 0.75rem;
+  color: #cbd5e1;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.05em;
-  padding: 0.375rem 0.75rem;
-  background: rgba(99, 102, 241, 0.15);
+  padding: 0.25rem 0.625rem;
+  background: rgba(99, 102, 241, 0.2);
   border-radius: 0.375rem;
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.4);
 }
 
 .code-block-content {
@@ -177,14 +177,12 @@ const languageLabel = computed(() => {
   <div class="code-block-wrapper" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
     <!-- Header with filename and language -->
     <div v-if="filename || language" class="code-block-header">
-      <div class="flex items-center gap-3">
-        <span v-if="filename" class="code-filename">
-          {{ filename }}
-        </span>
-        <span v-if="language && !filename" class="code-language">
-          {{ languageLabel }}
-        </span>
-      </div>
+      <span v-if="filename" class="code-filename">
+        {{ filename }}
+      </span>
+      <span v-if="language && !filename" class="code-language">
+        {{ languageLabel }}
+      </span>
     </div>
 
     <!-- Code block -->
