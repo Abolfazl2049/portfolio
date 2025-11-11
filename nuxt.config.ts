@@ -175,6 +175,8 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/', '/blog', '/fa/blog'],
+      failOnError: false,
+      ignore: ['/_vercel/image']
     },
   },
 
