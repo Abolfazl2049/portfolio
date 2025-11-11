@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "./transitions.css";
+@import "./prose.css";
+@import "./blog-content.css";
 
 @source "../../components/**/*.{vue,js,ts}";
 @source "../../layouts/**/*.vue";
@@ -61,6 +64,7 @@
   html {
     overflow-y: scroll;
     /* Avoid width variation */
+    scroll-padding-top: 2rem; /* Offset for fixed navbar when using anchor links */
   }
 
   html,
@@ -158,14 +162,16 @@
   }
 
   /* Hide scrollbars for overflow containers */
-  .no-scrollbar {
+  .no-scrollbar,
+  .scrollbar-hide {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
   }
 
-  .no-scrollbar::-webkit-scrollbar {
+  .no-scrollbar::-webkit-scrollbar,
+  .scrollbar-hide::-webkit-scrollbar {
     display: none;
     /* Chrome, Safari, Opera */
   }

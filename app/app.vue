@@ -1,23 +1,17 @@
 <template>
   <UApp :toaster="{ expand: false }">
-    <NuxtLoadingIndicator color="#6366F1" :height="3" :throttle="100" />
-    <TopNav />
-    <NuxtPage />
-    <FooterCopyright />
-    <!-- <FloatingActions /> -->
+    <NuxtLoadingIndicator color="#6366F1" :height="3" :throttle="100" :duration="2000" />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
 
 <script setup lang="ts">
-import FloatingActions from '@/components/portfolio/FloatingActions.vue'
-import TopNav from '@/components/common/TopNav.vue'
-import FooterCopyright from '@/components/common/FooterCopyright.vue'
 import { usePortfolio } from '@/composables/usePortfolio'
-import { useLocaleSwitching } from '@/composables/useLocaleSwitching'
 
 const { locale, locales } = useI18n()
 const portfolio = usePortfolio()
-const { isLocaleSwitching } = useLocaleSwitching()
 
 const activeLocale = computed(() => locales.value.find((item) => item.code === locale.value) ?? locales.value[0])
 const langAttr = computed(() => (activeLocale.value as any)?.language ?? locale.value)

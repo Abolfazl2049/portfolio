@@ -1,12 +1,35 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'app',
+  
+  // Enable View Transitions API for smooth page transitions
+  experimental: {
+    viewTransition: true
+  },
+  
+  // Configure page and layout transitions
+  app: {
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/',
+    cdnURL: '/',
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    },
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in'
+    }
+  },
+  
   modules: [
+    '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
   css: [
     '~/assets/css/main.css'
@@ -55,8 +78,24 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       loadPlausible: "", // overrided by env,
+      siteUrl: 'https://aliarghyani.vercel.app' // Used for sitemap and RSS generation
     },
   },
+
+  // Site configuration for sitemap
+  site: {
+    url: 'https://aliarghyani.vercel.app'
+  } as any,
+
+  // Sitemap configuration
+  sitemap: {
+    gzip: true,
+    exclude: [],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.8
+    }
+  } as any,
 
   image: {
     quality: 80,
@@ -92,8 +131,26 @@ export default defineNuxtConfig({
     storageKey: "nuxt-color-mode",
   },
 
-  //
 
+
+
+  // Nuxt Content configuration
+  content: {
+    // Disable experimental features that require native dependencies
+    experimental: {
+      clientDB: false,
+      cacheContents: false
+    },
+    markdown: {
+      mdc: true,
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      }
+    },
+    documentDriven: false,
+    respectPathCase: true
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -113,12 +170,25 @@ export default defineNuxtConfig({
     vueI18n: '~/i18n.config.ts'
   },
 
-  // Avoid Windows prerender issues and speed up local builds
+  // Prerender blog routes
   nitro: {
     prerender: {
-      crawlLinks: false,
-      routes: [],
+      crawlLinks: true,
+      routes: ['/', '/blog', '/fa/blog'],
+      failOnError: false,
+      ignore: ['/_vercel/image']
     },
+  },
+
+
+
+  // Route rules for caching and optimization
+  routeRules: {
+    // Blog routes caching
+    '/blog': { swr: 3600 },
+    '/fa/blog': { swr: 3600 },
+    '/blog/**': { swr: 3600 },
+    '/fa/blog/**': { swr: 3600 }
   },
 
   devtools: { enabled: false },

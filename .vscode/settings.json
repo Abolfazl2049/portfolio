@@ -61,5 +61,8 @@
   "i18n-ally.localesPaths": [
     "i18n",
     "i18n/locales"
-  ]
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
