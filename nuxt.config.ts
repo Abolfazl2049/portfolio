@@ -57,6 +57,11 @@ export default defineNuxtConfig({
       }
     }
   },
+  
+  devServer: {
+    host: '0.0.0.0',
+    port: 5000
+  },
   fonts: {
     defaults: {
       preload: true,
@@ -136,11 +141,6 @@ export default defineNuxtConfig({
 
   // Nuxt Content configuration
   content: {
-    // Disable experimental features that require native dependencies
-    experimental: {
-      clientDB: false,
-      cacheContents: false
-    },
     markdown: {
       mdc: true,
       toc: {
@@ -150,7 +150,7 @@ export default defineNuxtConfig({
     },
     documentDriven: false,
     respectPathCase: true
-  },
+  } as any,
 
   i18n: {
     defaultLocale: 'en',
@@ -178,6 +178,9 @@ export default defineNuxtConfig({
       failOnError: false,
       ignore: ['/_vercel/image']
     },
+    devProxy: {
+      host: '0.0.0.0'
+    }
   },
 
 
