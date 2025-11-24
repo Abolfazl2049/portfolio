@@ -65,18 +65,18 @@ export default defineNuxtConfig({
   fonts: {
     defaults: {
       preload: true,
-      weights: [300, 400, 500, 600, 700],
+      weights: [300, 400, 500, 600, 700, 800],
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: {
-        'sans-serif': ['system-ui', 'Segoe UI', 'sans-serif'],
+        'sans-serif': ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
         serif: ['Georgia', 'Times New Roman', 'serif']
       }
     },
     families: [
-      { name: 'Fraunces', provider: 'google', weights: [600, 700] },
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Outfit', provider: 'google', weights: [300, 400, 500, 600, 700] }
+      { name: 'Geist', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Space Grotesk', provider: 'google', weights: [500, 600, 700] },
+      { name: 'DM Sans', provider: 'google', weights: [400, 500, 600, 700] }
     ]
   },
 
