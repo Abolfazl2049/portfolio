@@ -37,9 +37,9 @@ development_status:
   # FRs: FR1-4
   # ═══════════════════════════════════════════════════════════════
   epic-1: contexted
-  1-1-create-resume-typescript-interfaces: ready-for-dev
-  1-2-create-sample-resume-data-file: backlog
-  1-3-create-resume-data-composable: backlog
+  1-1-create-resume-typescript-interfaces: done
+  1-2-create-sample-resume-data-file: done
+  1-3-create-resume-data-composable: done
   epic-1-retrospective: optional
 
   # ═══════════════════════════════════════════════════════════════
