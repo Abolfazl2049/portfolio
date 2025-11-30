@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'app',
-  
+
   // Enable View Transitions API for smooth page transitions
   experimental: {
     viewTransition: true
   },
-  
+
   // Configure page and layout transitions
   app: {
     baseURL: '/',
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-  
+
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   devServer: {
     host: '0.0.0.0',
     port: 5000
