@@ -13,12 +13,12 @@ export function useResumePdf() {
 
     try {
       // Fetch PDF as blob (AC1)
-      const response = await $fetch('/api/resume/pdf', {
+      const response = await $fetch<Blob>('/api/resume/pdf', {
         responseType: 'blob',
       })
 
       // Create object URL from blob (AC2)
-      const url = URL.createObjectURL(response as Blob)
+      const url = URL.createObjectURL(response)
 
       // Create temporary anchor element and trigger download
       const a = document.createElement('a')

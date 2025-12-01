@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
       browser = await puppeteerCore.default.launch({
         args: chromium.default.args,
         executablePath: await chromium.default.executablePath(),
-        headless: chromium.default.headless,
+        headless: true,
       })
     }
 

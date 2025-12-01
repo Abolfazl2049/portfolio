@@ -1,6 +1,6 @@
 # Story 3.2: Create PDF Download Composable
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 

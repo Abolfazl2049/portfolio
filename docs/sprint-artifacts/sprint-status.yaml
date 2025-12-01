@@ -61,7 +61,7 @@ development_status:
   # FRs: FR10-14
   # ═══════════════════════════════════════════════════════════════
   epic-3: contexted
-  3-1-create-pdf-generation-api-route: ready-for-dev
-  3-2-create-pdf-download-composable: ready-for-dev
-  3-3-connect-download-button-to-pdf-generation: ready-for-dev
+  3-1-create-pdf-generation-api-route: done
+  3-2-create-pdf-download-composable: done
+  3-3-connect-download-button-to-pdf-generation: done
   epic-3-retrospective: optional
