@@ -53,7 +53,7 @@ development_status:
   2-3-create-resume-header-main-content-components: done
   2-4-create-resume-sidebar-components: done
   2-5-create-download-button-component: done
-  epic-2-retrospective: optional
+  epic-2-retrospective: completed
 
   # ═══════════════════════════════════════════════════════════════
   # Epic 3: PDF Export
