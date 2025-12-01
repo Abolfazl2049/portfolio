@@ -1,6 +1,6 @@
 # Story 2.2: Create Resume Preview Container Component
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -26,48 +26,48 @@ so that I have a single source of truth for web and PDF.
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumePreview component file (AC: #1-#13)
-  - [ ] Create `app/components/resume/ResumePreview.vue`
-  - [ ] Set up component structure with script setup and TypeScript
+- [x] Create ResumePreview component file (AC: #1-#13)
+  - [x] Create `app/components/resume/ResumePreview.vue`
+  - [x] Set up component structure with script setup and TypeScript
 
-- [ ] Implement single-column layout (AC: #1, #10)
-  - [ ] Use vertical stack layout (flexbox or CSS Grid single column)
-  - [ ] Add proper spacing between sections
-  - [ ] Ensure consistent layout on all screen sizes
+- [x] Implement single-column layout (AC: #1, #10)
+  - [x] Use vertical stack layout (flexbox or CSS Grid single column)
+  - [x] Add proper spacing between sections
+  - [x] Ensure consistent layout on all screen sizes
 
-- [ ] Configure container dimensions (AC: #2, #3)
-  - [ ] Set container to A4 aspect ratio (210mm × 297mm)
-  - [ ] Apply 24px (1.5rem) margins
-  - [ ] Use Tailwind classes: `max-w-[210mm] min-h-[297mm] p-6`
+- [x] Configure container dimensions (AC: #2, #3)
+  - [x] Set container to A4 aspect ratio (210mm × 297mm)
+  - [x] Apply 24px (1.5rem) margins
+  - [x] Use Tailwind classes: `max-w-[210mm] min-h-[297mm] p-6`
 
-- [ ] Apply color scheme and typography (AC: #4-#9)
-  - [ ] Set white background: `bg-white`
-  - [ ] Define blue primary color: `text-blue-600` (#2563eb)
-  - [ ] Configure Inter font (already available via @nuxt/fonts)
-  - [ ] Set body text size: `text-sm` (0.875rem)
-  - [ ] Ensure proper heading hierarchy (h1, h2)
+- [x] Apply color scheme and typography (AC: #4-#9)
+  - [x] Set white background: `bg-white`
+  - [x] Define blue primary color: `text-blue-600` (#2563eb)
+  - [x] Configure Inter font (already available via @nuxt/fonts)
+  - [x] Set body text size: `text-sm` (0.875rem)
+  - [x] Ensure proper heading hierarchy (h1, h2)
 
-- [ ] Add print styles (AC: #11-#13)
-  - [ ] Create `.no-print` utility class
-  - [ ] Add `@media print` styles
-  - [ ] Set `printBackground: true` for colors
-  - [ ] Control page breaks with `break-inside-avoid`
+- [x] Add print styles (AC: #11-#13)
+  - [x] Create `.no-print` utility class
+  - [x] Add `@media print` styles
+  - [x] Set `printBackground: true` for colors
+  - [x] Control page breaks with `break-inside-avoid`
 
-- [ ] Integrate data from composable
-  - [ ] Import `useResumeData()` composable
-  - [ ] Access `resume` reactive reference
-  - [ ] Prepare for child component integration (Stories 2.3, 2.4)
+- [x] Integrate data from composable
+  - [x] Import `useResumeData()` composable
+  - [x] Access `resume` reactive reference
+  - [x] Prepare for child component integration (Stories 2.3, 2.4)
 
-- [ ] Add placeholder sections
-  - [ ] Add comment placeholders for child components
-  - [ ] Structure: Header → Summary → Experience → Education → Additional Info
+- [x] Add placeholder sections
+  - [x] Add comment placeholders for child components
+  - [x] Structure: Header → Summary → Experience → Education → Additional Info
 
-- [ ] Test component rendering
-  - [ ] Import component in `pages/resume.vue`
-  - [ ] Verify single-column layout
-  - [ ] Test responsive behavior on mobile
-  - [ ] Check print preview (Ctrl+P)
-  - [ ] Verify A4 dimensions and margins
+- [x] Test component rendering
+  - [x] Import component in `pages/resume.vue`
+  - [x] Verify single-column layout
+  - [x] Test responsive behavior on mobile
+  - [x] Check print preview (Ctrl+P)
+  - [x] Verify A4 dimensions and margins
 
 ## Dev Notes
 
@@ -209,14 +209,22 @@ const { resume } = useResumeData()
 
 ### Completion Notes List
 
-<!-- Will be filled by dev agent after completion -->
+- Created `app/components/resume/ResumePreview.vue` with single-column layout
+- Implemented A4 container (210mm × 297mm) with 24px margins
+- Added all resume sections: Header, Summary, Experience, Education, Additional Info
+- Applied blue (#2563eb) and white color scheme with Inter typography
+- Added print styles with `.no-print` class and `break-inside: avoid`
+- Integrated `useResumeData()` composable for reactive data
+- Updated `pages/resume.vue` to use ResumePreview component
 
 ### File List
 
-<!-- Will be filled by dev agent with created/modified files -->
+- app/components/resume/ResumePreview.vue (created)
+- app/pages/resume.vue (modified)
 
 ---
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
 - 2025-11-30: **REVISED** by SM agent (Bob) - Changed from two-column to single-column layout per UX validation and architect revision
+- 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done
