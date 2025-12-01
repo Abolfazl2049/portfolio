@@ -50,9 +50,9 @@ development_status:
   epic-2: contexted
   2-1-create-resume-page-route: done
   2-2-create-resume-preview-container-component: done
-  2-3-create-resume-header-main-content-components: ready-for-dev
-  2-4-create-resume-sidebar-components: ready-for-dev
-  2-5-create-download-button-component: ready-for-dev
+  2-3-create-resume-header-main-content-components: done
+  2-4-create-resume-sidebar-components: done
+  2-5-create-download-button-component: done
   epic-2-retrospective: optional
 
   # ═══════════════════════════════════════════════════════════════

@@ -1,6 +1,6 @@
 # Story 2.4: Create Resume Education & Additional Info Components
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -26,42 +26,42 @@ so that recruiters can quickly assess my qualifications.
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumeEducation component (AC: #1-#5)
-  - [ ] Create `app/components/resume/ResumeEducation.vue`
-  - [ ] Accept props: `education` (Education[])
-  - [ ] Add section header "EDUCATION" with blue, uppercase, bold styling
-  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
-  - [ ] For each degree, display:
+- [x] Create ResumeEducation component (AC: #1-#5)
+  - [x] Create `app/components/resume/ResumeEducation.vue`
+  - [x] Accept props: `education` (Education[])
+  - [x] Add section header "EDUCATION" with blue, uppercase, bold styling
+  - [x] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [x] For each degree, display:
     - Degree type and field: `font-semibold text-gray-900`
     - Institution name: `text-gray-700`
     - Date range: Use `formatDate()` helper (right-aligned)
     - Optional bullet points for achievements
 
-- [ ] Create ResumeAdditionalInfo component (AC: #6-#10)
-  - [ ] Create `app/components/resume/ResumeAdditionalInfo.vue`
-  - [ ] Accept props: `skills` (Skill[]), `languages` (Language[]), `certificates?` (Certificate[]), `awards?` (Award[])
-  - [ ] Add section header "ADDITIONAL INFORMATION" with blue, uppercase, bold styling
-  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
-  - [ ] Display "Technical Skills:" with categorized list or comma-separated keywords
-  - [ ] Display "Languages:" with comma-separated list and fluency
-  - [ ] Display "Certifications:" (if provided) with name and issuer
-  - [ ] Display "Awards/Activities:" (if provided) with descriptions
+- [x] Create ResumeAdditionalInfo component (AC: #6-#10)
+  - [x] Create `app/components/resume/ResumeAdditionalInfo.vue`
+  - [x] Accept props: `skills` (Skill[]), `languages` (Language[]), `certificates?` (Certificate[]), `awards?` (Award[])
+  - [x] Add section header "ADDITIONAL INFORMATION" with blue, uppercase, bold styling
+  - [x] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [x] Display "Technical Skills:" with categorized list or comma-separated keywords
+  - [x] Display "Languages:" with comma-separated list and fluency
+  - [x] Display "Certifications:" (if provided) with name and issuer
+  - [x] Display "Awards/Activities:" (if provided) with descriptions
 
-- [ ] Integrate components into ResumePreview (AC: #1-#10)
-  - [ ] Import both components in `ResumePreview.vue`
-  - [ ] Pass data from `useResumeData()` composable
-  - [ ] Place in vertical order (after Experience):
+- [x] Integrate components into ResumePreview (AC: #1-#10)
+  - [x] Import both components in `ResumePreview.vue`
+  - [x] Pass data from `useResumeData()` composable
+  - [x] Place in vertical order (after Experience):
     - ResumeEducation
     - ResumeAdditionalInfo
 
-- [ ] Test components rendering
-  - [ ] Verify education section with blue uppercase header and bottom border
-  - [ ] Check degree, institution, date formatting
-  - [ ] Test with multiple education entries
-  - [ ] Verify additional info section with all subsections
-  - [ ] Check skills categorization or comma-separated display
-  - [ ] Test languages display
-  - [ ] Verify optional certifications and awards (if present)
+- [x] Test components rendering
+  - [x] Verify education section with blue uppercase header and bottom border
+  - [x] Check degree, institution, date formatting
+  - [x] Test with multiple education entries
+  - [x] Verify additional info section with all subsections
+  - [x] Check skills categorization or comma-separated display
+  - [x] Test languages display
+  - [x] Verify optional certifications and awards (if present)
 
 ## Dev Notes
 
@@ -274,14 +274,20 @@ defineProps<Props>()
 
 ### Completion Notes List
 
-<!-- Will be filled by dev agent after completion -->
+- Created `ResumeEducation.vue` with date formatting and proper styling
+- Created `ResumeAdditionalInfo.vue` with skills, languages, certifications sections
+- Integrated both components into `ResumePreview.vue`
+- All sections use consistent blue uppercase headers with bottom border
 
 ### File List
 
-<!-- Will be filled by dev agent with created/modified files -->
+- app/components/resume/ResumeEducation.vue (created)
+- app/components/resume/ResumeAdditionalInfo.vue (created)
+- app/components/resume/ResumePreview.vue (modified)
 
 ---
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
 - 2025-11-30: **COMPLETELY REVISED** by SM agent (Bob) - Removed sidebar components (Contact, Skills, Languages), moved Education to main body, created consolidated AdditionalInfo component per new architecture and design template
+- 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

@@ -1,6 +1,6 @@
 # Story 2.3: Create Resume Header & Main Content Components
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -31,53 +31,53 @@ so that recruiters see the most important information first.
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumeHeader component (AC: #1-#6)
-  - [ ] Create `app/components/resume/ResumeHeader.vue`
-  - [ ] Accept props: `basics` (ResumeBasics) - includes name, label, email, phone, location, url, image
-  - [ ] Display profile photo (if provided) with proper sizing (150px max width)
-  - [ ] Display name with `text-3xl font-bold` (2rem)
-  - [ ] Display job title with `text-xl text-gray-600` (1.25rem)
-  - [ ] Display address, phone, email, website in structured format
-  - [ ] Make email, phone, website clickable with proper href attributes
-  - [ ] Use horizontal layout: photo left, info right
+- [x] Create ResumeHeader component (AC: #1-#6)
+  - [x] Create `app/components/resume/ResumeHeader.vue`
+  - [x] Accept props: `basics` (ResumeBasics) - includes name, label, email, phone, location, url, image
+  - [x] Display profile photo (if provided) with proper sizing (150px max width)
+  - [x] Display name with `text-3xl font-bold` (2rem)
+  - [x] Display job title with `text-xl text-gray-600` (1.25rem)
+  - [x] Display address, phone, email, website in structured format
+  - [x] Make email, phone, website clickable with proper href attributes
+  - [x] Use horizontal layout: photo left, info right
 
-- [ ] Create ResumeSummary component (AC: #7-#9)
-  - [ ] Create `app/components/resume/ResumeSummary.vue`
-  - [ ] Accept props: `summary` (string)
-  - [ ] Add section header "SUMMARY" with blue, uppercase, bold styling
-  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
-  - [ ] Display summary paragraph with `leading-relaxed` (line-height: 1.6)
-  - [ ] Use `text-sm text-gray-800`
+- [x] Create ResumeSummary component (AC: #7-#9)
+  - [x] Create `app/components/resume/ResumeSummary.vue`
+  - [x] Accept props: `summary` (string)
+  - [x] Add section header "SUMMARY" with blue, uppercase, bold styling
+  - [x] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [x] Display summary paragraph with `leading-relaxed` (line-height: 1.6)
+  - [x] Use `text-sm text-gray-800`
 
-- [ ] Create ResumeExperience component (AC: #10-#13)
-  - [ ] Create `app/components/resume/ResumeExperience.vue`
-  - [ ] Accept props: `work` (WorkExperience[])
-  - [ ] Add section header "WORK EXPERIENCE" with blue, uppercase, bold styling
-  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
-  - [ ] Sort jobs by startDate (most recent first)
-  - [ ] For each job, display:
+- [x] Create ResumeExperience component (AC: #10-#13)
+  - [x] Create `app/components/resume/ResumeExperience.vue`
+  - [x] Accept props: `work` (WorkExperience[])
+  - [x] Add section header "WORK EXPERIENCE" with blue, uppercase, bold styling
+  - [x] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [x] Sort jobs by startDate (most recent first)
+  - [x] For each job, display:
     - Position title: `font-semibold text-gray-900` (left-aligned)
     - Company name: `text-gray-700`
     - Date range: Use `formatDate()` helper from composable (right-aligned)
     - Highlights: `<ul>` with bullet points (• character)
-  - [ ] Handle current jobs: Show "Present" if no endDate
+  - [x] Handle current jobs: Show "Present" if no endDate
 
-- [ ] Integrate components into ResumePreview (AC: #1-#13)
-  - [ ] Import all three components in `ResumePreview.vue`
-  - [ ] Pass data from `useResumeData()` composable
-  - [ ] Place in vertical order:
+- [x] Integrate components into ResumePreview (AC: #1-#13)
+  - [x] Import all three components in `ResumePreview.vue`
+  - [x] Pass data from `useResumeData()` composable
+  - [x] Place in vertical order:
     - ResumeHeader at top
     - ResumeSummary below header
     - ResumeExperience below summary
 
-- [ ] Test components rendering
-  - [ ] Verify header displays photo (if available), name, title, contact info
-  - [ ] Check all contact links are clickable
-  - [ ] Verify summary section with blue uppercase header and bottom border
-  - [ ] Test experience section with multiple jobs
-  - [ ] Verify date formatting ("Jan 2022 - Present")
-  - [ ] Check job sorting (most recent first)
-  - [ ] Test with current job (no endDate)
+- [x] Test components rendering
+  - [x] Verify header displays photo (if available), name, title, contact info
+  - [x] Check all contact links are clickable
+  - [x] Verify summary section with blue uppercase header and bottom border
+  - [x] Test experience section with multiple jobs
+  - [x] Verify date formatting ("Jan 2022 - Present")
+  - [x] Check job sorting (most recent first)
+  - [x] Test with current job (no endDate)
 
 ## Dev Notes
 
@@ -283,14 +283,23 @@ const formatDateRange = (start: string, end?: string) => {
 
 ### Completion Notes List
 
-<!-- Will be filled by dev agent after completion -->
+- Created `ResumeHeader.vue` with photo support, name, job title, and clickable contact links
+- Created `ResumeSummary.vue` with blue uppercase header and leading-relaxed paragraph
+- Created `ResumeExperience.vue` with sorted jobs, date formatting, and bullet highlights
+- Added `image` property to `ResumeBasics` interface for profile photo support
+- Integrated all components into `ResumePreview.vue`
 
 ### File List
 
-<!-- Will be filled by dev agent with created/modified files -->
+- app/components/resume/ResumeHeader.vue (created)
+- app/components/resume/ResumeSummary.vue (created)
+- app/components/resume/ResumeExperience.vue (created)
+- app/components/resume/ResumePreview.vue (modified)
+- app/types/resume.ts (modified - added image property)
 
 ---
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
 - 2025-11-30: **REVISED** by SM agent (Bob) - Merged contact info into Header component, updated section header styling (blue, uppercase, bottom border), aligned with design template
+- 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

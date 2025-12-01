@@ -13,6 +13,7 @@ export const resumeData: Resume = {
     email: 'ali@example.com',
     phone: '+98 912 345 6789',
     url: 'https://aliarghyani.com',
+    image: '/img/AliProfile.webp',
     location: {
       city: 'Tehran',
       country: 'Iran',

@@ -10,6 +10,7 @@ export interface ResumeBasics {
   email: string
   phone: string
   url?: string
+  image?: string // Profile photo URL
   location: {
     city: string
     country: string

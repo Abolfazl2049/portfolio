@@ -1,6 +1,6 @@
 # Story 2.5: Create Download Button Component
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -21,41 +21,41 @@ so that I can easily download my resume as PDF.
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumeDownloadButton component (AC: #1-#7)
-  - [ ] Create `app/components/resume/ResumeDownloadButton.vue`
-  - [ ] Use Nuxt UI `UButton` component
-  - [ ] Set icon to `i-heroicons-arrow-down-tray`
-  - [ ] Add "Download PDF" text
-  - [ ] Apply blue background: `color="primary"` or `bg-blue-600`
-  - [ ] Set fixed position: `fixed bottom-6 right-6`
-  - [ ] Add shadow: `shadow-lg`
-  - [ ] Add `.no-print` class
+- [x] Create ResumeDownloadButton component (AC: #1-#7)
+  - [x] Create `app/components/resume/ResumeDownloadButton.vue`
+  - [x] Use Nuxt UI `UButton` component
+  - [x] Set icon to `i-heroicons-arrow-down-tray`
+  - [x] Add "Download PDF" text
+  - [x] Apply blue background: `color="primary"` or `bg-blue-600`
+  - [x] Set fixed position: `fixed bottom-6 right-6`
+  - [x] Add shadow: `shadow-lg`
+  - [x] Add `.no-print` class
 
-- [ ] Implement print mode detection (AC: #8)
-  - [ ] Accept prop: `isPrintMode` (boolean)
-  - [ ] Use `v-if="!isPrintMode"` to conditionally render
-  - [ ] Ensure button hidden when `?print=true`
+- [x] Implement print mode detection (AC: #8)
+  - [x] Accept prop: `isPrintMode` (boolean)
+  - [x] Use `v-if="!isPrintMode"` to conditionally render
+  - [x] Ensure button hidden when `?print=true`
 
-- [ ] Add placeholder click handler
-  - [ ] Add `@click` event handler
-  - [ ] For now, log to console: "Download PDF clicked"
-  - [ ] Note: Actual PDF generation will be implemented in Epic 3
+- [x] Add placeholder click handler
+  - [x] Add `@click` event handler
+  - [x] For now, log to console: "Download PDF clicked"
+  - [x] Note: Actual PDF generation will be implemented in Epic 3
 
-- [ ] Integrate into resume page (AC: #1-#8)
-  - [ ] Import component in `pages/resume.vue`
-  - [ ] Pass `isPrintMode` prop from route query
-  - [ ] Place button outside ResumePreview container
-  - [ ] Verify button appears in bottom-right corner
+- [x] Integrate into resume page (AC: #1-#8)
+  - [x] Import component in `pages/resume.vue`
+  - [x] Pass `isPrintMode` prop from route query
+  - [x] Place button outside ResumePreview container
+  - [x] Verify button appears in bottom-right corner
 
-- [ ] Test button functionality
-  - [ ] Verify button appears in bottom-right corner
-  - [ ] Check fixed position (doesn't scroll with page)
-  - [ ] Verify blue background and shadow
-  - [ ] Test icon displays correctly
-  - [ ] Check "Download PDF" text visibility
-  - [ ] Test click handler (console log)
-  - [ ] Verify button hidden with `?print=true`
-  - [ ] Test print preview (Ctrl+P) - button should be hidden
+- [x] Test button functionality
+  - [x] Verify button appears in bottom-right corner
+  - [x] Check fixed position (doesn't scroll with page)
+  - [x] Verify blue background and shadow
+  - [x] Test icon displays correctly
+  - [x] Check "Download PDF" text visibility
+  - [x] Test click handler (console log)
+  - [x] Verify button hidden with `?print=true`
+  - [x] Test print preview (Ctrl+P) - button should be hidden
 
 ## Dev Notes
 
@@ -215,13 +215,19 @@ useHead({
 
 ### Completion Notes List
 
-<!-- Will be filled by dev agent after completion -->
+- Created `ResumeDownloadButton.vue` with UButton, fixed position FAB
+- Implemented print mode detection via `isPrintMode` prop
+- Added placeholder click handler (console.log for Epic 3 integration)
+- Integrated into `pages/resume.vue` with proper prop passing
+- Responsive: shows text on desktop, icon-only on mobile
 
 ### File List
 
-<!-- Will be filled by dev agent with created/modified files -->
+- app/components/resume/ResumeDownloadButton.vue (created)
+- app/pages/resume.vue (modified)
 
 ---
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

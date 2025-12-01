@@ -17,8 +17,6 @@ useHead({
 <template>
   <div class="min-h-screen">
     <ResumePreview />
-
-    <!-- Download button will be added in Story 2.5 -->
-    <!-- Hidden when isPrintMode is true -->
+    <ResumeDownloadButton :is-print-mode="isPrintMode" />
   </div>
 </template>
