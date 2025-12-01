@@ -1,6 +1,6 @@
 # Story 3.1: Create PDF Generation API Route
 
-Status: drafted
+Status: ready-for-dev
 
 ## Story
 

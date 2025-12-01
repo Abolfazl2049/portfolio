@@ -1,6 +1,6 @@
 # Story 3.3: Connect Download Button to PDF Generation
 
-Status: drafted
+Status: ready-for-dev
 
 ## Story
 
