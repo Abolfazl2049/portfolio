@@ -5,66 +5,75 @@ Status: ready-for-dev
 ## Story
 
 As a user,
-I want to see my name, title, summary, and work experience prominently,
+I want to see my photo, name, contact info, summary, and work experience prominently,
 so that recruiters see the most important information first.
 
 ## Acceptance Criteria
 
 ### ResumeHeader.vue
-1. **AC1:** Given the header component renders, when it displays, then it shows full name in large bold text (2rem, font-bold)
-2. **AC2:** Job title appears below name (1.25rem, text-gray-600)
-3. **AC3:** Blue accent line or background element is present
+1. **AC1:** Given the header component renders, when it displays, then it shows profile photo on the left (if provided)
+2. **AC2:** Full name in large bold text (2rem, font-bold) displayed on the right
+3. **AC3:** Job title appears below name (1.25rem, text-gray-600)
+4. **AC4:** Contact information (address, phone, email, website) displayed with proper formatting
+5. **AC5:** All contact links are clickable (mailto:, tel:, https://)
+6. **AC6:** Layout is horizontal: photo (left) + info block (right)
 
 ### ResumeSummary.vue
-4. **AC4:** Given the summary component renders, when it displays, then it shows "Profile" or "Summary" section header
-5. **AC5:** Professional summary paragraph is displayed
-6. **AC6:** Line height is 1.6 for readability
+7. **AC7:** Given the summary component renders, when it displays, then it shows "SUMMARY" section header (blue, uppercase, with bottom border)
+8. **AC8:** Professional summary paragraph is displayed
+9. **AC9:** Line height is 1.6 for readability
 
 ### ResumeExperience.vue
-7. **AC7:** Given the experience component renders, when it displays, then it shows for each job: position title (bold), company name, date range (formatted: "Jan 2022 - Present"), bullet points for highlights (• character)
-8. **AC8:** Jobs are sorted by date (most recent first)
-9. **AC9:** "Present" is shown for current jobs (no endDate)
+10. **AC10:** Given the experience component renders, when it displays, then it shows "WORK EXPERIENCE" section header (blue, uppercase, with bottom border)
+11. **AC11:** For each job: position title (bold, left), company name, date range (right-aligned: "Jan 2022 - Present"), bullet points for highlights (• character)
+12. **AC12:** Jobs are sorted by date (most recent first)
+13. **AC13:** "Present" is shown for current jobs (no endDate)
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumeHeader component (AC: #1-#3)
+- [ ] Create ResumeHeader component (AC: #1-#6)
   - [ ] Create `app/components/resume/ResumeHeader.vue`
-  - [ ] Accept props: `name` (string), `label` (string)
+  - [ ] Accept props: `basics` (ResumeBasics) - includes name, label, email, phone, location, url, image
+  - [ ] Display profile photo (if provided) with proper sizing (150px max width)
   - [ ] Display name with `text-3xl font-bold` (2rem)
   - [ ] Display job title with `text-xl text-gray-600` (1.25rem)
-  - [ ] Add blue accent line: `border-b-4 border-blue-600`
+  - [ ] Display address, phone, email, website in structured format
+  - [ ] Make email, phone, website clickable with proper href attributes
+  - [ ] Use horizontal layout: photo left, info right
 
-- [ ] Create ResumeSummary component (AC: #4-#6)
+- [ ] Create ResumeSummary component (AC: #7-#9)
   - [ ] Create `app/components/resume/ResumeSummary.vue`
   - [ ] Accept props: `summary` (string)
-  - [ ] Add section header "Profile" with `text-base font-semibold`
+  - [ ] Add section header "SUMMARY" with blue, uppercase, bold styling
+  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
   - [ ] Display summary paragraph with `leading-relaxed` (line-height: 1.6)
   - [ ] Use `text-sm text-gray-800`
 
-- [ ] Create ResumeExperience component (AC: #7-#9)
+- [ ] Create ResumeExperience component (AC: #10-#13)
   - [ ] Create `app/components/resume/ResumeExperience.vue`
   - [ ] Accept props: `work` (WorkExperience[])
-  - [ ] Add section header "Experience" with `text-base font-semibold`
+  - [ ] Add section header "WORK EXPERIENCE" with blue, uppercase, bold styling
+  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
   - [ ] Sort jobs by startDate (most recent first)
   - [ ] For each job, display:
-    - Position title: `font-semibold text-gray-900`
+    - Position title: `font-semibold text-gray-900` (left-aligned)
     - Company name: `text-gray-700`
-    - Date range: Use `formatDate()` helper from composable
+    - Date range: Use `formatDate()` helper from composable (right-aligned)
     - Highlights: `<ul>` with bullet points (• character)
   - [ ] Handle current jobs: Show "Present" if no endDate
 
-- [ ] Integrate components into ResumePreview (AC: #1-#9)
+- [ ] Integrate components into ResumePreview (AC: #1-#13)
   - [ ] Import all three components in `ResumePreview.vue`
   - [ ] Pass data from `useResumeData()` composable
-  - [ ] Place in right main content column:
+  - [ ] Place in vertical order:
     - ResumeHeader at top
     - ResumeSummary below header
     - ResumeExperience below summary
 
 - [ ] Test components rendering
-  - [ ] Verify header displays name and title correctly
-  - [ ] Check blue accent line visibility
-  - [ ] Verify summary section with proper line height
+  - [ ] Verify header displays photo (if available), name, title, contact info
+  - [ ] Check all contact links are clickable
+  - [ ] Verify summary section with blue uppercase header and bottom border
   - [ ] Test experience section with multiple jobs
   - [ ] Verify date formatting ("Jan 2022 - Present")
   - [ ] Check job sorting (most recent first)
@@ -79,19 +88,19 @@ so that recruiters see the most important information first.
 - Data source: Props passed from `ResumePreview.vue` (which uses `useResumeData()`)
 - Date formatting: Use `formatDate()` helper from composable
 
-**From Tech Spec Epic 2:**
-- AC5, AC10, AC11, AC15, AC20, AC21 map to this story
-- Main content components for right column (65% width)
+**From Tech Spec Epic 2 (REVISED):**
+- AC5, AC6, AC7, AC11 map to this story
+- Main content components for single-column layout
 - Professional typography and spacing
+- **CRITICAL:** Header now includes photo + contact info (not separate component)
 
 ### Learnings from Previous Story
 
-**From Story 2.2 (Status: drafted)**
-- `ResumePreview.vue` container created with two-column grid
-- Right main content column ready for child components
+**From Story 2.2 (Status: revised)**
+- `ResumePreview.vue` container created with single-column layout
 - Data access via `useResumeData()` composable established
 - Tailwind styling patterns defined (text-sm, text-blue-600, etc.)
-- **Integration Point**: Import these components into right column of ResumePreview
+- **Integration Point**: Import these components into ResumePreview vertical stack
 
 [Source: docs/sprint-artifacts/2-2-create-resume-preview-container-component.md]
 
@@ -107,7 +116,7 @@ so that recruiters see the most important information first.
 
 **Dependencies:**
 - `app/composables/useResumeData.ts` - `formatDate()` helper
-- `app/types/resume.ts` - `WorkExperience` interface
+- `app/types/resume.ts` - `WorkExperience`, `ResumeBasics` interfaces
 - `app/data/resume.en.ts` - Sample data
 
 ### Implementation Notes
@@ -115,18 +124,38 @@ so that recruiters see the most important information first.
 **ResumeHeader.vue:**
 ```vue
 <script setup lang="ts">
+import type { ResumeBasics } from '~/types/resume'
+
 interface Props {
-  name: string
-  label: string
+  basics: ResumeBasics
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-  <div class="border-b-4 border-blue-600 pb-4 mb-6">
-    <h1 class="text-3xl font-bold text-gray-900">{{ name }}</h1>
-    <p class="text-xl text-gray-600 mt-1">{{ label }}</p>
+  <div class="flex gap-6 mb-6">
+    <!-- Profile Photo (if provided) -->
+    <div v-if="basics.image" class="flex-shrink-0">
+      <img 
+        :src="basics.image" 
+        :alt="basics.name"
+        class="w-32 h-32 object-cover"
+      />
+    </div>
+    
+    <!-- Name + Contact Info -->
+    <div class="flex-1">
+      <h1 class="text-3xl font-bold text-gray-900">{{ basics.name }}</h1>
+      <p class="text-xl text-gray-600 mt-1">{{ basics.label }}</p>
+      
+      <div class="mt-3 space-y-1 text-sm text-gray-700">
+        <p><strong>Address:</strong> {{ basics.location.address }}, {{ basics.location.city }}</p>
+        <p><strong>Phone:</strong> <a :href="`tel:${basics.phone}`" class="hover:text-blue-600">{{ basics.phone }}</a></p>
+        <p><strong>Email:</strong> <a :href="`mailto:${basics.email}`" class="hover:text-blue-600">{{ basics.email }}</a></p>
+        <p><strong>Website:</strong> <a :href="basics.url" target="_blank" class="hover:text-blue-600">{{ basics.url }}</a></p>
+      </div>
+    </div>
   </div>
 </template>
 ```
@@ -143,7 +172,9 @@ defineProps<Props>()
 
 <template>
   <div class="mb-6">
-    <h2 class="text-base font-semibold text-gray-900 mb-2">Profile</h2>
+    <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-3">
+      Summary
+    </h2>
     <p class="text-sm text-gray-800 leading-relaxed">{{ summary }}</p>
   </div>
 </template>
@@ -177,13 +208,18 @@ const formatDateRange = (start: string, end?: string) => {
 </script>
 
 <template>
-  <div>
-    <h2 class="text-base font-semibold text-gray-900 mb-4">Experience</h2>
-    <div v-for="job in sortedWork" :key="job.company + job.position" class="mb-6">
-      <h3 class="font-semibold text-gray-900">{{ job.position }}</h3>
-      <p class="text-sm text-gray-700">{{ job.company }}</p>
-      <p class="text-xs text-gray-600 mb-2">{{ formatDateRange(job.startDate, job.endDate) }}</p>
-      <ul class="text-sm text-gray-800 space-y-1">
+  <div class="mb-6">
+    <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-4">
+      Work Experience
+    </h2>
+    
+    <div v-for="job in sortedWork" :key="job.company + job.position" class="mb-4">
+      <div class="flex justify-between items-baseline">
+        <h3 class="font-semibold text-gray-900">{{ job.position }}, {{ job.company }}</h3>
+        <span class="text-sm text-gray-600">{{ formatDateRange(job.startDate, job.endDate) }}</span>
+      </div>
+      
+      <ul class="mt-2 text-sm text-gray-800 space-y-1">
         <li v-for="(highlight, idx) in job.highlights" :key="idx" class="flex">
           <span class="mr-2">•</span>
           <span>{{ highlight }}</span>
@@ -196,26 +232,26 @@ const formatDateRange = (start: string, end?: string) => {
 
 **Integration in ResumePreview.vue:**
 ```vue
-<!-- Right Main Content -->
-<div class="p-6 space-y-6">
-  <ResumeHeader 
-    :name="resume.basics.name" 
-    :label="resume.basics.label" 
-  />
+<!-- Single-column vertical stack -->
+<div class="flex flex-col gap-0 p-6">
+  <ResumeHeader :basics="resume.basics" />
   <ResumeSummary :summary="resume.basics.summary" />
   <ResumeExperience :work="resume.work" />
+  <!-- Education and AdditionalInfo will be added in Story 2.4 -->
 </div>
 ```
 
 **Testing Checklist:**
+- [ ] Header displays photo (if available)
 - [ ] Header displays name "Ali Arghyani" in large bold text
 - [ ] Job title displays below name in gray
-- [ ] Blue accent line visible under header
-- [ ] Summary section has "Profile" header
+- [ ] Contact info (address, phone, email, website) displayed
+- [ ] Email, phone, website links are clickable
+- [ ] Summary section has "SUMMARY" header (blue, uppercase, with border)
 - [ ] Summary paragraph has proper line height (1.6)
-- [ ] Experience section has "Experience" header
+- [ ] Experience section has "WORK EXPERIENCE" header (blue, uppercase, with border)
 - [ ] Jobs sorted by date (most recent first)
-- [ ] Each job shows position, company, date range, highlights
+- [ ] Each job shows position, company, date range (right-aligned), highlights
 - [ ] Date formatting works: "Jan 2022 - Present"
 - [ ] Bullet points (•) display correctly
 - [ ] Current job shows "Present" instead of end date
@@ -225,9 +261,11 @@ const formatDateRange = (start: string, end?: string) => {
 - [Source: docs/architecture.md#Data-Architecture]
 - [Source: docs/architecture.md#Consistency-Rules]
 - [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC5-Header-Section]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC10-Summary-Section]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC11-Experience-Section]
+- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC6-Summary-Section]
+- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC7-Experience-Section]
 - [Source: docs/epics.md#Story-2.3-Create-Resume-Header-Main-Content-Components]
+- [Source: docs/design-validation-epic-2.md] - UX validation report
+- [Source: design templates/Blue and White Clean and Professional Resume.png] - Design reference
 
 ## Dev Agent Record
 
@@ -255,3 +293,4 @@ const formatDateRange = (start: string, end?: string) => {
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: **REVISED** by SM agent (Bob) - Merged contact info into Header component, updated section header styling (blue, uppercase, bottom border), aligned with design template

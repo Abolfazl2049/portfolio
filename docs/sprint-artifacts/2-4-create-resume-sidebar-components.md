@@ -1,209 +1,113 @@
-# Story 2.4: Create Resume Sidebar Components
+# Story 2.4: Create Resume Education & Additional Info Components
 
 Status: ready-for-dev
 
 ## Story
 
 As a user,
-I want to see my contact info, skills, education, and languages in the sidebar,
-so that this supporting information is easily scannable.
+I want to see my education, skills, languages, and certifications organized clearly,
+so that recruiters can quickly assess my qualifications.
 
 ## Acceptance Criteria
 
-### ResumeContact.vue
-1. **AC1:** Given the contact component renders, when it displays, then it shows email with icon (i-mdi-email)
-2. **AC2:** Phone with icon (i-mdi-phone)
-3. **AC3:** Location with icon (i-mdi-map-marker)
-4. **AC4:** Social profiles with icons (LinkedIn, GitHub, etc.)
-5. **AC5:** Each item is on its own line
-6. **AC6:** Links are clickable (mailto:, tel:, https://)
-
-### ResumeSkills.vue
-7. **AC7:** Given the skills component renders, when it displays, then it shows "Skills" section header
-8. **AC8:** Skill categories as subheaders
-9. **AC9:** Keywords as tags or comma-separated list
-
 ### ResumeEducation.vue
-10. **AC10:** Given the education component renders, when it displays, then it shows degree type and field (e.g., "B.Sc. Computer Science")
-11. **AC11:** Institution name
-12. **AC12:** Date range
+1. **AC1:** Given the education component renders, when it displays, then it shows "EDUCATION" section header (blue, uppercase, with bottom border)
+2. **AC2:** For each degree: degree type and field (e.g., "Bachelor of Mechatronics Engineering with Honours")
+3. **AC3:** Institution name displayed
+4. **AC4:** Date range formatted and right-aligned (e.g., "Aug 2016 - Oct 2019")
+5. **AC5:** Optional bullet points for achievements or coursework
 
-### ResumeLanguages.vue
-13. **AC13:** Given the languages component renders, when it displays, then it shows "Languages" section header
-14. **AC14:** Each language with fluency level
+### ResumeAdditionalInfo.vue
+6. **AC6:** Given the additional info component renders, when it displays, then it shows "ADDITIONAL INFORMATION" section header (blue, uppercase, with bottom border)
+7. **AC7:** "Technical Skills:" label with categorized or comma-separated list
+8. **AC8:** "Languages:" label with fluency levels (e.g., "English, Malay, Japan")
+9. **AC9:** "Certifications:" label (if present) with name and issuer
+10. **AC10:** "Awards/Activities:" label (if present) with brief descriptions
 
 ## Tasks / Subtasks
 
-- [ ] Create ResumeContact component (AC: #1-#6)
-  - [ ] Create `app/components/resume/ResumeContact.vue`
-  - [ ] Accept props: `basics` (ResumeBasics)
-  - [ ] Display email with icon and mailto: link
-  - [ ] Display phone with icon and tel: link
-  - [ ] Display location with icon (city, country)
-  - [ ] Display social profiles with icons and https:// links
-  - [ ] Use Nuxt UI `UIcon` component for icons
-  - [ ] Style each item on separate line
-
-- [ ] Create ResumeSkills component (AC: #7-#9)
-  - [ ] Create `app/components/resume/ResumeSkills.vue`
-  - [ ] Accept props: `skills` (Skill[])
-  - [ ] Add section header "Skills"
-  - [ ] Display each skill category as subheader
-  - [ ] Display keywords as comma-separated list or tags
-  - [ ] Use consistent styling with other sidebar sections
-
-- [ ] Create ResumeEducation component (AC: #10-#12)
+- [ ] Create ResumeEducation component (AC: #1-#5)
   - [ ] Create `app/components/resume/ResumeEducation.vue`
   - [ ] Accept props: `education` (Education[])
-  - [ ] Add section header "Education"
-  - [ ] Display degree type and field (e.g., "B.Sc. Computer Science")
-  - [ ] Display institution name
-  - [ ] Display date range using `formatDate()` helper
+  - [ ] Add section header "EDUCATION" with blue, uppercase, bold styling
+  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [ ] For each degree, display:
+    - Degree type and field: `font-semibold text-gray-900`
+    - Institution name: `text-gray-700`
+    - Date range: Use `formatDate()` helper (right-aligned)
+    - Optional bullet points for achievements
 
-- [ ] Create ResumeLanguages component (AC: #13-#14)
-  - [ ] Create `app/components/resume/ResumeLanguages.vue`
-  - [ ] Accept props: `languages` (Language[])
-  - [ ] Add section header "Languages"
-  - [ ] Display each language with fluency level
-  - [ ] Format: "English - Fluent"
+- [ ] Create ResumeAdditionalInfo component (AC: #6-#10)
+  - [ ] Create `app/components/resume/ResumeAdditionalInfo.vue`
+  - [ ] Accept props: `skills` (Skill[]), `languages` (Language[]), `certificates?` (Certificate[]), `awards?` (Award[])
+  - [ ] Add section header "ADDITIONAL INFORMATION" with blue, uppercase, bold styling
+  - [ ] Add blue bottom border to header: `border-b-2 border-blue-600`
+  - [ ] Display "Technical Skills:" with categorized list or comma-separated keywords
+  - [ ] Display "Languages:" with comma-separated list and fluency
+  - [ ] Display "Certifications:" (if provided) with name and issuer
+  - [ ] Display "Awards/Activities:" (if provided) with descriptions
 
-- [ ] Integrate components into ResumePreview (AC: #1-#14)
-  - [ ] Import all four components in `ResumePreview.vue`
+- [ ] Integrate components into ResumePreview (AC: #1-#10)
+  - [ ] Import both components in `ResumePreview.vue`
   - [ ] Pass data from `useResumeData()` composable
-  - [ ] Place in left sidebar column:
-    - ResumeContact at top
-    - ResumeSkills below contact
-    - ResumeEducation below skills
-    - ResumeLanguages at bottom
+  - [ ] Place in vertical order (after Experience):
+    - ResumeEducation
+    - ResumeAdditionalInfo
 
 - [ ] Test components rendering
-  - [ ] Verify contact info displays with icons
-  - [ ] Test clickable links (email, phone, social)
-  - [ ] Check skills section with categories and keywords
-  - [ ] Verify education section with degree and dates
-  - [ ] Test languages section with fluency levels
-  - [ ] Verify all components fit in sidebar layout
+  - [ ] Verify education section with blue uppercase header and bottom border
+  - [ ] Check degree, institution, date formatting
+  - [ ] Test with multiple education entries
+  - [ ] Verify additional info section with all subsections
+  - [ ] Check skills categorization or comma-separated display
+  - [ ] Test languages display
+  - [ ] Verify optional certifications and awards (if present)
 
 ## Dev Notes
 
 ### Architecture Alignment
 
 **From Architecture Doc:**
-- File locations: `app/components/resume/ResumeContact.vue`, `ResumeSkills.vue`, `ResumeEducation.vue`, `ResumeLanguages.vue`
-- Icons: Use Nuxt UI `UIcon` component with Iconify icons
+- File locations: `app/components/resume/ResumeEducation.vue`, `ResumeAdditionalInfo.vue`
 - Data source: Props passed from `ResumePreview.vue`
+- Date formatting: Use `formatDate()` helper from composable
 
-**From Tech Spec Epic 2:**
-- AC6, AC7, AC8, AC9, AC16, AC17, AC18, AC19 map to this story
-- Sidebar components for left column (35% width)
-- Consistent section header styling
+**From Tech Spec Epic 2 (REVISED):**
+- AC8, AC9 map to this story
+- **CRITICAL:** Education moved from sidebar to main body
+- **CRITICAL:** Skills, Languages, Certificates consolidated into single AdditionalInfo component
+- No more standalone Contact, Skills, Languages components
 
 ### Learnings from Previous Story
 
-**From Story 2.3 (Status: drafted)**
-- Main content components created (Header, Summary, Experience)
-- Component prop patterns established
-- Section header styling: `text-base font-semibold text-gray-900 mb-2`
+**From Story 2.3 (Status: revised)**
+- Main content components created (Header with contact, Summary, Experience)
+- Section header styling established: blue, uppercase, bold, with bottom border
 - Date formatting via `formatDate()` helper
-- **Integration Point**: Import sidebar components into left column of ResumePreview
+- **Integration Point**: Add Education and AdditionalInfo below Experience
 
 [Source: docs/sprint-artifacts/2-3-create-resume-header-main-content-components.md]
 
 ### Project Structure Notes
 
 **Files to Create:**
-- `app/components/resume/ResumeContact.vue`
-- `app/components/resume/ResumeSkills.vue`
 - `app/components/resume/ResumeEducation.vue`
-- `app/components/resume/ResumeLanguages.vue`
+- `app/components/resume/ResumeAdditionalInfo.vue`
 
 **Files to Modify:**
-- `app/components/resume/ResumePreview.vue` - Import and integrate sidebar components
+- `app/components/resume/ResumePreview.vue` - Import and integrate new components
+
+**Files NOT Created (vs. old architecture):**
+- ~~`ResumeContact.vue`~~ - Merged into ResumeHeader
+- ~~`ResumeSkills.vue`~~ - Merged into ResumeAdditionalInfo
+- ~~`ResumeLanguages.vue`~~ - Merged into ResumeAdditionalInfo
 
 **Dependencies:**
-- `@nuxt/ui` - `UIcon` component
 - `app/composables/useResumeData.ts` - `formatDate()` helper
 - `app/types/resume.ts` - Type interfaces
 - `app/data/resume.en.ts` - Sample data
 
 ### Implementation Notes
-
-**ResumeContact.vue:**
-```vue
-<script setup lang="ts">
-import type { ResumeBasics } from '~/types/resume'
-
-interface Props {
-  basics: ResumeBasics
-}
-
-defineProps<Props>()
-</script>
-
-<template>
-  <div class="space-y-3">
-    <h2 class="text-base font-semibold text-gray-900 mb-4">Contact</h2>
-    
-    <!-- Email -->
-    <div class="flex items-center gap-2 text-sm">
-      <UIcon name="i-mdi-email" class="text-blue-600 flex-shrink-0" />
-      <a :href="`mailto:${basics.email}`" class="text-gray-700 hover:text-blue-600">
-        {{ basics.email }}
-      </a>
-    </div>
-    
-    <!-- Phone -->
-    <div class="flex items-center gap-2 text-sm">
-      <UIcon name="i-mdi-phone" class="text-blue-600 flex-shrink-0" />
-      <a :href="`tel:${basics.phone}`" class="text-gray-700 hover:text-blue-600">
-        {{ basics.phone }}
-      </a>
-    </div>
-    
-    <!-- Location -->
-    <div class="flex items-center gap-2 text-sm">
-      <UIcon name="i-mdi-map-marker" class="text-blue-600 flex-shrink-0" />
-      <span class="text-gray-700">
-        {{ basics.location.city }}, {{ basics.location.country }}
-      </span>
-    </div>
-    
-    <!-- Social Profiles -->
-    <div v-for="profile in basics.profiles" :key="profile.network" class="flex items-center gap-2 text-sm">
-      <UIcon :name="profile.icon || 'i-mdi-link'" class="text-blue-600 flex-shrink-0" />
-      <a :href="profile.url" target="_blank" class="text-gray-700 hover:text-blue-600">
-        {{ profile.network }}
-      </a>
-    </div>
-  </div>
-</template>
-```
-
-**ResumeSkills.vue:**
-```vue
-<script setup lang="ts">
-import type { Skill } from '~/types/resume'
-
-interface Props {
-  skills: Skill[]
-}
-
-defineProps<Props>()
-</script>
-
-<template>
-  <div class="space-y-4">
-    <h2 class="text-base font-semibold text-gray-900 mb-4">Skills</h2>
-    
-    <div v-for="skill in skills" :key="skill.name" class="space-y-1">
-      <h3 class="text-sm font-medium text-gray-800">{{ skill.name }}</h3>
-      <p class="text-xs text-gray-600">
-        {{ skill.keywords.join(', ') }}
-      </p>
-    </div>
-  </div>
-</template>
-```
 
 **ResumeEducation.vue:**
 ```vue
@@ -225,38 +129,91 @@ const formatDateRange = (start: string, end?: string) => {
 </script>
 
 <template>
-  <div class="space-y-4">
-    <h2 class="text-base font-semibold text-gray-900 mb-4">Education</h2>
+  <div class="mb-6">
+    <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-4">
+      Education
+    </h2>
     
-    <div v-for="edu in education" :key="edu.institution" class="space-y-1">
-      <h3 class="text-sm font-medium text-gray-800">
-        {{ edu.studyType }} {{ edu.area }}
-      </h3>
-      <p class="text-xs text-gray-600">{{ edu.institution }}</p>
-      <p class="text-xs text-gray-500">{{ formatDateRange(edu.startDate, edu.endDate) }}</p>
+    <div v-for="edu in education" :key="edu.institution" class="mb-4">
+      <div class="flex justify-between items-baseline">
+        <h3 class="font-semibold text-gray-900">
+          {{ edu.studyType }} {{ edu.area }}
+        </h3>
+        <span class="text-sm text-gray-600">{{ formatDateRange(edu.startDate, edu.endDate) }}</span>
+      </div>
+      <p class="text-sm text-gray-700">{{ edu.institution }}</p>
+      
+      <!-- Optional: Coursework or achievements -->
+      <ul v-if="edu.courses && edu.courses.length > 0" class="mt-2 text-sm text-gray-800 space-y-1">
+        <li v-for="(course, idx) in edu.courses" :key="idx" class="flex">
+          <span class="mr-2">•</span>
+          <span>{{ course }}</span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 ```
 
-**ResumeLanguages.vue:**
+**ResumeAdditionalInfo.vue:**
 ```vue
 <script setup lang="ts">
-import type { Language } from '~/types/resume'
+import type { Skill, Language, Certificate, Award } from '~/types/resume'
 
 interface Props {
+  skills: Skill[]
   languages?: Language[]
+  certificates?: Certificate[]
+  awards?: Award[]
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-  <div v-if="languages && languages.length > 0" class="space-y-2">
-    <h2 class="text-base font-semibold text-gray-900 mb-4">Languages</h2>
+  <div class="mb-6">
+    <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-4">
+      Additional Information
+    </h2>
     
-    <div v-for="lang in languages" :key="lang.language" class="text-sm text-gray-700">
-      {{ lang.language }} - {{ lang.fluency }}
+    <!-- Technical Skills -->
+    <div class="mb-3">
+      <p class="text-sm text-gray-900">
+        <strong>Technical Skills:</strong>
+        <span class="text-gray-700">
+          {{ skills.map(s => s.keywords.join(', ')).join('; ') }}
+        </span>
+      </p>
+    </div>
+    
+    <!-- Languages -->
+    <div v-if="languages && languages.length > 0" class="mb-3">
+      <p class="text-sm text-gray-900">
+        <strong>Languages:</strong>
+        <span class="text-gray-700">
+          {{ languages.map(l => l.language).join(', ') }}
+        </span>
+      </p>
+    </div>
+    
+    <!-- Certifications -->
+    <div v-if="certificates && certificates.length > 0" class="mb-3">
+      <p class="text-sm text-gray-900"><strong>Certifications:</strong></p>
+      <ul class="text-sm text-gray-700 space-y-1 ml-4">
+        <li v-for="cert in certificates" :key="cert.name">
+          {{ cert.name }} ({{ cert.issuer }})
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Awards/Activities -->
+    <div v-if="awards && awards.length > 0" class="mb-3">
+      <p class="text-sm text-gray-900"><strong>Awards/Activities:</strong></p>
+      <ul class="text-sm text-gray-700 space-y-1 ml-4">
+        <li v-for="award in awards" :key="award.title">
+          {{ award.title }} - {{ award.summary }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -264,37 +221,42 @@ defineProps<Props>()
 
 **Integration in ResumePreview.vue:**
 ```vue
-<!-- Left Sidebar -->
-<div class="bg-blue-50 p-6 space-y-6">
-  <ResumeContact :basics="resume.basics" />
-  <ResumeSkills :skills="resume.skills" />
+<!-- Single-column vertical stack -->
+<div class="flex flex-col gap-0 p-6">
+  <ResumeHeader :basics="resume.basics" />
+  <ResumeSummary :summary="resume.basics.summary" />
+  <ResumeExperience :work="resume.work" />
   <ResumeEducation :education="resume.education" />
-  <ResumeLanguages :languages="resume.languages" />
+  <ResumeAdditionalInfo 
+    :skills="resume.skills" 
+    :languages="resume.languages"
+    :certificates="resume.certificates"
+    :awards="resume.awards"
+  />
 </div>
 ```
 
 **Testing Checklist:**
-- [ ] Contact section displays email, phone, location with icons
-- [ ] Email link opens mailto: client
-- [ ] Phone link opens tel: dialer
-- [ ] Social profile links open in new tab
-- [ ] Skills section shows categories and keywords
-- [ ] Keywords displayed as comma-separated list
-- [ ] Education section shows degree, institution, dates
-- [ ] Date formatting works correctly
-- [ ] Languages section shows language and fluency
-- [ ] All components fit properly in sidebar
-- [ ] Icons render correctly (Nuxt UI Icon)
+- [ ] Education section has "EDUCATION" header (blue, uppercase, with border)
+- [ ] Each degree shows type, field, institution, date range
+- [ ] Date formatting works correctly (right-aligned)
+- [ ] Optional coursework/achievements display if present
+- [ ] Additional Info section has "ADDITIONAL INFORMATION" header (blue, uppercase, with border)
+- [ ] Technical Skills displayed with proper formatting
+- [ ] Languages displayed as comma-separated list
+- [ ] Certifications displayed (if present)
+- [ ] Awards/Activities displayed (if present)
+- [ ] All sections align with design template
 
 ### References
 
 - [Source: docs/architecture.md#Data-Architecture]
 - [Source: docs/architecture.md#Consistency-Rules]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC6-Contact-Section]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC7-Skills-Section]
 - [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC8-Education-Section]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC9-Languages-Section]
+- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC9-Additional-Information-Section]
 - [Source: docs/epics.md#Story-2.4-Create-Resume-Sidebar-Components]
+- [Source: docs/design-validation-epic-2.md] - UX validation report
+- [Source: design templates/Blue and White Clean and Professional Resume.png] - Design reference
 
 ## Dev Agent Record
 
@@ -322,3 +284,4 @@ defineProps<Props>()
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: **COMPLETELY REVISED** by SM agent (Bob) - Removed sidebar components (Contact, Skills, Languages), moved Education to main body, created consolidated AdditionalInfo component per new architecture and design template

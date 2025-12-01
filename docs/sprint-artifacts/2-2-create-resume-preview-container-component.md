@@ -10,7 +10,7 @@ so that I have a single source of truth for web and PDF.
 
 ## Acceptance Criteria
 
-1. **AC1:** Given the ResumePreview component is rendered, when it displays, then it shows a two-column layout with left sidebar (35% width) and right main content (65% width)
+1. **AC1:** Given the ResumePreview component is rendered, when it displays, then it shows a single-column vertical layout with proper spacing
 2. **AC2:** The container has A4 aspect ratio (210mm × 297mm)
 3. **AC3:** Page margins are 24px (1.5rem)
 4. **AC4:** Background is white
@@ -19,7 +19,7 @@ so that I have a single source of truth for web and PDF.
 7. **AC7:** Proper heading hierarchy (h1 for name, h2 for sections)
 8. **AC8:** Body text is 14px (0.875rem)
 9. **AC9:** ATS-readable font sizes
-10. **AC10:** Layout is responsive - desktop shows two-column side by side, mobile shows single column (sidebar on top)
+10. **AC10:** Layout is responsive - maintains single column on all screen sizes
 11. **AC11:** Print styles included - `.no-print` class hides elements in print
 12. **AC12:** Page breaks are controlled
 13. **AC13:** Colors print correctly (`printBackground: true`)
@@ -30,11 +30,10 @@ so that I have a single source of truth for web and PDF.
   - [ ] Create `app/components/resume/ResumePreview.vue`
   - [ ] Set up component structure with script setup and TypeScript
 
-- [ ] Implement two-column layout (AC: #1, #10)
-  - [ ] Use CSS Grid for two-column layout
-  - [ ] Set sidebar width to 35%, main content to 65%
-  - [ ] Add responsive breakpoint for mobile (single column)
-  - [ ] Ensure sidebar appears above main content on mobile
+- [ ] Implement single-column layout (AC: #1, #10)
+  - [ ] Use vertical stack layout (flexbox or CSS Grid single column)
+  - [ ] Add proper spacing between sections
+  - [ ] Ensure consistent layout on all screen sizes
 
 - [ ] Configure container dimensions (AC: #2, #3)
   - [ ] Set container to A4 aspect ratio (210mm × 297mm)
@@ -61,12 +60,11 @@ so that I have a single source of truth for web and PDF.
 
 - [ ] Add placeholder sections
   - [ ] Add comment placeholders for child components
-  - [ ] Structure: Sidebar (Contact, Skills, Education, Languages)
-  - [ ] Structure: Main (Header, Summary, Experience)
+  - [ ] Structure: Header → Summary → Experience → Education → Additional Info
 
 - [ ] Test component rendering
   - [ ] Import component in `pages/resume.vue`
-  - [ ] Verify two-column layout on desktop
+  - [ ] Verify single-column layout
   - [ ] Test responsive behavior on mobile
   - [ ] Check print preview (Ctrl+P)
   - [ ] Verify A4 dimensions and margins
@@ -77,14 +75,15 @@ so that I have a single source of truth for web and PDF.
 
 **From Architecture Doc:**
 - File location: `app/components/resume/ResumePreview.vue`
-- Layout: CSS Grid for two-column design
+- Layout: Single-column vertical stack
 - Styling: Tailwind CSS utilities
 - Data source: `useResumeData()` composable from Epic 1
 
-**From Tech Spec Epic 2:**
+**From Tech Spec Epic 2 (REVISED):**
 - AC1-AC13 map directly to this story
 - Container is the main orchestrator for all resume sections
 - WYSIWYG pattern: same component for web and PDF
+- **CRITICAL:** Single-column layout (NOT two-column)
 
 ### Learnings from Previous Story
 
@@ -110,8 +109,8 @@ so that I have a single source of truth for web and PDF.
 - @nuxt/fonts with Inter (existing)
 
 **Future Integration:**
-- Story 2.3 will create Header, Summary, Experience components
-- Story 2.4 will create Contact, Skills, Education, Languages components
+- Story 2.3 will create Header (with photo + contact), Summary, Experience components
+- Story 2.4 will create Education and AdditionalInfo components
 - Story 2.5 will create Download Button component
 
 ### Implementation Notes
@@ -126,22 +125,17 @@ const { resume } = useResumeData()
   <div class="min-h-screen bg-gray-50 flex items-center justify-center p-8">
     <!-- A4 Container -->
     <div class="bg-white shadow-lg max-w-[210mm] min-h-[297mm] w-full">
-      <!-- Two-column grid -->
-      <div class="grid grid-cols-1 md:grid-cols-[35%_65%] gap-0 p-6">
-        <!-- Left Sidebar -->
-        <div class="bg-blue-50 p-6 space-y-6">
-          <!-- Contact (Story 2.4) -->
-          <!-- Skills (Story 2.4) -->
-          <!-- Education (Story 2.4) -->
-          <!-- Languages (Story 2.4) -->
-        </div>
-
-        <!-- Right Main Content -->
-        <div class="p-6 space-y-6">
-          <!-- Header (Story 2.3) -->
-          <!-- Summary (Story 2.3) -->
-          <!-- Experience (Story 2.3) -->
-        </div>
+      <!-- Single-column vertical stack -->
+      <div class="flex flex-col gap-0 p-6">
+        <!-- Header with Photo + Contact (Story 2.3) -->
+        
+        <!-- Summary (Story 2.3) -->
+        
+        <!-- Experience (Story 2.3) -->
+        
+        <!-- Education (Story 2.4) -->
+        
+        <!-- Additional Information (Story 2.4) -->
       </div>
     </div>
   </div>
@@ -167,26 +161,20 @@ const { resume } = useResumeData()
 </style>
 ```
 
-**Responsive Breakpoints:**
-- Desktop (md: 768px+): Two columns side by side
-- Mobile (< 768px): Single column, sidebar stacked on top
-
 **Color Palette:**
 - Primary Blue: `#2563eb` (text-blue-600, bg-blue-600)
 - Background: `#ffffff` (bg-white)
-- Sidebar Background: `#eff6ff` (bg-blue-50)
 - Text: `#1f2937` (text-gray-800)
 - Secondary Text: `#6b7280` (text-gray-600)
 
 **Typography Scale:**
 - Name (h1): 2rem (text-3xl), font-bold
-- Section Headers (h2): 1rem (text-base), font-semibold
+- Section Headers (h2): 1rem (text-base), font-semibold, uppercase, blue, with bottom border
 - Body Text: 0.875rem (text-sm), font-normal
 
 **Testing Checklist:**
 - [ ] Component renders without errors
-- [ ] Two-column layout displays correctly on desktop
-- [ ] Single column layout on mobile (< 768px)
+- [ ] Single-column layout displays correctly
 - [ ] A4 dimensions maintained (210mm × 297mm)
 - [ ] Margins are 24px (1.5rem)
 - [ ] White background applied
@@ -200,9 +188,10 @@ const { resume } = useResumeData()
 - [Source: docs/architecture.md#Project-Structure]
 - [Source: docs/architecture.md#Novel-Pattern-WYSIWYG-PDF-Export]
 - [Source: docs/architecture.md#Consistency-Rules]
-- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC2-Two-Column-Layout]
+- [Source: docs/sprint-artifacts/tech-spec-epic-2.md#AC2-Single-Column-Layout]
 - [Source: docs/sprint-artifacts/tech-spec-epic-2.md#Detailed-Design]
 - [Source: docs/epics.md#Story-2.2-Create-Resume-Preview-Container-Component]
+- [Source: docs/design-validation-epic-2.md] - UX validation report
 
 ## Dev Agent Record
 
@@ -230,3 +219,4 @@ const { resume } = useResumeData()
 
 **Change Log:**
 - 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: **REVISED** by SM agent (Bob) - Changed from two-column to single-column layout per UX validation and architect revision
