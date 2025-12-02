@@ -141,26 +141,29 @@ const { isGenerating, downloadPdf } = useResumePdf()
 ## Dev Agent Record
 
 ### Context Reference
-
-<!-- Will be filled by SM agent -->
+- docs/sprint-artifacts/3-3-connect-download-button-to-pdf-generation.context.xml
 
 ### Agent Model Used
-
-<!-- Will be filled by dev agent -->
+- Claude Sonnet 4 (via Kiro)
 
 ### Debug Log References
-
-<!-- Will be filled by dev agent during implementation -->
+- Button integration straightforward
+- Changed from `downloadPdf` to `openPdf` for better UX
 
 ### Completion Notes List
-
-<!-- Will be filled by dev agent after completion -->
+- ✅ ResumeDownloadButton updated to use `useResumePdf()` composable
+- ✅ Loading state bound with `:loading="isGenerating"`
+- ✅ Disabled state bound with `:disabled="isGenerating"`
+- ✅ Click handler uses `openPdf()` - opens PDF in new browser tab
+- ✅ User can preview PDF and save from browser's PDF viewer
+- ✅ Print mode detection still works (hides button)
 
 ### File List
-
-<!-- Will be filled by dev agent with created/modified files -->
+- `app/components/resume/ResumeDownloadButton.vue` (modified)
 
 ---
 
 **Change Log:**
 - 2025-12-01: Story drafted by SM agent (Bob)
+- 2025-12-01: Implementation completed - button connected to composable
+- 2025-12-01: Changed to openPdf for preview-first UX

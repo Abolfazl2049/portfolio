@@ -26,6 +26,7 @@ export interface ResumeBasics {
 export interface WorkExperience {
   company: string
   position: string
+  location?: string // City, Country or Remote
   startDate: string // YYYY-MM format
   endDate?: string // YYYY-MM or undefined for "Present"
   highlights: string[] // Bullet points
@@ -37,6 +38,7 @@ export interface Education {
   studyType: string // Degree type
   startDate: string // YYYY-MM format
   endDate?: string // YYYY-MM format
+  courses?: string[] // Relevant coursework
 }
 
 export interface Skill {
@@ -46,13 +48,27 @@ export interface Skill {
 
 export interface Language {
   language: string
-  fluency: 'Native' | 'Fluent' | 'Intermediate' | 'Basic'
+  fluency: string // Native, Fluent, Intermediate, Basic, or custom (e.g., "Fluent (Duolingo 85/100)")
 }
 
 export interface Certification {
   name: string
   issuer: string
-  date: string // YYYY-MM format
+  date: string // YYYY or YYYY-MM format
+  url?: string // Certificate URL
+  summary?: string // Additional details (e.g., score)
+}
+
+export interface Project {
+  name: string
+  description: string
+  highlights?: string[]
+  keywords?: string[]
+  startDate?: string
+  endDate?: string
+  url?: string
+  roles?: string[]
+  type?: string
 }
 
 export interface Resume {
@@ -61,5 +77,6 @@ export interface Resume {
   education: Education[]
   skills: Skill[]
   languages?: Language[]
-  certifications?: Certification[]
+  certificates?: Certification[]
+  projects?: Project[]
 }

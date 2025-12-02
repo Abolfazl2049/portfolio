@@ -5,24 +5,25 @@ export default defineEventHandler(async (event) => {
   let browser: Browser | null = null
 
   try {
-    // Get base URL from request
     const requestUrl = getRequestURL(event)
-    const baseUrl = `${requestUrl.protocol}//${requestUrl.host}`
+    const host = requestUrl.host.includes('192.168') || requestUrl.host.includes('localhost')
+      ? 'localhost:5000'
+      : requestUrl.host
+    const baseUrl = `http://${host}`
     const resumeUrl = `${baseUrl}/resume?print=true`
 
-    // Launch browser
+    console.log('[PDF API] Generating from:', resumeUrl)
+
     const isDev = process.env.NODE_ENV === 'development'
 
     if (isDev) {
-      // Development: use puppeteer with bundled Chromium
       browser = await puppeteer.launch({
         headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
       })
     } else {
-      // Production: use puppeteer-core with @sparticuz/chromium
       const chromium = await import('@sparticuz/chromium')
       const puppeteerCore = await import('puppeteer-core')
-
       browser = await puppeteerCore.default.launch({
         args: chromium.default.args,
         executablePath: await chromium.default.executablePath(),
@@ -30,51 +31,43 @@ export default defineEventHandler(async (event) => {
       })
     }
 
-    // Create page and navigate
     const page = await browser.newPage()
+    await page.setViewport({ width: 794, height: 1123 })
 
-    // Set viewport to A4 dimensions
-    await page.setViewport({
-      width: 794, // A4 width in pixels at 96 DPI
-      height: 1123, // A4 height in pixels at 96 DPI
-    })
-
-    // Navigate to resume page with print mode
-    await page.goto(resumeUrl, {
+    const response = await page.goto(resumeUrl, {
       waitUntil: 'networkidle0',
-      timeout: 10000,
+      timeout: 30000,
     })
 
-    // Generate PDF
+    if (!response || !response.ok()) {
+      throw new Error(`Failed to load: ${response?.status()}`)
+    }
+
     const pdf = await page.pdf({
       format: 'A4',
       printBackground: true,
-      margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
     })
 
-    // Set response headers (AC1, AC2)
+    const query = getQuery(event)
+    const filename = (query.filename as string) || 'Ali_Arghyani_Resume.pdf'
+    const download = query.download === 'true'
+
     setResponseHeaders(event, {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment; filename="Ali_Arghyani_Resume.pdf"',
+      // inline = show in browser, attachment = force download
+      'Content-Disposition': `${download ? 'attachment' : 'inline'}; filename="${filename}"`,
     })
 
     return pdf
   } catch (error) {
-    // Error handling (AC7)
     console.error('PDF generation failed:', error)
-
     setResponseStatus(event, 500)
     return {
       error: 'PDF generation failed',
       message: error instanceof Error ? error.message : 'Unknown error',
     }
   } finally {
-    // Always close browser to prevent memory leaks
     if (browser) {
       await browser.close()
     }

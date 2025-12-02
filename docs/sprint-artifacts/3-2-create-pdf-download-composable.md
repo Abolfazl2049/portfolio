@@ -146,26 +146,30 @@ const { isGenerating, downloadPdf } = useResumePdf()
 ## Dev Agent Record
 
 ### Context Reference
-
-<!-- Will be filled by SM agent -->
+- docs/sprint-artifacts/3-2-create-pdf-download-composable.context.xml
 
 ### Agent Model Used
-
-<!-- Will be filled by dev agent -->
+- Claude Sonnet 4 (via Kiro)
 
 ### Debug Log References
-
-<!-- Will be filled by dev agent during implementation -->
+- IDM (Internet Download Manager) intercept issues resolved
+- Changed from blob fetch to window.open approach
 
 ### Completion Notes List
-
-<!-- Will be filled by dev agent after completion -->
+- ✅ Composable created at `app/composables/useResumePdf.ts`
+- ✅ `isGenerating` ref for loading state
+- ✅ `openPdf()` function - opens PDF in new tab for preview
+- ✅ `downloadPdf()` function - forces download with attachment header
+- ✅ Uses `window.open` instead of `$fetch` to avoid IDM conflicts
+- ✅ Filename from `useResumeData().getPdfFilename()`
+- ⚠️ Toast error handling removed (IDM intercepts cause false errors)
 
 ### File List
-
-<!-- Will be filled by dev agent with created/modified files -->
+- `app/composables/useResumePdf.ts` (created)
 
 ---
 
 **Change Log:**
 - 2025-12-01: Story drafted by SM agent (Bob)
+- 2025-12-01: Implementation completed with blob fetch approach
+- 2025-12-01: Refactored to window.open approach due to IDM conflicts

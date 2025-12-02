@@ -75,7 +75,9 @@
     }
   },
   "hero": {
-    "currently": "Currently at"
+    "currently": "Currently at",
+    "viewResume": "View Resume",
+    "downloadPdf": "Download PDF"
   },
   "toasts": {
     "emailCopied": {

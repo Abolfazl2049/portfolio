@@ -1,51 +1,49 @@
 /**
  * PDF Download Composable
- * Handles PDF download logic with loading state and error handling
+ * Handles PDF generation with preview in new tab
  */
 
 export function useResumePdf() {
   const isGenerating = ref(false)
-  const toast = useToast()
   const { getPdfFilename } = useResumeData()
 
-  async function downloadPdf() {
+  // Open PDF in new tab for preview (user can download from there)
+  async function openPdf() {
+    if (isGenerating.value) return
+
     isGenerating.value = true
 
     try {
-      // Fetch PDF as blob (AC1)
-      const response = await $fetch<Blob>('/api/resume/pdf', {
-        responseType: 'blob',
-      })
+      const filename = getPdfFilename()
+      // Opens PDF in browser's built-in viewer
+      window.open(`/api/resume/pdf?filename=${encodeURIComponent(filename)}`, '_blank')
 
-      // Create object URL from blob (AC2)
-      const url = URL.createObjectURL(response)
-
-      // Create temporary anchor element and trigger download
-      const a = document.createElement('a')
-      a.href = url
-      a.download = getPdfFilename() // AC3: filename from composable
-      a.click()
-
-      // Revoke object URL to prevent memory leaks (AC8)
-      URL.revokeObjectURL(url)
-    } catch (error) {
-      // Error handling (AC6)
-      console.error('PDF generation failed:', error)
-
-      toast.add({
-        title: 'Error generating PDF',
-        description: 'Please try again',
-        color: 'error',
-      })
+      await new Promise((resolve) => setTimeout(resolve, 1500))
     } finally {
-      // Always reset loading state (AC7)
       isGenerating.value = false
     }
   }
 
-  // Return composable interface (AC4, AC5)
+  // Force download PDF directly
+  async function downloadPdf() {
+    if (isGenerating.value) return
+
+    isGenerating.value = true
+
+    try {
+      const filename = getPdfFilename()
+      // download=true forces attachment header
+      window.open(`/api/resume/pdf?filename=${encodeURIComponent(filename)}&download=true`, '_blank')
+
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+    } finally {
+      isGenerating.value = false
+    }
+  }
+
   return {
     isGenerating,
+    openPdf,
     downloadPdf,
   }
 }

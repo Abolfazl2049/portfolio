@@ -150,26 +150,32 @@ pnpm add puppeteer puppeteer-core @sparticuz/chromium
 ## Dev Agent Record
 
 ### Context Reference
-
-<!-- Will be filled by SM agent -->
+- docs/sprint-artifacts/3-1-create-pdf-generation-api-route.context.xml
 
 ### Agent Model Used
-
-<!-- Will be filled by dev agent -->
+- Claude (Kiro)
 
 ### Debug Log References
-
-<!-- Will be filled by dev agent during implementation -->
+- Chrome installation issue resolved with `npx puppeteer browsers install chrome`
+- Fixed code conflicts from autofix
 
 ### Completion Notes List
-
-<!-- Will be filled by dev agent after completion -->
+- ✅ API route created at `server/api/resume/pdf.get.ts`
+- ✅ Puppeteer integration with environment detection (dev vs prod)
+- ✅ PDF generation with A4 format, printBackground
+- ✅ Dynamic filename support via query parameter
+- ✅ Inline/attachment mode support via `download` query param
+- ✅ Error handling with 500 status and JSON response
+- ✅ vercel.json configured with memory and maxDuration
 
 ### File List
-
-<!-- Will be filled by dev agent with created/modified files -->
+- `server/api/resume/pdf.get.ts` (created)
+- `vercel.json` (modified)
+- `package.json` (puppeteer dependencies added)
 
 ---
 
 **Change Log:**
 - 2025-12-01: Story drafted by SM agent (Bob)
+- 2025-12-01: Implementation completed - API route with Puppeteer PDF generation
+- 2025-12-01: Added dynamic filename and inline/download mode support

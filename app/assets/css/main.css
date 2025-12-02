@@ -130,11 +130,19 @@
     --font-display: 'Vazirmatn', 'Space Grotesk', 'ui-sans-serif', 'sans-serif';
   }
 
-  /* Hide promotional banners from @nuxt/ui */
+  /* Hide promotional banners from @nuxt/ui and certificates.dev */
   [class*="VueSchool"],
   [class*="banner"][class*="promotional"],
-  [data-v-inspector*="VueSchool"] {
+  [data-v-inspector*="VueSchool"],
+  #bb-banner,
+  [id^="bb-"],
+  [class*="bb-campaign"],
+  [class*="bb-close"],
+  a[href*="certificates.dev"] {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 }
 
