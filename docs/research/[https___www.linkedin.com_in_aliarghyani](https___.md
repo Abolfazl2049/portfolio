@@ -30,7 +30,7 @@ Based on your current resume, portfolio website, and LinkedIn profile, here's wh
 - **Current Role:** Frontend Developer at NexaPortal (Remote, Dec 2024-Present)
 - **Primary Tech Stack:** Vue.js, Vue 3, Nuxt.js, Nuxt 3, TypeScript, JavaScript
 - **Career Transition:** From 7 years telecom operations leadership (Huawei) to 5+ years frontend development
-- **Contact:** +98 912 322 0694 | ali.arghyani@email.com | https://aliarghyani.com
+- **Contact:** +98 912 322 0694 | aliarghyani@gmail.com | https://aliarghyani.vercel.app
 
 
 ### **Work Experience Identified:**
@@ -107,7 +107,7 @@ Your resume is incomplete and has several significant gaps. Here's what needs to
 ### **TIER 2 IMPORTANT ISSUES (Should Fix):**
 
 7. **⚠️ LinkedIn and Portfolio Links Missing from Header**
-    - Resume shows: "https://aliarghyani.com"
+    - Resume shows: "https://aliarghyani.vercel.app"
     - Missing: GitHub link (critical for frontend developer!)
     - Missing: LinkedIn URL
     - For technical roles, GitHub is essential
@@ -144,8 +144,8 @@ Based on 2025 best practices and your unique profile, here's the exact structure
 ```
 ALI ARGHYANI
 Senior Frontend Developer | Vue.js • Nuxt.js • TypeScript
-Tehran, Iran | +98 912 322 0694 | ali.arghyani@email.com
-linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.com
+Tehran, Iran | +98 912 322 0694 | aliarghyani@gmail.com
+linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.vercel.app
 ```
 
 **Why this works:**
@@ -400,7 +400,7 @@ English Proficiency: Duolingo English Test - 85/100 (Advanced) | 2025
 ```
 FEATURED PROJECTS & PORTFOLIO
 
-Portfolio Website: aliarghyani.com (Vue 3, Nuxt 3, Tailwind CSS)
+Portfolio Website: aliarghyani.vercel.app (Vue 3, Nuxt 3, Tailwind CSS)
 GitHub: github.com/aliarghyani | [View public repositories and contributions]
 
 Select Project Showcase:
@@ -433,8 +433,8 @@ Here's the complete structure organized optimally:
 ════════════════════════════════════════════════════════════════════════════════
 ALI ARGHYANI
 Senior Frontend Developer | Vue.js • Nuxt.js • TypeScript • Full-Stack Adjacent
-Tehran, Iran | +98 912 322 0694 | ali.arghyani@email.com
-linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.com
+Tehran, Iran | +98 912 322 0694 | aliarghyani@gmail.com
+linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.vercel.app
 ════════════════════════════════════════════════════════════════════════════════
 
 PROFESSIONAL SUMMARY
@@ -536,7 +536,7 @@ Advanced English Proficiency: Duolingo English Test - 85/100 | 2025
 
 FEATURED PROJECTS
 
-Portfolio: aliarghyani.com | GitHub: github.com/aliarghyani
+Portfolio: aliarghyani.vercel.app | GitHub: github.com/aliarghyani
 
 Elara Medical (Production) - Medical tourism platform serving 50+ countries
 Vue 3 • Nuxt 3 • TypeScript • PWA • RBAC • i18n • WebSocket

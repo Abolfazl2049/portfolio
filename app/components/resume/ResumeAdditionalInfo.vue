@@ -7,7 +7,12 @@ interface Props {
   certifications?: Certification[]
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+// Get only key technical skills (first 3 categories)
+const keySkills = computed(() => {
+  return props.skills.slice(0, 3)
+})
 </script>
 
 <template>
@@ -16,18 +21,18 @@ defineProps<Props>()
       Additional Information
     </h2>
 
-    <!-- Skills -->
-    <div v-if="skills?.length" class="mb-3">
+    <!-- Key Technical Skills (simplified) -->
+    <div v-if="keySkills?.length" class="mb-3">
       <span class="text-sm font-semibold text-gray-800">Technical Skills: </span>
       <span class="text-sm text-gray-700">
-        <template v-for="(skill, idx) in skills" :key="skill.name">
-          {{ skill.keywords.join(', ') }}<template v-if="idx < skills.length - 1">; </template>
+        <template v-for="(skill, idx) in keySkills" :key="skill.name">
+          {{ skill.keywords.join(', ') }}<template v-if="idx < keySkills.length - 1">; </template>
         </template>
       </span>
     </div>
 
     <!-- Languages -->
-    <div v-if="languages?.length" class="mb-3">
+    <div v-if="languages?.length" class="mb-2">
       <span class="text-sm font-semibold text-gray-800">Languages: </span>
       <span class="text-sm text-gray-700">
         <template v-for="(lang, idx) in languages" :key="lang.language">
@@ -41,7 +46,7 @@ defineProps<Props>()
       <span class="text-sm font-semibold text-gray-800">Certifications: </span>
       <span class="text-sm text-gray-700">
         <template v-for="(cert, idx) in certifications" :key="cert.name">
-          {{ cert.name }} ({{ cert.issuer }})<template v-if="idx < certifications.length - 1">, </template>
+          {{ cert.issuer }} - {{ cert.summary }}<template v-if="idx < certifications.length - 1">, </template>
         </template>
       </span>
     </div>

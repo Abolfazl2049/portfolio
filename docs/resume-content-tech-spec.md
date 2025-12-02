@@ -40,8 +40,8 @@ Create scannable, ATS-friendly header with all critical contact points and profe
 ```
 ALI ARGHYANI
 Senior Frontend Developer | Vue.js • Nuxt.js • TypeScript
-Tehran, Iran | +98 912 322 0694 | ali.arghyani@email.com
-linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.com
+Tehran, Iran | +98 912 322 0694 | aliarghyani@gmail.com
+linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.vercel.app
 ```
 
 ### **Content Specifications**
@@ -53,10 +53,10 @@ linkedin.com/in/aliarghyani | github.com/aliarghyani | aliarghyani.com
 | **Tech Stack** | Vue.js • Nuxt.js • TypeScript | Pipe or bullet separated, concise |
 | **Location** | Tehran, Iran | City, Country format (no full address) |
 | **Phone** | +98 912 322 0694 | Include country code for international |
-| **Email** | ali.arghyani@email.com | Professional email (current is good) |
+| **Email** | aliarghyani@gmail.com | Professional email (current is good) |
 | **LinkedIn** | linkedin.com/in/aliarghyani | Remove https://, just domain path |
 | **GitHub** | github.com/aliarghyani | **CRITICAL - Currently missing!** |
-| **Portfolio** | aliarghyani.com | Clean domain, no https:// |
+| **Portfolio** | aliarghyani.vercel.app | Clean domain, no https:// |
 
 ### **ATS Optimization**
 - ✅ All links as plain text (ATS can parse)
@@ -460,7 +460,7 @@ Provide direct links to portfolio and GitHub, showcase top 3 projects with tech 
 ```
 FEATURED PROJECTS
 
-Portfolio: aliarghyani.com | GitHub: github.com/aliarghyani
+Portfolio: aliarghyani.vercel.app | GitHub: github.com/aliarghyani
 
 Elara Medical (Production) - Medical tourism platform serving 50+ countries
 Tech Stack: Vue 3 • Nuxt 3 • TypeScript • Tailwind CSS • Pinia • PWA • RBAC • i18n • WebSocket
