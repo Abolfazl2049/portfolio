@@ -1,10 +1,4 @@
 {
-  "functions": {
-    "server/api/resume/pdf.get.ts": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
   "rewrites": [
     {
       "source": "/stats/js/script.js",
