@@ -37,7 +37,7 @@ export const resumeData: Resume = {
       },
     ],
     summary:
-      'Frontend Developer with 3+ years building high-performance Vue.js/Nuxt applications for international clients. AI-first engineer leveraging Cursor, GitHub Copilot, and AI-powered tools & methodologies to accelerate development by 40% while maintaining code quality. Specialized in performance optimization, scalable architecture (SSR, PWA, RBAC), and accessibility. Delivered 6+ production applications with focus on maintainability and distributed team collaboration. Fluent in English (6+ years in fully English-speaking environment at Huawei).',
+      'Frontend Developer with 3+ years building high-performance Vue.js/Nuxt applications for international clients. AI-first engineer leveraging Cursor, GitHub Copilot, and AI-powered tools & methodologies to accelerate development by up to 50% while maintaining code quality. Specialized in performance optimization, scalable architecture (SSR, PWA, RBAC), and accessibility. Delivered 6+ production applications with focus on maintainability and distributed team collaboration. Fluent in English (6+ years in fully English-speaking environment at Huawei).',
   },
 
   work: [
