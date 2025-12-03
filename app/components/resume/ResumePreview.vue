@@ -3,17 +3,19 @@ const { resume } = useResumeData()
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4 print:p-0 print:bg-white">
+  <div class="resume-wrapper">
     <!-- A4 Container -->
-    <div
-      class="resume-container bg-white shadow-lg max-w-[210mm] min-h-[297mm] w-full print:shadow-none print:max-w-none">
+    <div class="resume-container">
       <!-- Single-column vertical stack -->
-      <div class="flex flex-col p-6">
+      <div class="resume-content">
         <!-- Header with Photo + Name + Contact -->
         <ResumeHeader :basics="resume.basics" />
 
         <!-- Summary -->
         <ResumeSummary :summary="resume.basics.summary" />
+
+        <!-- Skills & Qualifications -->
+        <ResumeAdditionalInfo :skills="resume.skills" />
 
         <!-- Experience -->
         <ResumeExperience :work="resume.work" />
@@ -21,28 +23,59 @@ const { resume } = useResumeData()
         <!-- Education -->
         <ResumeEducation :education="resume.education" />
 
-        <!-- Additional Information -->
-        <ResumeAdditionalInfo :skills="resume.skills" :languages="resume.languages"
-          :certifications="resume.certifications" />
+        <!-- Languages & Certifications -->
+        <ResumeLanguages :languages="resume.languages" :certifications="resume.certificates" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.resume-wrapper {
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.resume-container {
+  background: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  max-width: 210mm;
+  width: 100%;
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem !important;
+}
+
 @media print {
-  .no-print {
-    display: none !important;
+  .resume-wrapper {
+    background: white !important;
+    padding: 0 !important;
+    display: block !important;
   }
 
   .resume-container {
-    width: 210mm;
-    min-height: 297mm;
+    width: 210mm !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .resume-content {
+    padding: 0.75rem !important;
   }
 
   * {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
   }
 
   section {

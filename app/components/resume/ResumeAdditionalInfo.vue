@@ -1,54 +1,27 @@
 <script setup lang="ts">
-import type { Skill, Language, Certification } from '~/types/resume'
+import type { Skill } from '~/types/resume'
 
 interface Props {
   skills: Skill[]
-  languages?: Language[]
-  certifications?: Certification[]
 }
 
 const props = defineProps<Props>()
-
-// Get only key technical skills (first 3 categories)
-const keySkills = computed(() => {
-  return props.skills.slice(0, 3)
-})
 </script>
 
 <template>
-  <section>
+  <section class="mb-6 print:mb-4">
     <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-3">
-      Additional Information
+      Skills & Qualifications
     </h2>
 
-    <!-- Key Technical Skills (simplified) -->
-    <div v-if="keySkills?.length" class="mb-3">
-      <span class="text-sm font-semibold text-gray-800">Technical Skills: </span>
-      <span class="text-sm text-gray-700">
-        <template v-for="(skill, idx) in keySkills" :key="skill.name">
-          {{ skill.keywords.join(', ') }}<template v-if="idx < keySkills.length - 1">; </template>
-        </template>
-      </span>
-    </div>
-
-    <!-- Languages -->
-    <div v-if="languages?.length" class="mb-2">
-      <span class="text-sm font-semibold text-gray-800">Languages: </span>
-      <span class="text-sm text-gray-700">
-        <template v-for="(lang, idx) in languages" :key="lang.language">
-          {{ lang.language }} ({{ lang.fluency }})<template v-if="idx < languages.length - 1">, </template>
-        </template>
-      </span>
-    </div>
-
-    <!-- Certifications -->
-    <div v-if="certifications?.length">
-      <span class="text-sm font-semibold text-gray-800">Certifications: </span>
-      <span class="text-sm text-gray-700">
-        <template v-for="(cert, idx) in certifications" :key="cert.name">
-          {{ cert.issuer }} - {{ cert.summary }}<template v-if="idx < certifications.length - 1">, </template>
-        </template>
-      </span>
+    <!-- Technical Skills (categorized) -->
+    <div v-if="skills?.length">
+      <div class="space-y-0.5">
+        <div v-for="skill in skills" :key="skill.name" class="text-sm">
+          <span class="font-medium text-gray-800">{{ skill.name }}:</span>
+          <span class="text-gray-700"> {{ skill.keywords.join(', ') }}</span>
+        </div>
+      </div>
     </div>
   </section>
 </template>

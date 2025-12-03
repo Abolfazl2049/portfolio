@@ -89,6 +89,16 @@
     color-scheme: light;
   }
 
+  @media print {
+    html,
+    body,
+    #__nuxt,
+    #__layout {
+      background: white !important;
+      min-height: auto !important;
+    }
+  }
+
   .dark html,
   .dark body,
   .dark #__nuxt,
@@ -104,6 +114,18 @@
   html.dark #__layout {
     background: linear-gradient(135deg, #0a0a0f 0%, #18181b 50%, #1c1425 100%);
     color-scheme: dark;
+  }
+
+  @media print {
+    :root.dark #__nuxt,
+    :root.dark #__layout,
+    html.dark,
+    html.dark body,
+    html.dark #__nuxt,
+    html.dark #__layout {
+      background: white !important;
+      color-scheme: light !important;
+    }
   }
 
   div,

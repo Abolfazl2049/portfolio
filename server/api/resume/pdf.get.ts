@@ -32,7 +32,15 @@ export default defineEventHandler(async (event) => {
     }
 
     const page = await browser.newPage()
-    await page.setViewport({ width: 794, height: 1123 })
+    
+    // Set viewport to A4 dimensions (210mm x 297mm at 96 DPI)
+    await page.setViewport({ 
+      width: 794,  // 210mm
+      height: 1123 // 297mm
+    })
+
+    // Enable print media type BEFORE loading page
+    await page.emulateMediaType('print')
 
     const response = await page.goto(resumeUrl, {
       waitUntil: 'networkidle0',
@@ -43,10 +51,65 @@ export default defineEventHandler(async (event) => {
       throw new Error(`Failed to load: ${response?.status()}`)
     }
 
+    // Inject critical CSS fixes
+    await page.addStyleTag({
+      content: `
+        @page {
+          size: A4;
+          margin: 1.2cm;
+        }
+        
+        * { 
+          box-shadow: none !important;
+          word-break: normal !important;
+          hyphens: none !important;
+          -webkit-hyphens: none !important;
+          -ms-hyphens: none !important;
+        }
+        
+        html, body { 
+          margin: 0 !important;
+          padding: 0 !important;
+          background: white !important;
+          min-height: auto !important;
+        }
+        
+        .resume-wrapper {
+          background: white !important;
+          padding: 0 !important;
+          display: block !important;
+          margin: 0 !important;
+        }
+        
+        .resume-container {
+          box-shadow: none !important;
+          max-width: none !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+        .resume-content {
+          padding: 0 !important;
+        }
+        
+        section {
+          page-break-inside: auto !important;
+          break-inside: auto !important;
+        }
+        
+        h2 {
+          page-break-after: avoid !important;
+          break-after: avoid !important;
+        }
+      `,
+    })
+
     const pdf = await page.pdf({
       format: 'A4',
       printBackground: true,
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
+      preferCSSPageSize: true,
     })
 
     const query = getQuery(event)

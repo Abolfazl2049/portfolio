@@ -21,9 +21,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white dark:bg-gray-900">
+  <div class="bg-white dark:bg-gray-900 print:bg-white">
     <!-- Back to Home Button -->
-    <NuxtLink v-if="!isPrintMode" to="/" class="fixed top-4 left-4 z-50 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
+    <NuxtLink v-if="!isPrintMode" to="/" class="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
         bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
         text-gray-700 dark:text-gray-200 rounded-full shadow-lg
         transition-all duration-200 hover:scale-105 no-print">

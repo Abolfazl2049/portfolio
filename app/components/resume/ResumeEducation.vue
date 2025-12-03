@@ -16,7 +16,7 @@ function formatDateRange(start: string, end?: string): string {
 </script>
 
 <template>
-  <section class="mb-6">
+  <section class="mb-6 print:mb-4">
     <h2 class="text-base font-bold text-blue-600 uppercase border-b-2 border-blue-600 pb-1 mb-3">
       Education
     </h2>
