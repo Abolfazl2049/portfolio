@@ -1,8 +1,13 @@
 /**
  * Resume Data - Ali Arghyani
- * Based on Resume Content Tech-Spec (docs/resume-content-tech-spec.md)
+ * Based on RESUME-STANDARDS.md (docs/RESUME-STANDARDS.md)
  * Optimized for ATS and 2025 best practices
  * Version: 2.0 - 2-Page Resume (International Remote Positions)
+ * 
+ * ⚠️ BEFORE EDITING: Give docs/RESUME-UPDATE-RULES.md to any AI agent
+ * 
+ * Quick command for AI:
+ * "Read docs/RESUME-UPDATE-RULES.md and update my resume"
  */
 
 import type { Resume } from '~/types/resume'
@@ -47,7 +52,7 @@ export const resumeData: Resume = {
       location: 'Izmir, Turkey',
       startDate: '2024-12',
       highlights: [
-        'Architected medical tourism platform (Elara Medical) serving international patients across 10+ languages with real-time scheduling via WebSocket, multi-language support (3 languages), and PWA capabilities for offline access',
+        'Architected two medical tourism platforms (Elara Medical & Artemis Clinics) serving international patients across 10+ languages with real-time scheduling via WebSocket, multi-language support (3 languages), and PWA capabilities for offline access',
         'Accelerated feature development at least by 50% using Cursor and other tools for component generation and real-time debugging, while maintaining zero critical bugs through AI-assisted code review and automated testing',
         'Optimized application performance through code splitting, lazy loading, and Pinia state management restructuring, significantly reducing bundle size and improving initial load time',
         'Engineered RBAC (Role-Based Access Control) system with role-based permissions, multi-tenant architecture supporting 3 languages (English, Persian, Turkish), and PWA features enabling offline functionality across mobile and desktop devices',
@@ -126,6 +131,7 @@ export const resumeData: Resume = {
         'HTML5',
         'CSS3',
         'Pinia',
+        'Vuetify',
         'Tailwind CSS',
       ],
     },
@@ -158,6 +164,7 @@ export const resumeData: Resume = {
         'GitHub Actions (CI/CD)',
         'ESLint/Prettier',
         'Vite',
+        'VueUse',
         'REST APIs',
         'WebSocket',
         'Agile/Scrum',
@@ -168,6 +175,7 @@ export const resumeData: Resume = {
       keywords: [
         'WCAG 2.1 Compliance',
         'Lighthouse Optimization',
+        'Cypress E2E Testing',
         'Code Review',
         'i18n Internationalization',
         'Responsive Design',
