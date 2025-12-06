@@ -42,7 +42,7 @@ export const resumeData: Resume = {
       },
     ],
     summary:
-      'Frontend Developer with 3+ years building high-performance Vue.js/Nuxt applications for international clients. AI-first engineer leveraging Cursor, GitHub Copilot, and AI-powered tools & methodologies to accelerate development by up to 50% while maintaining code quality. Specialized in performance optimization, scalable architecture (SSR, PWA, RBAC), and accessibility. Delivered 6+ production applications with focus on maintainability and distributed team collaboration. Fluent in English (6+ years in fully English-speaking environment at Huawei).',
+      'Frontend Developer with 3+ years building high-performance Vue.js/Nuxt applications for international clients. AI-first engineer leveraging Cursor, GitHub Copilot, and AI-powered tools & methodologies to accelerate development by up to 50% while maintaining code quality. Specialized in performance optimization, scalable architecture (SSR, PWA, RBAC), and accessibility. Delivered 4+ production applications with focus on maintainability and distributed team collaboration. Fluent in English (6+ years in fully English-speaking environment at Huawei).',
   },
 
   work: [
@@ -67,7 +67,7 @@ export const resumeData: Resume = {
       startDate: '2023-09',
       endDate: '2024-12',
       highlights: [
-        'Delivered 6+ production-grade web applications for international clients using Vue.js/Nuxt.js, consistently achieving strong performance metrics and high client satisfaction',
+        'Delivered 4+ production-grade web applications for international clients using Vue.js/Nuxt.js, consistently achieving strong performance metrics and high client satisfaction',
         'Leveraged AI development tools (Cursor and Github Copilot) to reduce development time by at least 40% across 6 projects, enabling faster client delivery and 100% on-time project completion rate',
         'Elara Medical - Medical tourism platform with RBAC system, i18n for 3 languages, PWA features, and optimized performance through code splitting and lazy loading',
         'Ideh - Idea evaluation platform with reusable component library reducing development time by 30% and scalable Vue.js architecture',

@@ -48,7 +48,7 @@ const { resume } = useResumeData()
 .resume-content {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem !important;
+  padding: 2rem !important;
 }
 
 @media print {
@@ -68,7 +68,7 @@ const { resume } = useResumeData()
   }
 
   .resume-content {
-    padding: 0.75rem !important;
+    padding: 1rem !important;
   }
 
   * {

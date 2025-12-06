@@ -258,7 +258,7 @@ Frontend Developer | Freelance (Remote) | Sep 2023 – Dec 2024
 
 **Introduction Paragraph:**
 ```
-Delivered 6+ production-grade web applications for international clients, achieving 
+Delivered 4+ production-grade web applications for international clients, achieving 
 90+ Lighthouse performance scores and 99%+ uptime across all projects.
 ```
 
@@ -545,7 +545,7 @@ Spearheaded 40% performance improvement...
 **Summary Adjustment:**
 ```
 Versatile Senior Frontend Developer with 5+ years delivering production-grade 
-applications for international clients. Delivered 6+ projects as freelancer with 
+applications for international clients. Delivered 4+ projects as freelancer with 
 100% on-time delivery and 90+ Lighthouse scores. Architected reusable component 
 library reducing development time by 30%...
 ```

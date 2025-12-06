@@ -9,7 +9,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="flex gap-6 mb-6 print:mb-2 print:pb-0">
+  <div class="flex gap-6 mb-8 print:mb-4 print:pb-1">
     <!-- Profile Photo (if provided) -->
     <div v-if="basics.image" class="flex-shrink-0">
       <img :src="basics.image" :alt="basics.name" class="w-32 h-32 object-cover rounded-full print:w-24 print:h-24" />
@@ -20,7 +20,7 @@ defineProps<Props>()
       <h1 class="text-3xl font-bold text-gray-900 print:text-xl print:mb-0.5">{{ basics.name }}</h1>
       <p class="text-xl text-gray-600 mt-1 print:text-base print:mt-0">{{ basics.label }}</p>
 
-      <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-gray-700 print:mt-1.5 print:text-xs print:gap-x-3">
+      <div class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-700 print:mt-2 print:text-xs print:gap-x-4">
         <!-- Location -->
         <span class="inline-flex items-center gap-1.5">
           <UIcon name="i-heroicons-map-pin" class="text-gray-500 flex-shrink-0" />
@@ -34,12 +34,19 @@ defineProps<Props>()
         </a>
 
         <!-- Email -->
-        <span class="inline-flex items-center gap-1.5">
+        <a :href="`mailto:${basics.email}`"
+          class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors">
           <UIcon name="i-heroicons-envelope" class="text-gray-500 flex-shrink-0" />
-          <a :href="`mailto:${basics.email}`" class="hover:text-blue-600 transition-colors">
-            {{ basics.email }}
-          </a>
-        </span>
+          {{ basics.email }}
+        </a>
+
+        <!-- Website (Portfolio) - Bold & Colored -->
+        <a v-if="basics.profiles?.find(p => p.network === 'Portfolio')"
+          :href="basics.profiles.find(p => p.network === 'Portfolio')!.url" target="_blank"
+          class="inline-flex items-center gap-1.5 font-semibold text-blue-600 hover:text-blue-700 transition-colors print:text-blue-600">
+          <UIcon name="i-heroicons-globe-alt" class="text-blue-600 flex-shrink-0" />
+          Website
+        </a>
 
         <!-- LinkedIn -->
         <a v-if="basics.profiles?.find(p => p.network === 'LinkedIn')"
@@ -47,14 +54,6 @@ defineProps<Props>()
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors">
           <UIcon name="i-mdi-linkedin" class="text-gray-500 flex-shrink-0" />
           LinkedIn
-        </a>
-
-        <!-- Website (Portfolio) -->
-        <a v-if="basics.profiles?.find(p => p.network === 'Portfolio')"
-          :href="basics.profiles.find(p => p.network === 'Portfolio')!.url" target="_blank"
-          class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-          <UIcon name="i-heroicons-globe-alt" class="text-gray-500 flex-shrink-0" />
-          Website
         </a>
 
         <!-- GitHub -->
