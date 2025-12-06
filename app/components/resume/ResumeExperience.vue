@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { WorkExperience } from '~/types/resume'
+import { parseMarkdownBold } from '~/composables/useMarkdownText'
 
 interface Props {
   work: WorkExperience[]
@@ -24,13 +25,13 @@ function formatDateRange(start: string, end?: string): string {
 </script>
 
 <template>
-  <section class="mb-8 print:mb-5">
+  <section class="mb-12 print:mb-12">
     <h2
-      class="text-base font-bold text-blue-700 uppercase border-b-2 border-blue-600 pb-1.5 mb-4 print:mb-2.5 tracking-wide">
+      class="text-base font-bold text-blue-700 uppercase border-b-2 border-blue-600 pb-2 mb-6 print:mb-6 tracking-wide">
       Work Experience
     </h2>
 
-    <div v-for="job in sortedWork" :key="job.company + job.startDate" class="mb-5 last:mb-0 print:mb-4">
+    <div v-for="job in sortedWork" :key="job.company + job.startDate" class="mb-8 last:mb-0 print:mb-8">
       <div class="flex justify-between items-start gap-4">
         <div class="flex-1 min-w-0">
           <h3 class="text-sm font-bold text-gray-900 break-words hyphens-none">{{ job.position }}</h3>
@@ -40,11 +41,10 @@ function formatDateRange(start: string, end?: string): string {
           {{ formatDateRange(job.startDate, job.endDate) }}
         </span>
       </div>
-      <ul class="mt-2.5 space-y-1.5 print:mt-1.5 print:space-y-1">
+      <ul class="mt-4 space-y-2.5 print:mt-4 print:space-y-2.5">
         <li v-for="(highlight, idx) in job.highlights" :key="idx"
-          class="text-sm text-gray-700 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-gray-500 before:font-bold print:before:text-gray-500 break-words hyphens-none">
-          {{ highlight }}
-        </li>
+          class="text-sm text-gray-700 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-gray-500 before:font-bold print:before:text-gray-500 break-words hyphens-none leading-relaxed"
+          v-html="parseMarkdownBold(highlight)" />
       </ul>
     </div>
   </section>

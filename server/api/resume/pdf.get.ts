@@ -51,12 +51,20 @@ export default defineEventHandler(async (event) => {
       throw new Error(`Failed to load: ${response?.status()}`)
     }
 
-    // Inject critical CSS fixes
+    // Wait for Vue hydration and v-html rendering to complete
+    await page.waitForSelector('strong', { timeout: 5000 }).catch(() => {
+      console.log('[PDF API] No strong tags found, continuing anyway')
+    })
+    
+    // Additional wait to ensure all dynamic content is rendered
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    // Inject critical CSS fixes for PDF generation - optimized for exactly 2 pages
     await page.addStyleTag({
       content: `
         @page {
           size: A4;
-          margin: 1.2cm;
+          margin: 1cm;
         }
         
         * { 
@@ -65,6 +73,8 @@ export default defineEventHandler(async (event) => {
           hyphens: none !important;
           -webkit-hyphens: none !important;
           -ms-hyphens: none !important;
+          print-color-adjust: exact !important;
+          -webkit-print-color-adjust: exact !important;
         }
         
         html, body { 
@@ -90,17 +100,54 @@ export default defineEventHandler(async (event) => {
         }
         
         .resume-content {
-          padding: 0 !important;
+          padding: 1rem !important;
         }
         
+        /* Balanced spacing for sections - fits exactly 2 pages */
         section {
+          margin-bottom: 1.5rem !important;
           page-break-inside: auto !important;
           break-inside: auto !important;
         }
         
-        h2 {
+        section:last-child {
+          margin-bottom: 0 !important;
+        }
+        
+        /* Section titles */
+        section h2 {
+          margin-bottom: 0.7rem !important;
+          padding-bottom: 0.3rem !important;
           page-break-after: avoid !important;
           break-after: avoid !important;
+        }
+        
+        /* Work experience job blocks */
+        section > div {
+          margin-bottom: 1rem !important;
+        }
+        
+        section > div:last-child {
+          margin-bottom: 0 !important;
+        }
+        
+        /* Bullet lists */
+        ul {
+          margin-top: 0.5rem !important;
+        }
+        
+        ul li {
+          margin-bottom: 0.25rem !important;
+          line-height: 1.45 !important;
+        }
+        
+        strong {
+          font-weight: 700 !important;
+        }
+        
+        /* Summary paragraph - more line height */
+        section > p {
+          line-height: 1.75 !important;
         }
       `,
     })

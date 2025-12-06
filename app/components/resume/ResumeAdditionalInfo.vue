@@ -9,15 +9,15 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <section class="mb-8 print:mb-5">
+  <section class="mb-12 print:mb-12">
     <h2
-      class="text-base font-bold text-blue-700 uppercase border-b-2 border-blue-600 pb-1.5 mb-4 print:mb-2.5 tracking-wide">
+      class="text-base font-bold text-blue-700 uppercase border-b-2 border-blue-600 pb-2 mb-6 print:mb-6 tracking-wide">
       Skills & Qualifications
     </h2>
 
     <!-- Technical Skills (categorized) -->
     <div v-if="skills?.length">
-      <div class="space-y-2">
+      <div class="space-y-3 print:space-y-3">
         <div v-for="skill in skills" :key="skill.name" class="text-sm">
           <span class="font-bold text-gray-900">{{ skill.name }}:&nbsp;</span><span class="text-gray-700">{{
             skill.keywords.join(', ') }}</span>
