@@ -35,14 +35,15 @@ const { resume } = useResumeData()
   background: #f3f4f6;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  min-height: 100vh;
 }
 
 .resume-container {
   background: white;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  width: 210mm;
   max-width: 210mm;
-  width: 100%;
 }
 
 .resume-content {
