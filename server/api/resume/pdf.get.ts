@@ -59,7 +59,7 @@ export default defineEventHandler(async (event) => {
     // Additional wait to ensure all dynamic content is rendered
     await new Promise(resolve => setTimeout(resolve, 1000))
 
-    // Inject critical CSS fixes for PDF generation - optimized for exactly 2 pages
+    // Inject critical CSS fixes for PDF generation - balanced spacing like web version
     await page.addStyleTag({
       content: `
         @page {
@@ -100,12 +100,12 @@ export default defineEventHandler(async (event) => {
         }
         
         .resume-content {
-          padding: 1rem !important;
+          padding: 1.2rem !important;
         }
         
-        /* Balanced spacing for sections - fits exactly 2 pages */
+        /* Balanced spacing for sections - fits exactly 2 pages with better readability */
         section {
-          margin-bottom: 1.5rem !important;
+          margin-bottom: 1.85rem !important;
           page-break-inside: auto !important;
           break-inside: auto !important;
         }
@@ -116,38 +116,38 @@ export default defineEventHandler(async (event) => {
         
         /* Section titles */
         section h2 {
-          margin-bottom: 0.7rem !important;
-          padding-bottom: 0.3rem !important;
+          margin-bottom: 0.85rem !important;
+          padding-bottom: 0.38rem !important;
           page-break-after: avoid !important;
           break-after: avoid !important;
         }
         
         /* Work experience job blocks */
         section > div {
-          margin-bottom: 1rem !important;
+          margin-bottom: 1.15rem !important;
         }
         
         section > div:last-child {
           margin-bottom: 0 !important;
         }
         
-        /* Bullet lists */
+        /* Bullet lists - balanced breathing room */
         ul {
-          margin-top: 0.5rem !important;
+          margin-top: 0.58rem !important;
         }
         
         ul li {
-          margin-bottom: 0.25rem !important;
-          line-height: 1.45 !important;
+          margin-bottom: 0.38rem !important;
+          line-height: 1.52 !important;
         }
         
         strong {
           font-weight: 700 !important;
         }
         
-        /* Summary paragraph - more line height */
+        /* Summary paragraph - good line height for readability */
         section > p {
-          line-height: 1.75 !important;
+          line-height: 1.82 !important;
         }
       `,
     })
