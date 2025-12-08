@@ -151,7 +151,9 @@
     }
   },
   "hero": {
-    "currently": "در حال حاضر در"
+    "currently": "در حال حاضر در",
+    "viewResume": "مشاهده رزومه",
+    "downloadPdf": "دانلود PDF"
   },
   "toasts": {
     "emailCopied": {

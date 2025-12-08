@@ -18,8 +18,20 @@
 @source "../../../content/**/*.{md,json,yaml,yml}";
 
 @theme {
-  --font-sans: 'Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif';
-  --font-display: 'Fraunces', 'Roobert', 'Inter', 'serif';
+  --font-sans: 'Geist', 'DM Sans', '-apple-system', 'ui-sans-serif', 'system-ui', 'sans-serif';
+  --font-display: 'Space Grotesk', 'Geist', 'ui-sans-serif', 'sans-serif';
+
+  --color-primary-50: oklch(0.98 0.01 280);
+  --color-primary-100: oklch(0.95 0.03 280);
+  --color-primary-200: oklch(0.89 0.08 280);
+  --color-primary-300: oklch(0.80 0.15 280);
+  --color-primary-400: oklch(0.70 0.22 280);
+  --color-primary-500: oklch(0.60 0.25 280);
+  --color-primary-600: oklch(0.50 0.22 280);
+  --color-primary-700: oklch(0.42 0.18 280);
+  --color-primary-800: oklch(0.34 0.14 280);
+  --color-primary-900: oklch(0.28 0.10 280);
+  --color-primary-950: oklch(0.18 0.06 280);
 }
 
 @layer base {
@@ -64,7 +76,8 @@
   html {
     overflow-y: scroll;
     /* Avoid width variation */
-    scroll-padding-top: 2rem; /* Offset for fixed navbar when using anchor links */
+    scroll-padding-top: 2rem;
+    /* Offset for fixed navbar when using anchor links */
   }
 
   html,
@@ -72,8 +85,18 @@
   #__nuxt,
   #__layout {
     @apply min-h-screen w-full;
-    background-color: #f2f5f9;
+    background: linear-gradient(135deg, #f8f9fc 0%, #faf5ff 50%, #fdf4ff 100%);
     color-scheme: light;
+  }
+
+  @media print {
+    html,
+    body,
+    #__nuxt,
+    #__layout {
+      background: white !important;
+      min-height: auto !important;
+    }
   }
 
   .dark html,
@@ -89,8 +112,20 @@
   html.dark body,
   html.dark #__nuxt,
   html.dark #__layout {
-    background-color: #0b1220;
+    background: linear-gradient(135deg, #0a0a0f 0%, #18181b 50%, #1c1425 100%);
     color-scheme: dark;
+  }
+
+  @media print {
+    :root.dark #__nuxt,
+    :root.dark #__layout,
+    html.dark,
+    html.dark body,
+    html.dark #__nuxt,
+    html.dark #__layout {
+      background: white !important;
+      color-scheme: light !important;
+    }
   }
 
   div,
@@ -113,8 +148,23 @@
   /* In Persian/RTL, prefer Vazirmatn for both body and headings via variables */
   html[dir="rtl"],
   html[lang^="fa"] {
-    --font-sans: 'Vazirmatn', 'Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif';
-    --font-display: 'Vazirmatn', 'Roobert', 'Inter', 'serif';
+    --font-sans: 'Vazirmatn', 'Geist', 'ui-sans-serif', 'system-ui', 'sans-serif';
+    --font-display: 'Vazirmatn', 'Space Grotesk', 'ui-sans-serif', 'sans-serif';
+  }
+
+  /* Hide promotional banners from @nuxt/ui and certificates.dev */
+  [class*="VueSchool"],
+  [class*="banner"][class*="promotional"],
+  [data-v-inspector*="VueSchool"],
+  #bb-banner,
+  [id^="bb-"],
+  [class*="bb-campaign"],
+  [class*="bb-close"],
+  a[href*="certificates.dev"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 }
 
@@ -123,42 +173,52 @@
   h1,
   h2,
   h3 {
-    @apply font-display tracking-tight;
+    @apply font-display tracking-tight font-bold;
+    background: linear-gradient(135deg, currentColor 0%, color-mix(in oklch, currentColor, violet 30%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   h1 {
-    @apply text-3xl sm:text-4xl;
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+    letter-spacing: -0.02em;
   }
 
   h2 {
-    @apply text-2xl sm:text-3xl;
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+    letter-spacing: -0.01em;
   }
 
   h3 {
-    @apply text-xl sm:text-2xl;
+    @apply text-2xl sm:text-3xl lg:text-4xl;
   }
 }
 
 @layer utilities {
   .primary-text {
-    @apply text-primary-500 dark:text-primary-400;
+    @apply text-violet-600 dark:text-violet-400;
   }
 
   .primary-text-muted {
-    @apply text-slate-500 dark:text-slate-400;
+    @apply text-zinc-500 dark:text-zinc-400;
   }
 
   .decorated {
-    @apply underline underline-offset-8 decoration-primary-500 dark:decoration-primary-400;
+    @apply underline underline-offset-8 decoration-violet-500 dark:decoration-violet-400 decoration-2;
   }
 
   /* Soft text color helpers */
   .muted {
-    @apply text-slate-600 dark:text-slate-300;
+    @apply text-zinc-600 dark:text-zinc-300;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 dark:from-violet-400 dark:via-purple-400 dark:to-fuchsia-400 bg-clip-text text-transparent;
   }
 
   .chip-base {
-    @apply inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1 text-xs font-medium ring-1 ring-slate-200/70 bg-white/70 text-slate-700 shadow-sm backdrop-blur-sm dark:bg-white/5 dark:text-slate-300 dark:ring-slate-700/50;
+    @apply inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 text-xs font-semibold ring-1 ring-violet-200/70 bg-gradient-to-br from-white/90 to-violet-50/60 text-violet-700 shadow-lg shadow-violet-500/10 backdrop-blur-md dark:from-violet-950/40 dark:to-violet-900/20 dark:text-violet-200 dark:ring-violet-800/50 dark:shadow-violet-500/5 transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-500/20;
   }
 
   /* Hide scrollbars for overflow containers */
@@ -181,15 +241,22 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
 
+  /* Modern glassmorphic card */
+  .glass-card {
+    @apply rounded-3xl bg-white/80 dark:bg-zinc-900/50 backdrop-blur-xl shadow-xl shadow-violet-500/5 dark:shadow-violet-500/10 border border-white/20 dark:border-zinc-800/50 transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply shadow-2xl shadow-violet-500/10 dark:shadow-violet-500/20 translate-y-[-2px];
+  }
+
   /* Global hover utilities for consistent interactions */
   .hover-ring-tint {
-    /* Ring-only hover with subtle background tint; no scale; focus-visible support */
-    @apply transition-colors duration-200 ease-out ring-0 hover:ring-2 hover:ring-primary-500 dark:hover:ring-primary-400 hover:bg-primary-50/60 dark:hover:bg-primary-400/10 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
+    @apply transition-all duration-300 ease-out ring-0 hover:ring-2 hover:ring-violet-500 dark:hover:ring-violet-400 hover:bg-violet-50/60 dark:hover:bg-violet-400/10 focus-visible:ring-2 focus-visible:ring-violet-500 dark:focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
   }
 
   .link-hover-clean {
-    /* Clean link hover with color shift and underline */
-    @apply transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 hover:underline underline-offset-4 decoration-primary-500/60 dark:decoration-primary-400/60;
+    @apply transition-all duration-300 hover:text-violet-600 dark:hover:text-violet-400 hover:underline underline-offset-4 decoration-violet-500/60 dark:decoration-violet-400/60;
   }
 }
 
@@ -197,7 +264,12 @@
 
   /* Minimal hover: subtle bg tint, slight shadow, no ring/border change */
   .hover-minimal {
-    @apply transition-all duration-150 ease-out hover:bg-gray-100/70 dark:hover:bg-white/5 hover:shadow-sm;
+    @apply transition-all duration-300 ease-out hover:bg-violet-50/50 dark:hover:bg-white/5 hover:shadow-lg hover:shadow-violet-500/5;
+  }
+
+  /* Modern button with gradient */
+  .btn-modern {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold text-white bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 shadow-lg shadow-violet-500/30 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 hover:scale-105;
   }
 }
 
@@ -205,7 +277,7 @@
 
   /* Minimal outlined button: persistent subtle border and light background; hover handled separately */
   .btn-outline-minimal {
-    @apply border border-gray-300/60 dark:border-gray-600/50 bg-gray-100/30 dark:bg-white/5;
+    @apply border border-violet-200/60 dark:border-violet-800/50 bg-gradient-to-br from-white/60 to-violet-50/30 dark:from-white/5 dark:to-violet-950/20 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10;
   }
 }
 
@@ -213,7 +285,7 @@
 
   /* Chip-style icon button inspired by SkillGrid: subtle ring, soft bg, minimal hover */
   .chip-button {
-    @apply inline-flex items-center justify-center h-10 w-10 rounded-xl ring-1 ring-slate-200/70 dark:ring-slate-700/50 bg-white/70 dark:bg-white/5 text-slate-700 dark:text-slate-200 shadow-sm backdrop-blur-sm transition-colors duration-150 ease-out hover:bg-white/80 dark:hover:bg-white/10;
+    @apply inline-flex items-center justify-center h-12 w-12 rounded-2xl ring-1 ring-violet-200/70 dark:ring-violet-800/50 bg-gradient-to-br from-white/90 to-violet-50/50 dark:from-white/10 dark:to-violet-950/30 text-violet-700 dark:text-violet-200 shadow-lg shadow-violet-500/10 backdrop-blur-md transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-violet-500/20 hover:from-violet-50 hover:to-violet-100 dark:hover:from-white/15 dark:hover:to-violet-900/40;
   }
 }
 

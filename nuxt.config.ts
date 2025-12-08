@@ -1,12 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'app',
-  
+
   // Enable View Transitions API for smooth page transitions
   experimental: {
     viewTransition: true
   },
-  
+
   // Configure page and layout transitions
   app: {
     baseURL: '/',
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-  
+
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
@@ -57,21 +57,26 @@ export default defineNuxtConfig({
       }
     }
   },
+
+  devServer: {
+    host: '0.0.0.0',
+    port: 5000
+  },
   fonts: {
     defaults: {
       preload: true,
-      weights: [300, 400, 500, 600, 700],
+      weights: [300, 400, 500, 600, 700, 800],
       styles: ['normal'],
       subsets: ['latin'],
       fallbacks: {
-        'sans-serif': ['system-ui', 'Segoe UI', 'sans-serif'],
+        'sans-serif': ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
         serif: ['Georgia', 'Times New Roman', 'serif']
       }
     },
     families: [
-      { name: 'Fraunces', provider: 'google', weights: [600, 700] },
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Outfit', provider: 'google', weights: [300, 400, 500, 600, 700] }
+      { name: 'Geist', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Space Grotesk', provider: 'google', weights: [500, 600, 700] },
+      { name: 'DM Sans', provider: 'google', weights: [400, 500, 600, 700] }
     ]
   },
 
@@ -136,11 +141,6 @@ export default defineNuxtConfig({
 
   // Nuxt Content configuration
   content: {
-    // Disable experimental features that require native dependencies
-    experimental: {
-      clientDB: false,
-      cacheContents: false
-    },
     markdown: {
       mdc: true,
       toc: {
@@ -150,7 +150,7 @@ export default defineNuxtConfig({
     },
     documentDriven: false,
     respectPathCase: true
-  },
+  } as any,
 
   i18n: {
     defaultLocale: 'en',
@@ -178,6 +178,9 @@ export default defineNuxtConfig({
       failOnError: false,
       ignore: ['/_vercel/image']
     },
+    devProxy: {
+      host: '0.0.0.0'
+    }
   },
 
 

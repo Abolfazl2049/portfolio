@@ -15,18 +15,42 @@
               <UIcon name="i-twemoji-round-pushpin" class="text-base text-primary-600 me-1 dark:text-primary-300" />
               <span class="leading-relaxed">{{ portfolio.profile.location }}</span>
             </div>
-            <div v-if="currentRole" class="flex items-center gap-1 text-base text-gray-700 dark:text-gray-200">
-              <img v-if="currentRole.companyLogo" :src="currentRole.companyLogo" :alt="`${currentRole.company} logo`"
-                class="h-7 w-7 rounded-md object-contain" loading="lazy" />
-              <span class="">{{ t('hero.currently') }}</span>
-              <span class="font-semibold text-primary-600 dark:text-primary-300">
-                <a v-if="currentRole.companyLink" :href="currentRole.companyLink" target="_blank" rel="noopener"
-                  class="hover:underline text-primary-600 dark:text-primary-300">
-                  {{ currentRole.company }}
-                </a>
-                <span v-else>{{ currentRole.company }}</span>
-              </span>
+            <div v-if="currentRole"
+              class="flex items-center justify-between w-full text-base text-gray-700 dark:text-gray-200">
+              <div class="flex items-center gap-1">
+                <img v-if="currentRole.companyLogo" :src="currentRole.companyLogo" :alt="`${currentRole.company} logo`"
+                  class="h-7 w-7 rounded-md object-contain" loading="lazy" />
+                <span class="">{{ t('hero.currently') }}</span>
+                <span class="font-semibold text-primary-600 dark:text-primary-300">
+                  <a v-if="currentRole.companyLink" :href="currentRole.companyLink" target="_blank" rel="noopener"
+                    class="hover:underline text-primary-600 dark:text-primary-300">
+                    {{ currentRole.company }}
+                  </a>
+                  <span v-else>{{ currentRole.company }}</span>
+                </span>
+              </div>
+              <!-- Resume Button - Desktop only -->
+              <NuxtLink to="/resume" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
+                  bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 
+                  hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
+                  text-white rounded-full shadow-lg shadow-primary-500/25
+                  transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/40
+                  animate-pulse hover:animate-none">
+                <UIcon name="i-heroicons-document-text" class="text-lg" />
+                <span>View Resume</span>
+                <UIcon name="i-heroicons-sparkles" class="text-sm opacity-80" />
+              </NuxtLink>
             </div>
+            <!-- Resume Button - Mobile only -->
+            <NuxtLink to="/resume" class="sm:hidden inline-flex items-center justify-center gap-2 mt-2 px-4 py-2 text-sm font-medium
+                bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 
+                hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
+                text-white rounded-full shadow-lg shadow-primary-500/25
+                transition-all duration-300 hover:scale-105">
+              <UIcon name="i-heroicons-document-text" class="text-base" />
+              <span>View My Resume</span>
+              <UIcon name="i-heroicons-arrow-right" class="text-sm" />
+            </NuxtLink>
           </div>
           <div class="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <ClientTooltip :text="emailTooltip">
