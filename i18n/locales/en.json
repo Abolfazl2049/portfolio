@@ -1,9 +1,11 @@
 {
   "sections": {
     "work": "Work Experience",
+    "workAccordion": "7+ years building enterprise solutions and web applications.",
     "education": "Education",
     "recommendations": "Recommendations",
     "projects": " Projects",
+    "projectsAccordion": "Real-world applications built for clients and the community.",
     "blog": "Blog",
     "contact": "Contact",
     "mainTools": "Main tools",
@@ -19,6 +21,9 @@
     "proficient": "Proficient",
     "usedBefore": "Used before",
     "aiStack": "AI Stack"
+  },
+  "softSkillsAccordion": {
+    "label": "Mindset and interpersonal strengths that drive team success."
   },
   "softSkills": {
     "problemSolving": {
@@ -60,6 +65,7 @@
   },
   "languageSection": {
     "tagline": "Advanced English communication for global collaboration.",
+    "accordionLabel": "Advanced English communication for global collaboration.",
     "duolingo": {
       "label": "Duolingo English Test",
       "value": "85"
@@ -123,7 +129,10 @@
     "noResults": "No posts found matching your search",
     "copyCode": "Copy code",
     "codeCopied": "Copied!",
-    "subscribe": "Subscribe via RSS"
+    "subscribe": "Subscribe via RSS",
+    "sharePost": "Share this post",
+    "linkCopied": "Link copied to clipboard!",
+    "copyFailed": "Failed to copy link"
   },
   "common": {
     "present": "Present",

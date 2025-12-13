@@ -20,86 +20,83 @@
         </p>
       </div>
 
-      <!-- GitHub Calendar Card using UCard -->
-      <UCard v-else-if="calendar">
-        <template #header>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-            {{ t('portfolio.githubActivity.subtitle') }}
-          </h3>
+      <!-- GitHub Calendar Accordion -->
+      <UAccordion v-else-if="calendar" type="single" :unmount-on-hide="false" :items="accordionItems"
+        default-value="github" :ui="accordionUi">
+        <template #body>
+          <div class="flex flex-col gap-4">
+            <!-- Scrollable Graph Container (only the graph scrolls) -->
+            <div class="overflow-x-auto pb-4 lg:overflow-visible">
+              <div class="min-w-[940px] max-w-full w-fit mx-auto">
+                <!-- Month Labels Row -->
+                <div class="flex mb-2">
+                  <div class="w-8 flex-shrink-0"></div>
+                  <div class="flex flex-1">
+                    <div v-for="(month, index) in monthLabels" :key="index"
+                      class="text-xs text-gray-500 dark:text-gray-400" :style="{ flex: `0 0 ${month.width}%` }">
+                      {{ month.name }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Grid Container -->
+                <div class="flex gap-1">
+                  <!-- Day Labels -->
+                  <div class="flex flex-col gap-[3px] w-8 flex-shrink-0">
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Mon</span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Wed</span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Fri</span>
+                    <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
+                  </div>
+
+                  <!-- Weeks Grid -->
+                  <div class="flex flex-1 justify-between gap-[3px]">
+                    <div v-for="(week, weekIndex) in calendar.weeks" :key="weekIndex" class="flex flex-col gap-[3px]">
+                      <div v-for="(day, dayIndex) in week.contributionDays" :key="dayIndex"
+                        class="w-[11px] h-[11px] rounded-[2px] cursor-pointer transition-transform hover:scale-110"
+                        :class="getContributionClass(day.contributionCount)" @mouseenter="hoveredDay = day"
+                        @mouseleave="hoveredDay = null" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer: Legend + Hover Info (always visible) -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+                <span>Less</span>
+                <div class="flex gap-[3px] mx-1">
+                  <div v-for="(cls, idx) in legendClasses" :key="idx" class="w-[11px] h-[11px] rounded-[2px]"
+                    :class="cls" />
+                </div>
+                <span>More</span>
+              </div>
+
+              <div
+                class="text-xs text-gray-600 dark:text-gray-300 min-h-[32px] flex flex-col justify-center text-right">
+                <template v-if="hoveredDay">
+                  <span class="font-semibold text-gray-900 dark:text-white">
+                    {{ hoveredDay.contributionCount }} contribution{{ hoveredDay.contributionCount !== 1 ? 's' : '' }}
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">
+                    {{ formatDateFull(hoveredDay.date) }}
+                  </span>
+                </template>
+              </div>
+            </div>
+          </div>
         </template>
-
-        <div class="flex flex-col gap-4">
-          <!-- Scrollable Graph Container (only the graph scrolls) -->
-          <div class="overflow-x-auto pb-4 lg:overflow-visible">
-            <div class="min-w-[940px] max-w-full w-fit mx-auto">
-              <!-- Month Labels Row -->
-              <div class="flex mb-2">
-                <div class="w-8 flex-shrink-0"></div>
-                <div class="flex flex-1">
-                  <div v-for="(month, index) in monthLabels" :key="index" class="text-xs text-gray-500 dark:text-gray-400"
-                    :style="{ flex: `0 0 ${month.width}%` }">
-                    {{ month.name }}
-                  </div>
-                </div>
-              </div>
-
-              <!-- Grid Container -->
-              <div class="flex gap-1">
-                <!-- Day Labels -->
-                <div class="flex flex-col gap-[3px] w-8 flex-shrink-0">
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Mon</span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Wed</span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1">Fri</span>
-                  <span class="h-[11px] text-[11px] text-gray-500 dark:text-gray-400 text-right pr-1"></span>
-                </div>
-
-                <!-- Weeks Grid -->
-                <div class="flex flex-1 justify-between gap-[3px]">
-                  <div v-for="(week, weekIndex) in calendar.weeks" :key="weekIndex" class="flex flex-col gap-[3px]">
-                    <div v-for="(day, dayIndex) in week.contributionDays" :key="dayIndex"
-                      class="w-[11px] h-[11px] rounded-[2px] cursor-pointer transition-transform hover:scale-110"
-                      :class="getContributionClass(day.contributionCount)" @mouseenter="hoveredDay = day"
-                      @mouseleave="hoveredDay = null" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer: Legend + Hover Info (always visible) -->
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-              <span>Less</span>
-              <div class="flex gap-[3px] mx-1">
-                <div v-for="(cls, idx) in legendClasses" :key="idx" class="w-[11px] h-[11px] rounded-[2px]"
-                  :class="cls" />
-              </div>
-              <span>More</span>
-            </div>
-
-            <div
-              class="text-xs text-gray-600 dark:text-gray-300 min-h-[32px] flex flex-col justify-center text-right">
-              <template v-if="hoveredDay">
-                <span class="font-semibold text-gray-900 dark:text-white">
-                  {{ hoveredDay.contributionCount }} contribution{{ hoveredDay.contributionCount !== 1 ? 's' : '' }}
-                </span>
-                <span class="text-gray-500 dark:text-gray-400">
-                  {{ formatDateFull(hoveredDay.date) }}
-                </span>
-              </template>
-            </div>
-          </div>
-        </div>
-      </UCard>
+      </UAccordion>
     </UContainer>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import type { GitHubContributionCalendar, GitHubContributionDay } from '@/types/github'
 
 const { t } = useI18n()
@@ -114,11 +111,43 @@ const props = withDefaults(defineProps<Props>(), {
   username: 'aliarghyani'
 })
 
+// Detect mobile for accordion behavior (SSR-safe)
+const isMobile = ref(true)
+
+onMounted(() => {
+  const checkMobile = () => {
+    isMobile.value = window.innerWidth < 768
+  }
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+  onUnmounted(() => {
+    window.removeEventListener('resize', checkMobile)
+  })
+})
+
 // State
 const calendar = ref<GitHubContributionCalendar | null>(null)
 const loading = ref(true)
 const error = ref(false)
 const hoveredDay = ref<GitHubContributionDay | null>(null)
+
+// Accordion config
+const accordionItems = computed(() => [{
+  label: t('portfolio.githubActivity.subtitle'),
+  value: 'github'
+}])
+
+const accordionUi = {
+  root: 'flex flex-col',
+  item: 'flex flex-col rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/70 dark:bg-gray-900/40 shadow-sm',
+  header: 'px-4 data-[state=open]:border-b border-gray-200/70 dark:border-gray-700/50',
+  trigger: 'group flex-1 items-center gap-2 py-3 text-left cursor-pointer',
+  label: 'text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300',
+  leadingIcon: 'shrink-0',
+  trailingIcon: 'ms-auto text-gray-500 dark:text-gray-400 transition-transform duration-200 group-data-[state=open]:rotate-180',
+  content: 'px-4 pb-4 pt-3 data-[state=closed]:hidden',
+  body: 'pt-1'
+} as const
 
 // Get contribution level class - uses CSS utility classes from main.css
 // that reference Nuxt UI's dynamic --ui-color-primary-* variables

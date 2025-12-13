@@ -21,9 +21,9 @@
                 <img v-if="currentRole.companyLogo" :src="currentRole.companyLogo" :alt="`${currentRole.company} logo`"
                   class="h-7 w-7 rounded-md object-contain" loading="lazy" />
                 <span class="">{{ t('hero.currently') }}</span>
-                <span class="font-semibold text-primary-600 dark:text-primary-300">
+                <span class="font-semibold company-name">
                   <a v-if="currentRole.companyLink" :href="currentRole.companyLink" target="_blank" rel="noopener"
-                    class="hover:underline text-primary-600 dark:text-primary-300">
+                    class="hover:underline company-name">
                     {{ currentRole.company }}
                   </a>
                   <span v-else>{{ currentRole.company }}</span>
@@ -31,7 +31,7 @@
               </div>
               <!-- Resume Button - Desktop only -->
               <NuxtLink to="/resume" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
-                  bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 
+                  bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500
                   hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
                   text-white rounded-full shadow-lg shadow-primary-500/25
                   transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/40
@@ -43,7 +43,7 @@
             </div>
             <!-- Resume Button - Mobile only -->
             <NuxtLink to="/resume" class="sm:hidden inline-flex items-center justify-center gap-2 mt-2 px-4 py-2 text-sm font-medium
-                bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 
+                bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500
                 hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
                 text-white rounded-full shadow-lg shadow-primary-500/25
                 transition-all duration-300 hover:scale-105">
@@ -211,3 +211,35 @@ async function copyEmail() {
   }
 }
 </script>
+
+<style>
+.company-name {
+  color: var(--ui-color-primary-600);
+}
+
+.dark .company-name {
+  color: var(--ui-color-primary-300);
+}
+
+/* Override Tailwind ring color variable for chip buttons */
+:deep(.chip-button) {
+  --tw-ring-color: var(--ui-color-primary-500) !important;
+}
+
+:deep(.dark .chip-button) {
+  --tw-ring-color: var(--ui-color-primary-400) !important;
+}
+
+/* Also override on hover and focus states */
+:deep(.chip-button:hover),
+:deep(.chip-button:focus),
+:deep(.chip-button:focus-visible) {
+  --tw-ring-color: var(--ui-color-primary-500) !important;
+}
+
+:deep(.dark .chip-button:hover),
+:deep(.dark .chip-button:focus),
+:deep(.dark .chip-button:focus-visible) {
+  --tw-ring-color: var(--ui-color-primary-400) !important;
+}
+</style>
