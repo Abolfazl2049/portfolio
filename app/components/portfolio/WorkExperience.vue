@@ -1,9 +1,9 @@
 <template>
-  <section id="work" class="py-6 scroll-mt-20">
+  <section id="work" class="section-spacing scroll-mt-20">
     <UContainer>
-      <div class="flex items-center gap-3 mb-6">
+      <div class="section-header">
         <UIcon name="i-twemoji-briefcase" class="text-2xl" />
-        <h2 class="text-lg font-semibold">{{ t('sections.work') }}</h2>
+        <h2 class="section-title">{{ t('sections.work') }}</h2>
       </div>
       <UTimeline :items="experiences" :default-value="0" color="primary" size="md" class="max-w-3xl">
         <template #indicator="{ item }">

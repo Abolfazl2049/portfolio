@@ -270,12 +270,12 @@ export const portfolio: PortfolioData = {
       category: 'current',
     },
     {
-      name: 'NuxtUi-Portfolio-Ali',
+      name: 'nuxt-portfolio',
       description: 'My portfolio built with Nuxt 3 and Nuxt UI v4, showcasing projects, skills, and experiences.',
       status: 'Active',
       opensource: true,
       links: [
-        { label: 'GitHub', to: 'https://github.com/aliarghyani/NuxtUi-Portfolio-Ali', icon: 'i-mdi-github' },
+        { label: 'GitHub', to: 'https://github.com/aliarghyani/nuxt-portfolio', icon: 'i-mdi-github' },
       ],
       icons: ['i-logos-nuxt-icon', 'i-logos-vue', 'i-logos-typescript-icon', 'i-logos-tailwindcss-icon'],
       category: 'public',

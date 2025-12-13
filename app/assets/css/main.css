@@ -145,6 +145,44 @@
     font-family: var(--font-sans);
   }
 
+  :root {
+    --scrollbar-track: color-mix(in oklch, #e0e7ff 35%, transparent);
+    --scrollbar-thumb: color-mix(in oklch, #7c3aed 65%, #6d28d9 35%);
+    --scrollbar-thumb-hover: color-mix(in oklch, #7c3aed 80%, #a855f7 20%);
+  }
+
+  :root.dark {
+    --scrollbar-track: color-mix(in oklch, #0b1020 80%, #7c3aed 20%);
+    --scrollbar-thumb: color-mix(in oklch, #a855f7 65%, #7c3aed 35%);
+    --scrollbar-thumb-hover: color-mix(in oklch, #c084fc 75%, #8b5cf6 25%);
+  }
+
+  /* Global scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--scrollbar-thumb), color-mix(in oklch, var(--scrollbar-thumb), black 10%));
+    border-radius: 9999px;
+    border: 2px solid color-mix(in oklch, var(--scrollbar-track), transparent 50%);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+
   /* In Persian/RTL, prefer Vazirmatn for both body and headings via variables */
   html[dir="rtl"],
   html[lang^="fa"] {
@@ -197,6 +235,18 @@
 @layer utilities {
   .primary-text {
     @apply text-violet-600 dark:text-violet-400;
+  }
+
+  .section-spacing {
+    @apply pt-5 pb-8 sm:pt-8 sm:pb-12;
+  }
+
+  .section-title {
+    @apply text-xl sm:text-2xl font-semibold leading-tight text-gray-900 dark:text-gray-100;
+  }
+
+  .section-header {
+    @apply flex flex-wrap items-center gap-3 mb-5 sm:mb-6;
   }
 
   .primary-text-muted {
@@ -286,6 +336,43 @@
   /* Chip-style icon button inspired by SkillGrid: subtle ring, soft bg, minimal hover */
   .chip-button {
     @apply inline-flex items-center justify-center h-12 w-12 rounded-2xl ring-1 ring-violet-200/70 dark:ring-violet-800/50 bg-gradient-to-br from-white/90 to-violet-50/50 dark:from-white/10 dark:to-violet-950/30 text-violet-700 dark:text-violet-200 shadow-lg shadow-violet-500/10 backdrop-blur-md transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-violet-500/20 hover:from-violet-50 hover:to-violet-100 dark:hover:from-white/15 dark:hover:to-violet-900/40;
+  }
+
+  /* GitHub Activity Contribution Graph - Dynamic Primary Color */
+  /* Level 0: No contributions - very neutral/muted color */
+  .contrib-level-0 {
+    background-color: var(--ui-color-neutral-100);
+  }
+  /* Levels 1-4: More contributions = darker/more vibrant primary */
+  .contrib-level-1 {
+    background-color: var(--ui-color-primary-200);
+  }
+  .contrib-level-2 {
+    background-color: var(--ui-color-primary-400);
+  }
+  .contrib-level-3 {
+    background-color: var(--ui-color-primary-600);
+  }
+  .contrib-level-4 {
+    background-color: var(--ui-color-primary-800);
+  }
+
+  /* Dark mode overrides for contribution graph */
+  /* In dark mode: brighter = more contributions (same visual logic as light) */
+  .dark .contrib-level-0 {
+    background-color: var(--ui-color-neutral-800);
+  }
+  .dark .contrib-level-1 {
+    background-color: var(--ui-color-primary-950);
+  }
+  .dark .contrib-level-2 {
+    background-color: var(--ui-color-primary-800);
+  }
+  .dark .contrib-level-3 {
+    background-color: var(--ui-color-primary-600);
+  }
+  .dark .contrib-level-4 {
+    background-color: var(--ui-color-primary-400);
   }
 }
 

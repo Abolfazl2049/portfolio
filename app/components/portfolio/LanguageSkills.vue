@@ -1,9 +1,9 @@
 <template>
-  <section class="py-6">
+  <section class="section-spacing">
     <UContainer>
-      <div class="flex items-center gap-3 mb-4">
+      <div class="section-header flex-nowrap items-center gap-3 justify-start">
         <UIcon name="i-twemoji-globe-showing-europe-africa" class="text-2xl" />
-        <h2 class="text-lg font-semibold">{{ t('sections.language') }}</h2>
+        <h2 class="section-title">{{ t('sections.language') }}</h2>
       </div>
 
       <UCard>

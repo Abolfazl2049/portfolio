@@ -271,12 +271,12 @@ const portfolioFa: PortfolioData = {
       category: 'current',
     },
     {
-      name: 'NuxtUi-Portfolio-Ali',
+      name: 'nuxt-portfolio',
       description: 'پورتفولیو من با Nuxt 3 و Nuxt UI v4، شامل پروژه‌ها، مهارت‌ها و سوابق.',
       status: 'فعال',
       opensource: true,
       links: [
-        { label: 'GitHub', to: 'https://github.com/aliarghyani/NuxtUi-Portfolio-Ali', icon: 'i-mdi-github' },
+        { label: 'GitHub', to: 'https://github.com/aliarghyani/nuxt-portfolio', icon: 'i-mdi-github' },
       ],
       icons: ['i-logos-nuxt-icon', 'i-logos-vue', 'i-logos-typescript-icon', 'i-logos-tailwindcss-icon'],
       category: 'public',

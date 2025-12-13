@@ -11,7 +11,8 @@
     "values": "Values",
     "skills": "Skills",
     "softSkills": "Values & Soft Skills",
-    "language": "Language Proficiency"
+    "language": "Language Proficiency",
+    "githubActivity": "GitHub Activity"
   },
   "skills": {
     "expert": "Expert",
@@ -199,5 +200,12 @@
     "current": "Current",
     "freelance": "Freelance Projects",
     "public": "Public Repositories"
+  },
+  "portfolio": {
+    "githubActivity": {
+      "title": "GitHub Activity",
+      "subtitle": "My contributions over the past year",
+      "error": "Failed to load GitHub contributions"
+    }
   }
 }
