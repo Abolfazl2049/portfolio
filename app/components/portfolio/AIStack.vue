@@ -1,14 +1,14 @@
 <template>
-  <section id="ai-stack" class="py-6 scroll-mt-20">
+  <section id="ai-stack" class="section-spacing scroll-mt-20">
     <UContainer>
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
-        <div class="flex items-center gap-3">
+      <div class="section-header flex-nowrap justify-between">
+        <div class="flex items-center gap-3 min-w-0">
           <UIcon name="twemoji:robot" class="text-2xl" />
-          <h2 class="text-lg font-semibold">{{ t('skills.aiStack') }}</h2>
+          <h2 class="section-title">{{ t('skills.aiStack') }}</h2>
         </div>
 
         <div
-          class="ms-auto w-full md:w-auto flex flex-row-reverse items-center gap-1 overflow-x-auto no-scrollbar whitespace-nowrap px-1 py-1"
+          class="ms-auto flex flex-row-reverse items-center gap-1 overflow-x-auto no-scrollbar whitespace-nowrap px-1 py-1 min-w-0"
           role="toolbar" aria-label="AI Stack group filters">
           <UButton :icon="filterButtonIcon" size="xs" :variant="filterButtonVariant" :color="filterButtonColor"
             class="filter-toggle rounded-full shrink-0 mx-1"

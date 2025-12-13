@@ -1,11 +1,11 @@
 <template>
-  <section id="projects" class="py-6 scroll-mt-20">
+  <section id="projects" class="section-spacing scroll-mt-20">
     <UContainer>
-      <div class="flex items-center gap-3 mb-3">
+      <div class="section-header">
         <UIcon name="i-twemoji-rocket" class="text-2xl" />
-        <h2 class="text-lg font-semibold text-start">{{ t('sections.projects') }}</h2>
+        <h2 class="section-title text-start">{{ t('sections.projects') }}</h2>
       </div>
-      <div v-for="g in nonEmptyCategoryList" :key="g.cat" class="space-y-3 mb-6">
+      <div v-for="g in nonEmptyCategoryList" :key="g.cat" class="space-y-3 mb-5">
         <div class="flex items-center gap-2">
           <UIcon name="i-twemoji-open-book" class="text-xl" />
           <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">{{ tCategory(g.cat) }}</h3>

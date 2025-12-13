@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-10">
+  <footer class=" pb-10  sm:pb-12">
     <UContainer>
       <div class="flex flex-col items-center gap-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <ClientOnly>
@@ -31,7 +31,7 @@ const colorMode = useColorMode()
 const currentYear = computed(() => new Date().getFullYear())
 const logoSrc = computed(() => {
   return colorMode.value === 'dark'
-    ? '/favicon/android-chrome-192x192-dark.png'
+    ? '/favicon/logo-nobg.svg'
     : '/favicon/android-chrome-192x192.png'
 })
 </script>

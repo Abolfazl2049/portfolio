@@ -10,14 +10,14 @@
             {{ portfolio.profile.summary }}
           </p>
           <div v-if="portfolio.profile.location || currentRole"
-            class="mb-6 flex flex-col items-center gap-2 text-sm text-gray-600 dark:text-gray-300 sm:items-start">
+            class="mb-6 flex flex-col items-center gap-3 text-sm text-gray-600 dark:text-gray-300 sm:items-start">
             <div v-if="portfolio.profile.location" class="flex items-center gap-2">
               <UIcon name="i-twemoji-round-pushpin" class="text-base text-primary-600 me-1 dark:text-primary-300" />
               <span class="leading-relaxed">{{ portfolio.profile.location }}</span>
             </div>
             <div v-if="currentRole"
-              class="flex items-center justify-between w-full text-base text-gray-700 dark:text-gray-200">
-              <div class="flex items-center gap-1">
+              class="flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full gap-2 text-base text-gray-700 dark:text-gray-200 text-center sm:text-left">
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1">
                 <img v-if="currentRole.companyLogo" :src="currentRole.companyLogo" :alt="`${currentRole.company} logo`"
                   class="h-7 w-7 rounded-md object-contain" loading="lazy" />
                 <span class="">{{ t('hero.currently') }}</span>
