@@ -139,6 +139,9 @@ if (post.value) {
             <ContentRenderer v-if="(post as any).body" :value="(post as any).body" />
           </article>
 
+          <!-- Share Buttons -->
+          <BlogShare :title="(post as any).title" :url="`${siteUrl}${(post as any).path}`" />
+
           <!-- Blog Navigation (Prev/Next) -->
           <BlogNavigation :prev="prevPost" :next="nextPost" />
         </div>

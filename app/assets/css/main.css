@@ -5,6 +5,7 @@
 @import "./transitions.css";
 @import "./prose.css";
 @import "./blog-content.css";
+@import "./resume-button.css";
 
 @source "../../components/**/*.{vue,js,ts}";
 @source "../../layouts/**/*.vue";
@@ -146,15 +147,15 @@
   }
 
   :root {
-    --scrollbar-track: color-mix(in oklch, #e0e7ff 35%, transparent);
-    --scrollbar-thumb: color-mix(in oklch, #7c3aed 65%, #6d28d9 35%);
-    --scrollbar-thumb-hover: color-mix(in oklch, #7c3aed 80%, #a855f7 20%);
+    --scrollbar-track: color-mix(in srgb, var(--ui-color-primary-100) 35%, transparent);
+    --scrollbar-thumb: color-mix(in srgb, var(--ui-color-primary-500) 65%, var(--ui-color-primary-600) 35%);
+    --scrollbar-thumb-hover: color-mix(in srgb, var(--ui-color-primary-500) 80%, var(--ui-color-primary-400) 20%);
   }
 
   :root.dark {
-    --scrollbar-track: color-mix(in oklch, #0b1020 80%, #7c3aed 20%);
-    --scrollbar-thumb: color-mix(in oklch, #a855f7 65%, #7c3aed 35%);
-    --scrollbar-thumb-hover: color-mix(in oklch, #c084fc 75%, #8b5cf6 25%);
+    --scrollbar-track: color-mix(in srgb, #0b1020 80%, var(--ui-color-primary-500) 20%);
+    --scrollbar-thumb: color-mix(in srgb, var(--ui-color-primary-400) 65%, var(--ui-color-primary-500) 35%);
+    --scrollbar-thumb-hover: color-mix(in srgb, var(--ui-color-primary-300) 75%, var(--ui-color-primary-400) 25%);
   }
 
   /* Global scrollbar styling */
@@ -297,16 +298,51 @@
   }
 
   .glass-card:hover {
-    @apply shadow-2xl shadow-violet-500/10 dark:shadow-violet-500/20 translate-y-[-2px];
+    @apply translate-y-[-2px];
+    box-shadow: 
+      0 25px 50px -12px color-mix(in srgb, var(--ui-color-primary-500) 10%, transparent);
+  }
+  
+  .dark .glass-card:hover {
+    box-shadow: 
+      0 25px 50px -12px color-mix(in srgb, var(--ui-color-primary-500) 20%, transparent);
   }
 
-  /* Global hover utilities for consistent interactions */
+  /* Global hover utilities for consistent interactions - using dynamic theme colors */
   .hover-ring-tint {
-    @apply transition-all duration-300 ease-out ring-0 hover:ring-2 hover:ring-violet-500 dark:hover:ring-violet-400 hover:bg-violet-50/60 dark:hover:bg-violet-400/10 focus-visible:ring-2 focus-visible:ring-violet-500 dark:focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
+    @apply transition-all duration-300 ease-out focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
+  }
+  
+  .hover-ring-tint:hover {
+    box-shadow: 0 0 0 2px var(--ui-color-primary-500);
+    background-color: color-mix(in srgb, var(--ui-color-primary-50) 60%, transparent);
+  }
+  
+  .dark .hover-ring-tint:hover {
+    box-shadow: 0 0 0 2px var(--ui-color-primary-400);
+    background-color: color-mix(in srgb, var(--ui-color-primary-400) 10%, transparent);
+  }
+  
+  .hover-ring-tint:focus-visible {
+    box-shadow: 0 0 0 2px var(--ui-color-primary-500);
+  }
+  
+  .dark .hover-ring-tint:focus-visible {
+    box-shadow: 0 0 0 2px var(--ui-color-primary-400);
   }
 
   .link-hover-clean {
-    @apply transition-all duration-300 hover:text-violet-600 dark:hover:text-violet-400 hover:underline underline-offset-4 decoration-violet-500/60 dark:decoration-violet-400/60;
+    @apply transition-all duration-300 hover:underline underline-offset-4;
+  }
+  
+  .link-hover-clean:hover {
+    color: var(--ui-color-primary-600);
+    text-decoration-color: color-mix(in srgb, var(--ui-color-primary-500) 60%, transparent);
+  }
+  
+  .dark .link-hover-clean:hover {
+    color: var(--ui-color-primary-400);
+    text-decoration-color: color-mix(in srgb, var(--ui-color-primary-400) 60%, transparent);
   }
 }
 
@@ -314,7 +350,12 @@
 
   /* Minimal hover: subtle bg tint, slight shadow, no ring/border change */
   .hover-minimal {
-    @apply transition-all duration-300 ease-out hover:bg-violet-50/50 dark:hover:bg-white/5 hover:shadow-lg hover:shadow-violet-500/5;
+    @apply transition-all duration-300 ease-out dark:hover:bg-white/5 hover:shadow-lg;
+  }
+  
+  .hover-minimal:hover {
+    background-color: color-mix(in srgb, var(--ui-color-primary-50) 50%, transparent);
+    box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--ui-color-primary-500) 5%, transparent);
   }
 
   /* Modern button with gradient */
@@ -335,7 +376,50 @@
 
   /* Chip-style icon button inspired by SkillGrid: subtle ring, soft bg, minimal hover */
   .chip-button {
-    @apply inline-flex items-center justify-center h-12 w-12 rounded-2xl ring-1 ring-violet-200/70 dark:ring-violet-800/50 bg-gradient-to-br from-white/90 to-violet-50/50 dark:from-white/10 dark:to-violet-950/30 text-violet-700 dark:text-violet-200 shadow-lg shadow-violet-500/10 backdrop-blur-md transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-violet-500/20 hover:from-violet-50 hover:to-violet-100 dark:hover:from-white/15 dark:hover:to-violet-900/40;
+    @apply inline-flex items-center justify-center h-12 w-12 rounded-2xl ring-1 backdrop-blur-md transition-all duration-300 ease-out hover:scale-110;
+    
+    /* Dynamic theme colors using CSS variables */
+    ring-color: color-mix(in srgb, var(--ui-color-primary-200) 70%, transparent);
+    background: linear-gradient(to bottom right, 
+      color-mix(in srgb, white 90%, transparent),
+      color-mix(in srgb, var(--ui-color-primary-50) 50%, transparent)
+    );
+    color: var(--ui-color-primary-700);
+    box-shadow: 
+      0 10px 15px -3px color-mix(in srgb, var(--ui-color-primary-500) 10%, transparent),
+      0 4px 6px -4px color-mix(in srgb, var(--ui-color-primary-500) 10%, transparent);
+  }
+  
+  .chip-button:hover {
+    background: linear-gradient(to bottom right,
+      color-mix(in srgb, var(--ui-color-primary-50) 100%, transparent),
+      color-mix(in srgb, var(--ui-color-primary-100) 100%, transparent)
+    );
+    box-shadow: 
+      0 20px 25px -5px color-mix(in srgb, var(--ui-color-primary-500) 20%, transparent),
+      0 8px 10px -6px color-mix(in srgb, var(--ui-color-primary-500) 20%, transparent);
+  }
+  
+  .dark .chip-button {
+    ring-color: color-mix(in srgb, var(--ui-color-primary-800) 50%, transparent);
+    background: linear-gradient(to bottom right,
+      color-mix(in srgb, white 10%, transparent),
+      color-mix(in srgb, var(--ui-color-primary-950) 30%, transparent)
+    );
+    color: var(--ui-color-primary-200);
+    box-shadow: 
+      0 10px 15px -3px color-mix(in srgb, var(--ui-color-primary-500) 5%, transparent),
+      0 4px 6px -4px color-mix(in srgb, var(--ui-color-primary-500) 5%, transparent);
+  }
+  
+  .dark .chip-button:hover {
+    background: linear-gradient(to bottom right,
+      color-mix(in srgb, white 15%, transparent),
+      color-mix(in srgb, var(--ui-color-primary-900) 40%, transparent)
+    );
+    box-shadow: 
+      0 20px 25px -5px color-mix(in srgb, var(--ui-color-primary-500) 10%, transparent),
+      0 8px 10px -6px color-mix(in srgb, var(--ui-color-primary-500) 10%, transparent);
   }
 
   /* GitHub Activity Contribution Graph - Dynamic Primary Color */

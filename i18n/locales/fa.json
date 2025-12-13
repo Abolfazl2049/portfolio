@@ -1,9 +1,11 @@
 {
   "sections": {
     "work": "سوابق کاری",
+    "workAccordion": "بیش از ۷ سال تجربه در توسعه راهکارهای سازمانی و اپلیکیشن‌های وب.",
     "education": "تحصیلات",
     "recommendations": "توصیه‌نامه‌ها",
     "projects": "پروژه‌ها",
+    "projectsAccordion": "اپلیکیشن‌های واقعی ساخته شده برای مشتریان و جامعه توسعه‌دهندگان.",
     "blog": "وبلاگ",
     "contact": "ارتباط",
     "mainTools": "ابزارهای اصلی",
@@ -19,6 +21,9 @@
     "proficient": "مسلط",
     "usedBefore": "تجربه قبلی",
     "aiStack": "استک هوش مصنوعی"
+  },
+  "softSkillsAccordion": {
+    "label": "ذهنیت و توانمندی‌های بین‌فردی که موفقیت تیم را رقم می‌زنند."
   },
   "softSkills": {
     "problemSolving": {
@@ -91,7 +96,10 @@
     "noResults": "نتیجه‌ای یافت نشد",
     "copyCode": "کپی کد",
     "codeCopied": "کپی شد!",
-    "subscribe": "اشتراک از طریق RSS"
+    "subscribe": "اشتراک از طریق RSS",
+    "sharePost": "اشتراک‌گذاری این مقاله",
+    "linkCopied": "لینک کپی شد!",
+    "copyFailed": "کپی لینک ناموفق بود"
   },
   "common": {
     "present": "اکنون",
@@ -136,6 +144,7 @@
   },
   "languageSection": {
     "tagline": "انگلیسی پیشرفته برای همکاری با تیم‌های بین‌المللی.",
+    "accordionLabel": "انگلیسی پیشرفته برای همکاری با تیم‌های بین‌المللی.",
     "duolingo": {
       "label": "آزمون زبان دولینگو",
       "value": "85"

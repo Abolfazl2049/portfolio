@@ -10,7 +10,7 @@
       </div>
 
       <UAccordion type="multiple" :unmount-on-hide="false" :items="skillSections" :default-value="openSkillSections"
-        :ui="accordionUi">
+        :ui="accordionUi" :disabled="!isMobile">
         <template #leading="{ item }">
           <UIcon v-if="item.icon" :name="item.icon" class="text-base text-primary-500 dark:text-primary-300" />
         </template>
@@ -23,12 +23,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import type { Tag, SkillType } from '@/types/portfolio.types'
 import { expert, proficient, usedBefore } from '@/data/skills'
 import SkillGrid from '@/components/portfolio/SkillGrid.vue'
 import SkillFilters from '@/components/portfolio/SkillFilters.vue'
+
 const { t } = useI18n()
+
+// Detect mobile for accordion behavior (SSR-safe)
+const isMobile = ref(true)
+
+onMounted(() => {
+  const checkMobile = () => {
+    isMobile.value = window.innerWidth < 768
+  }
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+  onUnmounted(() => {
+    window.removeEventListener('resize', checkMobile)
+  })
+})
 
 type SkillSectionKey = 'expert' | 'proficient' | 'usedBefore'
 
@@ -61,11 +76,11 @@ const openSkillSections = computed(() => skillSections.value.map(section => sect
 const accordionUi = {
   root: 'flex flex-col gap-3 md:grid md:grid-cols-3 md:gap-4 md:items-stretch',
   item: 'flex flex-col rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/70 dark:bg-gray-900/40 shadow-sm md:self-stretch data-[state=closed]:md:self-start md:h-full data-[state=open]:md:h-full data-[state=closed]:md:h-auto data-[state=open]:md:min-h-[320px] data-[state=closed]:md:min-h-[64px]',
-  header: 'px-4',
-  trigger: 'group flex-1 items-center gap-2 py-3 text-left',
+  header: 'px-4 border-b border-gray-200/70 dark:border-gray-700/50',
+  trigger: 'group flex-1 items-center gap-2 py-3 text-left md:cursor-default',
   label: 'text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300',
   leadingIcon: 'shrink-0',
-  trailingIcon: 'ms-auto text-gray-500 dark:text-gray-400 transition-transform duration-200 group-data-[state=open]:rotate-180',
+  trailingIcon: 'ms-auto text-gray-500 dark:text-gray-400 transition-transform duration-200 group-data-[state=open]:rotate-180 md:hidden',
   content: 'px-4 pb-4 pt-1 data-[state=closed]:hidden',
   body: 'pt-1'
 } as const
