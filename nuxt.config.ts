@@ -175,9 +175,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/blog', '/fa/blog'],
+      routes: ['/', '/blog', '/fa/blog', '/blog/rss.xml', '/fa/blog/rss.xml'],
       failOnError: false,
-      ignore: ['/_vercel/image']
+      // Avoid crawling and prerendering internal/asset endpoints (speeds up builds significantly)
+      ignore: ['/_vercel/image', '/_ipx', '/_nuxt', '/_i18n', '/__nuxt_content']
     },
     devProxy: {
       host: '0.0.0.0'

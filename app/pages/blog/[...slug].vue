@@ -56,6 +56,8 @@ const siteUrl = 'https://aliarghyani.vercel.app' // TODO: Move to runtime config
 // Custom meta tags
 if (post.value) {
   const postData = post.value as any
+  const canonicalPath = postData.path ? postData.path.replace(/^\/(en|fa)/, '') : ''
+  const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : siteUrl
 
   useSeoMeta({
     title: `${postData.title} | ${t('blog.title')}`,
@@ -64,7 +66,7 @@ if (post.value) {
     ogDescription: postData.description,
     ogImage: postData.image || '/img/blog/default-cover.jpg',
     ogType: 'article',
-    ogUrl: `${siteUrl}${postData.path}`,
+    ogUrl: canonicalUrl,
     twitterCard: 'summary_large_image',
     twitterTitle: postData.title,
     twitterDescription: postData.description,
@@ -77,6 +79,14 @@ if (post.value) {
 
   // JSON-LD structured data
   useHead({
+    link: canonicalPath
+      ? [
+          {
+            rel: 'canonical',
+            href: canonicalUrl
+          }
+        ]
+      : [],
     script: [
       {
         type: 'application/ld+json',
@@ -140,7 +150,7 @@ if (post.value) {
           </article>
 
           <!-- Share Buttons -->
-          <BlogShare :title="(post as any).title" :url="`${siteUrl}${(post as any).path}`" />
+          <BlogShare :title="(post as any).title" :url="`${siteUrl}${(post as any).path.replace(/^\/(en|fa)/, '')}`" />
 
           <!-- Blog Navigation (Prev/Next) -->
           <BlogNavigation :prev="prevPost" :next="nextPost" />
