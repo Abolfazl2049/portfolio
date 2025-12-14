@@ -1,4 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const isGenerate = process.env.npm_lifecycle_event === 'generate'
+
+const prerenderIgnore = ['/_vercel/image']
+// When generating a static site, we must not ignore internal endpoints/assets that the client fetches at runtime.
+if (!isGenerate) prerenderIgnore.push('/_ipx', '/_nuxt', '/_i18n', '/__nuxt_content')
+
 export default defineNuxtConfig({
   srcDir: 'app',
 
@@ -83,6 +89,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       loadPlausible: "", // overrided by env,
+      siteName: 'AliArghyani',
       siteUrl: 'https://aliarghyani.vercel.app', // Used for sitemap and RSS generation
       githubToken: '' // GitHub API token - set via NUXT_PUBLIC_GITHUB_TOKEN env variable
     },
@@ -175,9 +182,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/blog', '/fa/blog'],
+      routes: ['/', '/blog', '/fa/blog', '/blog/rss.xml', '/fa/blog/rss.xml'],
       failOnError: false,
-      ignore: ['/_vercel/image']
+      // Avoid crawling internal endpoints during SSR builds (speeds up builds significantly)
+      ignore: prerenderIgnore
     },
     devProxy: {
       host: '0.0.0.0'

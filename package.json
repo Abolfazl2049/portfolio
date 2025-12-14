@@ -4,8 +4,9 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "clean": "node scripts/clean.mjs",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "pnpm run clean && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
