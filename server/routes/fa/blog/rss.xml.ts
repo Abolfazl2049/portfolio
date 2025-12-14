@@ -1,3 +1,5 @@
+import { queryCollection } from '@nuxt/content/server'
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const siteUrl = config.public.siteUrl || 'https://example.com'

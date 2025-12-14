@@ -3,11 +3,10 @@
     <UContainer>
       <div class="flex flex-col items-center gap-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <ClientOnly>
-          <NuxtImg :src="logoSrc" alt="Ali Arghyani logo" width="64" height="64" class="h-12 w-12" format="png"
-            loading="lazy" />
+          <img :src="logoSrc" alt="Ali Arghyani logo" width="64" height="64" class="h-12 w-12" loading="lazy" />
           <template #fallback>
-            <NuxtImg src="/favicon/android-chrome-192x192.png" alt="Ali Arghyani logo" width="64" height="64"
-              class="h-12 w-12" format="png" loading="lazy" />
+            <img src="/favicon/android-chrome-192x192.png" alt="Ali Arghyani logo" width="64" height="64"
+              class="h-12 w-12" loading="lazy" />
           </template>
         </ClientOnly>
         <p>&copy; {{ currentYear }}, <span class="font-semibold text-gray-900 dark:text-gray-100">AliArghyani</span> -
