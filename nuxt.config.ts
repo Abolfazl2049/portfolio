@@ -196,11 +196,20 @@ export default defineNuxtConfig({
 
   // Route rules for caching and optimization
   routeRules: {
-    // Blog routes caching
-    '/blog': { swr: 3600 },
-    '/fa/blog': { swr: 3600 },
-    '/blog/**': { swr: 3600 },
-    '/fa/blog/**': { swr: 3600 }
+    // IMPORTANT:
+    // Do NOT cache HTML pages for blog routes on Vercel/CDNs.
+    // Caching `/blog` or `/blog/<slug>` can serve stale HTML that references old `/_nuxt/*.js` chunks,
+    // causing client-side navigation to intermittently 404 until a refresh loads the new HTML.
+    '/blog': { headers: { 'cache-control': 'no-store' } },
+    '/fa/blog': { headers: { 'cache-control': 'no-store' } },
+    '/blog/**': { headers: { 'cache-control': 'no-store' } },
+    '/fa/blog/**': { headers: { 'cache-control': 'no-store' } },
+
+    // These endpoints are safe to cache: they are versioned via query params/build ids.
+    '/blog/_payload.json': { swr: 3600 },
+    '/fa/blog/_payload.json': { swr: 3600 },
+    '/blog/rss.xml': { swr: 3600 },
+    '/fa/blog/rss.xml': { swr: 3600 }
   },
 
   devtools: { enabled: false },
