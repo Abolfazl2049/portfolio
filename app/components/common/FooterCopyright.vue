@@ -9,9 +9,9 @@
               class="h-12 w-12" loading="lazy" />
           </template>
         </ClientOnly>
-        <p>&copy; {{ currentYear }}, <span class="font-semibold text-gray-900 dark:text-gray-100">AliArghyani</span> -
+        <p>&copy; {{ currentYear }}, <span class="font-semibold text-gray-900 dark:text-gray-100">MahdiArghyani</span> -
           All rights reserved.</p>
-        <a href="https://github.com/aliarghyani" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/mahdiarghyani" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition hover:text-primary-500 dark:text-primary-400 dark:hover:text-primary-300">
           <UIcon name="i-mdi-github" class="text-base" />
           <span>GitHub</span>
