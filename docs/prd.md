@@ -1,6 +1,6 @@
 # nuxt-portfolio - Product Requirements Document
 
-**Author:** mahdi
+**Author:** ali
 **Date:** 2025-11-30
 **Version:** 1.0
 
@@ -140,7 +140,7 @@ This is a focused feature addition to an existing portfolio site, not a new prod
 
 _This PRD captures the Resume Export feature - enabling professional, ATS-compatible PDF resume generation with pixel-perfect design fidelity._
 
-_Created through collaborative discovery between mahdi and AI facilitator._
+_Created through collaborative discovery between ali and AI facilitator._
 
 
 ## User Experience Principles
@@ -262,4 +262,4 @@ _Created through collaborative discovery between mahdi and AI facilitator._
 
 _This PRD captures the Resume Export feature for nuxt-portfolio - enabling professional PDF resume generation with ATS compatibility and pixel-perfect design fidelity._
 
-_Created through collaborative discovery between mahdi and AI facilitator._
+_Created through collaborative discovery between ali and AI facilitator._

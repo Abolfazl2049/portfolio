@@ -4,7 +4,7 @@
 **Epic:** 2 - Resume Preview Page  
 **Status:** ✅ Complete (5/5 stories)  
 **Facilitator:** Bob (Scrum Master)  
-**Participants:** mahdi (Project Lead), Dev Team
+**Participants:** ali (Project Lead), Dev Team
 
 ---
 
@@ -202,7 +202,7 @@ The `?print=true` query parameter and `.no-print` class were implemented early, 
 
 **What the team said:**
 
-**mahdi (Project Lead):**
+**ali (Project Lead):**
 - "Epic 2 went smoothly overall. The architecture change was handled well."
 - "Concerned about tracking changes - retrospective helps with that."
 

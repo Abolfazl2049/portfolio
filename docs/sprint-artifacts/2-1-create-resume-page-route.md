@@ -152,14 +152,14 @@ useHead({
 ---
 
 **Change Log:**
-- 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: Story drafted by SM agent (ali)
 - 2025-12-01: Senior Developer Review (AI) - APPROVED, status updated to done
 
 ---
 
 ## Senior Developer Review (AI)
 
-**Reviewer:** mahdi  
+**Reviewer:** ali  
 **Date:** 2025-12-01  
 **Outcome:** ✅ APPROVE
 

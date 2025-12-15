@@ -300,6 +300,6 @@ const formatDateRange = (start: string, end?: string) => {
 ---
 
 **Change Log:**
-- 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: Story drafted by SM agent (ali)
 - 2025-11-30: **REVISED** by SM agent (Bob) - Merged contact info into Header component, updated section header styling (blue, uppercase, bottom border), aligned with design template
 - 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

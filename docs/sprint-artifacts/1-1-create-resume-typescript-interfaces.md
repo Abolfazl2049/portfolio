@@ -157,7 +157,7 @@ Claude (Kiro Dev Agent - Amelia)
 ## Senior Developer Review (AI)
 
 ### Review Metadata
-- **Reviewer:** mahdi
+- **Reviewer:** ali
 - **Date:** 2025-11-30
 - **Outcome:** ✅ **APPROVE**
 

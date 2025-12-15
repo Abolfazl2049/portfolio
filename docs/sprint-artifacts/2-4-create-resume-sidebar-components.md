@@ -288,6 +288,6 @@ defineProps<Props>()
 ---
 
 **Change Log:**
-- 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: Story drafted by SM agent (ali)
 - 2025-11-30: **COMPLETELY REVISED** by SM agent (Bob) - Removed sidebar components (Contact, Skills, Languages), moved Education to main body, created consolidated AdditionalInfo component per new architecture and design template
 - 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

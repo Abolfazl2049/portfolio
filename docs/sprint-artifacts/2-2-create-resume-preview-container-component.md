@@ -225,6 +225,6 @@ const { resume } = useResumeData()
 ---
 
 **Change Log:**
-- 2025-11-30: Story drafted by SM agent (mahdi)
+- 2025-11-30: Story drafted by SM agent (ali)
 - 2025-11-30: **REVISED** by SM agent (Bob) - Changed from two-column to single-column layout per UX validation and architect revision
 - 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

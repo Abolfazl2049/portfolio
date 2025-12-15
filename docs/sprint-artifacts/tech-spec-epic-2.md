@@ -1,7 +1,7 @@
 # Epic Technical Specification: Resume Preview Page
 
 Date: 2025-11-30  
-Author: mahdi  
+Author: ali  
 Epic ID: 2  
 Status: **REVISED** (Post UX Validation)  
 Last Update: 2025-11-30 (Winston - Architect)
@@ -422,7 +422,7 @@ interface Props {
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-11-30 | mahdi (initial) | Created initial tech spec (two-column layout) |
+| 2025-11-30 | ali (initial) | Created initial tech spec (two-column layout) |
 | 2025-11-30 | Winston (Architect) | **MAJOR REVISION:** Changed to single-column layout per UX validation report. Refactored component architecture (merged Contact into Header, created AdditionalInfo, removed standalone Skills/Languages). Updated all ACs to match design template. |
 
 ---

@@ -6,8 +6,8 @@
   },
   "mode": "initial_scan",
   "scan_level": "quick",
-  "project_root": "c:\\Users\\mahdi\\Documents\\Projects\\nuxt-portfolio-ali\\nuxt-portfolio",
-  "output_folder": "c:\\Users\\mahdi\\Documents\\Projects\\nuxt-portfolio-ali\\nuxt-portfolio\\docs",
+  "project_root": "c:\\Users\\ali\\Documents\\Projects\\nuxt-portfolio-ali\\nuxt-portfolio",
+  "output_folder": "c:\\Users\\ali\\Documents\\Projects\\nuxt-portfolio-ali\\nuxt-portfolio\\docs",
   "completed_steps": [
     {
       "step": "step_1",

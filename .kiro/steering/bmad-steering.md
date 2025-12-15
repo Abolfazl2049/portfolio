@@ -141,7 +141,7 @@ Since Kiro doesn't have native BMad integration yet, use these patterns:
 
 ## 9. Configuration
 
-- **User**: mahdi
+- **User**: ali
 - **BMad Version**: 6.0.0-alpha.12
 - **Installed Modules**: core, bmm
 - **Configured IDEs**: codex, cursor, antigravity, roo
