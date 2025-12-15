@@ -160,7 +160,10 @@ export default defineEventHandler(async (event) => {
     })
 
     const query = getQuery(event)
-    const filename = (query.filename as string) || 'Ali_Arghyani_Resume.pdf'
+    const now = new Date()
+    const year = now.getFullYear()
+    const monthName = now.toLocaleString('en-US', { month: 'long' })
+    const filename = (query.filename as string) || `Ali_Arghyani_Resume_${monthName.replace(/\s+/g, '')}_${year}.pdf`
     const download = query.download === 'true'
 
     setResponseHeaders(event, {

@@ -10,6 +10,13 @@ export function useResumeData() {
   // Reactive reference to resume data
   const resume = computed(() => resumeData)
 
+  function getCurrentMonthYearTag(): string {
+    const now = new Date()
+    const year = now.getFullYear()
+    const monthName = now.toLocaleString('en-US', { month: 'long' })
+    return `${monthName.replace(/\s+/g, '')}_${year}`
+  }
+
   /**
    * Format YYYY-MM date string to readable format
    * @param date - Date string in YYYY-MM format (e.g., "2023-01")
@@ -36,12 +43,13 @@ export function useResumeData() {
 
   /**
    * Generate PDF filename from resume data
-   * @returns Filename in format "FirstName_LastName_Resume.pdf"
+   * Best practice: include a stable date tag so recipients can distinguish versions.
+   * @returns Filename in format "FirstName_LastName_Resume_December_2025.pdf"
    */
   function getPdfFilename(): string {
     const name = resumeData.basics.name
     const filename = name.replace(/\s+/g, '_')
-    return `${filename}_Resume.pdf`
+    return `${filename}_Resume_${getCurrentMonthYearTag()}.pdf`
   }
 
   return {

@@ -31,10 +31,9 @@
               </div>
               <!-- Resume Button - Desktop only -->
               <NuxtLink to="/resume" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
-                  bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500
-                  hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
-                  text-white rounded-full shadow-lg shadow-primary-500/25
-                  transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/40
+                  resume-button
+                  text-white rounded-full
+                  transition-all duration-300 hover:scale-105
                   animate-pulse hover:animate-none">
                 <UIcon name="i-heroicons-document-text" class="text-lg" />
                 <span>View Resume</span>
@@ -43,9 +42,8 @@
             </div>
             <!-- Resume Button - Mobile only -->
             <NuxtLink to="/resume" class="sm:hidden inline-flex items-center justify-center gap-2 mt-2 px-4 py-2 text-sm font-medium
-                bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500
-                hover:from-primary-600 hover:via-purple-600 hover:to-pink-600
-                text-white rounded-full shadow-lg shadow-primary-500/25
+                resume-button
+                text-white rounded-full
                 transition-all duration-300 hover:scale-105">
               <UIcon name="i-heroicons-document-text" class="text-base" />
               <span>View My Resume</span>
@@ -219,6 +217,23 @@ async function copyEmail() {
 
 .dark .company-name {
   color: var(--ui-color-primary-300);
+}
+
+/* Resume button with primary color gradient */
+.resume-button {
+  background: linear-gradient(to right,
+      var(--ui-color-primary-600),
+      var(--ui-color-primary-500),
+      var(--ui-color-primary-400));
+  box-shadow: 0 10px 15px -3px color-mix(in oklch, var(--ui-color-primary-500) 25%, transparent);
+}
+
+.resume-button:hover {
+  background: linear-gradient(to right,
+      var(--ui-color-primary-700),
+      var(--ui-color-primary-600),
+      var(--ui-color-primary-500));
+  box-shadow: 0 20px 25px -5px color-mix(in oklch, var(--ui-color-primary-500) 40%, transparent);
 }
 
 /* Override Tailwind ring color variable for chip buttons */
