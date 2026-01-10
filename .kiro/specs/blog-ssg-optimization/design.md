@@ -53,6 +53,7 @@ User Request ──▶ CDN/Static Host ──▶ Pre-rendered HTML
 **Location:** `nuxt.config.ts`
 
 **Configuration:**
+
 ```typescript
 nitro: {
   prerender: {
@@ -67,6 +68,7 @@ nitro: {
 ```
 
 **Key Features:**
+
 - `crawlLinks: true` - خزیدن خودکار لینک‌ها برای کشف مسیرها
 - مسیرهای seed برای شروع crawling
 - پشتیبانی از چند زبانه (en/fa)
@@ -79,27 +81,25 @@ nitro: {
 
 **Implementation Strategy:**
 
-
 از Nitro hook `prerender:routes` برای اضافه کردن مسیرهای دینامیک:
 
 ```typescript
 // server/plugins/prerender.ts
-export default defineNitroPlugin((nitroApp) => {
-  nitroApp.hooks.hook('prerender:routes', async (ctx) => {
+export default defineNitroPlugin(nitroApp => {
+  nitroApp.hooks.hook("prerender:routes", async ctx => {
     // Fetch all blog posts
-    const posts = await queryCollection('blog')
-      .where('draft', '<>', true)
-      .all()
-    
+    const posts = await queryCollection("blog").where("draft", "<>", true).all();
+
     // Generate routes for each post
     for (const post of posts) {
-      ctx.routes.add(post.path)
+      ctx.routes.add(post.path);
     }
-  })
-})
+  });
+});
 ```
 
 **Benefits:**
+
 - تشخیص خودکار تمام پست‌های بلاگ
 - عدم نیاز به لیست دستی مسیرها
 - پشتیبانی از draft posts (حذف از pre-render)
@@ -111,6 +111,7 @@ export default defineNitroPlugin((nitroApp) => {
 **Module:** `@nuxtjs/sitemap` یا `nuxt-simple-sitemap`
 
 **Configuration:**
+
 ```typescript
 // nuxt.config.ts
 modules: [
@@ -118,13 +119,13 @@ modules: [
 ],
 
 sitemap: {
-  hostname: 'https://aliarghyani.vercel.app',
+  hostname: 'https://abolfazlshahini.vercel.app',
   gzip: true,
   routes: async () => {
     const posts = await queryCollection('blog')
       .where('draft', '<>', true)
       .all()
-    
+
     return posts.map(post => ({
       url: post.path,
       lastmod: post.updatedAt || post.date,
@@ -136,6 +137,7 @@ sitemap: {
 ```
 
 **Output:**
+
 - `/sitemap.xml` - sitemap اصلی
 - شامل تمام پست‌های منتشر شده
 - تاریخ آخرین تغییر برای هر URL
@@ -147,6 +149,7 @@ sitemap: {
 **Location:** `package.json`
 
 **Scripts:**
+
 ```json
 {
   "scripts": {
@@ -158,6 +161,7 @@ sitemap: {
 ```
 
 **Command Usage:**
+
 - `pnpm generate` - تولید فایل‌های استاتیک کامل
 - خروجی در `.output/public`
 
@@ -167,11 +171,11 @@ sitemap: {
 
 ```typescript
 interface BlogRoute {
-  path: string          // e.g., "/blog/post-slug" or "/fa/blog/post-slug"
-  locale: 'en' | 'fa'
-  slug: string
-  lastmod: string       // ISO 8601 date
-  priority: number      // 0.0 to 1.0
+  path: string; // e.g., "/blog/post-slug" or "/fa/blog/post-slug"
+  locale: "en" | "fa";
+  slug: string;
+  lastmod: string; // ISO 8601 date
+  priority: number; // 0.0 to 1.0
 }
 ```
 
@@ -179,7 +183,7 @@ interface BlogRoute {
 
 ```typescript
 interface PrerenderContext {
-  routes: Set<string>   // مجموعه مسیرهای برای pre-render
+  routes: Set<string>; // مجموعه مسیرهای برای pre-render
 }
 ```
 
@@ -190,6 +194,7 @@ interface PrerenderContext {
 **Scenario:** فایل markdown وجود ندارد
 
 **Handling:**
+
 - در زمان build، خطا نمایش داده شود
 - Build process متوقف شود
 - پیام خطای واضح برای developer
@@ -199,6 +204,7 @@ interface PrerenderContext {
 **Scenario:** frontmatter پست بلاگ نامعتبر است
 
 **Handling:**
+
 - Validation در زمان build
 - خطای واضح با نام فایل
 - پیشنهاد فرمت صحیح
@@ -208,6 +214,7 @@ interface PrerenderContext {
 **Scenario:** لینک داخلی به صفحه‌ای اشاره می‌کند که وجود ندارد
 
 **Handling:**
+
 - Warning در build logs
 - ادامه build process
 - لیست لینک‌های شکسته در انتهای build
@@ -217,6 +224,7 @@ interface PrerenderContext {
 **Scenario:** pre-rendering زمان زیادی می‌برد
 
 **Handling:**
+
 - تنظیم timeout مناسب در Nitro config
 - نمایش progress در console
 - امکان افزایش timeout برای بلاگ‌های بزرگ
@@ -228,11 +236,13 @@ interface PrerenderContext {
 **Objective:** اطمینان از موفقیت build process
 
 **Tests:**
+
 - اجرای `pnpm generate` و بررسی exit code
 - بررسی وجود فایل‌های HTML در `.output/public`
 - بررسی تعداد فایل‌های تولید شده
 
 **Example:**
+
 ```bash
 pnpm generate
 # Check exit code
@@ -248,11 +258,13 @@ ls -la .output/public/fa/blog/
 **Objective:** اطمینان از pre-render تمام مسیرها
 
 **Tests:**
+
 - بررسی وجود HTML برای هر پست بلاگ
 - بررسی صفحات index
 - بررسی هر دو locale
 
 **Example:**
+
 ```bash
 # Check English blog posts
 test -f .output/public/blog/index.html
@@ -268,12 +280,14 @@ test -f .output/public/fa/blog/post-slug/index.html
 **Objective:** اطمینان از صحت sitemap
 
 **Tests:**
+
 - بررسی وجود `/sitemap.xml`
 - Validation XML syntax
 - بررسی تعداد URLها
 - بررسی فرمت تاریخ‌ها
 
 **Example:**
+
 ```bash
 # Check sitemap exists
 test -f .output/public/sitemap.xml
@@ -287,11 +301,13 @@ xmllint --noout .output/public/sitemap.xml
 **Objective:** اطمینان از صحت محتوای pre-rendered
 
 **Tests:**
+
 - بررسی وجود meta tags در HTML
 - بررسی وجود محتوای کامل
 - بررسی structured data (JSON-LD)
 
 **Example:**
+
 ```bash
 # Check meta tags
 grep -q "og:title" .output/public/blog/post-slug/index.html
@@ -303,12 +319,14 @@ grep -q "application/ld+json" .output/public/blog/post-slug/index.html
 **Objective:** اندازه‌گیری بهبود performance
 
 **Metrics:**
+
 - زمان بارگذاری صفحه
 - First Contentful Paint (FCP)
 - Largest Contentful Paint (LCP)
 - Time to Interactive (TTI)
 
 **Tools:**
+
 - Lighthouse CI
 - WebPageTest
 - Chrome DevTools
@@ -316,18 +334,22 @@ grep -q "application/ld+json" .output/public/blog/post-slug/index.html
 ## Implementation Phases
 
 ### Phase 1: Basic SSG Setup
+
 - پیکربندی Nitro prerender
 - تست با چند پست نمونه
 
 ### Phase 2: Dynamic Route Generation
+
 - پیاده‌سازی prerender hook
 - تشخیص خودکار تمام پست‌ها
 
 ### Phase 3: Sitemap Integration
+
 - نصب و پیکربندی sitemap module
 - تولید sitemap با تمام مسیرها
 
 ### Phase 4: Optimization & Testing
+
 - بهینه‌سازی build process
 - تست کامل و validation
 
@@ -336,6 +358,7 @@ grep -q "application/ld+json" .output/public/blog/post-slug/index.html
 ### Static Hosting Options
 
 **Recommended Platforms:**
+
 1. **Vercel** - بهترین گزینه برای Nuxt
 2. **Netlify** - پشتیبانی عالی از SSG
 3. **Cloudflare Pages** - سریع و رایگان
@@ -356,17 +379,19 @@ pnpm generate
 ### Environment Variables
 
 ```env
-NUXT_PUBLIC_SITE_URL=https://aliarghyani.vercel.app
+NUXT_PUBLIC_SITE_URL=https://abolfazlshahini.vercel.app
 ```
 
 ## Performance Expectations
 
 ### Before SSG (SSR)
+
 - TTFB: 200-500ms
 - FCP: 800-1200ms
 - LCP: 1500-2500ms
 
 ### After SSG
+
 - TTFB: 50-100ms (از CDN)
 - FCP: 300-600ms
 - LCP: 600-1200ms

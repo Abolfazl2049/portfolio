@@ -64,7 +64,6 @@ This document outlines the technical design for implementing a fully-featured bl
 └─────────────────────────────────────────────────────────────┘
 ```
 
-
 ### Directory Structure
 
 ```
@@ -134,6 +133,7 @@ project-root/
 **Purpose**: Display all published blog posts with search and filtering capabilities
 
 **Key Features**:
+
 - Fetch posts using `queryContent()`
 - Search functionality with debounce
 - Tag filtering
@@ -142,11 +142,14 @@ project-root/
 - Locale-aware content fetching
 
 **Component Structure**:
+
 ```vue
 <template>
   <UContainer>
     <BlogSearch v-model="searchQuery" />
-    <BlogTagFilter v-model="selectedTag" :tags="allTags" />
+    <BlogTagFilter
+      v-model="selectedTag"
+      :tags="allTags" />
     <BlogList :posts="filteredPosts" />
     <BlogEmpty v-if="filteredPosts.length === 0" />
   </UContainer>
@@ -154,26 +157,27 @@ project-root/
 ```
 
 **Data Fetching Strategy**:
+
 ```typescript
-const { locale } = useI18n()
-const route = useRoute()
+const {locale} = useI18n();
+const route = useRoute();
 
 // Fetch posts for current locale
-const { data: posts } = await useAsyncData('blog-posts', () => 
+const {data: posts} = await useAsyncData("blog-posts", () =>
   queryContent(`${locale.value}/blog`)
-    .where({ draft: { $ne: true } })
-    .sort({ date: -1 })
-    .only(['title', 'description', 'date', 'tags', '_path', 'image'])
+    .where({draft: {$ne: true}})
+    .sort({date: -1})
+    .only(["title", "description", "date", "tags", "_path", "image"])
     .find()
-)
+);
 ```
-
 
 #### 2. Blog Detail Page (`app/pages/blog/[...slug].vue`)
 
 **Purpose**: Render individual blog post with full content and metadata
 
 **Key Features**:
+
 - Fetch single post by slug
 - Render markdown content with syntax highlighting
 - Display metadata (title, date, tags, reading time)
@@ -183,6 +187,7 @@ const { data: posts } = await useAsyncData('blog-posts', () =>
 - Breadcrumb navigation
 
 **Component Structure**:
+
 ```vue
 <template>
   <UContainer>
@@ -190,38 +195,43 @@ const { data: posts } = await useAsyncData('blog-posts', () =>
     <article>
       <BlogPost :post="post" />
       <ContentRenderer :value="post" />
-      <BlogTableOfContents v-if="post.body?.toc" :toc="post.body.toc" />
+      <BlogTableOfContents
+        v-if="post.body?.toc"
+        :toc="post.body.toc" />
     </article>
-    <BlogNavigation :prev="prevPost" :next="nextPost" />
+    <BlogNavigation
+      :prev="prevPost"
+      :next="nextPost" />
   </UContainer>
 </template>
 ```
 
 **Data Fetching Strategy**:
+
 ```typescript
-const { locale } = useI18n()
-const route = useRoute()
-const slug = route.params.slug as string[]
+const {locale} = useI18n();
+const route = useRoute();
+const slug = route.params.slug as string[];
 
 // Fetch current post
-const { data: post } = await useAsyncData(`blog-post-${slug.join('/')}`, () =>
+const {data: post} = await useAsyncData(`blog-post-${slug.join("/")}`, () =>
   queryContent(`${locale.value}/blog`)
-    .where({ _path: `/${locale.value}/blog/${slug.join('/')}` })
+    .where({_path: `/${locale.value}/blog/${slug.join("/")}`})
     .findOne()
-)
+);
 
 if (!post.value) {
-  throw createError({ statusCode: 404, message: 'Post not found' })
+  throw createError({statusCode: 404, message: "Post not found"});
 }
 
 // Fetch adjacent posts for navigation
-const { data: adjacentPosts } = await useAsyncData('adjacent-posts', () =>
+const {data: adjacentPosts} = await useAsyncData("adjacent-posts", () =>
   queryContent(`${locale.value}/blog`)
-    .where({ draft: { $ne: true } })
-    .sort({ date: -1 })
-    .only(['title', '_path', 'date'])
+    .where({draft: {$ne: true}})
+    .sort({date: -1})
+    .only(["title", "_path", "date"])
     .find()
-)
+);
 ```
 
 ### UI Components
@@ -231,13 +241,15 @@ const { data: adjacentPosts } = await useAsyncData('adjacent-posts', () =>
 **Purpose**: Display blog post preview in listing page
 
 **Props**:
+
 ```typescript
 interface BlogCardProps {
-  post: BlogPost
+  post: BlogPost;
 }
 ```
 
 **Features**:
+
 - Cover image with lazy loading
 - Title and description
 - Formatted date
@@ -247,6 +259,7 @@ interface BlogCardProps {
 - Click to navigate
 
 **Implementation Notes**:
+
 - Use `UCard` from Nuxt UI as base
 - Use `NuxtImg` for optimized images
 - Use `UBadge` for tags
@@ -257,23 +270,26 @@ interface BlogCardProps {
 **Purpose**: Search input for filtering posts
 
 **Props**:
+
 ```typescript
 interface BlogSearchProps {
-  modelValue: string
+  modelValue: string;
 }
 
 interface BlogSearchEmits {
-  'update:modelValue': [value: string]
+  "update:modelValue": [value: string];
 }
 ```
 
 **Features**:
+
 - Debounced input (300ms)
 - Clear button
 - Search icon
 - Placeholder text (i18n)
 
 **Implementation Notes**:
+
 - Use `UInput` with icon slots
 - Use `useDebounceFn` from VueUse
 - Emit updates to parent
@@ -283,46 +299,50 @@ interface BlogSearchEmits {
 **Purpose**: Display and filter by tags
 
 **Props**:
+
 ```typescript
 interface BlogTagFilterProps {
-  tags: string[]
-  modelValue: string | null
+  tags: string[];
+  modelValue: string | null;
 }
 ```
 
 **Features**:
+
 - Display all unique tags
 - Highlight active tag
 - Clear filter option
 - Responsive layout
 
 **Implementation Notes**:
+
 - Use `UButton` or `UBadge` for tags
 - Use query parameters for state persistence
 - Horizontal scroll on mobile
-
 
 #### 4. BlogTableOfContents Component
 
 **Purpose**: Display navigable table of contents for long posts
 
 **Props**:
+
 ```typescript
 interface TocLink {
-  id: string
-  text: string
-  depth: number
-  children?: TocLink[]
+  id: string;
+  text: string;
+  depth: number;
+  children?: TocLink[];
 }
 
 interface BlogTableOfContentsProps {
   toc: {
-    links: TocLink[]
-  }
+    links: TocLink[];
+  };
 }
 ```
 
 **Features**:
+
 - Nested heading structure
 - Active section highlighting
 - Smooth scroll to sections
@@ -330,6 +350,7 @@ interface BlogTableOfContentsProps {
 - Collapsible on mobile
 
 **Implementation Notes**:
+
 - Use `IntersectionObserver` for active tracking
 - Use `scrollIntoView({ behavior: 'smooth' })` for navigation
 - Use `UAccordion` for mobile collapsible version
@@ -339,20 +360,23 @@ interface BlogTableOfContentsProps {
 **Purpose**: Previous/next post navigation
 
 **Props**:
+
 ```typescript
 interface BlogNavigationProps {
-  prev: BlogPost | null
-  next: BlogPost | null
+  prev: BlogPost | null;
+  next: BlogPost | null;
 }
 ```
 
 **Features**:
+
 - Previous and next post links
 - Post titles
 - Directional arrows
 - Keyboard navigation support
 
 **Implementation Notes**:
+
 - Use `UButton` with icon slots
 - Use `@keydown` for arrow key navigation
 - Use flexbox for layout
@@ -362,13 +386,15 @@ interface BlogNavigationProps {
 **Purpose**: Display post metadata header
 
 **Props**:
+
 ```typescript
 interface BlogPostProps {
-  post: BlogPost
+  post: BlogPost;
 }
 ```
 
 **Features**:
+
 - Post title (h1)
 - Formatted publish date
 - Reading time estimate
@@ -377,6 +403,7 @@ interface BlogPostProps {
 - Cover image
 
 **Implementation Notes**:
+
 - Use semantic HTML (`<article>`, `<header>`, `<time>`)
 - Use `useDateFormat` from VueUse for date formatting
 - Calculate reading time from word count
@@ -386,45 +413,45 @@ interface BlogPostProps {
 ### BlogPost Interface
 
 ```typescript
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type {ParsedContent} from "@nuxt/content/dist/runtime/types";
 
 export interface BlogPost extends ParsedContent {
   // Required fields
-  title: string
-  description: string
-  date: string // ISO 8601 format
-  tags: string[]
-  
+  title: string;
+  description: string;
+  date: string; // ISO 8601 format
+  tags: string[];
+
   // Optional fields
-  image?: string // Cover image path
-  author?: string
-  draft?: boolean
-  updatedAt?: string
-  
+  image?: string; // Cover image path
+  author?: string;
+  draft?: boolean;
+  updatedAt?: string;
+
   // Custom SEO
   head?: {
-    title?: string
-    description?: string
-    image?: string
-  }
-  
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+
   // Computed by Nuxt Content
-  _path: string
-  _dir: string
-  _draft: boolean
-  _partial: boolean
-  _locale: string
-  _empty: boolean
+  _path: string;
+  _dir: string;
+  _draft: boolean;
+  _partial: boolean;
+  _locale: string;
+  _empty: boolean;
   body: {
-    type: string
-    children: any[]
+    type: string;
+    children: any[];
     toc?: {
-      title: string
-      searchDepth: number
-      depth: number
-      links: TocLink[]
-    }
-  }
+      title: string;
+      searchDepth: number;
+      depth: number;
+      links: TocLink[];
+    };
+  };
 }
 ```
 
@@ -437,11 +464,10 @@ description: "Learn how to build a blog with Nuxt Content v3 and TypeScript"
 date: "2024-11-09"
 tags: ["nuxt", "vue", "typescript", "tutorial"]
 image: "/img/blog/nuxt-content-cover.jpg"
-author: "Ali Arghyani"
+author: "Abolfazl Shahini"
 draft: false
 ---
 ```
-
 
 ## Composables
 
@@ -455,72 +481,73 @@ draft: false
 
 ```typescript
 export function useBlog() {
-  const { locale } = useI18n()
-  const route = useRoute()
-  
+  const {locale} = useI18n();
+  const route = useRoute();
+
   /**
    * Calculate reading time from word count
    */
   const calculateReadingTime = (content: any): number => {
-    if (!content?.body?.children) return 0
-    
-    const text = JSON.stringify(content.body.children)
-    const wordCount = text.split(/\s+/).length
-    return Math.ceil(wordCount / 200) // 200 words per minute
-  }
-  
+    if (!content?.body?.children) return 0;
+
+    const text = JSON.stringify(content.body.children);
+    const wordCount = text.split(/\s+/).length;
+    return Math.ceil(wordCount / 200); // 200 words per minute
+  };
+
   /**
    * Format date for display
    */
   const formatDate = (dateString: string): string => {
-    const date = new Date(dateString)
+    const date = new Date(dateString);
     return new Intl.DateTimeFormat(locale.value, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    }).format(date)
-  }
-  
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }).format(date);
+  };
+
   /**
    * Get all unique tags from posts
    */
   const extractUniqueTags = (posts: BlogPost[]): string[] => {
-    const tagSet = new Set<string>()
+    const tagSet = new Set<string>();
     posts.forEach(post => {
-      post.tags?.forEach(tag => tagSet.add(tag))
-    })
-    return Array.from(tagSet).sort()
-  }
-  
+      post.tags?.forEach(tag => tagSet.add(tag));
+    });
+    return Array.from(tagSet).sort();
+  };
+
   /**
    * Get blog path for current locale
    */
   const getBlogPath = (): string => {
-    return `${locale.value}/blog`
-  }
-  
+    return `${locale.value}/blog`;
+  };
+
   /**
    * Filter posts by search query
    */
   const filterPostsBySearch = (posts: BlogPost[], query: string): BlogPost[] => {
-    if (!query) return posts
-    
-    const lowerQuery = query.toLowerCase()
-    return posts.filter(post => 
-      post.title?.toLowerCase().includes(lowerQuery) ||
-      post.description?.toLowerCase().includes(lowerQuery) ||
-      post.tags?.some(tag => tag.toLowerCase().includes(lowerQuery))
-    )
-  }
-  
+    if (!query) return posts;
+
+    const lowerQuery = query.toLowerCase();
+    return posts.filter(
+      post =>
+        post.title?.toLowerCase().includes(lowerQuery) ||
+        post.description?.toLowerCase().includes(lowerQuery) ||
+        post.tags?.some(tag => tag.toLowerCase().includes(lowerQuery))
+    );
+  };
+
   /**
    * Filter posts by tag
    */
   const filterPostsByTag = (posts: BlogPost[], tag: string | null): BlogPost[] => {
-    if (!tag) return posts
-    return posts.filter(post => post.tags?.includes(tag))
-  }
-  
+    if (!tag) return posts;
+    return posts.filter(post => post.tags?.includes(tag));
+  };
+
   return {
     calculateReadingTime,
     formatDate,
@@ -528,7 +555,7 @@ export function useBlog() {
     getBlogPath,
     filterPostsBySearch,
     filterPostsByTag
-  }
+  };
 }
 ```
 
@@ -539,24 +566,24 @@ export function useBlog() {
 ```typescript
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content',  // Add before other modules
-    '@nuxt/fonts',
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@nuxtjs/color-mode',
-    '@nuxt/image'
+    "@nuxt/content", // Add before other modules
+    "@nuxt/fonts",
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
+    "@nuxtjs/color-mode",
+    "@nuxt/image"
   ],
-  
+
   content: {
     // Highlight code blocks with Shiki
     highlight: {
       theme: {
-        default: 'github-light',
-        dark: 'github-dark'
+        default: "github-light",
+        dark: "github-dark"
       },
-      preload: ['typescript', 'javascript', 'vue', 'css', 'bash', 'json']
+      preload: ["typescript", "javascript", "vue", "css", "bash", "json"]
     },
-    
+
     // Enable MDC syntax
     markdown: {
       mdc: true,
@@ -565,32 +592,31 @@ export default defineNuxtConfig({
         searchDepth: 3
       }
     },
-    
+
     // Document-driven mode disabled (we use custom pages)
     documentDriven: false,
-    
+
     // Respect gitignore
     respectPathCase: true
   },
-  
+
   // Prerender blog routes
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/blog', '/fa/blog']
+      routes: ["/blog", "/fa/blog"]
     }
   },
-  
+
   // Route rules for blog
   routeRules: {
-    '/blog': { swr: 3600 },
-    '/fa/blog': { swr: 3600 },
-    '/blog/**': { swr: 3600 },
-    '/fa/blog/**': { swr: 3600 }
+    "/blog": {swr: 3600},
+    "/fa/blog": {swr: 3600},
+    "/blog/**": {swr: 3600},
+    "/fa/blog/**": {swr: 3600}
   }
-})
+});
 ```
-
 
 ## Styling and Theming
 
@@ -599,6 +625,7 @@ export default defineNuxtConfig({
 Nuxt UI provides Prose components for styling markdown content. We'll customize them to match the portfolio design.
 
 **Approach**:
+
 1. Use Nuxt UI's built-in Prose components (ProseH1, ProseP, ProseCode, etc.)
 2. Override styles via `app.config.ts` if needed
 3. Apply consistent spacing and typography
@@ -612,43 +639,47 @@ export default defineAppConfig({
     prose: {
       // Customize prose components
       h1: {
-        base: 'text-4xl font-semibold mb-4 mt-8',
-        color: 'text-gray-900 dark:text-gray-100'
+        base: "text-4xl font-semibold mb-4 mt-8",
+        color: "text-gray-900 dark:text-gray-100"
       },
       h2: {
-        base: 'text-3xl font-semibold mb-3 mt-6',
-        color: 'text-gray-900 dark:text-gray-100'
+        base: "text-3xl font-semibold mb-3 mt-6",
+        color: "text-gray-900 dark:text-gray-100"
       },
       p: {
-        base: 'text-lg leading-relaxed mb-4',
-        color: 'text-gray-700 dark:text-gray-300'
+        base: "text-lg leading-relaxed mb-4",
+        color: "text-gray-700 dark:text-gray-300"
       },
       code: {
-        base: 'font-mono text-sm',
-        inline: 'px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800'
+        base: "font-mono text-sm",
+        inline: "px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800"
       }
     }
   }
-})
+});
 ```
 
 ### Blog-Specific Styles
 
-**Content Width**: 
+**Content Width**:
+
 - Max width: 65ch for optimal readability
 - Wider for code blocks and images
 
 **Typography**:
+
 - Body text: 18px / 1.75 line-height
 - Headings: Existing font stack (Fraunces for headings, Inter for body)
 
 **Code Blocks**:
+
 - Syntax highlighting with Shiki
 - Copy button overlay
 - Language label
 - Line numbers for long blocks
 
 **Images**:
+
 - Responsive with `NuxtImg`
 - Lazy loading
 - Caption support via markdown
@@ -659,7 +690,9 @@ export default defineAppConfig({
 
 ```vue
 <template>
-  <div :dir="locale === 'fa' ? 'rtl' : 'ltr'" class="blog-content">
+  <div
+    :dir="locale === 'fa' ? 'rtl' : 'ltr'"
+    class="blog-content">
     <ContentRenderer :value="post" />
   </div>
 </template>
@@ -685,11 +718,11 @@ export default defineAppConfig({
 **Page-Level SEO** (`app/pages/blog/[...slug].vue`):
 
 ```typescript
-const { locale } = useI18n()
-const config = useAppConfig()
+const {locale} = useI18n();
+const config = useAppConfig();
 
 // Use Nuxt Content's built-in SEO helper
-useContentHead(post)
+useContentHead(post);
 
 // Additional custom meta tags
 useSeoMeta({
@@ -697,46 +730,45 @@ useSeoMeta({
   description: post.value.description,
   ogTitle: post.value.title,
   ogDescription: post.value.description,
-  ogImage: post.value.image || '/img/blog/default-cover.jpg',
-  ogType: 'article',
+  ogImage: post.value.image || "/img/blog/default-cover.jpg",
+  ogType: "article",
   ogUrl: `${config.siteUrl}${post.value._path}`,
-  twitterCard: 'summary_large_image',
+  twitterCard: "summary_large_image",
   twitterTitle: post.value.title,
   twitterDescription: post.value.description,
-  twitterImage: post.value.image || '/img/blog/default-cover.jpg',
+  twitterImage: post.value.image || "/img/blog/default-cover.jpg",
   articlePublishedTime: post.value.date,
   articleModifiedTime: post.value.updatedAt || post.value.date,
-  articleAuthor: post.value.author || 'Ali Arghyani',
+  articleAuthor: post.value.author || "Abolfazl Shahini",
   articleTag: post.value.tags
-})
+});
 
 // JSON-LD structured data
 useHead({
   script: [
     {
-      type: 'application/ld+json',
+      type: "application/ld+json",
       children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
         headline: post.value.title,
         description: post.value.description,
         image: post.value.image,
         datePublished: post.value.date,
         dateModified: post.value.updatedAt || post.value.date,
         author: {
-          '@type': 'Person',
-          name: post.value.author || 'Ali Arghyani'
+          "@type": "Person",
+          name: post.value.author || "Abolfazl Shahini"
         },
         publisher: {
-          '@type': 'Person',
-          name: 'Ali Arghyani'
+          "@type": "Person",
+          name: "Abolfazl Shahini"
         }
       })
     }
   ]
-})
+});
 ```
-
 
 ## RSS Feed Implementation
 
@@ -747,29 +779,31 @@ useHead({
 **Implementation**:
 
 ```typescript
-import { serverQueryContent } from '#content/server'
+import {serverQueryContent} from "#content/server";
 
-export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig()
-  const locale = event.node.req.url?.includes('/fa/') ? 'fa' : 'en'
-  
+export default defineEventHandler(async event => {
+  const config = useRuntimeConfig();
+  const locale = event.node.req.url?.includes("/fa/") ? "fa" : "en";
+
   // Fetch published posts
   const posts = await serverQueryContent(event, `${locale}/blog`)
-    .where({ draft: { $ne: true } })
-    .sort({ date: -1 })
+    .where({draft: {$ne: true}})
+    .sort({date: -1})
     .limit(20)
-    .find()
-  
+    .find();
+
   // Generate RSS XML
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ali Arghyani - Blog</title>
+    <title>Abolfazl Shahini - Blog</title>
     <link>${config.public.siteUrl}/${locale}/blog</link>
-    <description>Stories and notes from Ali Arghyani</description>
+    <description>Stories and notes from Abolfazl Shahini</description>
     <language>${locale}</language>
     <atom:link href="${config.public.siteUrl}/${locale}/blog/rss.xml" rel="self" type="application/rss+xml"/>
-    ${posts.map(post => `
+    ${posts
+      .map(
+        post => `
     <item>
       <title>${escapeXml(post.title)}</title>
       <link>${config.public.siteUrl}${post._path}</link>
@@ -777,25 +811,33 @@ export default defineEventHandler(async (event) => {
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${escapeXml(post.description)}</description>
     </item>
-    `).join('')}
+    `
+      )
+      .join("")}
   </channel>
-</rss>`
-  
-  event.node.res.setHeader('Content-Type', 'application/rss+xml')
-  return rss
-})
+</rss>`;
+
+  event.node.res.setHeader("Content-Type", "application/rss+xml");
+  return rss;
+});
 
 function escapeXml(unsafe: string): string {
-  return unsafe.replace(/[<>&'"]/g, (c) => {
+  return unsafe.replace(/[<>&'"]/g, c => {
     switch (c) {
-      case '<': return '&lt;'
-      case '>': return '&gt;'
-      case '&': return '&amp;'
-      case "'": return '&apos;'
-      case '"': return '&quot;'
-      default: return c
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return c;
     }
-  })
+  });
 }
 ```
 
@@ -807,18 +849,18 @@ When a blog post is not found:
 
 ```typescript
 // In [...slug].vue
-const { data: post } = await useAsyncData(`blog-post-${slug}`, () =>
+const {data: post} = await useAsyncData(`blog-post-${slug}`, () =>
   queryContent(getBlogPath())
-    .where({ _path: `/${getBlogPath()}/${slug.join('/')}` })
+    .where({_path: `/${getBlogPath()}/${slug.join("/")}`})
     .findOne()
-)
+);
 
 if (!post.value) {
   throw createError({
     statusCode: 404,
-    message: 'Blog post not found',
+    message: "Blog post not found",
     fatal: true
-  })
+  });
 }
 ```
 
@@ -827,6 +869,7 @@ This will trigger the existing `app/error.vue` page.
 ### Content Parsing Errors
 
 Nuxt Content will show errors in development mode with:
+
 - File path
 - Line number
 - Error description
@@ -839,17 +882,17 @@ When a post exists in one language but not another:
 
 ```typescript
 // In blog listing
-const { data: posts } = await useAsyncData('blog-posts', async () => {
+const {data: posts} = await useAsyncData("blog-posts", async () => {
   try {
     return await queryContent(getBlogPath())
-      .where({ draft: { $ne: true } })
-      .sort({ date: -1 })
-      .find()
+      .where({draft: {$ne: true}})
+      .sort({date: -1})
+      .find();
   } catch (error) {
     // Return empty array if content directory doesn't exist
-    return []
+    return [];
   }
-})
+});
 ```
 
 Display a message: "This post is not available in [language]. View in [other language]."
@@ -859,6 +902,7 @@ Display a message: "This post is not available in [language]. View in [other lan
 ### Manual Testing Checklist
 
 **Content Creation**:
+
 - [ ] Create markdown file with valid frontmatter
 - [ ] Create markdown file with missing required fields
 - [ ] Create draft post
@@ -867,6 +911,7 @@ Display a message: "This post is not available in [language]. View in [other lan
 - [ ] Create post with MDC components
 
 **Blog Listing**:
+
 - [ ] View listing page in English
 - [ ] View listing page in Persian
 - [ ] Test search functionality
@@ -875,6 +920,7 @@ Display a message: "This post is not available in [language]. View in [other lan
 - [ ] Test responsive layout (mobile, tablet, desktop)
 
 **Blog Detail**:
+
 - [ ] View post in English
 - [ ] View post in Persian (RTL)
 - [ ] Test table of contents navigation
@@ -884,23 +930,25 @@ Display a message: "This post is not available in [language]. View in [other lan
 - [ ] Verify SEO meta tags in browser dev tools
 
 **Performance**:
+
 - [ ] Run Lighthouse audit
 - [ ] Check image lazy loading
 - [ ] Verify static generation
 - [ ] Test hot-reload in development
 
 **Accessibility**:
+
 - [ ] Keyboard navigation
 - [ ] Screen reader compatibility
 - [ ] Color contrast
 - [ ] Focus indicators
-
 
 ## Performance Optimization
 
 ### Image Optimization
 
 **Strategy**:
+
 1. Use `NuxtImg` for all blog images
 2. Generate responsive srcsets
 3. Lazy load images below fold
@@ -910,20 +958,13 @@ Display a message: "This post is not available in [language]. View in [other lan
 
 ```vue
 <!-- In markdown or components -->
-<NuxtImg
-  :src="post.image"
-  :alt="post.title"
-  width="1200"
-  height="630"
-  format="webp"
-  loading="lazy"
-  sizes="sm:100vw md:80vw lg:1200px"
-/>
+<NuxtImg :src="post.image" :alt="post.title" width="1200" height="630" format="webp" loading="lazy" sizes="sm:100vw md:80vw lg:1200px" />
 ```
 
 ### Code Splitting
 
 **Approach**:
+
 - Blog components are auto-imported (lazy by default)
 - Use `defineAsyncComponent` for heavy components like TOC
 - Separate chunks for blog routes
@@ -932,14 +973,13 @@ Display a message: "This post is not available in [language]. View in [other lan
 
 ```typescript
 // In blog/index.vue
-const BlogTableOfContents = defineAsyncComponent(
-  () => import('~/components/blog/BlogTableOfContents.vue')
-)
+const BlogTableOfContents = defineAsyncComponent(() => import("~/components/blog/BlogTableOfContents.vue"));
 ```
 
 ### Content Query Optimization
 
 **Best Practices**:
+
 1. Use `.only()` to fetch minimal fields for listings
 2. Use `.without()` to exclude heavy fields like body
 3. Cache queries with `useAsyncData`
@@ -949,20 +989,20 @@ const BlogTableOfContents = defineAsyncComponent(
 
 ```typescript
 // Listing page - only fetch necessary fields
-const { data: posts } = await useAsyncData('blog-posts', () =>
+const {data: posts} = await useAsyncData("blog-posts", () =>
   queryContent(getBlogPath())
-    .where({ draft: { $ne: true } })
-    .sort({ date: -1 })
-    .only(['title', 'description', 'date', 'tags', '_path', 'image'])
+    .where({draft: {$ne: true}})
+    .sort({date: -1})
+    .only(["title", "description", "date", "tags", "_path", "image"])
     .find()
-)
+);
 
 // Detail page - fetch full content
-const { data: post } = await useAsyncData(`blog-post-${slug}`, () =>
+const {data: post} = await useAsyncData(`blog-post-${slug}`, () =>
   queryContent(getBlogPath())
-    .where({ _path: `/${getBlogPath()}/${slug}` })
+    .where({_path: `/${getBlogPath()}/${slug}`})
     .findOne()
-)
+);
 ```
 
 ### Static Generation
@@ -977,25 +1017,21 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: async () => {
         // Dynamically generate routes for all blog posts
-        const { $content } = useNuxtApp()
-        const enPosts = await $content('en/blog').only(['_path']).find()
-        const faPosts = await $content('fa/blog').only(['_path']).find()
-        
-        return [
-          '/blog',
-          '/fa/blog',
-          ...enPosts.map(p => p._path),
-          ...faPosts.map(p => p._path)
-        ]
+        const {$content} = useNuxtApp();
+        const enPosts = await $content("en/blog").only(["_path"]).find();
+        const faPosts = await $content("fa/blog").only(["_path"]).find();
+
+        return ["/blog", "/fa/blog", ...enPosts.map(p => p._path), ...faPosts.map(p => p._path)];
       }
     }
   }
-})
+});
 ```
 
 ### Caching Strategy
 
 **Route Rules**:
+
 - Blog listing: SWR 1 hour
 - Blog posts: SWR 1 hour
 - RSS feed: SWR 1 hour
@@ -1018,14 +1054,14 @@ routeRules: {
 **Pattern**:
 
 ```typescript
-const { locale } = useI18n()
-const { localePath } = useI18n()
+const {locale} = useI18n();
+const {localePath} = useI18n();
 
 // Fetch content for current locale
-const posts = await queryContent(`${locale.value}/blog`).find()
+const posts = await queryContent(`${locale.value}/blog`).find();
 
 // Generate localized links
-const postLink = localePath(`/blog/${post.slug}`)
+const postLink = localePath(`/blog/${post.slug}`);
 ```
 
 ### Translation Keys
@@ -1098,10 +1134,10 @@ The existing blog pages (`app/pages/blog/index.vue` and `app/pages/blog/[...slug
 ### Backward Compatibility
 
 No breaking changes expected since:
+
 - Routes remain the same (`/blog`, `/fa/blog`)
 - i18n structure is preserved
 - Existing components are not affected
-
 
 ## MDC Component Examples
 
@@ -1112,16 +1148,15 @@ Nuxt Content's MDC syntax allows embedding Vue components in markdown.
 **Example 1: Alert Component**
 
 ```markdown
-::alert{type="info"}
-This is an informational alert using MDC syntax.
-::
+::alert{type="info"} This is an informational alert using MDC syntax. ::
 ```
 
 **Example 2: Code Group**
 
-```markdown
+`````markdown
 ::code-group
-```bash [npm]
+
+````bash [npm]
 npm install @nuxt/content
 \```
 
@@ -1129,14 +1164,15 @@ npm install @nuxt/content
 pnpm add @nuxt/content
 \```
 ::
-```
+````
+`````
+
+````
 
 **Example 3: Custom Blog Component**
 
 ```markdown
-::blog-callout{title="Pro Tip"}
-Use `queryContent()` with `.only()` to optimize performance.
-::
+::blog-callout{title="Pro Tip"} Use `queryContent()` with `.only()` to optimize performance. ::
 ```
 
 **Component Implementation** (`app/components/content/BlogCallout.vue`):
@@ -1155,8 +1191,8 @@ Use `queryContent()` with `.only()` to optimize performance.
 
 <script setup lang="ts">
 defineProps<{
-  title: string
-}>()
+  title: string;
+}>();
 </script>
 ```
 
@@ -1175,6 +1211,7 @@ defineProps<{
 ### Hot Reload Experience
 
 Nuxt Content provides instant feedback:
+
 - **Markdown changes**: Hot-reload without page refresh
 - **Frontmatter changes**: Hot-reload
 - **New files**: Detected automatically
@@ -1183,18 +1220,21 @@ Nuxt Content provides instant feedback:
 ### Debugging Tools
 
 **1. Content API Endpoint**:
+
 ```
 http://localhost:3000/api/_content/query
 ```
 
 **2. Dev Tools**:
+
 - Nuxt DevTools shows content queries
 - Vue DevTools for component inspection
 
 **3. Console Logging**:
+
 ```typescript
-const posts = await queryContent('en/blog').find()
-console.log('Fetched posts:', posts)
+const posts = await queryContent("en/blog").find();
+console.log("Fetched posts:", posts);
 ```
 
 ## Security Considerations
@@ -1204,6 +1244,7 @@ console.log('Fetched posts:', posts)
 Nuxt Content automatically sanitizes HTML in markdown to prevent XSS attacks.
 
 **Safe by default**:
+
 - User-provided markdown is parsed safely
 - HTML tags are escaped unless explicitly allowed
 - Script tags are stripped
@@ -1212,14 +1253,13 @@ Nuxt Content automatically sanitizes HTML in markdown to prevent XSS attacks.
 
 ```typescript
 // Ensure drafts are hidden in production
-const isDev = process.dev
+const isDev = process.dev;
 
-const query = queryContent(getBlogPath())
-  .where({ draft: { $ne: true } })
+const query = queryContent(getBlogPath()).where({draft: {$ne: true}});
 
 if (isDev) {
   // In dev, show all posts including drafts
-  query.where({}) // Remove draft filter
+  query.where({}); // Remove draft filter
 }
 ```
 
@@ -1243,8 +1283,8 @@ if (isDev) {
 
 ```bash
 # .env
-NUXT_PUBLIC_SITE_URL=https://aliarghyani.vercel.app
-NUXT_PUBLIC_SITE_NAME=Ali Arghyani
+NUXT_PUBLIC_SITE_URL=https://abolfazlshahini.vercel.app
+NUXT_PUBLIC_SITE_NAME=Abolfazl Shahini
 ```
 
 ### Vercel Configuration
@@ -1260,11 +1300,13 @@ NUXT_PUBLIC_SITE_NAME=Ali Arghyani
 ### Content Updates
 
 **Option 1: Git-based workflow**
+
 - Commit markdown files to repository
 - Trigger rebuild on push
 - Vercel auto-deploys
 
 **Option 2: CMS integration** (future enhancement)
+
 - Use Nuxt Studio or other headless CMS
 - Webhook triggers rebuild
 - Content preview before publish
@@ -1319,3 +1361,4 @@ This design provides a comprehensive, production-ready blog system that:
 - ✅ Scales for future enhancements
 
 The implementation will be done incrementally following the task list in the next phase.
+````

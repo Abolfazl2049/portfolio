@@ -14,6 +14,7 @@ pnpm generate
 **Output Directory:** `.output/public`
 
 The build process will:
+
 - Pre-render all blog posts (English & Persian)
 - Generate `sitemap.xml` automatically
 - Create RSS feeds for both languages
@@ -24,10 +25,12 @@ The build process will:
 ### Vercel (Recommended)
 
 The project includes `vercel.json` with:
+
 - Plausible analytics proxy rewrites
 - Cache headers for `/_nuxt/` assets (1 year, immutable)
 
 **Deploy via CLI:**
+
 ```bash
 npm i -g vercel
 vercel
@@ -62,16 +65,17 @@ vercel
 
 Set these in your hosting platform:
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `NUXT_PUBLIC_LOAD_PLAUSIBLE` | No | Enable Plausible analytics (`"yes"` or `"no"`) |
-| `NUXT_PUBLIC_SITE_URL` | No | Site URL for sitemap/RSS (default: `https://aliarghyani.vercel.app`) |
+| Variable                     | Required | Description                                                              |
+| ---------------------------- | -------- | ------------------------------------------------------------------------ |
+| `NUXT_PUBLIC_LOAD_PLAUSIBLE` | No       | Enable Plausible analytics (`"yes"` or `"no"`)                           |
+| `NUXT_PUBLIC_SITE_URL`       | No       | Site URL for sitemap/RSS (default: `https://abolfazlshahini.vercel.app`) |
 
 ## Vercel Configuration
 
 `vercel.json` includes:
 
 ### Rewrites (Plausible Proxy)
+
 ```json
 {
   "source": "/stats/js/script.js",
@@ -84,6 +88,7 @@ Set these in your hosting platform:
 ```
 
 ### Cache Headers
+
 ```json
 {
   "source": "/_nuxt/(.*)",
@@ -115,16 +120,17 @@ nitro: {
 
 Caching configuration:
 
-| Route | Rule |
-|-------|------|
-| `/blog` | SWR 3600s (1 hour) |
-| `/fa/blog` | SWR 3600s (1 hour) |
-| `/blog/**` | SWR 3600s (1 hour) |
+| Route         | Rule               |
+| ------------- | ------------------ |
+| `/blog`       | SWR 3600s (1 hour) |
+| `/fa/blog`    | SWR 3600s (1 hour) |
+| `/blog/**`    | SWR 3600s (1 hour) |
 | `/fa/blog/**` | SWR 3600s (1 hour) |
 
 ## CI/CD
 
 No CI/CD pipeline is currently configured. Consider adding:
+
 - GitHub Actions for automated builds
 - Preview deployments for PRs
 - Automated type checking and formatting

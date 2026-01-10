@@ -26,7 +26,7 @@
     <criterion id="AC1">Given I navigate to `/resume`, when the page loads, then I see the resume preview</criterion>
     <criterion id="AC2">The page is standalone (no site header/footer)</criterion>
     <criterion id="AC3">The page has a white background</criterion>
-    <criterion id="AC4">The page title is "Resume - Ali Arghyani"</criterion>
+    <criterion id="AC4">The page title is "Resume - Abolfazl Shahini"</criterion>
     <criterion id="AC5">Meta tags are set for SEO (noindex for privacy)</criterion>
     <criterion id="AC6">Given I add `?print=true` query parameter, when the page loads, then the download button is hidden (for PDF generation)</criterion>
   </acceptanceCriteria>
@@ -49,7 +49,7 @@
         <path>docs/sprint-artifacts/tech-spec-epic-2.md</path>
         <title>Epic Technical Specification: Resume Preview Page</title>
         <section>AC1: Standalone Resume Route</section>
-        <snippet>Page is standalone (no site header/footer), page title is "Resume - Ali Arghyani", meta tag `<meta name="robots" content="noindex">` is present</snippet>
+        <snippet>Page is standalone (no site header/footer), page title is "Resume - Abolfazl Shahini", meta tag `<meta name="robots" content="noindex">` is present</snippet>
       </doc>
     </docs>
     <code>

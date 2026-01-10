@@ -8,16 +8,16 @@ This architecture defines the Resume Export feature for nuxt-portfolio - a serve
 
 ## Decision Summary
 
-| Category | Decision | Version | Affects FRs | Rationale |
-|----------|----------|---------|-------------|-----------|
-| PDF Engine | Puppeteer (server-side) | ^23.x | FR8-14 | Best quality, font embedding, full control |
-| Data Schema | JSON Resume (customized) | - | FR1-4 | Industry standard, extensible |
-| Font (EN) | Inter | via @nuxt/fonts | FR22-23 | Modern, ATS-safe, excellent readability |
-| Font (FA) | Vazirmatn | via @nuxt/fonts | FR22-23 | Best Persian web font, RTL support |
-| Template System | Vue Components | - | FR15-21 | Full control, reusable, type-safe |
-| API Pattern | Nuxt Server Route | - | FR10-14 | Native Nuxt, no extra server |
-| Layout | Two-column (sidebar + main) | - | FR6, FR9 | Matches design template |
-| Storage | File-based (TypeScript) | - | FR1, FR3 | Simple, version controlled |
+| Category        | Decision                    | Version         | Affects FRs | Rationale                                  |
+| --------------- | --------------------------- | --------------- | ----------- | ------------------------------------------ |
+| PDF Engine      | Puppeteer (server-side)     | ^23.x           | FR8-14      | Best quality, font embedding, full control |
+| Data Schema     | JSON Resume (customized)    | -               | FR1-4       | Industry standard, extensible              |
+| Font (EN)       | Inter                       | via @nuxt/fonts | FR22-23     | Modern, ATS-safe, excellent readability    |
+| Font (FA)       | Vazirmatn                   | via @nuxt/fonts | FR22-23     | Best Persian web font, RTL support         |
+| Template System | Vue Components              | -               | FR15-21     | Full control, reusable, type-safe          |
+| API Pattern     | Nuxt Server Route           | -               | FR10-14     | Native Nuxt, no extra server               |
+| Layout          | Two-column (sidebar + main) | -               | FR6, FR9    | Matches design template                    |
+| Storage         | File-based (TypeScript)     | -               | FR1, FR3    | Simple, version controlled                 |
 
 ---
 
@@ -53,13 +53,13 @@ server/
 
 ## FR Category to Architecture Mapping
 
-| FR Category | FRs | Components/Files | Notes |
-|-------------|-----|------------------|-------|
-| Resume Data Management | FR1-4 | `data/resume.en.ts`, `types/resume.ts` | TypeScript for type safety |
-| Resume Preview Page | FR5-9 | `pages/resume.vue`, `components/resume/*` | Standalone, no nav |
-| PDF Export | FR10-14 | `server/api/resume/pdf.get.ts`, `useResumePdf.ts` | Puppeteer server-side |
-| Template Sections | FR15-21 | Individual resume components | Modular design |
-| Styling & Theming | FR22-25 | Tailwind classes, CSS variables | Blue/white theme |
+| FR Category            | FRs     | Components/Files                                  | Notes                      |
+| ---------------------- | ------- | ------------------------------------------------- | -------------------------- |
+| Resume Data Management | FR1-4   | `data/resume.en.ts`, `types/resume.ts`            | TypeScript for type safety |
+| Resume Preview Page    | FR5-9   | `pages/resume.vue`, `components/resume/*`         | Standalone, no nav         |
+| PDF Export             | FR10-14 | `server/api/resume/pdf.get.ts`, `useResumePdf.ts` | Puppeteer server-side      |
+| Template Sections      | FR15-21 | Individual resume components                      | Modular design             |
+| Styling & Theming      | FR22-25 | Tailwind classes, CSS variables                   | Blue/white theme           |
 
 ---
 
@@ -75,9 +75,9 @@ server/
 
 ### New Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| puppeteer | ^23.x | Server-side PDF generation |
+| Package   | Version | Purpose                    |
+| --------- | ------- | -------------------------- |
+| puppeteer | ^23.x   | Server-side PDF generation |
 
 ### Installation
 
@@ -95,62 +95,62 @@ pnpm add puppeteer
 // app/types/resume.ts
 
 export interface ResumeBasics {
-  name: string
-  label: string                    // Job title
-  email: string
-  phone: string
-  url?: string
+  name: string;
+  label: string; // Job title
+  email: string;
+  phone: string;
+  url?: string;
   location: {
-    city: string
-    country: string
-  }
+    city: string;
+    country: string;
+  };
   profiles: Array<{
-    network: string               // LinkedIn, GitHub, etc.
-    url: string
-    icon?: string                 // Iconify icon name
-  }>
-  summary: string
+    network: string; // LinkedIn, GitHub, etc.
+    url: string;
+    icon?: string; // Iconify icon name
+  }>;
+  summary: string;
 }
 
 export interface WorkExperience {
-  company: string
-  position: string
-  startDate: string               // YYYY-MM format
-  endDate?: string                // YYYY-MM or undefined for "Present"
-  highlights: string[]            // Bullet points
+  company: string;
+  position: string;
+  startDate: string; // YYYY-MM format
+  endDate?: string; // YYYY-MM or undefined for "Present"
+  highlights: string[]; // Bullet points
 }
 
 export interface Education {
-  institution: string
-  area: string                    // Field of study
-  studyType: string               // Degree type
-  startDate: string
-  endDate?: string
+  institution: string;
+  area: string; // Field of study
+  studyType: string; // Degree type
+  startDate: string;
+  endDate?: string;
 }
 
 export interface Skill {
-  name: string                    // Category name
-  keywords: string[]              // Individual skills
+  name: string; // Category name
+  keywords: string[]; // Individual skills
 }
 
 export interface Language {
-  language: string
-  fluency: 'Native' | 'Fluent' | 'Intermediate' | 'Basic'
+  language: string;
+  fluency: "Native" | "Fluent" | "Intermediate" | "Basic";
 }
 
 export interface Certification {
-  name: string
-  issuer: string
-  date: string
+  name: string;
+  issuer: string;
+  date: string;
 }
 
 export interface Resume {
-  basics: ResumeBasics
-  work: WorkExperience[]
-  education: Education[]
-  skills: Skill[]
-  languages?: Language[]
-  certifications?: Certification[]
+  basics: ResumeBasics;
+  work: WorkExperience[];
+  education: Education[];
+  skills: Skill[];
+  languages?: Language[];
+  certifications?: Certification[];
 }
 ```
 
@@ -162,7 +162,7 @@ import type { Resume } from '~/types/resume'
 
 export const resumeData: Resume = {
   basics: {
-    name: 'Ali Arghyani',
+    name: 'Abolfazl Shahini',
     label: 'Senior Frontend Developer',
     email: 'ali@example.com',
     phone: '+98 912 345 6789',
@@ -203,11 +203,13 @@ export const resumeData: Resume = {
 ### GET /api/resume/pdf
 
 **Request:**
+
 ```
 GET /api/resume/pdf
 ```
 
 **Response (Success):**
+
 ```
 Status: 200 OK
 Content-Type: application/pdf
@@ -216,6 +218,7 @@ Body: <PDF binary>
 ```
 
 **Response (Error):**
+
 ```
 Status: 500 Internal Server Error
 Content-Type: application/json
@@ -227,9 +230,11 @@ Body: { "error": "PDF generation failed", "message": "..." }
 ## Novel Pattern: WYSIWYG PDF Export
 
 ### Problem
+
 Web preview must match PDF output exactly (pixel-perfect).
 
 ### Solution
+
 Single component renders both web preview and PDF source.
 
 ### Flow
@@ -271,16 +276,20 @@ Single component renders both web preview and PDF source.
 ### Key Implementation Details
 
 **Query Parameter:** `?print=true`
+
 - Hides download button in PDF
 - Removes any interactive elements
 
 **CSS Print Styles:**
+
 ```css
 @media print {
-  .no-print { display: none; }
-  .resume-container { 
-    width: 210mm; 
-    min-height: 297mm; 
+  .no-print {
+    display: none;
+  }
+  .resume-container {
+    width: 210mm;
+    min-height: 297mm;
   }
 }
 ```
@@ -291,14 +300,14 @@ Single component renders both web preview and PDF source.
 
 ### Naming Conventions
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Vue Components | PascalCase | `ResumeHeader.vue` |
-| Composables | camelCase + `use` prefix | `useResumePdf.ts` |
-| Data files | kebab-case + locale suffix | `resume.en.ts` |
-| API routes | kebab-case + method suffix | `pdf.get.ts` |
-| TypeScript types | PascalCase | `WorkExperience` |
-| CSS classes | Tailwind utilities | `text-blue-600` |
+| Type             | Convention                 | Example            |
+| ---------------- | -------------------------- | ------------------ |
+| Vue Components   | PascalCase                 | `ResumeHeader.vue` |
+| Composables      | camelCase + `use` prefix   | `useResumePdf.ts`  |
+| Data files       | kebab-case + locale suffix | `resume.en.ts`     |
+| API routes       | kebab-case + method suffix | `pdf.get.ts`       |
+| TypeScript types | PascalCase                 | `WorkExperience`   |
+| CSS classes      | Tailwind utilities         | `text-blue-600`    |
 
 ### Component Organization
 
@@ -318,34 +327,34 @@ components/resume/
 ```typescript
 // Composable pattern
 export function useResumePdf() {
-  const isGenerating = ref(false)
-  const toast = useToast()
+  const isGenerating = ref(false);
+  const toast = useToast();
 
   async function downloadPdf() {
-    isGenerating.value = true
+    isGenerating.value = true;
     try {
-      const response = await $fetch('/api/resume/pdf', {
-        responseType: 'blob'
-      })
+      const response = await $fetch("/api/resume/pdf", {
+        responseType: "blob"
+      });
       // Create download link
-      const url = URL.createObjectURL(response)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = 'Ali_Arghyani_Resume.pdf'
-      a.click()
-      URL.revokeObjectURL(url)
+      const url = URL.createObjectURL(response);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Ali_Arghyani_Resume.pdf";
+      a.click();
+      URL.revokeObjectURL(url);
     } catch (error) {
       toast.add({
-        title: 'Error generating PDF',
-        description: 'Please try again',
-        color: 'error'
-      })
+        title: "Error generating PDF",
+        description: "Please try again",
+        color: "error"
+      });
     } finally {
-      isGenerating.value = false
+      isGenerating.value = false;
     }
   }
 
-  return { isGenerating, downloadPdf }
+  return {isGenerating, downloadPdf};
 }
 ```
 
@@ -359,8 +368,7 @@ export function useResumePdf() {
     icon="i-heroicons-arrow-down-tray"
     size="lg"
     class="fixed bottom-6 right-6 no-print"
-    @click="downloadPdf"
-  >
+    @click="downloadPdf">
     Download PDF
   </UButton>
 </template>
@@ -372,33 +380,33 @@ export function useResumePdf() {
 
 ### Color Scheme
 
-| Element | Color | Tailwind Class |
-|---------|-------|----------------|
-| Primary (headers, icons) | Blue | `text-blue-600`, `bg-blue-600` |
-| Background | White | `bg-white` |
-| Text | Dark gray | `text-gray-800` |
-| Secondary text | Medium gray | `text-gray-600` |
-| Borders/dividers | Light gray | `border-gray-200` |
+| Element                  | Color       | Tailwind Class                 |
+| ------------------------ | ----------- | ------------------------------ |
+| Primary (headers, icons) | Blue        | `text-blue-600`, `bg-blue-600` |
+| Background               | White       | `bg-white`                     |
+| Text                     | Dark gray   | `text-gray-800`                |
+| Secondary text           | Medium gray | `text-gray-600`                |
+| Borders/dividers         | Light gray  | `border-gray-200`              |
 
 ### Typography
 
-| Element | Font | Size | Weight |
-|---------|------|------|--------|
-| Name | Inter | 2rem | Bold |
-| Job Title | Inter | 1.25rem | Medium |
-| Section Headers | Inter | 1rem | Semibold |
-| Body Text | Inter | 0.875rem | Normal |
-| Persian Text | Vazirmatn | Same sizes | Same weights |
+| Element         | Font      | Size       | Weight       |
+| --------------- | --------- | ---------- | ------------ |
+| Name            | Inter     | 2rem       | Bold         |
+| Job Title       | Inter     | 1.25rem    | Medium       |
+| Section Headers | Inter     | 1rem       | Semibold     |
+| Body Text       | Inter     | 0.875rem   | Normal       |
+| Persian Text    | Vazirmatn | Same sizes | Same weights |
 
 ### Spacing
 
-| Element | Spacing |
-|---------|---------|
-| Page margins | 1.5rem (24px) |
-| Section gap | 1.5rem |
-| Item gap | 0.75rem |
-| Sidebar width | 35% |
-| Main content width | 65% |
+| Element            | Spacing       |
+| ------------------ | ------------- |
+| Page margins       | 1.5rem (24px) |
+| Section gap        | 1.5rem        |
+| Item gap           | 0.75rem       |
+| Sidebar width      | 35%           |
+| Main content width | 65%           |
 
 ---
 
@@ -423,19 +431,19 @@ export function useResumePdf() {
 
 ### PDF Generation
 
-| Metric | Target | Strategy |
-|--------|--------|----------|
+| Metric          | Target      | Strategy                      |
+| --------------- | ----------- | ----------------------------- |
 | Generation time | < 3 seconds | Puppeteer reuse, minimal page |
-| PDF file size | < 500KB | No images, optimized fonts |
-| Memory usage | < 512MB | Single browser instance |
+| PDF file size   | < 500KB     | No images, optimized fonts    |
+| Memory usage    | < 512MB     | Single browser instance       |
 
 ### Page Load
 
-| Metric | Target | Strategy |
-|--------|--------|----------|
+| Metric       | Target     | Strategy                  |
+| ------------ | ---------- | ------------------------- |
 | Preview load | < 1 second | Static data, no API calls |
-| LCP | < 1.5s | Inline critical CSS |
-| CLS | 0 | Fixed dimensions |
+| LCP          | < 1.5s     | Inline critical CSS       |
+| CLS          | 0          | Fixed dimensions          |
 
 ### Optimization Strategies
 
@@ -468,17 +476,17 @@ Use `@sparticuz/chromium` for serverless:
 
 ```typescript
 // server/api/resume/pdf.get.ts
-import puppeteer from 'puppeteer-core'
-import chromium from '@sparticuz/chromium'
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const browser = await puppeteer.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath(),
     headless: chromium.headless
-  })
+  });
   // ... generate PDF
-})
+});
 ```
 
 ---
@@ -523,11 +531,13 @@ PUPPETEER_EXECUTABLE_PATH=/path/to/chrome
 **Context:** Need pixel-perfect PDF with proper font embedding
 
 **Alternatives Considered:**
+
 - html2pdf.js (client) - Poor quality, converts to image
 - jsPDF (client) - Manual layout, no CSS support
 - Print to PDF (browser) - Inconsistent across browsers
 
 **Consequences:**
+
 - (+) Perfect quality, font embedding works
 - (+) Consistent output across all clients
 - (-) Requires server resources
@@ -542,10 +552,12 @@ PUPPETEER_EXECUTABLE_PATH=/path/to/chrome
 **Context:** Need maintainable, type-safe template system
 
 **Alternatives Considered:**
+
 - JSON config + dynamic renderer - Too complex for MVP
 - HTML templates - No type safety
 
 **Consequences:**
+
 - (+) Full TypeScript support
 - (+) Easy to modify individual sections
 - (+) Reusable across web and PDF
@@ -560,17 +572,17 @@ PUPPETEER_EXECUTABLE_PATH=/path/to/chrome
 **Context:** Need structured, extensible data format
 
 **Modifications from standard:**
+
 - Simplified location (city + country only)
 - Added icon field to profiles
 - Persian language support
 
 **Consequences:**
+
 - (+) Industry standard, well-documented
 - (+) Easy to export/import
 - (+) Future-proof for integrations
 
 ---
 
-_Generated by BMAD Decision Architecture Workflow_
-_Date: 2025-11-30_
-_For: ali_
+_Generated by BMAD Decision Architecture Workflow_ _Date: 2025-11-30_ _For: ali_

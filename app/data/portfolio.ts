@@ -70,16 +70,16 @@ export const portfolio: PortfolioData = {
             "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management",
             "From Entry to mid level"
           ],
-          icons: ["i-logos-vue", "i-logos-nuxt", "i-logos-typescript-icon", "i-logos-nuxtjs", "i-logos-pinia"],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-simple-icons:rekaui"],
           link: "https://moderndata.ir/",
           linkLabel: "modern data"
         }
       ]
     },
     {
-      company: "ModoChats",
-      link: "https:modochats.com",
-      logo: "/img/project/modochats-logo.svg",
+      company: "Modochats",
+      link: "https://modochats.com",
+      logo: "/img/projects/modochats-logo.svg",
       location: "Golestan, Gorgan - hybrid",
       type: "Part-time",
       positions: [
@@ -94,9 +94,9 @@ export const portfolio: PortfolioData = {
             "Implementing complex build processes using concurrently, rollup, node and tsx",
             "Developing DX focused packages with typescript"
           ],
-          icons: ["i-logos-vue", "i-logos-nuxt", "i-logos-typescript-icon", "i-logos-nuxtjs", "i-logos-pinia"],
-          link: "https://moderndata.ir/",
-          linkLabel: "modern data"
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon:nodejs"],
+          link: "https://modochats.com/",
+          linkLabel: "modo chats"
         }
       ]
     }
@@ -115,7 +115,7 @@ export const portfolio: PortfolioData = {
   projects: [
     {
       name: "Ephem Chat",
-      description: "WebRTC Ephemeral Anonymous Chat with realtime matching and communication  ",
+      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
       links: [
         {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
         {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
@@ -124,11 +124,11 @@ export const portfolio: PortfolioData = {
       ],
       icons: [
         "i-logos-react",
-        "i-logos-nextjs",
+        "i-devicon:nextjs",
         "i-logos-typescript-icon",
-        "i-logos-expressjs",
+        "i-skill-icons:expressjs-light",
         "i-logos-sequelize",
-        "i-logos-webrtc",
+        "i-logos:webrtc",
         "i-logos-socketio",
         "i-logos-supabase",
         "i-logos-railway",
@@ -137,6 +137,71 @@ export const portfolio: PortfolioData = {
       status: "Active",
       opensource: true,
       category: "public"
+    },
+
+    {
+      name: "Modochats",
+      description:
+        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: false,
+      links: [
+        {label: "Website", to: "https://modochats.com/", icon: "i-mdi-link"},
+        {label: "Website", to: "https://github.com/modochat", icon: "i-mdi-github"}
+      ],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Widget",
+      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-devicon:nodejs"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Chat Client",
+      description: "Client Sdk for Modo Chat system. written in typescript and focused on DX.Published on npm and open source on github",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Voice Client",
+      description:
+        "Modo Voice client sdk written in typescript.Realtime Voice-Chat with Ai though socket. Worked heavily with Web audio related Api's, like custom audio processor for parsing audio - quite the pain !",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "AR Studio",
+      description:
+        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar",
+      status: "Active",
+      opensource: true,
+      links: [],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-mindar"],
+      category: "freelance"
     },
     {
       name: "Esghat Dashboard",
@@ -154,72 +219,8 @@ export const portfolio: PortfolioData = {
       status: "Active",
       opensource: false,
       links: [{label: "Website", to: "https://yoozro.ir/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite"],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
-    },
-    {
-      name: "Modochats",
-      description:
-        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: false,
-      links: [
-        {label: "Website", to: "https://modochats.com/", icon: "i-mdi-link"},
-        {label: "Website", to: "https://github.com/modochat", icon: "i-mdi-github"}
-      ],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript", "i-logos-node"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Widget",
-      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript", "i-logos-node"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Chat Client",
-      description: "Client Sdk for Modo Chat system. written in typescript and focused on DX.Published on npm and open source on github",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript", "i-logos-node"],
-      category: "current"
-    },
-    {
-      name: "Modo Voice Client",
-      description:
-        "Modo Voice client sdk written in typescript.Realtime Voice-Chat with Ai though socket. Worked heavily with Web audio related Api's, like custom audio processor for parsing audio - quite the pain !",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript", "i-logos-node"],
-      category: "current"
-    },
-    {
-      name: "AR Studio",
-      description:
-        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar",
-      status: "Active",
-      opensource: true,
-      links: [],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-mindar"],
-      category: "public"
     }
   ]
 };

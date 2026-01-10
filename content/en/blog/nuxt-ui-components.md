@@ -3,7 +3,7 @@ title: "Building Beautiful UIs with Nuxt UI"
 description: "Explore Nuxt UI components and learn how to create stunning, accessible user interfaces with minimal effort."
 date: "2024-11-08"
 tags: ["nuxt", "ui", "design", "components"]
-author: "Ali Arghyani"
+author: "Abolfazl Shahini"
 draft: false
 ---
 
@@ -21,9 +21,7 @@ Nuxt UI stands out for several reasons:
 - **Dark Mode**: Built-in dark mode support
 - **Icons**: Integrated with Iconify for thousands of icons
 
-::blog-callout{type="info" title="Pro Tip"}
-Nuxt UI components are designed to work seamlessly with Nuxt's auto-import feature, so you can use them without explicit imports!
-::
+::blog-callout{type="info" title="Pro Tip"} Nuxt UI components are designed to work seamlessly with Nuxt's auto-import feature, so you can use them without explicit imports! ::
 
 ## Getting Started
 
@@ -37,8 +35,8 @@ Add it to your `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui']
-})
+  modules: ["@nuxt/ui"]
+});
 ```
 
 ## Essential Components
@@ -68,9 +66,9 @@ Cards are perfect for displaying content:
     <template #header>
       <h3>Card Title</h3>
     </template>
-    
+
     <p>Card content goes here</p>
-    
+
     <template #footer>
       <UButton>Action</UButton>
     </template>
@@ -85,26 +83,35 @@ Build forms quickly with validation:
 ```vue
 <script setup>
 const state = reactive({
-  email: '',
-  password: ''
-})
+  email: "",
+  password: ""
+});
 
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(8)
-})
+});
 </script>
 
 <template>
-  <UForm :schema="schema" :state="state" @submit="onSubmit">
-    <UFormGroup label="Email" name="email">
+  <UForm
+    :schema="schema"
+    :state="state"
+    @submit="onSubmit">
+    <UFormGroup
+      label="Email"
+      name="email">
       <UInput v-model="state.email" />
     </UFormGroup>
-    
-    <UFormGroup label="Password" name="password">
-      <UInput v-model="state.password" type="password" />
+
+    <UFormGroup
+      label="Password"
+      name="password">
+      <UInput
+        v-model="state.password"
+        type="password" />
     </UFormGroup>
-    
+
     <UButton type="submit">Submit</UButton>
   </UForm>
 </template>
@@ -117,18 +124,16 @@ Customize your app's appearance with the `app.config.ts`:
 ```typescript
 export default defineAppConfig({
   ui: {
-    primary: 'indigo',
-    gray: 'slate',
+    primary: "indigo",
+    gray: "slate",
     button: {
-      rounded: 'rounded-full'
+      rounded: "rounded-full"
     }
   }
-})
+});
 ```
 
-::alert{type="success"}
-All Nuxt UI components respect your theme configuration automatically!
-::
+::alert{type="success"} All Nuxt UI components respect your theme configuration automatically! ::
 
 ## Dark Mode
 
@@ -136,17 +141,15 @@ Dark mode is built-in and works out of the box:
 
 ```vue
 <template>
-  <UButton @click="toggleDarkMode">
-    Toggle Dark Mode
-  </UButton>
+  <UButton @click="toggleDarkMode"> Toggle Dark Mode </UButton>
 </template>
 
 <script setup>
-const colorMode = useColorMode()
+const colorMode = useColorMode();
 
 const toggleDarkMode = () => {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-}
+  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+};
 </script>
 ```
 
@@ -164,9 +167,7 @@ Access thousands of icons from Iconify:
 </template>
 ```
 
-::blog-callout{type="warning" title="Performance Note"}
-Icons are automatically optimized and only the ones you use are included in your bundle!
-::
+::blog-callout{type="warning" title="Performance Note"} Icons are automatically optimized and only the ones you use are included in your bundle! ::
 
 ## Best Practices
 

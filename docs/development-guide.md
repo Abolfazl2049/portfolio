@@ -23,30 +23,31 @@ Visit: http://localhost:5000
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server (port 5000) |
-| `pnpm build` | Build for production |
-| `pnpm generate` | Generate static site (SSG) |
-| `pnpm preview` | Preview production build |
-| `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm format` | Check code formatting (Prettier) |
-| `pnpm format:write` | Fix code formatting |
+| Command             | Description                          |
+| ------------------- | ------------------------------------ |
+| `pnpm dev`          | Start development server (port 5000) |
+| `pnpm build`        | Build for production                 |
+| `pnpm generate`     | Generate static site (SSG)           |
+| `pnpm preview`      | Preview production build             |
+| `pnpm typecheck`    | Run TypeScript type checking         |
+| `pnpm format`       | Check code formatting (Prettier)     |
+| `pnpm format:write` | Fix code formatting                  |
 
 ## Environment Variables
 
 Create a `.env` file based on `.env.example`:
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `NUXT_PUBLIC_LOAD_PLAUSIBLE` | Enable Plausible analytics | `"no"` |
-| `NUXT_PUBLIC_SITE_URL` | Site URL for sitemap/RSS | `https://aliarghyani.vercel.app` |
+| Variable                     | Description                | Default                              |
+| ---------------------------- | -------------------------- | ------------------------------------ |
+| `NUXT_PUBLIC_LOAD_PLAUSIBLE` | Enable Plausible analytics | `"no"`                               |
+| `NUXT_PUBLIC_SITE_URL`       | Site URL for sitemap/RSS   | `https://abolfazlshahini.vercel.app` |
 
 ## Project Configuration
 
 ### Nuxt Configuration (`nuxt.config.ts`)
 
 Key settings:
+
 - **srcDir:** `app/` - Source directory
 - **Dev Server:** `0.0.0.0:5000`
 - **Color Mode:** Dark mode default
@@ -59,6 +60,7 @@ Extends `.nuxt/tsconfig.json` with bundler module resolution.
 ### Tailwind CSS 4
 
 Custom PostCSS plugins:
+
 - `@csstools/postcss-oklab-function`
 - `@csstools/postcss-relative-color-syntax`
 - `@csstools/postcss-color-mix-function`
@@ -67,6 +69,7 @@ Custom PostCSS plugins:
 ## Auto-imports
 
 Nuxt automatically imports:
+
 - Components from `app/components/`
 - Composables from `app/composables/`
 - Utils from `app/utils/`
@@ -111,11 +114,13 @@ http://localhost:5000/fa/blog/rss.xml
 ### Portfolio Data
 
 Edit locale-specific files:
+
 - English: `app/data/portfolio.en.ts`
 - Persian: `app/data/portfolio.fa.ts`
 
 ### Translations
 
 Edit JSON files in `i18n/locales/`:
+
 - English: `en.json`
 - Persian: `fa.json`

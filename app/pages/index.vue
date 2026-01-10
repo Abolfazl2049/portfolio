@@ -9,7 +9,7 @@
     <AIStack />
     <SoftSkills />
     <LanguageSkills />
-    <GitHubActivity username="aliarghyani" />
+    <GitHubActivity username="abolfazlshahini" />
     <WorkExperience />
     <EducationList />
     <RecommendationsCarousel />
@@ -43,7 +43,7 @@ const description = computed(() => `${portfolio.value.profile.title}. ${portfoli
 useHead(() => ({
   title: siteTitle.value,
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: '/favicon/newlogo.png' },
+    // { rel: 'icon', type: 'image/svg+xml', href: '/favicon/newlogo.png' },
   ],
 }))
 

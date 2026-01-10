@@ -69,7 +69,7 @@ const nextPost = computed(() => {
 })
 
 // SEO meta tags
-const siteUrl = 'https://aliarghyani.vercel.app' // TODO: Move to runtime config
+const siteUrl = 'https://abolfazlshahini.vercel.app' // TODO: Move to runtime config
 
 // Custom meta tags
 if (post.value) {
@@ -91,7 +91,7 @@ if (post.value) {
     twitterImage: postData.image || '/img/blog/default-cover.jpg',
     articlePublishedTime: postData.date,
     articleModifiedTime: postData.updatedAt || postData.date,
-    articleAuthor: [postData.author || 'Ali Arghyani'],
+    articleAuthor: [postData.author || 'Abolfazl Shahini'],
     articleTag: postData.tags
   })
 
@@ -99,11 +99,11 @@ if (post.value) {
   useHead({
     link: canonicalPath
       ? [
-          {
-            rel: 'canonical',
-            href: canonicalUrl
-          }
-        ]
+        {
+          rel: 'canonical',
+          href: canonicalUrl
+        }
+      ]
       : [],
     script: [
       {
@@ -118,11 +118,11 @@ if (post.value) {
           dateModified: postData.updatedAt || postData.date,
           author: {
             '@type': 'Person',
-            name: postData.author || 'Ali Arghyani'
+            name: postData.author || 'Abolfazl Shahini'
           },
           publisher: {
             '@type': 'Person',
-            name: 'Ali Arghyani'
+            name: 'Abolfazl Shahini'
           }
         })
       }

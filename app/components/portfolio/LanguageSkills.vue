@@ -69,13 +69,13 @@ const items = computed(() => [
     title: t('languageSection.items.ielts.title'),
     description: t('languageSection.items.ielts.desc'),
   },
-  {
-    key: 'huawei',
-    iconType: 'icon' as const,
-    icon: 'i-twemoji-globe-with-meridians',
-    title: t('languageSection.items.huawei.title'),
-    description: t('languageSection.items.huawei.desc'),
-  },
+  // {
+  //   key: 'huawei',
+  //   iconType: 'icon' as const,
+  //   icon: 'i-twemoji-globe-with-meridians',
+  //   title: t('languageSection.items.huawei.title'),
+  //   description: t('languageSection.items.huawei.desc'),
+  // },
 ])
 
 const accordionItems = computed(() => [{

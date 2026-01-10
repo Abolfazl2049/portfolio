@@ -4,11 +4,12 @@
 
 A modern, bilingual portfolio website built with Nuxt 4, featuring English and Persian (RTL) support with dark mode as default.
 
-🔗 **Live Demo:** [aliarghyani.vercel.app](https://aliarghyani.vercel.app)
+🔗 **Live Demo:** [abolfazlshahini.vercel.app](https://abolfazlshahini.vercel.app)
 
 ## Purpose
 
 Personal portfolio website showcasing:
+
 - Professional experience and skills
 - Project portfolio
 - Blog with bilingual content
@@ -17,14 +18,14 @@ Personal portfolio website showcasing:
 
 ## Tech Stack Summary
 
-| Layer | Technology |
-|-------|------------|
+| Layer     | Technology                |
+| --------- | ------------------------- |
 | Framework | Nuxt 4.1.3 (Vue 3 + Vite) |
-| UI | Nuxt UI 4.0.1 |
-| Styling | Tailwind CSS 4.1.14 |
-| Language | TypeScript 5.9.3 |
-| i18n | @nuxtjs/i18n 10.1.1 |
-| Content | @nuxt/content 3.8.0 (MDC) |
+| UI        | Nuxt UI 4.0.1             |
+| Styling   | Tailwind CSS 4.1.14       |
+| Language  | TypeScript 5.9.3          |
+| i18n      | @nuxtjs/i18n 10.1.1       |
+| Content   | @nuxt/content 3.8.0 (MDC) |
 
 ## Architecture Type
 

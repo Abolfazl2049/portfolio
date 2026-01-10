@@ -46,7 +46,7 @@
         <path>docs/architecture.md</path>
         <title>Resume Export Feature - Architecture Document</title>
         <section>Data Architecture - Sample Data Structure</section>
-        <snippet>Defines sample resume data structure with Ali Arghyani as sample name. Includes basics, work, education, skills, languages sections.</snippet>
+        <snippet>Defines sample resume data structure with Abolfazl Shahini as sample name. Includes basics, work, education, skills, languages sections.</snippet>
       </doc>
       <doc>
         <path>docs/epics.md</path>
@@ -109,7 +109,7 @@
     <constraint type="location">File must be at app/data/resume.en.ts</constraint>
     <constraint type="icons">Use Iconify icon names for profiles: i-mdi-linkedin, i-mdi-github</constraint>
     <constraint type="fluency">Language fluency must use union type: 'Native' | 'Fluent' | 'Intermediate' | 'Basic'</constraint>
-    <constraint type="sample">Use Ali Arghyani as sample name per Architecture doc</constraint>
+    <constraint type="sample">Use Abolfazl Shahini as sample name per Architecture doc</constraint>
   </constraints>
 
   <interfaces>

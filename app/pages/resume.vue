@@ -8,7 +8,7 @@ const route = useRoute()
 const isPrintMode = computed(() => route.query.print === 'true')
 
 useHead({
-  title: 'Resume - Ali Arghyani',
+  title: 'Resume - Abolfazl Shahini',
   meta: [
     { name: 'robots', content: 'noindex' }
   ]

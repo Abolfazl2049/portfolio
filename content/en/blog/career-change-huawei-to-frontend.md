@@ -3,7 +3,7 @@ title: "A Big Career Change: From 7 Years at Huawei to Frontend Development"
 description: "A personal story of leaving telecom and team management at Huawei to pursue frontend development, covering the challenges, lessons, and mental shifts required for a successful career transition."
 date: "2025-11-25"
 tags: ["career-change", "frontend-development", "personal-growth", "huawei", "developer-journey"]
-author: "Ali Arghyani"
+author: "Abolfazl Shahini"
 image: "/img/blog/big-career-change.webp"
 draft: false
 ---
@@ -68,9 +68,7 @@ With quiet, sometimes tired, consistency.
 
 At some point I realized: this is the real "secret"—**keep going even when you don't feel like it. Even when you're scared. Even when nothing is clear yet.**
 
-::pull-quote{highlight}
-Keep going even when you don't feel like it. Even when you're scared. Even when nothing is clear yet.
-::
+::pull-quote{highlight} Keep going even when you don't feel like it. Even when you're scared. Even when nothing is clear yet. ::
 
 ## Mental Freeze and the Turning Point
 
@@ -94,9 +92,7 @@ I stopped feeling like a piece of ice floating in a cold ocean… and started to
 
 **That change wasn't just technical. It was about who I am.**
 
-::callout{type="tip" title="Key Insight"}
-Career change isn't just about learning new skills—it's about redefining your identity and finding alignment between who you are and what you do.
-::
+::callout{type="tip" title="Key Insight"} Career change isn't just about learning new skills—it's about redefining your identity and finding alignment between who you are and what you do. ::
 
 ## The Tools I Collected Along the Way
 
@@ -106,7 +102,7 @@ We all carry some kind of "toolkit" with us. Mine looked like this:
 
 - **People** who stayed close and didn't let me burn out under pressure.
 - **A program called "Aknoon"** that helped me build mental and emotional structure in the middle of chaos.
-- **Books** like *The Art of Thinking Clearly* and *The Compound Effect* that gave me a deeper understanding of decision-making and consistency.
+- **Books** like _The Art of Thinking Clearly_ and _The Compound Effect_ that gave me a deeper understanding of decision-making and consistency.
 - And most importantly: **the habit of slow refuelling.**
 
 I made a commitment to myself not to burn out.
@@ -169,6 +165,4 @@ If I keep going—with consistency, depth, and authenticity—I'm confident I'll
 
 And if you're currently stuck between the fear of losing your old security and the desire to build your own path, maybe this text has just one simple message for you:
 
-::pull-quote{highlight}
-Go slower, go deeper—but keep going.
-::
+::pull-quote{highlight} Go slower, go deeper—but keep going. ::

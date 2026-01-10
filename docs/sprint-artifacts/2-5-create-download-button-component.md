@@ -4,9 +4,7 @@ Status: done
 
 ## Story
 
-As a user,
-I want a prominent download button,
-so that I can easily download my resume as PDF.
+As a user, I want a prominent download button, so that I can easily download my resume as PDF.
 
 ## Acceptance Criteria
 
@@ -62,12 +60,14 @@ so that I can easily download my resume as PDF.
 ### Architecture Alignment
 
 **From Architecture Doc:**
+
 - File location: `app/components/resume/ResumeDownloadButton.vue`
 - Component: Use Nuxt UI `UButton` component
 - Icon: Heroicons arrow-down-tray
 - Position: Fixed bottom-right (FAB pattern)
 
 **From Tech Spec Epic 2:**
+
 - AC12 maps to this story
 - Button hidden in print mode for PDF generation
 - Placeholder for Epic 3 integration
@@ -75,52 +75,58 @@ so that I can easily download my resume as PDF.
 ### Learnings from Previous Story
 
 **From Story 2.4 (Status: drafted)**
+
 - Sidebar components created (Contact, Skills, Education, Languages)
 - All resume sections now complete
 - ResumePreview fully populated with content
 - **Integration Point**: Add download button to resume page, outside ResumePreview container
 
 **From Story 2.1 (Status: drafted)**
+
 - Print mode detection implemented via `useRoute().query.print`
 - `isPrintMode` computed property available in `pages/resume.vue`
 - **Integration Point**: Pass `isPrintMode` to download button component
 
-[Source: docs/sprint-artifacts/2-4-create-resume-sidebar-components.md]
-[Source: docs/sprint-artifacts/2-1-create-resume-page-route.md]
+[Source: docs/sprint-artifacts/2-4-create-resume-sidebar-components.md] [Source: docs/sprint-artifacts/2-1-create-resume-page-route.md]
 
 ### Project Structure Notes
 
 **File to Create:**
+
 - `app/components/resume/ResumeDownloadButton.vue`
 
 **Files to Modify:**
+
 - `app/pages/resume.vue` - Import and place download button
 
 **Dependencies:**
+
 - `@nuxt/ui` - `UButton` component
 - Heroicons icon set (via Nuxt UI)
 
 **Future Integration:**
+
 - Epic 3 Story 3.2 will create `useResumePdf()` composable
 - Epic 3 Story 3.3 will connect this button to PDF generation
 
 ### Implementation Notes
 
 **ResumeDownloadButton.vue:**
+
 ```vue
 <script setup lang="ts">
 interface Props {
-  isPrintMode?: boolean
+  isPrintMode?: boolean;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 
 const handleDownload = () => {
   // Placeholder - will be replaced in Epic 3 Story 3.3
-  console.log('Download PDF clicked')
+  console.log("Download PDF clicked");
   // Future: const { downloadPdf } = useResumePdf()
   // Future: await downloadPdf()
-}
+};
 </script>
 
 <template>
@@ -130,8 +136,7 @@ const handleDownload = () => {
     size="lg"
     color="primary"
     class="fixed bottom-6 right-6 shadow-lg no-print z-50"
-    @click="handleDownload"
-  >
+    @click="handleDownload">
     <span class="hidden sm:inline">Download PDF</span>
   </UButton>
 </template>
@@ -146,21 +151,20 @@ const handleDownload = () => {
 ```
 
 **Integration in pages/resume.vue:**
+
 ```vue
 <script setup lang="ts">
 definePageMeta({
   layout: false
-})
+});
 
-const route = useRoute()
-const isPrintMode = computed(() => route.query.print === 'true')
+const route = useRoute();
+const isPrintMode = computed(() => route.query.print === "true");
 
 useHead({
-  title: 'Resume - Ali Arghyani',
-  meta: [
-    { name: 'robots', content: 'noindex' }
-  ]
-})
+  title: "Resume - Abolfazl Shahini",
+  meta: [{name: "robots", content: "noindex"}]
+});
 </script>
 
 <template>
@@ -172,13 +176,16 @@ useHead({
 ```
 
 **Responsive Behavior:**
+
 - Desktop: Shows "Download PDF" text with icon
 - Mobile: Shows icon only (text hidden with `hidden sm:inline`)
 
 **Z-Index:**
+
 - Set `z-50` to ensure button appears above all content
 
 **Testing Checklist:**
+
 - [ ] Button appears in bottom-right corner
 - [ ] Button has fixed position (stays in place when scrolling)
 - [ ] Blue background color applied
@@ -229,5 +236,6 @@ useHead({
 ---
 
 **Change Log:**
+
 - 2025-11-30: Story drafted by SM agent (ali)
 - 2025-12-01: Implemented by Dev agent (Amelia) - All ACs completed, status: done

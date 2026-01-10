@@ -66,7 +66,7 @@ export default defineAppConfig({
       }
     }
   } as any,
-  repoUrl: "https://github.com/aliarghyani/vue-cursor-rules",
-  myWebsiteUrl: "https://www.linkedin.com/in/aliarghyani/",
-  myContactUrl: "https://www.linkedin.com/in/aliarghyani/"
+  repoUrl: "https://github.com/abolfazlshahini/vue-cursor-rules",
+  myWebsiteUrl: "https://www.linkedin.com/in/abolfazlshahini/",
+  myContactUrl: "https://www.linkedin.com/in/abolfazlshahini/"
 });

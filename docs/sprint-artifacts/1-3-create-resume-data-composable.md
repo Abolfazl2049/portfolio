@@ -4,20 +4,18 @@ Status: done
 
 ## Story
 
-As a **developer**,
-I want **a composable to access resume data**,
-so that **components can easily consume the data reactively**.
+As a **developer**, I want **a composable to access resume data**, so that **components can easily consume the data reactively**.
 
 ## Acceptance Criteria
 
-| AC ID | Criteria | Testable |
-|-------|----------|----------|
-| AC-1 | File exists at `app/composables/useResumeData.ts` | ✓ |
-| AC-2 | Exports `useResumeData()` function | ✓ |
-| AC-3 | Returns `resume` as reactive reference | ✓ |
-| AC-4 | Returns `formatDate()` that converts "2023-01" to "Jan 2023" | ✓ |
-| AC-5 | Returns `getFullName()` that returns full name | ✓ |
-| AC-6 | Returns `getPdfFilename()` that returns "FirstName_LastName_Resume.pdf" | ✓ |
+| AC ID | Criteria                                                                | Testable |
+| ----- | ----------------------------------------------------------------------- | -------- |
+| AC-1  | File exists at `app/composables/useResumeData.ts`                       | ✓        |
+| AC-2  | Exports `useResumeData()` function                                      | ✓        |
+| AC-3  | Returns `resume` as reactive reference                                  | ✓        |
+| AC-4  | Returns `formatDate()` that converts "2023-01" to "Jan 2023"            | ✓        |
+| AC-5  | Returns `getFullName()` that returns full name                          | ✓        |
+| AC-6  | Returns `getPdfFilename()` that returns "FirstName_LastName_Resume.pdf" | ✓        |
 
 ## Tasks / Subtasks
 
@@ -47,7 +45,7 @@ so that **components can easily consume the data reactively**.
   - [x] Create `getPdfFilename()` function
   - [x] Extract name from `resumeData.basics.name`
   - [x] Replace spaces with underscores
-  - [x] Append "_Resume.pdf"
+  - [x] Append "\_Resume.pdf"
 
 - [x] **Task 7: Return composable interface** (AC: 2-6)
   - [x] Return object with all functions and refs
@@ -74,13 +72,15 @@ so that **components can easily consume the data reactively**.
 ### Learnings from Previous Stories
 
 **From Story 1-1 (Status: done)**
+
 - Types available at `app/types/resume.ts`
 - Import pattern: `import type { Resume } from '~/types/resume'`
 
 **From Story 1-2 (Status: done)**
+
 - Resume data available at `app/data/resume.en.ts`
 - Export: `resumeData` constant of type `Resume`
-- Sample name: "Ali Arghyani"
+- Sample name: "Abolfazl Shahini"
 
 ### Project Structure Notes
 
@@ -120,66 +120,71 @@ Claude (Kiro Dev Agent - Amelia)
 - ✅ Exported useResumeData function
 - ✅ resume: ComputedRef returning resumeData
 - ✅ formatDate(date, locale='en'): Parses YYYY-MM, returns "Jan 2023"
-- ✅ getFullName(): Returns "Ali Arghyani"
+- ✅ getFullName(): Returns "Abolfazl Shahini"
 - ✅ getPdfFilename(): Returns "Ali_Arghyani_Resume.pdf"
 - ✅ All functions documented with JSDoc comments
 
 ### File List
 
-| Action | File |
-|--------|------|
+| Action  | File                               |
+| ------- | ---------------------------------- |
 | Created | `app/composables/useResumeData.ts` |
 
 ## Change Log
 
-| Date | Author | Change |
-|------|--------|--------|
-| 2025-11-30 | SM Agent (Bob) | Initial draft created |
-| 2025-11-30 | Dev Agent (Amelia) | Implemented all tasks - created resume data composable |
-| 2025-11-30 | Senior Dev Review (AI) | Code review completed - APPROVED |
+| Date       | Author                 | Change                                                 |
+| ---------- | ---------------------- | ------------------------------------------------------ |
+| 2025-11-30 | SM Agent (Bob)         | Initial draft created                                  |
+| 2025-11-30 | Dev Agent (Amelia)     | Implemented all tasks - created resume data composable |
+| 2025-11-30 | Senior Dev Review (AI) | Code review completed - APPROVED                       |
 
 ---
 
 ## Senior Developer Review (AI)
 
 ### Review Metadata
+
 - **Reviewer:** ali
 - **Date:** 2025-11-30
 - **Outcome:** ✅ **APPROVE**
 
 ### Summary
+
 All 6 acceptance criteria fully implemented. All 8 tasks verified. Composable follows Vue 3 patterns with computed refs, proper JSDoc documentation, and clean implementation.
 
 ### Acceptance Criteria Coverage
 
-| AC# | Description | Status | Evidence |
-|-----|-------------|--------|----------|
-| AC-1 | File exists at app/composables/useResumeData.ts | ✅ | File exists |
-| AC-2 | Exports useResumeData() function | ✅ | `useResumeData.ts:9` |
-| AC-3 | Returns resume as reactive reference | ✅ | `useResumeData.ts:11` |
-| AC-4 | formatDate converts "2023-01" to "Jan 2023" | ✅ | `useResumeData.ts:19-27` |
-| AC-5 | getFullName returns full name | ✅ | `useResumeData.ts:33` |
-| AC-6 | getPdfFilename returns formatted filename | ✅ | `useResumeData.ts:40-42` |
+| AC#  | Description                                     | Status | Evidence                 |
+| ---- | ----------------------------------------------- | ------ | ------------------------ |
+| AC-1 | File exists at app/composables/useResumeData.ts | ✅     | File exists              |
+| AC-2 | Exports useResumeData() function                | ✅     | `useResumeData.ts:9`     |
+| AC-3 | Returns resume as reactive reference            | ✅     | `useResumeData.ts:11`    |
+| AC-4 | formatDate converts "2023-01" to "Jan 2023"     | ✅     | `useResumeData.ts:19-27` |
+| AC-5 | getFullName returns full name                   | ✅     | `useResumeData.ts:33`    |
+| AC-6 | getPdfFilename returns formatted filename       | ✅     | `useResumeData.ts:40-42` |
 
 **Summary: 6 of 6 ACs implemented**
 
 ### Task Completion Validation
 
-| Task | Marked | Verified | Evidence |
-|------|--------|----------|----------|
-| Task 1-8 | [x] | ✅ | All verified |
+| Task     | Marked | Verified | Evidence     |
+| -------- | ------ | -------- | ------------ |
+| Task 1-8 | [x]    | ✅       | All verified |
 
 **Summary: 8 of 8 tasks verified, 0 false completions**
 
 ### Architectural Alignment
+
 - ✅ Follows Nuxt 4 composables convention (app/composables/)
 - ✅ Uses Vue 3 computed for reactivity
 - ✅ Proper JSDoc documentation
 - ✅ Clean, maintainable code structure
 
 ### Test Coverage
+
 - TypeScript compiler validates composable structure
 - getDiagnostics: No errors
 
 ### Action Items
+
 - Note: No action items required - implementation is complete and correct

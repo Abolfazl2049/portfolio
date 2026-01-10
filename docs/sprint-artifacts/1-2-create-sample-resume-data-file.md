@@ -4,25 +4,23 @@ Status: done
 
 ## Story
 
-As a **developer**,
-I want **a sample resume data file with realistic content**,
-so that **I can test the preview and PDF generation with real data**.
+As a **developer**, I want **a sample resume data file with realistic content**, so that **I can test the preview and PDF generation with real data**.
 
 ## Acceptance Criteria
 
-| AC ID | Criteria | Testable |
-|-------|----------|----------|
-| AC-1 | File exists at `app/data/resume.en.ts` | ✓ |
-| AC-2 | Exports `resumeData` of type `Resume` | ✓ |
-| AC-3 | Contains full name and job title in `basics` | ✓ |
-| AC-4 | Contains contact info (email, phone, location) in `basics` | ✓ |
-| AC-5 | Contains at least 2 social profiles with icons (LinkedIn, GitHub) | ✓ |
-| AC-6 | Contains professional summary (2-3 sentences) | ✓ |
-| AC-7 | Contains at least 2 work experiences with 3+ highlights each | ✓ |
-| AC-8 | Contains at least 1 education entry | ✓ |
-| AC-9 | Contains at least 2 skill categories with 4+ keywords each | ✓ |
-| AC-10 | Contains at least 2 languages | ✓ |
-| AC-11 | Data is independent from portfolio data | ✓ |
+| AC ID | Criteria                                                          | Testable |
+| ----- | ----------------------------------------------------------------- | -------- |
+| AC-1  | File exists at `app/data/resume.en.ts`                            | ✓        |
+| AC-2  | Exports `resumeData` of type `Resume`                             | ✓        |
+| AC-3  | Contains full name and job title in `basics`                      | ✓        |
+| AC-4  | Contains contact info (email, phone, location) in `basics`        | ✓        |
+| AC-5  | Contains at least 2 social profiles with icons (LinkedIn, GitHub) | ✓        |
+| AC-6  | Contains professional summary (2-3 sentences)                     | ✓        |
+| AC-7  | Contains at least 2 work experiences with 3+ highlights each      | ✓        |
+| AC-8  | Contains at least 1 education entry                               | ✓        |
+| AC-9  | Contains at least 2 skill categories with 4+ keywords each        | ✓        |
+| AC-10 | Contains at least 2 languages                                     | ✓        |
+| AC-11 | Data is independent from portfolio data                           | ✓        |
 
 ## Tasks / Subtasks
 
@@ -35,7 +33,7 @@ so that **I can test the preview and PDF generation with real data**.
   - [x] Export `resumeData` constant with type annotation
 
 - [x] **Task 3: Define basics section** (AC: 3, 4, 5, 6)
-  - [x] Add `name: string` (Ali Arghyani)
+  - [x] Add `name: string` (Abolfazl Shahini)
   - [x] Add `label: string` (Senior Frontend Developer)
   - [x] Add `email: string`
   - [x] Add `phone: string`
@@ -82,7 +80,7 @@ so that **I can test the preview and PDF generation with real data**.
 
 ### Sample Data Guidelines
 
-- Use Ali Arghyani as sample name (per Architecture doc)
+- Use Abolfazl Shahini as sample name (per Architecture doc)
 - Use placeholder contact info (not real PII)
 - Work experience should be realistic but fictional
 - Skills should reflect frontend developer profile
@@ -133,7 +131,7 @@ Claude (Kiro Dev Agent - Amelia)
 
 - ✅ Created `app/data/resume.en.ts` with header comment
 - ✅ Exported `resumeData` constant with `Resume` type annotation
-- ✅ basics: Ali Arghyani, Senior Frontend Developer, contact info, 2 profiles with icons, summary
+- ✅ basics: Abolfazl Shahini, Senior Frontend Developer, contact info, 2 profiles with icons, summary
 - ✅ work: 2 entries (NexaPortal current, Freelance past) with 4 highlights each
 - ✅ education: 1 entry (Qom University of Technology, B.Sc. Telecommunications)
 - ✅ skills: 2 categories (Frontend: 5 keywords, Tools & DevOps: 5 keywords)
@@ -142,68 +140,74 @@ Claude (Kiro Dev Agent - Amelia)
 
 ### File List
 
-| Action | File |
-|--------|------|
+| Action  | File                    |
+| ------- | ----------------------- |
 | Created | `app/data/resume.en.ts` |
 
 ## Change Log
 
-| Date | Author | Change |
-|------|--------|--------|
-| 2025-11-30 | SM Agent (Bob) | Initial draft created |
-| 2025-11-30 | Dev Agent (Amelia) | Implemented all tasks - created sample resume data file |
-| 2025-11-30 | Senior Dev Review (AI) | Code review completed - APPROVED |
+| Date       | Author                 | Change                                                  |
+| ---------- | ---------------------- | ------------------------------------------------------- |
+| 2025-11-30 | SM Agent (Bob)         | Initial draft created                                   |
+| 2025-11-30 | Dev Agent (Amelia)     | Implemented all tasks - created sample resume data file |
+| 2025-11-30 | Senior Dev Review (AI) | Code review completed - APPROVED                        |
 
 ---
 
 ## Senior Developer Review (AI)
 
 ### Review Metadata
+
 - **Reviewer:** ali
 - **Date:** 2025-11-30
 - **Outcome:** ✅ **APPROVE**
 
 ### Summary
+
 All 11 acceptance criteria are fully implemented. All 8 tasks verified with evidence. Data conforms to Resume interface, is independent from portfolio data, and follows project patterns.
 
 ### Acceptance Criteria Coverage
 
-| AC# | Description | Status | Evidence |
-|-----|-------------|--------|----------|
-| AC-1 | File exists at app/data/resume.en.ts | ✅ | File exists |
-| AC-2 | Exports resumeData of type Resume | ✅ | `resume.en.ts:9` |
-| AC-3 | Contains full name and job title | ✅ | `resume.en.ts:11-12` |
-| AC-4 | Contains contact info | ✅ | `resume.en.ts:13-19` |
-| AC-5 | Contains 2+ social profiles with icons | ✅ | `resume.en.ts:20-31` |
-| AC-6 | Contains professional summary | ✅ | `resume.en.ts:32-33` |
-| AC-7 | Contains 2+ work experiences with 3+ highlights | ✅ | `resume.en.ts:36-57` |
-| AC-8 | Contains 1+ education entry | ✅ | `resume.en.ts:58-65` |
-| AC-9 | Contains 2+ skill categories with 4+ keywords | ✅ | `resume.en.ts:66-73` |
-| AC-10 | Contains 2+ languages | ✅ | `resume.en.ts:74-83` |
-| AC-11 | Data independent from portfolio | ✅ | No portfolio imports |
+| AC#   | Description                                     | Status | Evidence             |
+| ----- | ----------------------------------------------- | ------ | -------------------- |
+| AC-1  | File exists at app/data/resume.en.ts            | ✅     | File exists          |
+| AC-2  | Exports resumeData of type Resume               | ✅     | `resume.en.ts:9`     |
+| AC-3  | Contains full name and job title                | ✅     | `resume.en.ts:11-12` |
+| AC-4  | Contains contact info                           | ✅     | `resume.en.ts:13-19` |
+| AC-5  | Contains 2+ social profiles with icons          | ✅     | `resume.en.ts:20-31` |
+| AC-6  | Contains professional summary                   | ✅     | `resume.en.ts:32-33` |
+| AC-7  | Contains 2+ work experiences with 3+ highlights | ✅     | `resume.en.ts:36-57` |
+| AC-8  | Contains 1+ education entry                     | ✅     | `resume.en.ts:58-65` |
+| AC-9  | Contains 2+ skill categories with 4+ keywords   | ✅     | `resume.en.ts:66-73` |
+| AC-10 | Contains 2+ languages                           | ✅     | `resume.en.ts:74-83` |
+| AC-11 | Data independent from portfolio                 | ✅     | No portfolio imports |
 
 **Summary: 11 of 11 ACs implemented**
 
 ### Task Completion Validation
 
-| Task | Marked | Verified | Evidence |
-|------|--------|----------|----------|
-| Task 1-8 | [x] | ✅ | All verified with file evidence |
+| Task     | Marked | Verified | Evidence                        |
+| -------- | ------ | -------- | ------------------------------- |
+| Task 1-8 | [x]    | ✅       | All verified with file evidence |
 
 **Summary: 8 of 8 tasks verified, 0 false completions**
 
 ### Architectural Alignment
+
 - ✅ Conforms to Resume interface from app/types/resume.ts
 - ✅ File location follows Nuxt 4 convention (app/data/)
 - ✅ Naming supports i18n extension (resume.en.ts)
 - ✅ Independent from portfolio data
 
 ### Test Coverage
+
 - TypeScript compiler validates data structure
 - getDiagnostics: No errors
 
 ### Security Notes
+
 - ✅ Uses placeholder contact info (not real PII)
 
 ### Action Items
+
 - Note: No action items required - implementation is complete and correct

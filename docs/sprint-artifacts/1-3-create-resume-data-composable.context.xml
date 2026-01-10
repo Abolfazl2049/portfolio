@@ -127,7 +127,7 @@
       <idea ac="AC-2">TypeScript validates function export</idea>
       <idea ac="AC-3">Test resume ref returns data</idea>
       <idea ac="AC-4">Test formatDate with various inputs: "2023-01" → "Jan 2023"</idea>
-      <idea ac="AC-5">Test getFullName returns "Ali Arghyani"</idea>
+      <idea ac="AC-5">Test getFullName returns "Abolfazl Shahini"</idea>
       <idea ac="AC-6">Test getPdfFilename returns "Ali_Arghyani_Resume.pdf"</idea>
     </ideas>
   </tests>
