@@ -5,22 +5,24 @@ export const portfolio: PortfolioData = {
     name: "Abolfazl Shahini",
     title: "Frontend Developer",
     location: "Golestan Province - Iran",
-    summary: "Passionate Frontend Developer with Vue.js, Nuxt.js, and TypeScript. Always learning new stuff and developing new solutions.",
+    summary:
+      "Passionate Frontend Developer Primary with Vue.js, Nuxt.js, open source contributor and maintainer, always learning and adapting to new tools and environments.",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
       github: "https://github.com/Abolfazl2049",
       linkedin: "https://www.linkedin.com/in/abolfazlShahini/",
-      telegram: "https://t.me/abolfazl2049"
+      telegram: "https://t.me/abolfazl2049",
+      devTo: "https://dev.to/abolfazl2049"
     }
   },
 
   mainTools: {
     title: "Main tools",
     items: [
+      {label: "TypeScript", icon: "i-logos-typescript-icon"},
       {label: "Vue.js", icon: "i-logos-vue"},
       {label: "Nuxt.js", icon: "i-logos-nuxt-icon"},
-      {label: "TypeScript", icon: "i-logos-typescript-icon"},
       {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon"},
       {label: "Reka ui", icon: "i-logos-reka-ui"},
       {label: "Pinia", icon: "i-logos-pinia"},
@@ -33,6 +35,7 @@ export const portfolio: PortfolioData = {
     title: "Roles",
     items: [
       {label: "Frontend Developer", icon: "i-twemoji-laptop"},
+      {label: "Open source contributor/maintainer"},
       {label: "SSR with Nuxt", icon: "i-twemoji-rocket"},
       {label: "DX & Performance", icon: "i-twemoji-high-voltage"},
       {label: "System and architecture design"}
@@ -42,136 +45,58 @@ export const portfolio: PortfolioData = {
   values: {
     title: "Values",
     items: [
-      {label: "Autonomy & Ownership", icon: "i-twemoji-key", description: "Take initiative and be accountable. Deliver end-to-end."},
-      {label: "High standards", icon: "i-twemoji-sparkles", description: "Aim for quality over shortcuts. Leave things better."},
+      {label: "High standards", icon: "i-twemoji-sparkles", description: "Aim for quality over shortcuts. perfectionist"},
       {label: "Client-focused delivery", icon: "i-twemoji-handshake", description: "Understand goals, ship iteratively, and align outcomes."},
-      {label: "Teamwork & Mentoring", icon: "i-twemoji-people-holding-hands", description: "Share knowledge, elevate teammates, be reliable."},
-      {label: "Clear communication", icon: "i-twemoji-speech-balloon", description: "Explain the why/what/how. Prefer concise async updates."}
+      {label: "Teamwork", icon: "i-twemoji-people-holding-hands", description: "Share knowledge, elevate teammates, be reliable."},
+      {label: "Clear communication", icon: "i-twemoji-speech-balloon", description: "Explain the why/what/how."}
     ]
   },
 
   experiences: [
     {
-      company: "NexaPortal",
-      link: "https://nexaportal.com/",
-      logo: "/img/NexaPortal1.png",
-      location: "İzmir, Türkiye · Remote",
+      company: "Modern Data",
+      link: "https://moderndata.ir/",
+      logo: "/img/modern-data-logo.png",
+      location: "Golestan, Gorgan - On site",
       type: "Full-time",
       positions: [
         {
           title: "Frontend Developer",
-          start: "Dec 2024",
+          start: "February 2024",
           ongoing: true,
           description: [
-            "Contributing to a platform transforming medical tourism business management; building secure, scalable frontends.",
-            "Implementing Vue 3 + TypeScript architecture with Vuetify, Vite, Pinia, RBAC and i18n; focus on DX, performance and a11y.",
-            "Built end-user app and admin dashboard: https://app.elaramedical.com/ · https://dashboard.elaramedical.com/",
-            "PWA features, form-heavy flows, calendar and scheduling UX, Google API integrations, and real‑time via WebSocket.",
-            "Quality gates: ESLint strict, E2E tests with Cypress, CI‑friendly builds and code reviews."
+            "building and maintaining large scale dashboard,pwa,website",
+            "migrating from javascript to typescript",
+            "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management",
+            "From Entry to mid level"
           ],
-          icons: ["i-logos-vue", "i-logos-vuetifyjs", "i-logos-typescript-icon", "i-logos-vitejs", "i-logos-pinia", "i-logos-eslint", "i-logos-cypress"],
-          link: "https://app.elaramedical.com/",
-          linkLabel: "Elara Platform"
+          icons: ["i-logos-vue", "i-logos-nuxt", "i-logos-typescript-icon", "i-logos-nuxtjs", "i-logos-pinia"],
+          link: "https://moderndata.ir/",
+          linkLabel: "modern data"
         }
       ]
     },
     {
-      company: "Freelancer",
-      type: "Self-employed",
-      location: "Tehran, Iran · Hybrid",
+      company: "ModoChats",
+      link: "https:modochats.com",
+      logo: "/img/project/modochats-logo.svg",
+      location: "Golestan, Gorgan - hybrid",
+      type: "Part-time",
       positions: [
         {
-          title: "Frontend Developer | Vue.js, Nuxt.js, TailwindCSS",
-          start: "Sep 2023",
-          end: "Dec 2024",
+          title: "Open Source Maintainer/Contributor",
+          start: "April 2025",
+          ongoing: true,
           description: [
-            "Delivered high‑performance SSR apps with Nuxt 3 and Vue 3, improving speed and SEO.",
-            "Designed modular, maintainable component systems; ensured responsive, accessible UIs across devices.",
-            "Collaborated with cross‑functional teams using Git; shipped iteratively with clear client‑focused outcomes.",
-            "Leveraged Vuetify and VueUse to accelerate delivery; comfortable adapting to React when needed.",
-            "Recent: https://ideh.app/ · https://insho.app/ · https://laservice.ir/ · https://bamashin.net/ · https://hiloop.app/ · https://atdeloop.com/"
+            "Building and maintaining open source repo's",
+            "Implementing User-friendly and modern widgets",
+            "Working with cdns (js deliver) and npm package management",
+            "Implementing complex build processes using concurrently, rollup, node and tsx",
+            "Developing DX focused packages with typescript"
           ],
-          icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-vuetifyjs", "i-logos-typescript-icon"]
-        }
-      ]
-    },
-    {
-      company: "Huawei",
-      logo: "/img/huawei.svg",
-      location: "Tehran, Iran",
-      positions: [
-        {
-          title: "Senior Performance Team Analyst and Team Lead",
-          start: "Apr 2022",
-          end: "Aug 2023",
-          description: [
-            "Maintained performance and availability for ~14,500 MTN Irancell sites nationwide.",
-            "Led KPI analysis (2G/3G/4G), TCHA checks, root‑cause analysis and end‑to‑end incident follow‑ups to resolution.",
-            "Produced weekly/monthly/quarterly stakeholder reports; ensured contractual OLA/SLA compliance and risk escalation.",
-            "Coordinated contractors and subcontractors; planned and tracked high‑risk initiatives and recovery actions.",
-            "Defined scope, schedules, policies and procedures; improved processes, audits and operational quality.",
-            "Optimized OPEX by eliminating needless costs; forecasting and budgeting with timely financial statements.",
-            "Owned customer communication interface; ensured financial and contractual targets were met on time.",
-            "Hands‑on with OSS/MW tools across Ericsson/Huawei/Nokia ecosystems; mentored team members."
-          ]
-        },
-        {
-          title: "Senior Performance Analyst",
-          start: "Jul 2018",
-          end: "Jul 2023",
-          description: [
-            "Drove network KPI analysis across 2G/3G/LTE; identified trends and improvement opportunities.",
-            "Contributed to audits, process improvements and performance dashboards; supported incident resolution workflows."
-          ]
-        },
-        {
-          title: "Assistant Regional Manager",
-          start: "Mar 2018",
-          end: "Jul 2018",
-          description: [
-            "Maintained ~3000 BTS sites across Tehran Province (2G/3G/4G); ensured delivery/acceptance and cost‑saving targets.",
-            "Managed subcontractors and planning interface; translated technical specs into executable implementation plans.",
-            "Removed blockers during acceptance; escalated out‑of‑scope risks to achieve win‑win outcomes with the customer."
-          ]
-        },
-        {
-          title: "TCHA Team Lead",
-          start: "Jun 2017",
-          end: "Mar 2018",
-          description: [
-            "Built comprehensive availability dashboards; main owner driving stakeholder alignment under strict contracts.",
-            "Analyzed KPIs and traffic/control channels; performed remote actions and tracked escalations end‑to‑end to resolution.",
-            "Recognized as outstanding fresh graduate in Huawei annual meeting."
-          ]
-        },
-        {
-          title: "Back Office Employee",
-          start: "Jun 2016",
-          end: "Jun 2017",
-          description: ["Supported OSS operations, performance checks and reporting; contributed to team efficiency and customer satisfaction."]
-        }
-      ]
-    },
-    {
-      company: "Solar Energy World",
-      positions: [
-        {
-          title: "Solaris System Administrator",
-          start: "Jul 2015",
-          end: "Jun 2016",
-          description: ["Solar systems monitoring and Solaris administration."]
-        }
-      ]
-    },
-    {
-      company: "Adfa l آدفا",
-      location: "Tehran Province, Iran",
-      positions: [
-        {
-          title: "Administrator",
-          start: "Jun 2015",
-          end: "Jun 2016",
-          description: ["Hardware/software support and administrative tasks for Municipality of District 3, Tehran."]
+          icons: ["i-logos-vue", "i-logos-nuxt", "i-logos-typescript-icon", "i-logos-nuxtjs", "i-logos-pinia"],
+          link: "https://moderndata.ir/",
+          linkLabel: "modern data"
         }
       ]
     }
@@ -179,84 +104,121 @@ export const portfolio: PortfolioData = {
 
   education: [
     {
-      school: "Qom University of Technology",
-      degree: "B.A., Telecommunications Engineering",
-      start: "2010",
-      end: "2015",
-      icons: ["i-material-symbols-school"],
-      logo: "/img/qut_logo-light.jpg"
+      school: "University of Gorgan",
+      degree: "Computer science",
+      start: "2026",
+      end: "ongoing",
+      icons: ["i-material-symbols-school"]
     }
   ],
 
   projects: [
     {
-      name: "vue-cursor-rules",
-      description: "Contract-driven Cursor rules for Vue 3 + TypeScript with a focus on DX, a11y, security and production-ready outputs.",
-      links: [{label: "GitHub", to: "https://github.com/aliarghyani/vue-cursor-rules", icon: "i-mdi-github"}],
-      icons: ["i-logos-vue", "i-logos-typescript-icon"],
+      name: "Ephem Chat",
+      description: "WebRTC Ephemeral Anonymous Chat with realtime matching and communication  ",
+      links: [
+        {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
+        {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
+        {label: "Linkedin Post", to: "https://linkedin.com/1111", icon: "i-mdi-linkedin"},
+        {label: "Website", to: "https://my-ephem-chat.vercel.app"}
+      ],
+      icons: [
+        "i-logos-react",
+        "i-logos-nextjs",
+        "i-logos-typescript-icon",
+        "i-logos-expressjs",
+        "i-logos-sequelize",
+        "i-logos-webrtc",
+        "i-logos-socketio",
+        "i-logos-supabase",
+        "i-logos-railway",
+        "i-logos-shadcn"
+      ],
       status: "Active",
       opensource: true,
       category: "public"
     },
     {
-      name: "Ideh — Innovating Ideas Platform",
-      description: "Dynamic, scalable platform for idea evaluation and market insights.",
-      thumbnail: "/img/projects/ideh.png",
+      name: "Esghat Dashboard",
+      description: "Scrapping and Recycling management platform for Golestan province",
+      thumbnail: "/img/projects/esghat-logo.png",
       status: "Active",
       opensource: false,
-      links: [{label: "Website", to: "https://ideh.app/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue"],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-pinia"],
       category: "freelance"
     },
     {
-      name: "Insho Advertising Marketplace",
-      description: "Media marketplace that helps agencies and creators collaborate on high-impact advertising campaigns.",
-      thumbnail: "/img/projects/insho.png",
+      name: "Yoozro Dashboard",
+      description: "easy-to-use city to city traveling-service platform for Golestan province",
+      thumbnail: "/img/projects/yoozro-logo.png",
       status: "Active",
       opensource: false,
-      links: [{label: "Website", to: "https://insho.app/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon"],
+      links: [{label: "Website", to: "https://yoozro.ir/", icon: "i-mdi-link"}],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite"],
       category: "freelance"
     },
     {
-      name: "BaMashin Mobility Rentals",
-      description: "Rental platform for booking cars, boats, helicopters, vans, bikes, and more across Iran.",
-      thumbnail: "/img/projects/bamashin.png",
-      status: "Active",
-      opensource: false,
-      links: [{label: "Website", to: "https://bamashin.net/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue"],
-      category: "freelance"
-    },
-    {
-      name: "Elara Panel",
+      name: "Modochats",
       description:
-        "More than a medical tourism platform — a personalized experience where each patient accesses tailored information and flawless service. With Elara Medical, unlock an unforgettable medical tourism journey.",
-      thumbnail: "/img/elara-logo.png",
+        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
+      thumbnail: "/img/projects/modochats-logo.svg",
       status: "Active",
       opensource: false,
-      links: [{label: "Website", to: "https://app.elaramedical.com/", icon: "i-mdi-link"}],
-      icons: ["i-logos-vue", "i-logos-vuetifyjs", "i-logos-typescript-icon", "i-logos-vitejs"],
-      category: "current"
+      links: [
+        {label: "Website", to: "https://modochats.com/", icon: "i-mdi-link"},
+        {label: "Website", to: "https://github.com/modochat", icon: "i-mdi-github"}
+      ],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript", "i-logos-node"],
+      category: "freelance"
     },
     {
-      name: "Artemis Clinics",
-      description:
-        "Your trusted provider for medical services in Turkey, connecting you to top-quality health services at significantly lower costs than North America and Europe — even including travel expenses.",
-      thumbnail: "/img/artemis-new-logo.png",
-      status: "Active",
-      opensource: false,
-      links: [{label: "Website", to: "https://app.artemisclinics.com/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon"],
-      category: "current"
-    },
-    {
-      name: "nuxt-portfolio",
-      description: "My portfolio built with Nuxt 3 and Nuxt UI v4, showcasing projects, skills, and experiences.",
+      name: "Modo Widget",
+      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
+      thumbnail: "/img/projects/modochats-logo.svg",
       status: "Active",
       opensource: true,
-      links: [{label: "GitHub", to: "https://github.com/aliarghyani/nuxt-portfolio", icon: "i-mdi-github"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-tailwindcss-icon"],
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Chat Client",
+      description: "Client Sdk for Modo Chat system. written in typescript and focused on DX.Published on npm and open source on github",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript", "i-logos-node"],
+      category: "current"
+    },
+    {
+      name: "Modo Voice Client",
+      description:
+        "Modo Voice client sdk written in typescript.Realtime Voice-Chat with Ai though socket. Worked heavily with Web audio related Api's, like custom audio processor for parsing audio - quite the pain !",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript", "i-logos-node"],
+      category: "current"
+    },
+    {
+      name: "AR Studio",
+      description:
+        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar",
+      status: "Active",
+      opensource: true,
+      links: [],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-mindar"],
       category: "public"
     }
   ]
