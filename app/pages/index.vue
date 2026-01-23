@@ -9,7 +9,7 @@
     <AIStack />
     <SoftSkills />
     <LanguageSkills />
-    <GitHubActivity username="abolfazlshahini" />
+    <GitHubActivity username="Abolfazl2049" />
     <WorkExperience />
     <EducationList />
     <RecommendationsCarousel />
