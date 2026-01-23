@@ -167,7 +167,7 @@ const currentRole = computed(() => {
 /**
  * Email copy-to-clipboard for Hero quick action
  */
-const emailAddress = 'abolfazlshahini@gmail.com'
+const emailAddress = 'abolfazlshahini37@gmail.com'
 const emailTooltip = ref('Email')
 
 async function copyEmail() {
