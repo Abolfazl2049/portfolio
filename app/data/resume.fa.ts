@@ -17,11 +17,11 @@ export const resumeDataFa: Resume = {
     name: "ابولفضل شاهینی",
     label: "توسعه‌دهنده فرانت‌اند | Vue.js • Nuxt.js • TypeScript",
     image: "/img/my-profile.jpg",
-    email: "abolfazlshahini@gmail.com",
-    phone: "+98 912 322 0694",
+    email: "abolfazlshahini37@gmail.com",
+    phone: "+98 938 578 0203",
     url: "https://abolfazlshahini.vercel.app",
     location: {
-      city: "تهران",
+      city: "گرگان",
       country: "ایران"
     },
     profiles: [

@@ -16,12 +16,12 @@ export const resumeData: Resume = {
   basics: {
     name: "Abolfazl Shahini",
     label: "Frontend Developer | Vue.js • Nuxt.js • TypeScript",
-    image: "/img/AliProfile.webp",
-    email: "abolfazlshahini@gmail.com",
-    phone: "+98 912 322 0694",
+    image: "/img/my-profile.jpg",
+    email: "abolfazlshahini37@gmail.com",
+    phone: "+98 938 578 0203",
     url: "https://abolfazlshahini.vercel.app",
     location: {
-      city: "Tehran",
+      city: "Gorgan",
       country: "Iran"
     },
     profiles: [
