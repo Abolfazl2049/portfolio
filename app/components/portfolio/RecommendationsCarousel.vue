@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="section-spacing">
+  <section v-if="recs.length" ref="sectionEl" class="section-spacing">
     <UContainer>
       <div class="section-header">
         <!-- <div
