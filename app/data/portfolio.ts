@@ -11,7 +11,7 @@ export const portfolio: PortfolioData = {
     socials: {
       website: "https://abolfazlshahini.vercel.app",
       github: "https://github.com/Abolfazl2049",
-      linkedin: "https://www.linkedin.com/in/abolfazlShahini/",
+      linkedin: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
       telegram: "https://t.me/abolfazl2049",
       devTo: "https://dev.to/abolfazl2049"
     }
@@ -104,7 +104,7 @@ export const portfolio: PortfolioData = {
 
   education: [
     {
-      school: "University of Gorgan",
+      school: "University of Khaneh Kargar (Gorgan)",
       degree: "Computer science",
       start: "2026",
       end: "ongoing",

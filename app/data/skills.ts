@@ -9,7 +9,7 @@ export const expert: Tag[] = [
   {label: "JavaScript", icon: "i-logos-javascript", to: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", type: "Language"},
   {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon", to: "https://tailwindcss.com", type: "Framework"},
   {label: "WebRTC", icon: "i-logos:webrtc", to: "https://webrtc.org", type: "Library"},
-  {label: "Reka Ui", icon: "i-simple-icons:rekaui", to: "https://vuetifyjs.com", type: "Library"},
+  {label: "Reka Ui", icon: "i-simple-icons:rekaui", to: "https://reka-ui.com/", type: "Library"},
   {label: "Pinia", icon: "i-logos-pinia", to: "https://pinia.vuejs.org", type: "Library"},
   {label: "Ofetch", icon: "i-unjs:ofetch", to: "https://github.com/ofetch", type: "Library"},
   {label: "Git", icon: "i-logos-git-icon", to: "https://git-scm.com", type: "DevOps"},

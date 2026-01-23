@@ -10,9 +10,9 @@ const portfolioFa: PortfolioData = {
       "توسعه‌دهندهٔ فرانت‌اند با تجربه در Vue.js، Nuxt.js و TypeScript. مهاجرت از حوزهٔ رهبری تیم و تحلیل در مخابرات به توسعهٔ وب مدرن با تمرکز بر تجربهٔ توسعه‌دهنده، دسترس‌پذیری، کارایی و تحویلِ متمرکز بر نیاز مشتری.",
     avatar: "/img/AliProfile.webp",
     socials: {
-      website: "https://www.linkedin.com/in/abolfazlshahini/",
+      website: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
       github: "https://github.com/abolfazlshahini",
-      linkedin: "https://www.linkedin.com/in/abolfazlshahini/",
+      linkedin: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
       telegram: "https://t.me/Ali_Argh",
       whatsapp: "https://wa.me/989123220694",
       spotify: "https://open.spotify.com/user/abolfazlshahini",
