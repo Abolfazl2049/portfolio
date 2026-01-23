@@ -49,7 +49,7 @@ export function useResumeData() {
   function getPdfFilename(): string {
     const name = resumeData.basics.name;
     const filename = name.replace(/\s+/g, "_");
-    return `${filename}_Resume.pdf`;
+    return `${filename}_Resume_${getCurrentMonthYearTag()}.pdf`;
   }
 
   return {
