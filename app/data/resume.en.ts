@@ -27,12 +27,12 @@ export const resumeData: Resume = {
     profiles: [
       {
         network: "LinkedIn",
-        url: "https://linkedin.com/in/abolfazlshahini",
+        url: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
         icon: "i-mdi-linkedin"
       },
       {
         network: "GitHub",
-        url: "https://github.com/abolfazlshahini",
+        url: "https://github.com/Abolfazl2049",
         icon: "i-mdi-github"
       },
       {
@@ -42,107 +42,79 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Frontend Developer with **3+ years** building high-performance Vue.js/Nuxt applications for international clients. **AI-first engineer** leveraging AI-powered tools & methodologies to accelerate development by up to **2x** while maintaining code quality. Specialized in performance optimization, scalable architecture (SSR, PWA, RBAC), and accessibility. Delivered **8 production applications** with focus on maintainability and distributed team collaboration. Fluent in English (**8+ years** in fully English-speaking environment at Huawei)."
+      "Passionate Frontend Developer with **2+ years** building high-performance Vue.js/Nuxt applications. Open source contributor/maintainer with strong expertise in **TypeScript**, **component architecture**, **DX optimization**, and **performance engineering**. Experienced in **WebRTC**, **real-time systems** (WebSocket), **PWA**, and **SSR**. Specialized in shipping quality code iteratively with clear communication. Currently developing scalable dashboards and real-time applications at Modern Data; maintaining open source packages at Modochats (AI chat/voice SDKs and web components)."
   },
 
   work: [
     {
-      company: "NexaPortal",
-      position: "Frontend Developer (Remote)",
-      location: "Izmir, Turkey",
-      startDate: "2024-12",
+      company: "Modern Data",
+      position: "Frontend Developer (On-site)",
+      location: "Gorgan, Golestan - Iran",
+      startDate: "2024-02",
       highlights: [
-        "Developed **5 interconnected applications** for two medical tourism platforms (**Elara Medical** & **Artemis Clinics**): admin panels, patient dashboards, and website with **10+ language** support and PWA capabilities",
-        "Built custom **PDF template editor** with drag-and-drop interface, dynamic variable injection, and multi-page support, enabling non-technical staff to create patient documents without developer intervention",
-        "Engineered enterprise-grade **RBAC system** with deep permission patterns supporting field-level granularity and wildcard permissions across **40+ domain models**",
-        "Developed **dynamic form builder** with **10+ field types** and drag-and-drop arrangement, reducing new form development time by **60%** through schema-based architecture",
-        "Implemented real-time messaging via **Pusher WebSockets** supporting WhatsApp and in-app channels, plus custom **Canvas animations** with physics simulation for premium UX",
-        "Optimized performance through code splitting, lazy loading, and Pinia state management; accelerated development by **2x** using AI-powered tools with **zero critical bugs**"
+        "Building and maintaining **large-scale dashboards, PWAs, and web applications** with high performance standards and real-time data updates",
+        "Migrated legacy **JavaScript codebase to TypeScript**, improving type safety, developer experience, and code maintainability across projects",
+        "Architected applications using **Nuxt.js, Tailwind CSS, REST APIs, WebSocket** for real-time functionality, **WebRTC** for video/audio/data transfer, and **Pinia** for state management",
+        "Progressed from **entry-level to mid-level** developer through hands-on experience with modern frontend stack and **mentorship** in professional environment",
+        "Delivered responsive, accessible interfaces with focus on **code quality** and **developer experience** across all components"
       ]
     },
     {
-      company: "Freelance",
-      position: "Frontend Developer (Remote)",
-      location: "Tehran, Iran",
-      startDate: "2023-09",
-      endDate: "2024-12",
+      company: "Modochats",
+      position: "Open Source Maintainer/Contributor (Part-time)",
+      location: "Gorgan, Golestan - Iran",
+      startDate: "2025-04",
       highlights: [
-        "Delivered **3 production-grade** web applications for international clients using Vue.js/Nuxt.js, consistently achieving strong performance metrics and high client satisfaction",
-        "Leveraged AI development tools to reduce development time by **40%** across all projects, enabling faster client delivery and **100% on-time** project completion rate",
-        "**Ideh** - Idea evaluation platform with reusable component library reducing development time by **30%** and scalable Vue.js architecture",
-        "**Insho** - Advertising marketplace with advanced dynamic form handling (schema-based architecture), modern backend-frontend structure reducing integration time by 40%, and responsive UI for creator-brand matching",
-        "**BaMashin** - Mobility rental platform with payment integration and responsive UI optimized for mobile/desktop",
-        "Led client communications, translated business requirements into technical specifications, delivered iteratively with clear documentation and transparent progress updates"
-      ]
-    },
-    {
-      company: "Huawei Technologies",
-      position: "Senior Performance Team Lead",
-      location: "Tehran, Iran",
-      startDate: "2022-04",
-      endDate: "2023-08",
-      highlights: [
-        "Led team managing performance and availability for **14,500+ network sites** nationwide, ensuring **99.5%+ uptime** and rapid incident response across distributed infrastructure",
-        "Automated Excel reporting workflows using **Python** and **Pandas**, reducing manual report generation time by **70%** and enabling real-time performance insights across **14,500+ sites**",
-        "Established operational standards and best practices; mentored **10 team members** improving team efficiency by **30%** through process optimization and knowledge sharing",
-        "Conducted comprehensive data analysis and KPI monitoring using advanced analytics; identified performance trends and improvement opportunities, reducing network downtime by **22%** year-over-year",
-        "Owned stakeholder communication interface; delivered weekly performance reports and monthly strategic updates to **C-level executives**, translating technical metrics into business impact",
-        "Built strong operational discipline (documentation, monitoring, incident management, quality gates) that directly enhances frontend engineering quality and architectural decision-making"
-      ]
-    },
-    {
-      company: "Huawei Technologies",
-      position: "Technical & Leadership Roles",
-      location: "Tehran, Iran",
-      startDate: "2016-06",
-      endDate: "2022-04",
-      highlights: [
-        "**Senior Performance Analyst** (2018-2022): Drove network KPI analysis across 2G/3G/LTE; contributed to audits, process improvements and performance dashboards",
-        "**Assistant Regional Manager** (2018): Managed **~3,000** BTS sites across Tehran Province; coordinated subcontractors and translated technical specs into implementation plans",
-        "**TCHA Team Lead** (2017-2018): Built availability dashboards and drove stakeholder alignment; recognized as **outstanding fresh graduate** at Huawei annual meeting",
-        "**Back Office Operations** (2016-2017): Supported OSS operations, performance checks and reporting; contributed to team efficiency and customer satisfaction"
+        "Building and maintaining **open source repositories** with focus on developer experience and code quality standards",
+        "Implemented **user-friendly and modern widgets** for AI customer support integration; designed with **TypeScript-first** approach for reliability and maintainability",
+        "Managed **complex build processes** using **concurrently, rollup, node, and tsx** for multi-package monorepo structure",
+        "Published **npm packages** (chat client SDK, voice client SDK, web component widget) enabling developers to integrate AI-powered communication with minimal effort",
+        "Developed **DX-focused packages** with comprehensive TypeScript support, documentation, and examples for seamless developer onboarding"
       ]
     }
   ],
 
   education: [
     {
-      institution: "Qom University of Technology",
-      area: "Telecommunications Engineering",
+      institution: "University of Khaneh Kargar (Gorgan)",
+      area: "Computer Science",
       studyType: "Bachelor of Science",
-      startDate: "2010-09",
-      endDate: "2015-06",
-      courses: ["Software Architecture", "Systems Design", "Network Management", "Digital Signal Processing"]
+      startDate: "2026-09",
+      courses: ["Software Architecture", "Systems Design", "Web Development", "Database Management"]
     }
   ],
 
   skills: [
     {
       name: "Frontend Core",
-      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Pinia", "Vuetify", "Tailwind CSS"]
+      keywords: ["Vue.js", "Nuxt.js", "React", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Pinia"]
     },
     {
-      name: "AI-Assisted Development",
-      keywords: ["Cursor AI", "GitHub Copilot", "Codex", "BMad Method", "Claude/ChatGPT", "Prompt Engineering", "AI-Powered Code Review"]
+      name: "Real-time & Advanced Features",
+      keywords: ["WebRTC (Video/Audio/Data)", "WebSocket", "Socket.io", "Web Audio API", "Real-time Communication", "PWA"]
     },
     {
       name: "Architecture & Performance",
       keywords: [
+        "Component Architecture",
         "SSR (Server-Side Rendering)",
-        "SSG (Static Site Generation)",
-        "PWA (Progressive Web Apps)",
-        "RBAC Systems",
         "Code Splitting & Lazy Loading",
-        "Performance Optimization"
+        "Performance Optimization",
+        "Monorepo Structure",
+        "State Management (Pinia)"
       ]
     },
     {
-      name: "Development Tools & Workflow",
-      keywords: ["Git/GitHub", "GitHub Actions (CI/CD)", "ESLint/Prettier", "Vite", "VueUse", "REST APIs", "WebSocket", "Agile/Scrum"]
+      name: "Development Tools & Build",
+      keywords: ["Git/GitHub", "npm/pnpm", "Vite", "Rollup", "Node.js", "Concurrently", "tsx", "ESLint/Prettier", "Web Components"]
     },
     {
       name: "Quality & Accessibility",
-      keywords: ["WCAG 2.1 Compliance", "Lighthouse Optimization", "Cypress E2E Testing", "Code Review", "i18n Internationalization", "Responsive Design"]
+      keywords: ["TypeScript Strict Mode", "Responsive Design", "Web Standards", "Git Workflows", "Documentation"]
+    },
+    {
+      name: "Backend (Supporting Knowledge)",
+      keywords: ["Express.js", "REST APIs", "Sequelize ORM", "Database Design", "Node.js"]
     }
   ],
 
@@ -163,45 +135,119 @@ export const resumeData: Resume = {
       date: "2025",
       issuer: "Duolingo English Test",
       url: "",
-      summary: "Score: 85/100 (Advanced Level)"
+      summary: "Score: 130/130 (Advanced Level)"
     }
   ],
 
   projects: [
     {
-      name: "Ideh",
-      description: "Idea evaluation & market insights platform with scalable architecture and reusable component library",
-      highlights: ["Component library reduced development time by 30%", "Scalable Vue.js architecture", "Dynamic form generation system"],
-      keywords: ["Vue.js", "Nuxt.js", "Component Library"],
-      startDate: "2023-09",
-      endDate: "2024-12",
-      url: "https://ideh.app",
-      roles: ["Frontend Developer"],
-      type: "application"
-    },
-    {
-      name: "Insho",
-      description: "Media & advertising marketplace connecting agencies and creators for campaign collaboration",
+      name: "Ephem Chat",
+      description: "WebRTC-based ephemeral anonymous chat with real-time matching and communication",
       highlights: [
-        "Advanced dynamic form handling with schema-based architecture enabling complex multi-functional forms with validation, conditional logic, and real-time updates",
-        "Established modern structure between backend and frontend for seamless form data flow, reducing integration time by 40%",
-        "Responsive UI optimized for creator-brand matching with comprehensive listing and proposal management system"
+        "Implemented WebRTC peer-to-peer connection for direct video/audio/data transfer between anonymous users",
+        "Built real-time matching system with Socket.io for ephemeral session management",
+        "Developed both frontend (React/Next.js) and backend (Express.js with Sequelize) for production deployment"
       ],
-      keywords: ["Vue.js", "Nuxt.js", "Dynamic Forms", "Schema-based Architecture", "Marketplace"],
-      startDate: "2023-09",
-      endDate: "2024-12",
-      url: "https://insho.app",
+      keywords: ["React", "Next.js", "TypeScript", "WebRTC", "Socket.io", "Express.js", "Supabase"],
+      startDate: "2025-04",
+      url: "https://my-ephem-chat.vercel.app",
+      roles: ["Full Stack Developer"],
+      type: "application"
+    },
+    {
+      name: "Modochats Platform",
+      description: "AI agent platform enabling businesses to build custom agents for customer support, sales, and content management",
+      highlights: [
+        "Contributed to landing page, dashboard, chat widget, and SDK packages",
+        "Architected modular component system for multi-package monorepo with shared utilities",
+        "Implemented customer support chat, voice channels, and business integration features"
+      ],
+      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "Node.js", "AI Integration"],
+      startDate: "2025-04",
+      url: "https://modochats.com",
+      roles: ["Frontend Developer", "Open Source Contributor"],
+      type: "application"
+    },
+    {
+      name: "Modo Widget - Customer Support",
+      description: "Customizable, responsive AI customer support chat widget with text and voice capabilities",
+      highlights: [
+        "Built as web component for easy integration across different web technologies",
+        "DX-focused implementation with comprehensive TypeScript support and minimal configuration",
+        "Real-time messaging and voice chat powered by AI backend"
+      ],
+      keywords: ["TypeScript", "Web Components", "Node.js", "Real-time Communication"],
+      startDate: "2025-04",
+      url: "https://github.com/mnodochats/webcomponent",
+      roles: ["Frontend Developer"],
+      type: "library"
+    },
+    {
+      name: "Modo Chat Client SDK",
+      description: "TypeScript SDK for integrating Modochats messaging system into applications",
+      highlights: [
+        "Published on npm for easy dependency management",
+        "Comprehensive TypeScript support with strict type safety",
+        "Focused on developer experience with clear documentation and examples"
+      ],
+      keywords: ["TypeScript", "Node.js", "SDK", "npm"],
+      startDate: "2025-04",
+      url: "https://github.com/mnodochats/chat_client",
+      roles: ["Library Developer"],
+      type: "library"
+    },
+    {
+      name: "Modo Voice Client SDK",
+      description: "Real-time voice chat SDK with AI integration using TypeScript",
+      highlights: [
+        "Implemented custom Web Audio API processors for audio stream parsing",
+        "Real-time voice communication via Socket.io with AI backend",
+        "Comprehensive error handling for audio device management"
+      ],
+      keywords: ["TypeScript", "Web Audio API", "Socket.io", "Node.js"],
+      startDate: "2025-04",
+      url: "https://github.com/mnodochats/voice_client",
+      roles: ["Library Developer"],
+      type: "library"
+    },
+    {
+      name: "AR Studio",
+      description: "Dynamic AR target registration and element placement system (text/audio/video/image)",
+      highlights: [
+        "Built with Aframe and Mind-ar for AR capabilities",
+        "Dynamic asset management and AR scanning functionality",
+        "Support for multiple media types with responsive design"
+      ],
+      keywords: ["Vue.js", "Nuxt.js", "Tailwind CSS", "AR Technology"],
+      startDate: "2024",
       roles: ["Frontend Developer"],
       type: "application"
     },
     {
-      name: "BaMashin",
-      description: "Mobility rental platform (cars, boats, helicopters) with comprehensive booking system and accessible UI",
-      highlights: ["Multi-category rental system", "WCAG 2.1 compliant interface", "Payment integration"],
-      keywords: ["Vue.js", "TypeScript", "Responsive Design", "Accessibility"],
-      startDate: "2023-09",
-      endDate: "2024-12",
-      url: "https://bamashin.net",
+      name: "Esghat Dashboard",
+      description: "Scrapping and recycling management platform for Golestan Province",
+      highlights: [
+        "Built with Nuxt.js and Pinia for state management",
+        "Scalable dashboard architecture for waste management operations",
+        "Real-time data updates and reporting"
+      ],
+      keywords: ["Vue.js", "Nuxt.js", "Pinia", "Dashboard"],
+      startDate: "2024",
+      url: "https://esghat.ir",
+      roles: ["Frontend Developer"],
+      type: "application"
+    },
+    {
+      name: "Yoozro Dashboard",
+      description: "City-to-city travel service platform for Golestan Province with mapping integration",
+      highlights: [
+        "User-friendly interface for travel booking and management",
+        "Leaflet integration for route mapping and location display",
+        "Responsive design optimized for mobile and desktop"
+      ],
+      keywords: ["Vue.js", "Nuxt.js", "JavaScript", "Leaflet", "Flowbite"],
+      startDate: "2024",
+      url: "https://yoozro.ir",
       roles: ["Frontend Developer"],
       type: "application"
     }

@@ -119,7 +119,11 @@ const portfolioFa: PortfolioData = {
       links: [
         {label: "GitHub فرانت‌اند", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
         {label: "GitHub بک‌اند", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
-        {label: "پست LinkedIn", to: "https://linkedin.com/1111", icon: "i-mdi-linkedin"},
+        {
+          label: "پست dev.to",
+          to: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          icon: "i-mdi-linkedin"
+        },
         {label: "وب‌سایت", to: "https://my-ephem-chat.vercel.app"}
       ],
       icons: [

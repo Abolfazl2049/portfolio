@@ -119,7 +119,11 @@ export const portfolio: PortfolioData = {
       links: [
         {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
         {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
-        {label: "Linkedin Post", to: "https://linkedin.com/1111", icon: "i-mdi-linkedin"},
+        {
+          label: "dev.to Post",
+          to: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          icon: "i-mdi-linkedin"
+        },
         {label: "Website", to: "https://my-ephem-chat.vercel.app"}
       ],
       icons: [
