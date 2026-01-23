@@ -218,7 +218,6 @@ export const portfolio: PortfolioData = {
       thumbnail: "/img/projects/yoozro-logo.png",
       status: "Active",
       opensource: false,
-      links: [{label: "Website", to: "https://yoozro.ir/", icon: "i-mdi-link"}],
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
     }

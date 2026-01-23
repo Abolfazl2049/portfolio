@@ -2,35 +2,31 @@ import type {PortfolioData} from "@/types/portfolio.types";
 
 const portfolioFa: PortfolioData = {
   profile: {
-    name: "علی ارغیانی",
+    name: "ابوالفضل شاهینی",
     title: "توسعه‌دهنده فرانت‌اند",
-    // location: 'Tehran Province - Iran , Remote - Turkey',
-    location: "استان تهران، ایران",
+    location: "استان گلستان - ایران",
     summary:
-      "توسعه‌دهندهٔ فرانت‌اند با تجربه در Vue.js، Nuxt.js و TypeScript. مهاجرت از حوزهٔ رهبری تیم و تحلیل در مخابرات به توسعهٔ وب مدرن با تمرکز بر تجربهٔ توسعه‌دهنده، دسترس‌پذیری، کارایی و تحویلِ متمرکز بر نیاز مشتری.",
-    avatar: "/img/AliProfile.webp",
+      "توسعه‌دهنده فرانت‌اند٬ با بیش از دو سال تجربه در ساخت وبسایت٬ دشبورد٬ pwa با ابزارها/زبان‌های مدرن و کاربردی از جمله Vue.js, Nuxt.js و TypeScript و ...",
+    avatar: "/img/my-profile.jpg",
     socials: {
-      website: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
-      github: "https://github.com/abolfazlshahini",
+      website: "https://abolfazlshahini.vercel.app",
+      github: "https://github.com/Abolfazl2049",
       linkedin: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
-      telegram: "https://t.me/Ali_Argh",
-      whatsapp: "https://wa.me/989123220694",
-      spotify: "https://open.spotify.com/user/abolfazlshahini",
-      bento: "https://bento.me/arghyani",
-      instagram: "https://www.instagram.com/ali.arghyani/"
+      telegram: "https://t.me/abolfazl2049",
+      devTo: "https://dev.to/abolfazl2049"
     }
   },
 
   mainTools: {
     title: "ابزارهای اصلی",
     items: [
+      {label: "TypeScript", icon: "i-logos-typescript-icon"},
       {label: "Vue.js", icon: "i-logos-vue"},
       {label: "Nuxt.js", icon: "i-logos-nuxt-icon"},
-      {label: "TypeScript", icon: "i-logos-typescript-icon"},
-      {label: "Vuetify", icon: "i-logos-vuetifyjs"},
       {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon"},
+      {label: "Reka ui", icon: "i-logos-reka-ui"},
       {label: "Pinia", icon: "i-logos-pinia"},
-      {label: "Vite", icon: "i-logos-vitejs"},
+      {label: "Node", icon: "i-logos-nodejs"},
       {label: "Git/GitHub", icon: "i-mdi-github"}
     ]
   },
@@ -39,145 +35,68 @@ const portfolioFa: PortfolioData = {
     title: "نقش‌ها",
     items: [
       {label: "توسعه‌دهندهٔ فرانت‌اند", icon: "i-twemoji-laptop"},
+      {label: "مشارکت‌کننده/نگهدارنده متن‌باز"},
       {label: "SSR با Nuxt", icon: "i-twemoji-rocket"},
-      {label: "مهندسی رابط کاربری", icon: "i-twemoji-toolbox"},
-      {label: "DX و عملکرد", icon: "i-twemoji-high-voltage"}
+      {label: "DX و عملکرد", icon: "i-twemoji-high-voltage"},
+      {label: "طراحی سیستم و معماری"}
     ]
   },
 
   values: {
     title: "ارزش‌ها",
     items: [
-      {label: "خودمختاری و مالکیت", icon: "i-twemoji-key", description: "پیش‌قدم و مسئولیت‌پذیر؛ تحویل کار از ابتدا تا انتها."},
-      {label: "استانداردهای بالا", icon: "i-twemoji-sparkles", description: "کیفیت به‌جای میانبر؛ کار را بهتر از قبل رها کن."},
-      {label: "تحویل متمرکز بر مشتری", icon: "i-twemoji-handshake", description: "هدف را بفهم، مرحله‌ای بساز، نتیجه را همسو نگه‌دار."},
-      {label: "کار تیمی و منتورینگ", icon: "i-twemoji-people-holding-hands", description: "دانش را به‌اشتراک بگذار، تیم را رشد بده، قابل اتکا باش."},
-      {label: "ارتباط شفاف", icon: "i-twemoji-speech-balloon", description: "چرایی/چی/چطور را بگو؛ کوتاه و ترجیحاً غیرهم‌زمان."}
+      {label: "استانداردهای بالا", icon: "i-twemoji-sparkles", description: "تمرکز بر کمال‌گرایی."},
+      {label: "تحویل متمرکز بر مشتری", icon: "i-twemoji-handshake", description: "اهداف را درک کن، مرحله‌ای توسعه دهید، نتایج را هماهنگ نگه‌دارید."},
+      {label: "کار تیمی", icon: "i-twemoji-people-holding-hands", description: "دانش را به‌اشتراک بگذار، همکاران را توسعه دهید، قابل اتکا باشید."},
+      {label: "ارتباط واضح", icon: "i-twemoji-speech-balloon", description: "چرایی/چی/چطور را توضیح دهید."}
     ]
   },
 
   experiences: [
     {
-      company: "NexaPortal",
-      link: "https://nexaportal.com/",
-      logo: "/img/NexaPortal1.png",
-      location: "ازمیر، ترکیه · ریموت",
+      company: "Modern Data",
+      link: "https://moderndata.ir/",
+      logo: "/img/modern-data-logo.png",
+      location: "گلستان، گرگان - حضوری",
       type: "تمام‌وقت",
       positions: [
         {
           title: "توسعه‌دهندهٔ فرانت‌اند",
-          start: "دسامبر ۲۰۲۴",
+          start: "بهمن ۱۴۰۲",
           ongoing: true,
           description: [
-            "مشارکت در پلتفرمی برای دگرگونی مدیریت کسب‌وکار گردشگری سلامت؛ ساخت فرانت‌اندهای امن و مقیاس‌پذیر.",
-            "پیاده‌سازی معماری Vue 3 + TypeScript با Vuetify، Vite، Pinia، RBAC و i18n؛ تمرکز بر DX، عملکرد و دسترس‌پذیری.",
-            "ساخت اپ کاربر و داشبورد ادمین: https://app.elaramedical.com/ · https://dashboard.elaramedical.com/",
-            "قابلیت‌های PWA، فلوهای فرمی سنگین، تقویم و زمان‌بندی، یکپارچه‌سازی با Google API و بلادرنگ با WebSocket.",
-            "دروازه‌های کیفیت: ESLint سخت‌گیرانه، تست‌های E2E با Cypress، بیلدهای سازگار با CI و کدریویو."
+            "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های بزرگ‌مقیاس",
+            "انتقال از JavaScript به TypeScript",
+            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC برای انتقال ویدیو/صدا/داده",
+            "از جونیور تا میدلول"
           ],
-          icons: ["i-logos-vue", "i-logos-vuetifyjs", "i-logos-typescript-icon", "i-logos-vitejs", "i-logos-pinia", "i-logos-eslint", "i-logos-cypress"],
-          link: "https://app.elaramedical.com/",
-          linkLabel: "پلتفرم Elara"
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-simple-icons:rekaui"],
+          link: "https://moderndata.ir/",
+          linkLabel: "Modern Data"
         }
       ]
     },
     {
-      company: "Freelancer",
-      type: "خویش‌فرما",
-      location: "تهران، ایران · هیبرید",
+      company: "Modochats",
+      link: "https://modochats.com",
+      logo: "/img/projects/modochats-logo.svg",
+      location: "گلستان، گرگان - هیبرید",
+      type: "پاره‌وقت",
       positions: [
         {
-          title: "توسعه‌دهندهٔ فرانت‌اند | Vue.js، Nuxt.js، TailwindCSS",
-          start: "سپتامبر ۲۰۲۳",
-          end: "دسامبر ۲۰۲۴",
+          title: "نگهدارنده/مشارکت‌کننده متن‌باز",
+          start: "فروردین ۱۴۰۴",
+          ongoing: true,
           description: [
-            "تحویل اپ‌های SSR پرفورمنس با Nuxt 3 و Vue 3؛ بهبود سرعت و SEO.",
-            "طراحی سیستم‌های کامپوننتی ماژولار و نگهداشت‌پذیر؛ اطمینان از واکنش‌گرایی و دسترس‌پذیری در همه دستگاه‌ها.",
-            "همکاری بین‌وظیفه‌ای با Git؛ ارسال مرحله‌ای با تمرکز بر اهداف مشتری.",
-            "بهره‌گیری از Vuetify و VueUse برای تسریع توسعه؛ قابلیت انطباق سریع با React در صورت نیاز.",
-            "نمونه‌های اخیر: https://ideh.app/ · https://insho.app/ · https://laservice.ir/ · https://bamashin.net/ · https://hiloop.app/ · https://atdeloop.com/"
+            "ساخت و نگهداری پروژه‌های متن‌باز",
+            "پیاده‌سازی ویجت‌های کاربردی و مدرن",
+            "کار با CDN‌ها (JS Deliver) و مدیریت بسته‌های npm",
+            "پیاده‌سازی فرآیندهای بیلد پیچیده با استفاده از concurrently، rollup، node و tsx",
+            "توسعه متمرکز بر DX با TypeScript"
           ],
-          icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-vuetifyjs", "i-logos-typescript-icon"]
-        }
-      ]
-    },
-    {
-      company: "Huawei",
-      logo: "/img/huawei.svg",
-      location: "تهران، ایران",
-      positions: [
-        {
-          title: "کارشناس ارشد عملکرد و رهبر تیم",
-          start: "آوریل ۲۰۲۲",
-          end: "آگوست ۲۰۲۳",
-          description: [
-            "نگهداشت عملکرد و در‌دسترس‌بودن ~۱۴٬۵۰۰ سایت MTN Irancell در سراسر کشور.",
-            "رهبری تحلیل KPI (2G/3G/4G)، چک‌های TCHA، ریشه‌یابی و پیگیری سرتاسری رخدادها تا حل.",
-            "تهیه گزارش‌های هفتگی/ماهانه/فصلانه برای ذی‌نفعان؛ پایش OLA/SLA و تصعید ریسک‌ها.",
-            "هماهنگی پیمانکاران و زیرپیمانکاران؛ برنامه‌ریزی و رهگیری ابتکارهای پرریسک و اقدامات بازیابی.",
-            "تعریف محدوده، زمان‌بندی، سیاست‌ها و رویه‌ها؛ بهبود فرآیند، ممیزی و کیفیت عملیات.",
-            "بهینه‌سازی OPEX با حذف هزینه‌های غیرضروری؛ پیش‌بینی و بودجه‌بندی با صورت‌های مالی به‌موقع.",
-            "مالک ارتباط با مشتری؛ تحقق اهداف مالی و قراردادی به‌موقع.",
-            "تسلط بر ابزارهای OSS/MW اکوسیستم Ericsson/Huawei/Nokia؛ منتورینگ اعضای تیم."
-          ]
-        },
-        {
-          title: "کارشناس ارشد عملکرد",
-          start: "جولای ۲۰۱۸",
-          end: "جولای ۲۰۲۳",
-          description: [
-            "راندن تحلیل KPI شبکه در 2G/3G/LTE؛ شناسایی روندها و فرصت‌های بهبود.",
-            "مشارکت در ممیزی‌ها، بهبود فرآیند و داشبوردهای عملکرد؛ پشتیبانی از فرایندهای حل رخداد."
-          ]
-        },
-        {
-          title: "دستیار مدیر منطقه",
-          start: "مارس ۲۰۱۸",
-          end: "جولای ۲۰۱۸",
-          description: [
-            "نگهداشت ~۳۰۰۰ سایت BTS در استان تهران (2G/3G/4G)؛ تحقق اهداف تحویل/پذیرش و صرفه‌جویی هزینه.",
-            "مدیریت زیرپیمانکاران و رابط برنامه‌ریزی؛ ترجمه طرح‌های فنی به برنامه‌های اجرایی.",
-            "رفع موانع حین پذیرش؛ تصعید ریسک‌های خارج از محدوده برای دستیابی به نتیجه برد-برد با مشتری."
-          ]
-        },
-        {
-          title: "رهبر تیم TCHA",
-          start: "ژوئن ۲۰۱۷",
-          end: "مارس ۲۰۱۸",
-          description: [
-            "ساخت داشبوردهای جامع در‌دسترس‌بودن؛ مالک اصلی هم‌راستاسازی ذی‌نفعان زیر الزامات قراردادی سخت.",
-            "تحلیل KPI و کانال‌های ترافیک/کنترلی؛ اقدامات راه‌دور و پیگیری تصعیدها تا حل نهایی.",
-            "کسب عنوان فارغ‌التحصیل برتر در گردهمایی سالانه Huawei."
-          ]
-        },
-        {
-          title: "کارمند بک‌آفیس",
-          start: "ژوئن ۲۰۱۶",
-          end: "ژوئن ۲۰۱۷",
-          description: ["پشتیبانی عملیات OSS، چک‌های عملکرد و گزارش‌دهی؛ کمک به کارایی تیم و رضایت مشتری."]
-        }
-      ]
-    },
-    {
-      company: "Solar Energy World",
-      positions: [
-        {
-          title: "مدیر سیستم Solaris",
-          start: "جولای ۲۰۱۵",
-          end: "ژوئن ۲۰۱۶",
-          description: ["مانیتورینگ سیستم‌های خورشیدی و ادمین Solaris."]
-        }
-      ]
-    },
-    {
-      company: "Adfa l آدفا",
-      location: "استان تهران، ایران",
-      positions: [
-        {
-          title: "ادمین",
-          start: "ژوئن ۲۰۱۵",
-          end: "ژوئن ۲۰۱۶",
-          description: ["پشتیبانی سخت‌افزار/نرم‌افزار و امور اداری شهرداری منطقه ۳ تهران."]
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon:nodejs"],
+          link: "https://modochats.com/",
+          linkLabel: "Modochats"
         }
       ]
     }
@@ -185,85 +104,122 @@ const portfolioFa: PortfolioData = {
 
   education: [
     {
-      school: "دانشگاه صنعتی قم",
-      degree: "کارشناسی مهندسی مخابرات",
-      start: "۲۰۱۰",
-      end: "۲۰۱۵",
-      icons: ["i-material-symbols-school"],
-      logo: "/img/qut_logo-light.jpg"
+      school: "دانشگاه علمی کاربردی خانه کارگر (گرگان)",
+      degree: "کامپیوتر",
+      start: "۱۴۰۴",
+      end: "در حال تحصیل",
+      icons: ["i-material-symbols-school"]
     }
   ],
 
   projects: [
     {
-      name: "vue-cursor-rules",
-      description: "قواعد Cursor مبتنی بر قرارداد برای Vue 3 + TypeScript با تمرکز بر DX، دسترس‌پذیری، امنیت و خروجی قابل اتکا.",
-      links: [{label: "GitHub", to: "https://github.com/abolfazlshahini/vue-cursor-rules", icon: "i-mdi-github"}],
-      icons: ["i-logos-vue", "i-logos-typescript-icon"],
+      name: "Ephem Chat",
+      description: "چت ناشناس Realtime مبتنی بر WebRTC با ارتباط Realtime",
+      links: [
+        {label: "GitHub فرانت‌اند", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
+        {label: "GitHub بک‌اند", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
+        {label: "پست LinkedIn", to: "https://linkedin.com/1111", icon: "i-mdi-linkedin"},
+        {label: "وب‌سایت", to: "https://my-ephem-chat.vercel.app"}
+      ],
+      icons: [
+        "i-logos-react",
+        "i-devicon:nextjs",
+        "i-logos-typescript-icon",
+        "i-skill-icons:expressjs-light",
+        "i-logos-sequelize",
+        "i-logos:webrtc",
+        "i-logos-socketio",
+        "i-logos-supabase",
+        "i-logos-railway",
+        "i-logos-shadcn"
+      ],
       status: "فعال",
       opensource: true,
       category: "public"
     },
+
     {
-      name: "ایده — پلتفرم نوآوری",
-      description: "پلتفرمی پویا و مقیاس‌پذیر برای ارزیابی ایده‌ها و بینش‌های بازار.",
-      thumbnail: "/img/projects/ideh.png",
-      status: "فعال",
-      opensource: false,
-      links: [{label: "وب‌سایت", to: "https://ideh.app/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue"],
-      category: "freelance"
-    },
-    {
-      name: "Insho — بازار تبلیغات",
-      description: "مارکت‌پلیس رسانه برای پیوند دادن آژانس‌ها و تولیدکنندگان محتوا در کمپین‌های تبلیغاتی پراثر.",
-      thumbnail: "/img/projects/insho.png",
-      status: "فعال",
-      opensource: false,
-      links: [{label: "وب‌سایت", to: "https://insho.app/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon"],
-      category: "freelance"
-    },
-    {
-      name: "باماشین — سامانه اجاره ناوگان",
-      description: "پلتفرم اجاره برای رزرو خودرو، قایق، بالگرد، ون، دوچرخه و ناوگان متنوع در سراسر ایران.",
-      thumbnail: "/img/projects/bamashin.png",
-      status: "فعال",
-      opensource: false,
-      links: [{label: "وب‌سایت", to: "https://bamashin.net/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue"],
-      category: "freelance"
-    },
-    {
-      name: "Elara Panel",
+      name: "Modochats",
       description:
-        "ما بسیار فراتر از یک مجموعه گردشگری سلامت هستیم. بیماران ما ارزشمندترین و محوری‌ترین نقطه ما هستند. خوشحالی آن‌ها، دریافت راهنمایی درست و تجربه خدمات بی‌نقص برای ما حیاتی است. می‌دانیم هر بیمار انتظارات و نیازهای متفاوتی دارد. در این پنل شخصی‌سازی‌شده، به اطلاعاتی دسترسی دارید که مخصوص شماست. در هر آنچه بخواهید شخصی‌سازی کنید کنار شما هستیم. با Elara Medical، درهای یک تجربه فراموش‌نشدنی گردشگری سلامت را بگشایید.",
-      thumbnail: "/img/elara-logo.png",
+        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مشارکت در لندینگ داشبورد، ویجت، پکیج های کلاینت چت متنی و صوتی.",
+      thumbnail: "/img/projects/modochats-logo.svg",
       status: "فعال",
       opensource: false,
-      links: [{label: "وب‌سایت", to: "https://app.elaramedical.com/", icon: "i-mdi-link"}],
-      icons: ["i-logos-vue", "i-logos-vuetifyjs", "i-logos-typescript-icon", "i-logos-vitejs"],
-      category: "current"
+      links: [
+        {label: "وب‌سایت", to: "https://modochats.com/", icon: "i-mdi-link"},
+        {label: "GitHub", to: "https://github.com/modochat", icon: "i-mdi-github"}
+      ],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
     },
     {
-      name: "Artemis Clinics",
-      description:
-        "آرتمیس، ارائه‌دهنده قابل اعتماد خدمات پزشکی در ترکیه، شما را به طیف گسترده‌ای از خدمات سلامت باکیفیت با هزینه‌ای به‌مراتب کمتر از آمریکای شمالی و اروپا متصل می‌کند، حتی با احتساب هزینه‌های سفر.",
-      thumbnail: "/img/artemis-new-logo.png",
-      status: "فعال",
-      opensource: false,
-      links: [{label: "وب‌سایت", to: "https://app.artemisclinics.com/", icon: "i-mdi-link"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon"],
-      category: "current"
-    },
-    {
-      name: "nuxt-portfolio",
-      description: "پورتفولیو من با Nuxt 3 و Nuxt UI v4، شامل پروژه‌ها، مهارت‌ها و سوابق.",
+      name: "Modo Widget",
+      description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime",
+      thumbnail: "/img/projects/modochats-logo.svg",
       status: "فعال",
       opensource: true,
-      links: [{label: "GitHub", to: "https://github.com/abolfazlshahini/nuxt-portfolio", icon: "i-mdi-github"}],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-tailwindcss-icon"],
-      category: "public"
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-devicon:nodejs"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Chat Client",
+      description: "Client SDK برای سیستم Modo Chat. نوشته‌شده با TypeScript و متمرکز بر DX. منتشر‌شده در npm و متن‌باز در github",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "فعال",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "Modo Voice Client",
+      description:
+        "Modo Voice client SDK نوشته‌شده با TypeScript. چت صوتی Realtime با هوش‌مصنوعی از طریق socket. کار با API‌های صدا در وب، مانند پردازشگر (processor) صدای custom برای تجزیه/پردازش صدا - خیلی سخت بود!",
+      thumbnail: "/img/projects/modochats-logo.svg",
+      status: "فعال",
+      opensource: true,
+      links: [
+        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
+        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
+      ],
+      icons: ["i-logos-typescript-icon", "i-logos-node"],
+      category: "freelance"
+    },
+    {
+      name: "AR Studio",
+      description:
+        "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar",
+      status: "فعال",
+      opensource: true,
+      links: [],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-mindar"],
+      category: "freelance"
+    },
+    {
+      name: "Esghat Dashboard",
+      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان",
+      thumbnail: "/img/projects/esghat-logo.png",
+      status: "فعال",
+      opensource: false,
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-pinia"],
+      category: "freelance"
+    },
+    {
+      name: "Yoozro Dashboard",
+      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان",
+      thumbnail: "/img/projects/yoozro-logo.png",
+      status: "فعال",
+      opensource: false,
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
+      category: "freelance"
     }
   ]
 };
