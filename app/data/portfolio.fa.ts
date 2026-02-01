@@ -198,6 +198,28 @@ const portfolioFa: PortfolioData = {
       category: "freelance"
     },
     {
+      name: "Godfather Meet",
+      thumbnail: "/img/projects/godfather-meet-logo.png",
+      description:
+        "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی.",
+      status: "Active",
+      opensource: false,
+      links: [
+        {
+          label: "وب‌اپلیکیشن",
+          to: "https://meet.godfathergame.ir",
+          icon: "i-mdi-link"
+        },
+        {
+          label: "بات تلگرام",
+          to: "https://t.me/godfathergame_bot",
+          icon: "i-mdi-telegram"
+        }
+      ],
+      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-webrtc", "i-hugeicons-plug-socket", "i-logos-tailwindcss-icon"],
+      category: "freelance"
+    },
+    {
       name: "AR Studio",
       description:
         "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar",

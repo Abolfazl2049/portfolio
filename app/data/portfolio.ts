@@ -198,6 +198,28 @@ export const portfolio: PortfolioData = {
       category: "freelance"
     },
     {
+      name: "Godfather Meet",
+      thumbnail: "/img/projects/godfather-meet-logo.png",
+      description:
+        "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking.",
+      status: "Active",
+      opensource: false,
+      links: [
+        {
+          label: "Web Application",
+          to: "https://meet.godfathergame.ir",
+          icon: "i-mdi-link"
+        },
+        {
+          label: "Telegram Bot",
+          to: "https://t.me/godfathergame_bot",
+          icon: "i-mdi-telegram"
+        }
+      ],
+      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-webrtc", "i-hugeicons-plug-socket", "i-logos-tailwindcss-icon"],
+      category: "freelance"
+    },
+    {
       name: "AR Studio",
       description:
         "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar",
