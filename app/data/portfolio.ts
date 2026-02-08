@@ -246,6 +246,20 @@ export const portfolio: PortfolioData = {
       opensource: false,
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
+    },
+    {
+      name: "Multi Connection WebRTC Starter",
+      description:
+        "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants.",
+      status: "Active",
+      opensource: true,
+      links: [
+        {label: "GitHub", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", icon: "i-mdi-github"},
+        {label: "Demo", to: "https://multi-connection-webrtc-starter.vercel.app/", icon: "i-mdi-link"},
+        {label: "README", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter#readme", icon: "i-mdi-file-document"}
+      ],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node", "i-logos-express", "i-logos-socketio", "i-logos-webrtc"],
+      category: "public"
     }
   ]
 };

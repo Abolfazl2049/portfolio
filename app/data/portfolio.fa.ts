@@ -65,7 +65,7 @@ const portfolioFa: PortfolioData = {
           start: "بهمن ۱۴۰۲",
           ongoing: true,
           description: [
-            "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های بزرگ‌مقیاس",
+            "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های در مقیاس بزرگ",
             "انتقال از JavaScript به TypeScript",
             "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC برای انتقال ویدیو/صدا/داده",
             "از جونیور تا میدلول"
@@ -246,6 +246,19 @@ const portfolioFa: PortfolioData = {
       opensource: false,
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
+    },
+    {
+      name: "Multi Connection WebRTC Starter",
+      description: "استارتر مینیمال برای برقراری ارتباط هم‌زمان چند peer با WebRTC؛ شامل فرانت‌اند با Nuxt 3 و بک‌اند Express + Socket.IO برای سیگنالینگ.",
+      status: "فعال",
+      opensource: true,
+      links: [
+        {label: "GitHub", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", icon: "i-mdi-github"},
+        {label: "دمو", to: "https://multi-connection-webrtc-starter.vercel.app/", icon: "i-mdi-link"},
+        {label: "README", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter#readme", icon: "i-mdi-file-document"}
+      ],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node", "i-logos-express", "i-logos-socketio", "i-logos-webrtc"],
+      category: "public"
     }
   ]
 };
