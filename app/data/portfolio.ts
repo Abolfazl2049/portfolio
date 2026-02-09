@@ -152,7 +152,7 @@ export const portfolio: PortfolioData = {
       opensource: false,
       links: [
         {label: "Website", to: "https://modochats.com/", icon: "i-mdi-link"},
-        {label: "Website", to: "https://github.com/modochat", icon: "i-mdi-github"}
+        {label: "github", to: "https://github.com/modochat", icon: "i-mdi-github"}
       ],
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node"],
       category: "freelance"
@@ -171,28 +171,17 @@ export const portfolio: PortfolioData = {
       category: "freelance"
     },
     {
-      name: "Modo Chat Client",
-      description: "Client Sdk for Modo Chat system. written in typescript and focused on DX.Published on npm and open source on github",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-logos-node"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Voice Client",
+      name: "Modo Chat & Voice Clients",
       description:
-        "Modo Voice client sdk written in typescript.Realtime Voice-Chat with Ai though socket. Worked heavily with Web audio related Api's, like custom audio processor for parsing audio - quite the pain !",
+        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
       thumbnail: "/img/projects/modochats-logo.svg",
       status: "Active",
       opensource: true,
       links: [
-        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
+        {label: "Chat Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
+        {label: "Chat NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"},
+        {label: "Voice Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
+        {label: "Voice NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
       ],
       icons: ["i-logos-typescript-icon", "i-logos-node"],
       category: "freelance"

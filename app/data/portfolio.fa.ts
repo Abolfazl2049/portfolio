@@ -171,28 +171,17 @@ const portfolioFa: PortfolioData = {
       category: "freelance"
     },
     {
-      name: "Modo Chat Client",
-      description: "Client SDK برای سیستم Modo Chat. نوشته‌شده با TypeScript و متمرکز بر DX. منتشر‌شده در npm و متن‌باز در github",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "فعال",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-logos-node"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Voice Client",
+      name: "Modo Chat & Voice Clients",
       description:
-        "Modo Voice client SDK نوشته‌شده با TypeScript. چت صوتی Realtime با هوش‌مصنوعی از طریق socket. کار با API‌های صدا در وب، مانند پردازشگر (processor) صدای custom برای تجزیه/پردازش صدا - خیلی سخت بود!",
+        "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند.",
       thumbnail: "/img/projects/modochats-logo.svg",
       status: "فعال",
       opensource: true,
       links: [
-        {label: "Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
+        {label: "Github (Chat)", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
+        {label: "NPM (Chat)", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"},
+        {label: "Github (Voice)", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
+        {label: "NPM (Voice)", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
       ],
       icons: ["i-logos-typescript-icon", "i-logos-node"],
       category: "freelance"
