@@ -67,10 +67,10 @@ const portfolioFa: PortfolioData = {
           description: [
             "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های در مقیاس بزرگ",
             "انتقال از JavaScript به TypeScript",
-            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC برای انتقال ویدیو/صدا/داده",
+            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC",
             "از جونیور تا میدلول"
           ],
-          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-simple-icons:rekaui"],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
           linkLabel: "Modern Data"
         }
@@ -257,7 +257,15 @@ const portfolioFa: PortfolioData = {
         {label: "دمو", to: "https://multi-connection-webrtc-starter.vercel.app/", icon: "i-mdi-link"},
         {label: "README", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter#readme", icon: "i-mdi-file-document"}
       ],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-devicon-nodejs", "i-logos-express", "i-devicon-socketio", "i-logos-webrtc"],
+      icons: [
+        "i-logos-nuxt-icon",
+        "i-logos-vue",
+        "i-logos-typescript-icon",
+        "i-logos-node",
+        "i-skill-icons:expressjs-light",
+        "i-devicon-socketio",
+        "i-logos-webrtc"
+      ],
       category: "public"
     }
   ]

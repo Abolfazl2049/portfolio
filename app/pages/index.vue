@@ -11,9 +11,9 @@
     <LanguageSkills />
     <GitHubActivity username="Abolfazl2049" />
     <WorkExperience />
+    <ProjectsList />
     <EducationList />
     <RecommendationsCarousel />
-    <ProjectsList />
   </div>
 </template>
 

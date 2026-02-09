@@ -65,12 +65,12 @@ export const portfolio: PortfolioData = {
           start: "February 2024",
           ongoing: true,
           description: [
-            "building and maintaining large scale dashboard,pwa,website",
+            "building and maintaining large scale dashboards, pwa(s), websites",
             "migrating from javascript to typescript",
             "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management",
             "From Entry to mid level"
           ],
-          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-simple-icons:rekaui"],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
           linkLabel: "modern data"
         }
@@ -244,7 +244,7 @@ export const portfolio: PortfolioData = {
       thumbnail: "/img/projects/yoozro-logo.png",
       status: "Active",
       opensource: false,
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
     },
     {
