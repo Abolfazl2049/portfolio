@@ -42,7 +42,7 @@ export const resumeDataFa: Resume = {
       }
     ],
     summary:
-      "توسعه‌دهندهٔ فرانت‌اند پرشور با **۲+ سال** تجربه در ساخت اپلیکیشن‌های عملکرد بالا با Vue.js و Nuxt.js. مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز با تخصص قوی در **TypeScript**، **معماری کامپوننت‌ها**، **بهینه‌سازی تجربه توسعه‌دهنده**، و **مهندسی عملکرد**. تجربه در **WebRTC**، **سیستم‌های بلادرنگ** (WebSocket)، **PWA**، و **SSR**. تخصص در توسعهٔ کد با کیفیت بالا به‌صورت مرحله‌ای با ارتباط واضح. در حال توسعهٔ داشبوردها و اپلیکیشن‌های بلادرنگ در Modern Data؛ نگهداری بسته‌های متن‌باز در Modochats (SDK‌های چت/صدا و web component‌های هوش‌مصنوعی)."
+      "یک برنامه نویس که داره توی گرداب توسعه وب غرق میشه (وسطاشم) .اکثر پروژه ها با nuxt, vue, reka-ui, typescript  و غیره.اکنون مشغول هستم در شرکت داده‌پردازان پارسیان نامی ولی برنامه مهاحرت داخلی به شهر تهران دارم."
   },
 
   work: [
@@ -177,30 +177,19 @@ export const resumeDataFa: Resume = {
       type: "library"
     },
     {
-      name: "Modo Chat Client SDK",
-      description: "TypeScript SDK برای یکپارچه‌سازی سیستم پیام‌رسانی Modochats در اپلیکیشن‌ها",
+      name: "SDK های کلاینت چت و صوت مودو",
+      description:
+        "SDK های کلاینت برای پلتفرم Modo: شامل یک SDK چت و یک SDK صوتی. هر دو با TypeScript نوشته شده و منتشر‌شده در npm و متن‌باز در GitHub هستند. SDK صوتی از چت صوتی realtime (Socket.io) پشتیبانی می‌کند و شامل پردازشگرهای Web Audio سفارشی برای تجزیهٔ صوت است.",
       highlights: [
-        "منتشر‌شده در npm برای مدیریت آسان وابستگی",
-        "پشتیبانی TypeScript جامع با صرامت نوع",
-        "متمرکز بر تجربهٔ توسعه‌دهنده با مستندات و نمونه‌های واضح"
+        "منتشر‌شده در npm برای مدیریت آسان وابستگی (بسته‌های چت و صوت)",
+        "پشتیبانی جامع TypeScript با مستندات و مثال‌های متمرکز بر تجربهٔ توسعه‌دهنده",
+        "پردازشگرهای سفارشی Web Audio API برای تجزیهٔ صوت (SDK صوتی)",
+        "ارتباط صوتی بلادرنگ از طریق Socket.io با بک‌اند هوش‌مصنوعی",
+        "مدیریت جامع خطا و دستگاه برای حالات استفادهٔ صوتی"
       ],
-      keywords: ["TypeScript", "Node.js", "SDK", "npm"],
+      keywords: ["TypeScript", "Node.js", "SDK", "npm", "Web Audio API", "Socket.io", "ارتباط بلادرنگ"],
       startDate: "2025-04",
-      url: "https://github.com/mnodochats/chat_client",
-      roles: ["توسعه‌دهندهٔ کتابخانه"],
-      type: "library"
-    },
-    {
-      name: "Modo Voice Client SDK",
-      description: "SDK چت صدا بلادرنگ با یکپارچه‌سازی هوش‌مصنوعی به‌کمک TypeScript",
-      highlights: [
-        "پیاده‌سازی پردازشگر Web Audio API سفارشی برای تجزیهٔ جریان صدا",
-        "ارتباط صدا بلادرنگ از طریق Socket.io با بک‌اند هوش‌مصنوعی",
-        "مدیریت جامع خطا برای مدیریت دستگاه صدا"
-      ],
-      keywords: ["TypeScript", "Web Audio API", "Socket.io", "Node.js"],
-      startDate: "2025-04",
-      url: "https://github.com/mnodochats/voice_client",
+      url: "https://github.com/mnodochats",
       roles: ["توسعه‌دهندهٔ کتابخانه"],
       type: "library"
     },

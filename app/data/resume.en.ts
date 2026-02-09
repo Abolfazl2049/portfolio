@@ -42,7 +42,7 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Passionate Frontend Developer with **2+ years** building high-performance Vue.js/Nuxt applications. Open source contributor/maintainer with strong expertise in **TypeScript**, **component architecture**, **DX optimization**, and **performance engineering**. Experienced in **WebRTC**, **real-time systems** (WebSocket), **PWA**, and **SSR**. Specialized in shipping quality code iteratively with clear communication. Currently developing scalable dashboards and real-time applications at Modern Data; maintaining open source packages at Modochats (AI chat/voice SDKs and web components)."
+      "a Programmer who is obsessed with WEB DEVELOPMENT (it has no end...). done projects mainly with nuxt, vue, reka-ui, tailwindcss, typescript of course and many more... .planning to move to Tehran"
   },
 
   work: [
@@ -183,30 +183,19 @@ export const resumeData: Resume = {
       type: "library"
     },
     {
-      name: "Modo Chat Client SDK",
-      description: "TypeScript SDK for integrating Modochats messaging system into applications",
+      name: "Modo Chat & Voice Client SDKs",
+      description:
+        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are TypeScript-first, published on npm, and open-sourced on GitHub. The Voice client supports realtime voice chat (Socket.io) and includes custom Web Audio processing for robust audio parsing.",
       highlights: [
-        "Published on npm for easy dependency management",
-        "Comprehensive TypeScript support with strict type safety",
-        "Focused on developer experience with clear documentation and examples"
-      ],
-      keywords: ["TypeScript", "Node.js", "SDK", "npm"],
-      startDate: "2025-04",
-      url: "https://github.com/mnodochats/chat_client",
-      roles: ["Library Developer"],
-      type: "library"
-    },
-    {
-      name: "Modo Voice Client SDK",
-      description: "Real-time voice chat SDK with AI integration using TypeScript",
-      highlights: [
-        "Implemented custom Web Audio API processors for audio stream parsing",
+        "Published on npm for easy dependency management (chat & voice packages)",
+        "Comprehensive TypeScript support with strict typing and DX-focused documentation and examples",
+        "Custom Web Audio API processors for robust audio parsing (Voice SDK)",
         "Real-time voice communication via Socket.io with AI backend",
-        "Comprehensive error handling for audio device management"
+        "Comprehensive error handling and device management for audio use-cases"
       ],
-      keywords: ["TypeScript", "Web Audio API", "Socket.io", "Node.js"],
+      keywords: ["TypeScript", "Node.js", "SDK", "npm", "Web Audio API", "Socket.io", "Real-time Communication"],
       startDate: "2025-04",
-      url: "https://github.com/mnodochats/voice_client",
+      url: "https://github.com/mnodochats",
       roles: ["Library Developer"],
       type: "library"
     },
