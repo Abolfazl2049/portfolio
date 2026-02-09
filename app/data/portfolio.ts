@@ -6,7 +6,7 @@ export const portfolio: PortfolioData = {
     title: "Frontend Developer",
     location: "Golestan Province - Iran",
     summary:
-      "Passionate Frontend Developer Primary with Vue.js, Nuxt.js, open source contributor and maintainer, always learning and adapting to new tools and environments.",
+      "a Programmer who is obsessed with WEB DEVELOPMENT (it has no end...). done projects mainly with nuxt, vue, reka-ui, tailwindcss, typescript of course and many more... .planning to move to Tehran",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",

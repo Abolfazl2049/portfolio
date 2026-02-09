@@ -6,7 +6,7 @@ const portfolioFa: PortfolioData = {
     title: "توسعه‌دهنده فرانت‌اند",
     location: "استان گلستان - ایران",
     summary:
-      "توسعه‌دهنده فرانت‌اند٬ با بیش از دو سال تجربه در ساخت وبسایت٬ دشبورد٬ pwa با ابزارها/زبان‌های مدرن و کاربردی از جمله Vue.js, Nuxt.js و TypeScript و ...",
+      "یک برنامه نویس که داره توی گرداب توسعه وب غرق میشه (وسطاشم) .اکثر پروژه ها با nuxt, vue, reka-ui, typescript  و غیره.اکنون مشغول هستم در شرکت داده‌پردازان پارسیان نامی ولی برنامه مهاحرت داخلی به شهر تهران دارم.",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
