@@ -66,7 +66,7 @@ export default defineAppConfig({
       }
     }
   } as any,
-  repoUrl: "https://github.com/Abolfazl2049/vue-cursor-rules",
-  myWebsiteUrl: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
-  myContactUrl: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/"
+  repoUrl: "https://github.com/Abolfazl2049/portfolio",
+  myWebsiteUrl: "https://abolfazlshini.vercel.app",
+  myContactUrl: "https://www.linkedin.com/in/abolfazl-shahini/"
 });

@@ -27,7 +27,7 @@ export const resumeData: Resume = {
     profiles: [
       {
         network: "LinkedIn",
-        url: "https://www.linkedin.com/in/abolfazl-shahini-6660302b1/",
+        url: "https://www.linkedin.com/in/abolfazl-shahini/",
         icon: "i-mdi-linkedin"
       },
       {
