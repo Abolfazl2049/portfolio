@@ -26,7 +26,7 @@ const portfolioFa: PortfolioData = {
       {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon"},
       {label: "Reka ui", icon: "i-logos-reka-ui"},
       {label: "Pinia", icon: "i-logos-pinia"},
-      {label: "Node", icon: "i-logos-nodejs"},
+      {label: "Node", icon: "i-devicon-nodejs"},
       {label: "Git/GitHub", icon: "i-mdi-github"}
     ]
   },
@@ -94,7 +94,7 @@ const portfolioFa: PortfolioData = {
             "پیاده‌سازی فرآیندهای بیلد پیچیده با استفاده از concurrently، rollup، node و tsx",
             "توسعه متمرکز بر DX با TypeScript"
           ],
-          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon:nodejs"],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
           link: "https://modochats.com/",
           linkLabel: "Modochats"
         }
@@ -133,7 +133,7 @@ const portfolioFa: PortfolioData = {
         "i-skill-icons:expressjs-light",
         "i-logos-sequelize",
         "i-logos:webrtc",
-        "i-logos-socketio",
+        "i-devicon-socketio",
         "i-logos-supabase",
         "i-logos-railway",
         "i-logos-shadcn"
@@ -154,7 +154,7 @@ const portfolioFa: PortfolioData = {
         {label: "وب‌سایت", to: "https://modochats.com/", icon: "i-mdi-link"},
         {label: "GitHub", to: "https://github.com/modochat", icon: "i-mdi-github"}
       ],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node"],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-devicon-nodejs"],
       category: "freelance"
     },
     {
@@ -167,7 +167,7 @@ const portfolioFa: PortfolioData = {
         {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
         {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
       ],
-      icons: ["i-logos-typescript-icon", "i-devicon:nodejs"],
+      icons: ["i-logos-typescript-icon", "i-devicon-nodejs"],
       category: "freelance"
     },
     {
@@ -212,7 +212,7 @@ const portfolioFa: PortfolioData = {
         },
         {
           label: "بات تلگرام",
-          to: "https://t.me/godfathergame_bot",
+          to: "https://t.me/god_father_game_bot",
           icon: "i-mdi-telegram"
         }
       ],
@@ -257,7 +257,7 @@ const portfolioFa: PortfolioData = {
         {label: "دمو", to: "https://multi-connection-webrtc-starter.vercel.app/", icon: "i-mdi-link"},
         {label: "README", to: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter#readme", icon: "i-mdi-file-document"}
       ],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node", "i-logos-express", "i-logos-socketio", "i-logos-webrtc"],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-devicon-nodejs", "i-logos-express", "i-devicon-socketio", "i-logos-webrtc"],
       category: "public"
     }
   ]

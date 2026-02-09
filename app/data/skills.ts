@@ -33,7 +33,7 @@ export const proficient: Tag[] = [
   {label: "GitHub Actions", icon: "simple-icons:githubactions", to: "https://docs.github.com/actions", type: "DevOps"},
   {label: "npm package publish", icon: "i-logos-npm", type: "Tool"},
   {label: "Leaflet", icon: "i-file-icons:leaflet", to: "https://leaflet.org", type: "Library"},
-  {label: "Node", icon: "i-devicon:nodejs", to: "https://nodejs.org"}
+  {label: "Node", icon: "i-devicon-nodejs", to: "https://nodejs.org"}
 ];
 
 export const usedBefore: Tag[] = [
