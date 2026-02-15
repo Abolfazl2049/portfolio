@@ -4,7 +4,6 @@
     <Hero />
 
     <!-- Below-the-fold sections rendered on server for SEO (SSR) -->
-    <!-- <TagGroups /> -->
     <Skills />
     <AIStack />
     <SoftSkills />
@@ -18,9 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 import Hero from '@/components/portfolio/Hero.vue'
-const TagGroups = defineAsyncComponent(() => import('@/components/portfolio/TagGroups.vue'))
 const Skills = defineAsyncComponent(() => import('@/components/portfolio/Skills.vue'))
 const AIStack = defineAsyncComponent(() => import('@/components/portfolio/AIStack.vue'))
 const SoftSkills = defineAsyncComponent(() => import('@/components/portfolio/SoftSkills.vue'))

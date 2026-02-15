@@ -5,8 +5,7 @@ const portfolioFa: PortfolioData = {
     name: "ابوالفضل شاهینی",
     title: "توسعه‌دهنده فرانت‌اند",
     location: "استان گلستان - ایران",
-    summary:
-      "یک برنامه نویس که داره توی گرداب توسعه وب غرق میشه (وسطاشم) .اکثر پروژه ها با nuxt, vue, reka-ui, typescript  و غیره.اکنون مشغول هستم در شرکت داده‌پردازان پارسیان نامی ولی برنامه مهاحرت داخلی به شهر تهران دارم.",
+    summary: "",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -15,20 +14,6 @@ const portfolioFa: PortfolioData = {
       telegram: "https://t.me/abolfazl2049",
       devTo: "https://dev.to/abolfazl2049"
     }
-  },
-
-  mainTools: {
-    title: "ابزارهای اصلی",
-    items: [
-      {label: "TypeScript", icon: "i-logos-typescript-icon"},
-      {label: "Vue.js", icon: "i-logos-vue"},
-      {label: "Nuxt.js", icon: "i-logos-nuxt-icon"},
-      {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon"},
-      {label: "Reka ui", icon: "i-logos-reka-ui"},
-      {label: "Pinia", icon: "i-logos-pinia"},
-      {label: "Node", icon: "i-devicon-nodejs"},
-      {label: "Git/GitHub", icon: "i-mdi-github"}
-    ]
   },
 
   roles: {

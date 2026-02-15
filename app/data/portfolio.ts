@@ -17,20 +17,6 @@ export const portfolio: PortfolioData = {
     }
   },
 
-  mainTools: {
-    title: "Main tools",
-    items: [
-      {label: "TypeScript", icon: "i-logos-typescript-icon"},
-      {label: "Vue.js", icon: "i-logos-vue"},
-      {label: "Nuxt.js", icon: "i-logos-nuxt-icon"},
-      {label: "Tailwind CSS", icon: "i-logos-tailwindcss-icon"},
-      {label: "Reka ui", icon: "i-logos-reka-ui"},
-      {label: "Pinia", icon: "i-logos-pinia"},
-      {label: "Node", icon: "i-devicon-nodejs"},
-      {label: "Git/GitHub", icon: "i-mdi-github"}
-    ]
-  },
-
   roles: {
     title: "Roles",
     items: [

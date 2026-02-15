@@ -102,7 +102,6 @@ export type Project = {
 
 export type PortfolioData = {
   profile: Profile;
-  mainTools: TagGroup;
   roles: TagGroup;
   values: TagGroup;
   // Supports both single experiences and grouped company timelines
