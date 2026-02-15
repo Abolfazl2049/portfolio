@@ -17,27 +17,6 @@ export const portfolio: PortfolioData = {
     }
   },
 
-  roles: {
-    title: "Roles",
-    items: [
-      {label: "Frontend Developer", icon: "i-twemoji-laptop"},
-      {label: "Open source contributor/maintainer"},
-      {label: "SSR with Nuxt", icon: "i-twemoji-rocket"},
-      {label: "DX & Performance", icon: "i-twemoji-high-voltage"},
-      {label: "System and architecture design"}
-    ]
-  },
-
-  values: {
-    title: "Values",
-    items: [
-      {label: "High standards", icon: "i-twemoji-sparkles", description: "Aim for quality over shortcuts. perfectionist"},
-      {label: "Client-focused delivery", icon: "i-twemoji-handshake", description: "Understand goals, ship iteratively, and align outcomes."},
-      {label: "Teamwork", icon: "i-twemoji-people-holding-hands", description: "Share knowledge, elevate teammates, be reliable."},
-      {label: "Clear communication", icon: "i-twemoji-speech-balloon", description: "Explain the why/what/how."}
-    ]
-  },
-
   experiences: [
     {
       company: "Modern Data",

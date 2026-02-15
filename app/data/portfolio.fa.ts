@@ -5,7 +5,7 @@ const portfolioFa: PortfolioData = {
     name: "ابوالفضل شاهینی",
     title: "توسعه‌دهنده فرانت‌اند",
     location: "استان گلستان - ایران",
-    summary: "",
+    summary: "برنامه‌نویس ",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -14,27 +14,6 @@ const portfolioFa: PortfolioData = {
       telegram: "https://t.me/abolfazl2049",
       devTo: "https://dev.to/abolfazl2049"
     }
-  },
-
-  roles: {
-    title: "نقش‌ها",
-    items: [
-      {label: "توسعه‌دهندهٔ فرانت‌اند", icon: "i-twemoji-laptop"},
-      {label: "مشارکت‌کننده/نگهدارنده متن‌باز"},
-      {label: "SSR با Nuxt", icon: "i-twemoji-rocket"},
-      {label: "DX و عملکرد", icon: "i-twemoji-high-voltage"},
-      {label: "طراحی سیستم و معماری"}
-    ]
-  },
-
-  values: {
-    title: "ارزش‌ها",
-    items: [
-      {label: "استانداردهای بالا", icon: "i-twemoji-sparkles", description: "تمرکز بر کمال‌گرایی."},
-      {label: "تحویل متمرکز بر مشتری", icon: "i-twemoji-handshake", description: "اهداف را درک کن، مرحله‌ای توسعه دهید، نتایج را هماهنگ نگه‌دارید."},
-      {label: "کار تیمی", icon: "i-twemoji-people-holding-hands", description: "دانش را به‌اشتراک بگذار، همکاران را توسعه دهید، قابل اتکا باشید."},
-      {label: "ارتباط واضح", icon: "i-twemoji-speech-balloon", description: "چرایی/چی/چطور را توضیح دهید."}
-    ]
   },
 
   experiences: [
