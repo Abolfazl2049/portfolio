@@ -6,7 +6,7 @@ export const portfolio: PortfolioData = {
     title: "Frontend Developer",
     location: "Golestan Province - Iran",
     summary:
-      "a Programmer who is obsessed with WEB DEVELOPMENT (it has no end...). done projects mainly with nuxt, vue, reka-ui, tailwindcss, typescript of course and many more... .planning to move to Tehran",
+      "Programmer .a Frontend Developer with more than two years experience primarily with Nuxt/Vue Framework in creating/maintaining Small to Large Scale Project .interested in Open Source Activities .still eager to learn and experience more languages, frameworks, tools and Deepening My Expertise.",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -32,8 +32,7 @@ export const portfolio: PortfolioData = {
           description: [
             "building and maintaining large scale dashboards, pwa(s), websites",
             "migrating from javascript to typescript",
-            "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management",
-            "From Entry to mid level"
+            "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management"
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
@@ -176,7 +175,7 @@ export const portfolio: PortfolioData = {
     {
       name: "AR Studio",
       description:
-        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar",
+        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links",
       status: "Active",
       opensource: true,
       links: [],
@@ -185,7 +184,7 @@ export const portfolio: PortfolioData = {
     },
     {
       name: "Esghat Dashboard",
-      description: "Scrapping and Recycling management platform for Golestan province",
+      description: "Scrapping and Recycling management platform for Golestan province. since it is an admin dashboard, cant provide links",
       thumbnail: "/img/projects/esghat-logo.png",
       status: "Active",
       opensource: false,
@@ -194,7 +193,7 @@ export const portfolio: PortfolioData = {
     },
     {
       name: "Yoozro Dashboard",
-      description: "easy-to-use city to city traveling-service platform for Golestan province",
+      description: "easy-to-use city to city traveling-service platform for Golestan province. since it is an admin dashboard, cant provide links",
       thumbnail: "/img/projects/yoozro-logo.png",
       status: "Active",
       opensource: false,

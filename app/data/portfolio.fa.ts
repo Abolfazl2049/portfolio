@@ -5,7 +5,8 @@ const portfolioFa: PortfolioData = {
     name: "ابوالفضل شاهینی",
     title: "توسعه‌دهنده فرانت‌اند",
     location: "استان گلستان - ایران",
-    summary: "برنامه‌نویس ",
+    summary:
+      "برنامه‌نویس٬ توسعه‌دهنده فرانت‌اند با بیش از دو سال تجربه عمدتا با فریمورک nuxt/vue در پروژه‌هایی در مقیاس کوچک و بزرگ .علاقه‌مند به فعالیت های متن‌باز. همچنان مشتاق یادگیری زبان‌ها/فریم‌ورک/ابزار های جدید و عمیق تر ساختن تخصص .",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -31,8 +32,7 @@ const portfolioFa: PortfolioData = {
           description: [
             "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های در مقیاس بزرگ",
             "انتقال از JavaScript به TypeScript",
-            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC",
-            "از جونیور تا میدلول"
+            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC"
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
@@ -175,7 +175,7 @@ const portfolioFa: PortfolioData = {
     {
       name: "AR Studio",
       description:
-        "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar",
+        "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar. به دلیل خصوصی بودن پروژه برای یک ارگان٬ امکان ارائه لینک ندارم .",
       status: "فعال",
       opensource: true,
       links: [],
@@ -184,7 +184,7 @@ const portfolioFa: PortfolioData = {
     },
     {
       name: "Esghat Dashboard",
-      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان",
+      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد.",
       thumbnail: "/img/projects/esghat-logo.png",
       status: "فعال",
       opensource: false,
@@ -193,7 +193,7 @@ const portfolioFa: PortfolioData = {
     },
     {
       name: "Yoozro Dashboard",
-      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان",
+      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد.",
       thumbnail: "/img/projects/yoozro-logo.png",
       status: "فعال",
       opensource: false,

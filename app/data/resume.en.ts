@@ -42,7 +42,7 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "a Programmer who is obsessed with WEB DEVELOPMENT (it has no end...). done projects mainly with nuxt, vue, reka-ui, tailwindcss, typescript of course and many more... .planning to move to Tehran"
+      "Programmer .a Frontend Developer with more than two years experience primarily with Nuxt/Vue Framework in creating/maintaining Small to Large Scale Project .interested in Open Source Activities .still eager to learn and experience more languages, frameworks, tools and Deepening My Expertise.Note: visit my website to check out projects ."
   },
 
   work: [
@@ -52,11 +52,10 @@ export const resumeData: Resume = {
       location: "Gorgan, Golestan - Iran",
       startDate: "2024-02",
       highlights: [
-        "Building and maintaining **large-scale dashboards, PWAs, and web applications** with high performance standards and real-time data updates",
-        "Migrated legacy **JavaScript codebase to TypeScript**, improving type safety, developer experience, and code maintainability across projects",
-        "Architected applications using **Nuxt.js, Tailwind CSS, REST APIs, WebSocket** for real-time functionality, **WebRTC** for video/audio/data transfer, and **Pinia** for state management",
-        "Progressed from **entry-level to mid-level** developer through hands-on experience with modern frontend stack and **mentorship** in professional environment",
-        "Delivered responsive, accessible interfaces with focus on **code quality** and **developer experience** across all components"
+        "Building and maintaining **large-scale dashboards, PWAs, and Websites** with high performance standards",
+        "Architected applications using **Nuxt.js/Vue.js**, **TypeScript** for consistency, **Pinia** for state management, Tailwind for Styling and using modern UI libraries Such as Reka-UI, Nuxt-UI, Maz UI and many other tools for a better codebase",
+        "Delivered responsive, accessible interfaces with focus on **User Experience**",
+        "Implemented Apps the way it would live up to the customer standards"
       ]
     },
     {
@@ -87,30 +86,28 @@ export const resumeData: Resume = {
   skills: [
     {
       name: "Frontend Core",
-      keywords: ["Vue.js", "Nuxt.js", "React", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Pinia"]
+      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Pinia", "React (Entry)", "Next.js (Entry)"]
     },
     {
-      name: "Real-time & Advanced Features",
-      keywords: ["WebRTC (Video/Audio/Data)", "WebSocket", "Socket.io", "Web Audio API", "Real-time Communication", "PWA"]
+      name: "Realtime Focused Skills",
+      keywords: ["WebRTC (Video/Audio/Data)", "WebSocket", "Socket.io", "Web Audio API"]
     },
     {
-      name: "Architecture & Performance",
+      name: "High Standards",
       keywords: [
-        "Component Architecture",
+        "Component/Page/Service Architecture (module-based)",
         "SSR (Server-Side Rendering)",
         "Code Splitting & Lazy Loading",
-        "Performance Optimization",
-        "Monorepo Structure",
-        "State Management (Pinia)"
+        "Performance Optimization"
       ]
     },
     {
       name: "Development Tools & Build",
-      keywords: ["Git/GitHub", "npm/pnpm", "Vite", "Rollup", "Node.js", "Concurrently", "tsx", "ESLint/Prettier", "Web Components"]
+      keywords: ["Git/GitHub", "npm/yarn", "Vite", "Rollup", "Node.js", "Concurrently", "tsx"]
     },
     {
       name: "Quality & Accessibility",
-      keywords: ["TypeScript Strict Mode", "Responsive Design", "Web Standards", "Git Workflows", "Documentation"]
+      keywords: ["JS Doc", "ESLint"]
     },
     {
       name: "Backend (Supporting Knowledge)",
@@ -136,109 +133,6 @@ export const resumeData: Resume = {
       issuer: "Duolingo English Test",
       url: "",
       summary: "Score: 130/130 (Advanced Level)"
-    }
-  ],
-
-  projects: [
-    {
-      name: "Ephem Chat",
-      description: "WebRTC-based ephemeral anonymous chat with real-time matching and communication",
-      highlights: [
-        "Implemented WebRTC peer-to-peer connection for direct video/audio/data transfer between anonymous users",
-        "Built real-time matching system with Socket.io for ephemeral session management",
-        "Developed both frontend (React/Next.js) and backend (Express.js with Sequelize) for production deployment"
-      ],
-      keywords: ["React", "Next.js", "TypeScript", "WebRTC", "Socket.io", "Express.js", "Supabase"],
-      startDate: "2025-04",
-      url: "https://my-ephem-chat.vercel.app",
-      roles: ["Full Stack Developer"],
-      type: "application"
-    },
-    {
-      name: "Modochats Platform",
-      description: "AI agent platform enabling businesses to build custom agents for customer support, sales, and content management",
-      highlights: [
-        "Contributed to landing page, dashboard, chat widget, and SDK packages",
-        "Architected modular component system for multi-package monorepo with shared utilities",
-        "Implemented customer support chat, voice channels, and business integration features"
-      ],
-      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "Node.js", "AI Integration"],
-      startDate: "2025-04",
-      url: "https://modochats.com",
-      roles: ["Frontend Developer", "Open Source Contributor"],
-      type: "application"
-    },
-    {
-      name: "Modo Widget - Customer Support",
-      description: "Customizable, responsive AI customer support chat widget with text and voice capabilities",
-      highlights: [
-        "Built as web component for easy integration across different web technologies",
-        "DX-focused implementation with comprehensive TypeScript support and minimal configuration",
-        "Real-time messaging and voice chat powered by AI backend"
-      ],
-      keywords: ["TypeScript", "Web Components", "Node.js", "Real-time Communication"],
-      startDate: "2025-04",
-      url: "https://github.com/mnodochats/webcomponent",
-      roles: ["Frontend Developer"],
-      type: "library"
-    },
-    {
-      name: "Modo Chat & Voice Client SDKs",
-      description:
-        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are TypeScript-first, published on npm, and open-sourced on GitHub. The Voice client supports realtime voice chat (Socket.io) and includes custom Web Audio processing for robust audio parsing.",
-      highlights: [
-        "Published on npm for easy dependency management (chat & voice packages)",
-        "Comprehensive TypeScript support with strict typing and DX-focused documentation and examples",
-        "Custom Web Audio API processors for robust audio parsing (Voice SDK)",
-        "Real-time voice communication via Socket.io with AI backend",
-        "Comprehensive error handling and device management for audio use-cases"
-      ],
-      keywords: ["TypeScript", "Node.js", "SDK", "npm", "Web Audio API", "Socket.io", "Real-time Communication"],
-      startDate: "2025-04",
-      url: "https://github.com/mnodochats",
-      roles: ["Library Developer"],
-      type: "library"
-    },
-    {
-      name: "AR Studio",
-      description: "Dynamic AR target registration and element placement system (text/audio/video/image)",
-      highlights: [
-        "Built with Aframe and Mind-ar for AR capabilities",
-        "Dynamic asset management and AR scanning functionality",
-        "Support for multiple media types with responsive design"
-      ],
-      keywords: ["Vue.js", "Nuxt.js", "Tailwind CSS", "AR Technology"],
-      startDate: "2024",
-      roles: ["Frontend Developer"],
-      type: "application"
-    },
-    {
-      name: "Esghat Dashboard",
-      description: "Scrapping and recycling management platform for Golestan Province",
-      highlights: [
-        "Built with Nuxt.js and Pinia for state management",
-        "Scalable dashboard architecture for waste management operations",
-        "Real-time data updates and reporting"
-      ],
-      keywords: ["Vue.js", "Nuxt.js", "Pinia", "Dashboard"],
-      startDate: "2024",
-      url: "https://esghat.ir",
-      roles: ["Frontend Developer"],
-      type: "application"
-    },
-    {
-      name: "Yoozro Dashboard",
-      description: "City-to-city travel service platform for Golestan Province with mapping integration",
-      highlights: [
-        "User-friendly interface for travel booking and management",
-        "Leaflet integration for route mapping and location display",
-        "Responsive design optimized for mobile and desktop"
-      ],
-      keywords: ["Vue.js", "Nuxt.js", "JavaScript", "Leaflet", "Flowbite"],
-      startDate: "2024",
-      url: "https://yoozro.ir",
-      roles: ["Frontend Developer"],
-      type: "application"
     }
   ]
 };

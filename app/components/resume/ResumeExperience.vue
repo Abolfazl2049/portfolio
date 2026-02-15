@@ -9,13 +9,6 @@ interface Props {
 const props = defineProps<Props>()
 const { formatDate } = useResumeData()
 
-const sortedWork = computed(() => {
-  return [...props.work].sort((a, b) => {
-    const dateA = a.startDate || ''
-    const dateB = b.startDate || ''
-    return dateB.localeCompare(dateA)
-  })
-})
 
 function formatDateRange(start: string, end?: string): string {
   const startFormatted = formatDate(start)
@@ -31,7 +24,7 @@ function formatDateRange(start: string, end?: string): string {
       Work Experience
     </h2>
 
-    <div v-for="job in sortedWork" :key="job.company + job.startDate" class="mb-8 last:mb-0 print:mb-8">
+    <div v-for="job in work" :key="job.company + job.startDate" class="mb-8 last:mb-0 print:mb-8">
       <div class="flex justify-between items-start gap-4">
         <div class="flex-1 min-w-0">
           <h3 class="text-sm font-bold text-gray-900 break-words hyphens-none">{{ job.position }}</h3>
