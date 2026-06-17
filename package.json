@@ -20,14 +20,14 @@
     "@nuxt/ui": "^4.9.0",
     "@nuxtjs/color-mode": "4.0.1",
     "@nuxtjs/i18n": "10.4.0",
-    "@sparticuz/chromium": "^143.0.4",
+    "@sparticuz/chromium": "^149.0.0",
     "@vueuse/core": "14.3.0",
     "better-sqlite3": "^12.11.1",
     "embla-carousel": "8.6.0",
     "nuxt": "^4.4.8",
     "puppeteer": "^25.1.0",
     "puppeteer-core": "^25.1.0",
-    "zod": "^4.1.13",
+    "zod": "^4.4.3",
     "zod-to-json-schema": "^3.25.2"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "typescript": "^6.0.3"
   },
   "overrides": {
-    "@intlify/unplugin-vue-i18n": "11.0.1"
+    "@intlify/unplugin-vue-i18n": "11.2.3"
   },
   "engines": {
     "node": ">=18.20.0 <23"
