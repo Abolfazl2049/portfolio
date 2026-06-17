@@ -5,6 +5,7 @@
 
 export function useResumePdf() {
   const isGenerating = ref(false)
+  const { locale } = useI18n()
   const { getPdfFilename } = useResumeData()
 
   // Open PDF in new tab for preview (user can download from there)
@@ -16,7 +17,7 @@ export function useResumePdf() {
     try {
       const filename = getPdfFilename()
       // Opens PDF in browser's built-in viewer
-      window.open(`/api/resume/pdf?filename=${encodeURIComponent(filename)}`, '_blank')
+      window.open(`/api/resume/pdf?locale=${locale.value}&filename=${encodeURIComponent(filename)}`, '_blank')
 
       await new Promise((resolve) => setTimeout(resolve, 1500))
     } finally {
@@ -33,7 +34,7 @@ export function useResumePdf() {
     try {
       const filename = getPdfFilename()
       // download=true forces attachment header
-      window.open(`/api/resume/pdf?filename=${encodeURIComponent(filename)}&download=true`, '_blank')
+      window.open(`/api/resume/pdf?locale=${locale.value}&filename=${encodeURIComponent(filename)}&download=true`, '_blank')
 
       await new Promise((resolve) => setTimeout(resolve, 1500))
     } finally {

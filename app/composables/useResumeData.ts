@@ -5,10 +5,12 @@
 
 import {computed} from "vue";
 import {resumeData} from "~/data/resume.en";
+import {resumeDataFa} from "~/data/resume.fa";
 
 export function useResumeData() {
-  // Reactive reference to resume data
-  const resume = computed(() => resumeData);
+  const {locale} = useI18n();
+
+  const resume = computed(() => (locale.value === "fa" ? resumeDataFa : resumeData));
 
   function getCurrentMonthYearTag(): string {
     const now = new Date();
@@ -30,7 +32,8 @@ export function useResumeData() {
     const dateObj = new Date(Number(year), Number(month) - 1);
 
     const monthName = dateObj.toLocaleDateString(locale, {month: "short"});
-    return `${monthName} ${year}`;
+    const yearStr = dateObj.toLocaleDateString(locale, {year: "numeric"});
+    return `${monthName} ${yearStr}`;
   }
 
   /**

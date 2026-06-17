@@ -15,9 +15,9 @@
               <UIcon name="i-twemoji-round-pushpin" class="text-base text-primary-600 me-1 dark:text-primary-300" />
               <span class="leading-relaxed">{{ portfolio.profile.location }}</span>
             </div>
-            <div v-if="currentRole"
+            <div
               class="flex flex-col sm:flex-row items-center justify-center sm:justify-between w-full gap-2 text-base text-gray-700 dark:text-gray-200 text-center sm:text-left">
-              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1">
+              <div v-if="currentRole"" class=" flex flex-wrap items-center justify-center sm:justify-start gap-1">
                 <img v-if="currentRole.companyLogo" :src="currentRole.companyLogo" :alt="`${currentRole.company} logo`"
                   class="h-7 w-7 rounded-md object-contain" loading="lazy" />
                 <span class="">{{ t('hero.currently') }}</span>
@@ -30,23 +30,23 @@
                 </span>
               </div>
               <!-- Resume Button - Desktop only -->
-              <NuxtLink to="/resume" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
+              <NuxtLink :to="localePath('/resume')" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
                   resume-button
                   text-white rounded-full
                   transition-all duration-300 hover:scale-105
                   animate-pulse hover:animate-none">
                 <UIcon name="i-heroicons-document-text" class="text-lg" />
-                <span>View Resume</span>
+                <span>{{ t('hero.viewResume') }}</span>
                 <UIcon name="i-heroicons-sparkles" class="text-sm opacity-80" />
               </NuxtLink>
             </div>
             <!-- Resume Button - Mobile only -->
-            <NuxtLink to="/resume" class="sm:hidden inline-flex items-center justify-center gap-2 mt-2 px-4 py-2 text-sm font-medium
+            <NuxtLink :to="localePath('/resume')" class="sm:hidden inline-flex items-center justify-center gap-2 mt-2 px-4 py-2 text-sm font-medium
                 resume-button
                 text-white rounded-full
                 transition-all duration-300 hover:scale-105">
               <UIcon name="i-heroicons-document-text" class="text-base" />
-              <span>View My Resume</span>
+              <span>{{ t('hero.viewResume') }}</span>
               <UIcon name="i-heroicons-arrow-right" class="text-sm" />
             </NuxtLink>
           </div>
@@ -121,6 +121,7 @@ import { usePortfolio } from '@/composables/usePortfolio'
 import type { CompanyExperience, Experience } from '@/types/portfolio.types'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const portfolio = usePortfolio()
 const toast = useToast()
 

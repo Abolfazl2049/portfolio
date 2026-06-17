@@ -55,11 +55,12 @@ export const portfolio: PortfolioData = {
       logo: "/img/projects/modochats-logo.svg",
       location: "Golestan, Gorgan - hybrid",
       type: "Part-time",
+
       positions: [
         {
           title: "Open Source Maintainer/Contributor",
           start: "April 2025",
-          ongoing: true,
+          ongoing: false,
           description: [
             "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
 

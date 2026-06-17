@@ -28,11 +28,14 @@ const portfolioFa: PortfolioData = {
         {
           title: "توسعه‌دهندهٔ فرانت‌اند",
           start: "بهمن ۱۴۰۲",
-          ongoing: true,
           description: [
-            "ساخت و نگهداری داشبورد، PWA و وب‌سایت‌های در مقیاس بزرگ",
-            "انتقال از JavaScript به TypeScript",
-            "پیاده‌سازی پروژه‌ها با Nuxt، Tailwind، Restful API، WebRTC"
+            "توسعه و نگهداری داشبوردهای مدیریتی، وب‌اپلیکیشن‌های PWA و وب‌سایت‌های مقیاس‌پذیر",
+
+            "به‌روز نگه داشتن پروژه- منتقل بخش‌هایی از پروژه از JavaScript به TypeScript برای افزایش پایداری و خوانایی کد",
+
+            "کار با تکنولوژی های محبوب و مدرن  Nuxt.js، Tailwind CSS، API REST و WebRTC",
+
+            "تمرکز بر بهینه‌سازی عملکرد، تجربه کاربری و ساختار ماژولار در پروژه‌ها"
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
@@ -40,6 +43,7 @@ const portfolioFa: PortfolioData = {
         }
       ]
     },
+
     {
       company: "Modochats",
       link: "https://modochats.com",
@@ -48,15 +52,18 @@ const portfolioFa: PortfolioData = {
       type: "پاره‌وقت",
       positions: [
         {
-          title: "نگهدارنده/مشارکت‌کننده متن‌باز",
+          title: "مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز",
           start: "فروردین ۱۴۰۴",
-          ongoing: true,
           description: [
-            "ساخت و نگهداری پروژه‌های متن‌باز",
-            "پیاده‌سازی ویجت‌های کاربردی و مدرن",
-            "کار با CDN‌ها (JS Deliver) و مدیریت بسته‌های npm",
-            "پیاده‌سازی فرآیندهای بیلد پیچیده با استفاده از concurrently، rollup، node و tsx",
-            "توسعه متمرکز بر DX با TypeScript"
+            "مشارکت در توسعه و نگهداری پروژه‌های متن‌باز با تمرکز بر کیفیت کد و تجربه توسعه‌دهنده",
+
+            "طراحی و پیاده‌سازی ویجت‌ها و ابزارهای کاربردی و سبک برای استفاده در محصولات مختلف ",
+
+            "کار با CDNها و مدیریت انتشار پکیج‌ها در npm",
+
+            "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
+
+            "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
           link: "https://modochats.com/",

@@ -6,6 +6,8 @@ interface Props {
 }
 
 defineProps<Props>()
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -47,7 +49,7 @@ defineProps<Props>()
           :href="basics.profiles.find(p => p.network === 'LinkedIn')!.url" target="_blank"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-mdi-linkedin" class="text-[#0A66C2] flex-shrink-0 w-4 h-4" />
-          LinkedIn
+          {{ t('resume.linkedin') }}
         </a>
 
         <!-- GitHub -->
@@ -55,7 +57,7 @@ defineProps<Props>()
           :href="basics.profiles.find(p => p.network === 'GitHub')!.url" target="_blank"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-mdi-github" class="text-gray-800 flex-shrink-0 w-4 h-4" />
-          GitHub
+          {{ t('resume.github') }}
         </a>
       </div>
 
@@ -66,7 +68,7 @@ defineProps<Props>()
           :href="basics.profiles.find(p => p.network === 'Portfolio')!.url" target="_blank"
           class="inline-flex items-center gap-1.5 text-md font-bold text-blue-600 hover:text-blue-700 transition-colors print:text-md print:font-bold">
           <UIcon name="i-heroicons-globe-alt" class="text-blue-600 flex-shrink-0 w-4 h-4 print:w-4 print:h-4" />
-          Website
+          {{ t('resume.website') }}
         </a>
       </div>
     </div>

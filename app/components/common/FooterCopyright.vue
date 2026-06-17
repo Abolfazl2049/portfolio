@@ -1,7 +1,7 @@
 <template>
   <footer class=" pb-10  sm:pb-12">
     <UContainer>
-      <div class="flex flex-col items-center gap-4 text-center text-sm text-gray-600 dark:text-gray-400">
+      <div dir="ltr" class="flex flex-col items-center gap-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <p>&copy; {{ currentYear }}, <span class="font-semibold text-gray-900 dark:text-gray-100">AbolfazlShahini</span>
           -
           All rights reserved.</p>

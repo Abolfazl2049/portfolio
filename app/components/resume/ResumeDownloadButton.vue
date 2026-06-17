@@ -5,13 +5,14 @@ interface Props {
 
 defineProps<Props>()
 
+const { t } = useI18n()
 const { isGenerating, downloadPdf } = useResumePdf()
 </script>
 
 <template>
   <UButton v-if="!isPrintMode" icon="i-heroicons-arrow-down-tray" size="lg" color="primary" :loading="isGenerating"
     :disabled="isGenerating" class="fixed bottom-6 right-6 shadow-lg no-print z-50" @click="downloadPdf">
-    <span class="hidden sm:inline">Download PDF</span>
+    <span class="hidden sm:inline">{{ t('resume.downloadPdf') }}</span>
   </UButton>
 </template>
 

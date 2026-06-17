@@ -64,7 +64,7 @@
   },
   "languageSection": {
     "tagline": "Advanced English communication for global collaboration.",
-    "accordionLabel": "Advanced English communication for global collaboration.",
+    "accordionLabel": "Advanced English",
     "duolingo": {
       "label": "Duolingo English Test",
       "value": "130"
@@ -208,6 +208,20 @@
     "current": "Current",
     "freelance": "Freelance Projects",
     "public": "Public Repositories"
+  },
+  "resume": {
+    "summary": "Summary",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "skillsQualifications": "Skills & Qualifications",
+    "languagesCertifications": "Languages & Certifications",
+    "languages": "Languages",
+    "certifications": "Certifications",
+    "downloadPdf": "Download PDF",
+    "present": "Present",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "website": "Website"
   },
   "portfolio": {
     "githubActivity": {

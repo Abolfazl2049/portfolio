@@ -5,10 +5,13 @@ export default defineEventHandler(async event => {
   let browser: Browser | null = null;
 
   try {
+    const query = getQuery(event);
+    const locale = (query.locale as string) || "en";
     const requestUrl = getRequestURL(event);
     const host = requestUrl.host.includes("192.168") || requestUrl.host.includes("localhost") ? "localhost:5000" : requestUrl.host;
     const baseUrl = `http://${host}`;
-    const resumeUrl = `${baseUrl}/resume?print=true`;
+    const localePrefix = locale === "fa" ? "/fa" : "";
+    const resumeUrl = `${baseUrl}${localePrefix}/resume?print=true`;
 
     console.log("[PDF API] Generating from:", resumeUrl);
 
@@ -157,7 +160,6 @@ export default defineEventHandler(async event => {
       preferCSSPageSize: true
     });
 
-    const query = getQuery(event);
     const now = new Date();
     const year = now.getFullYear();
     const monthName = now.toLocaleString("en-US", {month: "long"});

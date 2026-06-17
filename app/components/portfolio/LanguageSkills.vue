@@ -19,7 +19,7 @@
               </UBadge>
             </div>
 
-            <div class="grid gap-4 md:grid-cols-2">
+            <!-- <div class="grid gap-4 md:grid-cols-2">
               <div v-for="item in items" :key="item.key"
                 class="flex flex-col gap-2 rounded-lg border border-slate-200/80 p-3 dark:border-slate-700/60">
                 <div class="flex items-center gap-2">
@@ -34,7 +34,7 @@
                   {{ item.description }}
                 </p>
               </div>
-            </div>
+            </div> -->
           </div>
         </template>
       </UAccordion>
@@ -62,13 +62,13 @@ onMounted(() => {
 })
 
 const items = computed(() => [
-  {
-    key: 'ielts',
-    iconType: 'image' as const,
-    icon: '/img/icons8-ielts-48.png',
-    title: t('languageSection.items.ielts.title'),
-    description: t('languageSection.items.ielts.desc'),
-  },
+  // {
+  //   key: 'ielts',
+  //   iconType: 'image' as const,
+  //   icon: '/img/icons8-ielts-48.png',
+  //   title: t('languageSection.items.ielts.title'),
+  //   description: t('languageSection.items.ielts.desc'),
+  // },
   // {
   //   key: 'huawei',
   //   iconType: 'icon' as const,

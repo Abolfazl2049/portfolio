@@ -169,7 +169,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/", "/blog", "/fa/blog", "/blog/rss.xml", "/fa/blog/rss.xml"],
+      routes: ["/", "/resume", "/fa/resume", "/blog", "/fa/blog", "/blog/rss.xml", "/fa/blog/rss.xml"],
       failOnError: false,
       // Avoid crawling internal endpoints during SSR builds (speeds up builds significantly)
       ignore: prerenderIgnore
