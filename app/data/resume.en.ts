@@ -42,7 +42,7 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Programmer .a Frontend Developer with more than two years experience primarily with Nuxt/Vue Framework in creating/maintaining Small to Large Scale Project .interested in Open Source Activities .still eager to learn and experience more languages, frameworks, tools and Deepening My Expertise.Note: visit my website to check out projects ."
+      "Programmer. A frontend-developer with more than two years of experience primarily with Nuxt/Vue frameworks in creating/maintaining small to large scale Project .interested in open-source activities. eager to learn and experience more languages/ frameworks/tools and deepening my expertise. : visit my website to check out projects ."
   },
 
   work: [
