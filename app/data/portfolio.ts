@@ -6,7 +6,7 @@ export const portfolio: PortfolioData = {
     title: "Frontend Developer",
     location: "Golestan Province - Iran",
     summary:
-      "Programmer .a Frontend Developer with more than two years experience primarily with Nuxt/Vue Framework in creating/maintaining Small to Large Scale Project .interested in Open Source Activities .still eager to learn and experience more languages, frameworks, tools and Deepening My Expertise.",
+      "Frontend Developer with 2+ years of experience building scalable web applications using Vue.js, Nuxt.js, and TypeScript. Experienced in developing dashboards, PWAs, real-time communication systems, and developer-focused SDKs. Strong background in WebRTC, WebSockets, performance optimization, and maintainable frontend architecture. Active open-source maintainer with experience publishing npm packages and building AI-powered developer tools.",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -28,11 +28,20 @@ export const portfolio: PortfolioData = {
         {
           title: "Frontend Developer",
           start: "February 2024",
-          ongoing: true,
+          end: "June 2026",
+          ongoing: false,
           description: [
-            "building and maintaining large scale dashboards, pwa(s), websites",
-            "migrating from javascript to typescript",
-            "implementing projects with Nuxt, Tailwind, Restful api, Websocket - for realtime functionality, WebRTC for Video/audio/data transfer , pinia for state management"
+            "Develop and maintain large-scale dashboards, Progressive Web Applications (PWAs), and business-critical web applications using Nuxt.js, Vue.js, TypeScript, Pinia, and Tailwind CSS.",
+
+            "Architect scalable frontend applications with modular design principles and maintainable component-based architecture.",
+
+            "Implement real-time functionality using WebSocket technologies and WebRTC-based communication systems for audio, video, and data transfer.",
+
+            "Migrate legacy JavaScript codebases to TypeScript to improve maintainability and type safety.",
+
+            "Build responsive, accessible, and high-performance user interfaces with strong focus on user experience and cross-device compatibility.",
+
+            "Apply SSR, code splitting, lazy loading, and performance optimization techniques to improve application performance."
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
@@ -52,11 +61,17 @@ export const portfolio: PortfolioData = {
           start: "April 2025",
           ongoing: true,
           description: [
-            "Building and maintaining open source repo's",
-            "Implementing User-friendly and modern widgets",
-            "Working with cdns (js deliver) and npm package management",
-            "Implementing complex build processes using concurrently, rollup, node and tsx",
-            "Developing DX focused packages with typescript"
+            "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
+
+            "Design and implement AI-powered customer support widgets supporting text and voice communication.",
+
+            "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets used for AI communication integrations.",
+
+            "Develop TypeScript-first SDKs with comprehensive documentation, examples, and developer-focused APIs.",
+
+            "Manage monorepo workflows and complex build pipelines using Rollup, Node.js, tsx, and Concurrently.",
+
+            "Implement custom Web Audio processing and real-time communication functionality for voice-based applications."
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
           link: "https://modochats.com/",
@@ -70,7 +85,7 @@ export const portfolio: PortfolioData = {
     {
       school: "University of Khaneh Kargar (Gorgan)",
       degree: "Computer science",
-      start: "2026",
+      start: "2025",
       end: "ongoing",
       icons: ["i-material-symbols-school"]
     }

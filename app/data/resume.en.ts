@@ -42,7 +42,7 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Programmer. A frontend-developer with more than two years of experience primarily with Nuxt/Vue frameworks in creating/maintaining small to large scale Project .interested in open-source activities. eager to learn and experience more languages/ frameworks/tools and deepening my expertise. : visit my website to check out projects ."
+      "Frontend Developer with 2+ years of experience building scalable web applications using Vue.js, Nuxt.js, and TypeScript. Experienced in developing high-performance dashboards, PWAs, and real-time communication applications. Strong focus on maintainable architecture, developer experience, accessibility, and performance optimization. Active open-source maintainer with experience publishing npm packages and building developer-focused tools."
   },
 
   work: [
@@ -51,24 +51,34 @@ export const resumeData: Resume = {
       position: "Frontend Developer (On-site)",
       location: "Gorgan, Golestan - Iran",
       startDate: "2024-02",
+      endDate: "2026-06",
       highlights: [
-        "Building and maintaining **large-scale dashboards, PWAs, and Websites** with high performance standards",
-        "Architected applications using **Nuxt.js/Vue.js**, **TypeScript** for consistency, **Pinia** for state management, Tailwind for Styling and using modern UI libraries Such as Reka-UI, Nuxt-UI, Maz UI and many other tools for a better codebase",
-        "Delivered responsive, accessible interfaces with focus on **User Experience**",
-        "Implemented Apps the way it would live up to the customer standards"
+        "Develop and maintain large-scale dashboards, Progressive Web Applications (PWAs), and business-critical web applications using Nuxt.js, Vue.js, and TypeScript.",
+
+        "Architect scalable frontend applications with modular design principles, leveraging Pinia for state management and Tailwind CSS for maintainable styling.",
+
+        "Integrate modern UI frameworks and component libraries including Reka UI, Nuxt UI, and Maz UI to accelerate development and improve consistency.",
+
+        "Build responsive, accessible, and high-performance user interfaces with strong focus on user experience and cross-device compatibility.",
+
+        "Implement modern frontend best practices including SSR, code splitting, lazy loading, and performance optimization."
       ]
     },
     {
       company: "Modochats",
-      position: "Open Source Maintainer/Contributor (Part-time)",
-      location: "Gorgan, Golestan - Iran",
+      position: "Open Source Maintainer & Contributor (Part-time)",
+      location: "Remote",
       startDate: "2025-04",
       highlights: [
-        "Building and maintaining **open source repositories** with focus on developer experience and code quality standards",
-        "Implemented **user-friendly and modern widgets** for AI customer support integration; designed with **TypeScript-first** approach for reliability and maintainability",
-        "Managed **complex build processes** using **concurrently, rollup, node, and tsx** for multi-package monorepo structure",
-        "Published **npm packages** (chat client SDK, voice client SDK, web component widget) enabling developers to integrate AI-powered communication with minimal effort",
-        "Developed **DX-focused packages** with comprehensive TypeScript support, documentation, and examples for seamless developer onboarding"
+        "Maintain and contribute to open-source repositories with focus on developer experience, maintainability, and code quality.",
+
+        "Design and implement modern AI-powered customer support widgets using TypeScript-first development practices.",
+
+        "Manage complex build pipelines and monorepo workflows using Rollup, Node.js, tsx, and Concurrently.",
+
+        "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets to simplify AI communication integrations.",
+
+        "Develop developer-focused tooling with comprehensive TypeScript support, documentation, examples, and streamlined onboarding experience."
       ]
     }
   ],
@@ -78,40 +88,39 @@ export const resumeData: Resume = {
       institution: "University of Khaneh Kargar (Gorgan)",
       area: "Computer Science",
       studyType: "Bachelor of Science",
-      startDate: "2026-09",
+      startDate: "2025-09",
       courses: ["Software Architecture", "Systems Design", "Web Development", "Database Management"]
     }
   ],
 
   skills: [
     {
-      name: "Frontend Core",
-      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Pinia", "React (Entry)", "Next.js (Entry)"]
+      name: "Frontend",
+      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Pinia"]
     },
     {
-      name: "Realtime Focused Skills",
-      keywords: ["WebRTC (Video/Audio/Data)", "WebSocket", "Socket.io", "Web Audio API"]
+      name: "Realtime Communication",
+      keywords: ["WebRTC", "WebSocket", "Socket.io", "Web Audio API"]
     },
     {
-      name: "High Standards",
-      keywords: [
-        "Component/Page/Service Architecture (module-based)",
-        "SSR (Server-Side Rendering)",
-        "Code Splitting & Lazy Loading",
-        "Performance Optimization"
-      ]
+      name: "Architecture & Performance",
+      keywords: ["SSR", "Component Architecture", "Code Splitting", "Lazy Loading", "Performance Optimization", "Scalable Frontend Design"]
     },
     {
-      name: "Development Tools & Build",
-      keywords: ["Git/GitHub", "npm/yarn", "Vite", "Rollup", "Node.js", "Concurrently", "tsx"]
+      name: "Backend & APIs (Entry-Level)",
+      keywords: ["Node.js", "Express.js", "REST APIs", "Sequelize ORM", "Database Design"]
     },
     {
-      name: "Quality & Accessibility",
-      keywords: ["JS Doc", "ESLint"]
+      name: "Development Tools",
+      keywords: ["Git", "GitHub", "Vite", "Rollup", "npm", "Yarn", "Concurrently", "tsx"]
     },
     {
-      name: "Backend (Supporting Knowledge)",
-      keywords: ["Express.js", "REST APIs", "Sequelize ORM", "Database Design", "Node.js"]
+      name: "Code Quality",
+      keywords: ["ESLint", "JSDoc", "Type Safety", "Maintainable Code"]
+    },
+    {
+      name: "AI & Developer Productivity",
+      keywords: ["Claude", "Cursor", "OpenCode", "Hermes", "Hugging Face", "Prompt Engineering", "AI-Assisted Development", "Developer Tooling"]
     }
   ],
 
