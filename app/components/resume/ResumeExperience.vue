@@ -31,7 +31,7 @@ function formatDateRange(start: string, end?: string): string {
           <h3 class="text-sm font-bold text-gray-900 break-words hyphens-none">{{ job.position }}</h3>
           <p class="text-sm font-medium text-gray-600">{{ job.company }}</p>
         </div>
-        <span class="text-sm text-gray-500 whitespace-nowrap flex-shrink-0 font-medium">
+          <span class="text-sm text-gray-500 whitespace-nowrap flex-shrink-0 font-medium rtl:print:ml-16 ">
           {{ formatDateRange(job.startDate, job.endDate) }}
         </span>
       </div>

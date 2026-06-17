@@ -35,7 +35,7 @@ function formatDateRange(start: string, end?: string): string {
           </h3>
           <p class="text-sm font-medium text-gray-600">{{ edu.institution }}</p>
         </div>
-        <span class="text-sm text-gray-500 whitespace-nowrap font-medium">
+        <span class="text-sm text-gray-500 whitespace-nowrap font-medium rtl:print:ml-16">
           {{ formatDateRange(edu.startDate, edu.endDate) }}
         </span>
       </div>
