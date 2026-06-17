@@ -45,9 +45,6 @@ export default defineNuxtConfig({
     }
   },
   vite: {
-    build: {
-      sourcemap: false
-    },
     css: {
       lightningcss: {
         targets: {
