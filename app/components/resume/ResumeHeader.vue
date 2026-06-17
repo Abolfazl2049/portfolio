@@ -31,7 +31,7 @@ const { t } = useI18n()
         </span>
 
         <!-- Phone -->
-        <a :href="`tel:${basics.phone}`"
+        <a  dir="ltr" :href="`tel:${basics.phone}`"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-heroicons-phone" class="text-green-600 flex-shrink-0 w-4 h-4" />
           {{ basics.phone }}

@@ -69,6 +69,7 @@ export const resumeData: Resume = {
       position: "Open Source Maintainer & Contributor (Part-time)",
       location: "Remote",
       startDate: "2025-04",
+      endDate: "2026-03",
       highlights: [
         "Maintain and contribute to open-source repositories with focus on developer experience, maintainability, and code quality.",
 

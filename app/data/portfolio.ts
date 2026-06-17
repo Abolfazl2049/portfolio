@@ -60,6 +60,7 @@ export const portfolio: PortfolioData = {
         {
           title: "Open Source Maintainer/Contributor",
           start: "April 2025",
+          end: "March 2026",
           ongoing: false,
           description: [
             "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
