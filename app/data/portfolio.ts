@@ -48,39 +48,39 @@ export const portfolio: PortfolioData = {
           linkLabel: "modern data"
         }
       ]
-    },
-    {
-      company: "Modochats",
-      link: "https://modochats.com",
-      logo: "/img/projects/modochats-logo.svg",
-      location: "Golestan, Gorgan - hybrid",
-      type: "Part-time",
-
-      positions: [
-        {
-          title: "Open Source Maintainer/Contributor",
-          start: "April 2025",
-          end: "March 2026",
-          ongoing: false,
-          description: [
-            "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
-
-            "Design and implement AI-powered customer support widgets supporting text and voice communication.",
-
-            "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets used for AI communication integrations.",
-
-            "Develop TypeScript-first SDKs with comprehensive documentation, examples, and developer-focused APIs.",
-
-            "Manage monorepo workflows and complex build pipelines using Rollup, Node.js, tsx, and Concurrently.",
-
-            "Implement custom Web Audio processing and real-time communication functionality for voice-based applications."
-          ],
-          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
-          link: "https://modochats.com/",
-          linkLabel: "modo chats"
-        }
-      ]
     }
+    // {
+    //   company: "Modochats",
+    //   link: "https://modochats.com",
+    //   logo: "/img/projects/modochats-logo.svg",
+    //   location: "Golestan, Gorgan - hybrid",
+    //   type: "Part-time",
+
+    //   positions: [
+    //     {
+    //       title: "Open Source Maintainer/Contributor",
+    //       start: "April 2025",
+    //       end: "March 2026",
+    //       ongoing: false,
+    //       description: [
+    //         "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
+
+    //         "Design and implement AI-powered customer support widgets supporting text and voice communication.",
+
+    //         "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets used for AI communication integrations.",
+
+    //         "Develop TypeScript-first SDKs with comprehensive documentation, examples, and developer-focused APIs.",
+
+    //         "Manage monorepo workflows and complex build pipelines using Rollup, Node.js, tsx, and Concurrently.",
+
+    //         "Implement custom Web Audio processing and real-time communication functionality for voice-based applications."
+    //       ],
+    //       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
+    //       link: "https://modochats.com/",
+    //       linkLabel: "modo chats"
+    //     }
+    //   ]
+    // }
   ],
 
   education: [

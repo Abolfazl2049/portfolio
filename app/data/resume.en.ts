@@ -62,51 +62,79 @@ export const resumeData: Resume = {
 
         "Implement modern frontend best practices including SSR, code splitting, lazy loading, and performance optimization."
       ]
-    },
-    {
-      company: "Modochats",
-      position: "Open Source Maintainer & Contributor (Part-time)",
-      location: "Remote",
-      startDate: "2025-04",
-      endDate: "2026-03",
-      highlights: [
-        "Maintain and contribute to open-source repositories with focus on developer experience, maintainability, and code quality.",
-
-        "Design and implement modern AI-powered customer support widgets using TypeScript-first development practices.",
-
-        "Manage complex build pipelines and monorepo workflows using Rollup, Node.js, tsx, and Concurrently.",
-
-        "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets to simplify AI communication integrations.",
-
-        "Develop developer-focused tooling with comprehensive TypeScript support, documentation, examples, and streamlined onboarding experience."
-      ]
     }
+    // {
+    //   company: "Modochats",
+    //   position: "Open Source Maintainer & Contributor (Part-time)",
+    //   location: "Remote",
+    //   startDate: "2025-04",
+    //   endDate: "2026-03",
+    //   highlights: [
+    //     "Maintain and contribute to open-source repositories with focus on developer experience, maintainability, and code quality.",
+
+    //     "Design and implement modern AI-powered customer support widgets using TypeScript-first development practices.",
+
+    //     "Manage complex build pipelines and monorepo workflows using Rollup, Node.js, tsx, and Concurrently.",
+
+    //     "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets to simplify AI communication integrations.",
+
+    //     "Develop developer-focused tooling with comprehensive TypeScript support, documentation, examples, and streamlined onboarding experience."
+    //   ]
+    // }
   ],
 
   projects: [
     {
       name: "Ephem Chat",
-      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  "
+      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
+      links: [
+        {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted"},
+        {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend"},
+        {label: "dev.to Post", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78"},
+        {label: "Website", url: "https://my-ephem-chat.vercel.app"}
+      ]
     },
     {
       name: "Modochats",
-      description: "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages."
+      description:
+        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
+      links: [
+        {label: "Website", url: "https://modochats.com/"},
+        {label: "GitHub", url: "https://github.com/modochat"}
+      ]
     },
     {
       name: "Modo Widget",
-      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime"
+      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
+      links: [
+        {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
+        {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
+      ]
     },
     {
       name: "Modo Chat & Voice Clients",
-      description: "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing."
+      description:
+        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
+      links: [
+        {label: "Chat GitHub", url: "https://github.com/mnodochats/chat_client"},
+        {label: "Chat NPM", url: "https://npmjs.com/modochats/chat-client"},
+        {label: "Voice GitHub", url: "https://github.com/mnodochats/voice_client"},
+        {label: "Voice NPM", url: "https://npmjs.com/modochats/voice-client"}
+      ]
     },
     {
       name: "Godfather Meet",
-      description: "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking."
+      description:
+        "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking.",
+      links: [
+        {label: "Web Application", url: "https://meet.godfathergame.ir"},
+        {label: "Telegram Bot", url: "https://t.me/god_father_game_bot"}
+      ]
     },
     {
       name: "AR Studio",
-      description: "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
+      description:
+        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
     },
     {
       name: "Esghat Dashboard",
@@ -118,7 +146,12 @@ export const resumeData: Resume = {
     },
     {
       name: "Multi Connection WebRTC Starter",
-      description: "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants."
+      description:
+        "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants.",
+      links: [
+        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter"},
+        {label: "Demo", url: "https://multi-connection-webrtc-starter.vercel.app/"}
+      ]
     }
   ],
 
@@ -181,6 +214,13 @@ export const resumeData: Resume = {
       issuer: "Duolingo English Test",
       url: "",
       summary: "Score: 130/130 (Advanced Level)"
+    },
+    {
+      name: "JavaScript (Intermediate)",
+      date: "2025",
+      issuer: "HackerRank",
+      url: "https://www.hackerrank.com/certificates/a07d032700d1",
+      summary: ""
     }
   ]
 };

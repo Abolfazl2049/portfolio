@@ -22,7 +22,9 @@ const { t } = useI18n()
       <span class="text-sm font-bold text-gray-900">{{ t('resume.languages') }}: </span>
       <span class="text-sm text-gray-700">
         <template v-for="(lang, idx) in languages" :key="lang.language">
-          {{ lang.language }} ({{ lang.fluency }})<template v-if="idx < languages.length - 1">, </template>
+          {{ lang.language }} <template v-if="lang.fluency">
+            ({{ lang.fluency }})
+          </template><template v-if="idx < languages.length - 1">, </template>
         </template>
       </span>
     </div>
@@ -32,7 +34,10 @@ const { t } = useI18n()
       <span class="text-sm font-bold text-gray-900">{{ t('resume.certifications') }}: </span>
       <span class="text-sm text-gray-700">
         <template v-for="(cert, idx) in certifications" :key="cert.name">
-          {{ cert.issuer }} - {{ cert.summary }}<template v-if="idx < certifications.length - 1">, </template>
+          <a v-if="cert.url" :href="cert.url" target="_blank" rel="noopener noreferrer"
+            class="text-blue-600 hover:underline print:text-blue-700">{{ cert.name }}</a>
+          <template v-else>{{ cert.name }}</template>
+          <template v-if="cert.summary"> ({{ cert.summary }})</template><template v-if="idx < certifications.length - 1">, </template>
         </template>
       </span>
     </div>

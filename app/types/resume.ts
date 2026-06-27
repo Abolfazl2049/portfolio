@@ -67,6 +67,7 @@ export interface Project {
   startDate?: string;
   endDate?: string;
   url?: string;
+  links?: { label: string; url: string }[];
   roles?: string[];
   type?: string;
 }

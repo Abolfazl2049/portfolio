@@ -42,36 +42,36 @@ const portfolioFa: PortfolioData = {
           linkLabel: "Modern Data"
         }
       ]
-    },
-
-    {
-      company: "Modochats",
-      link: "https://modochats.com",
-      logo: "/img/projects/modochats-logo.svg",
-      location: "گلستان، گرگان - هیبرید",
-      type: "پاره‌وقت",
-      positions: [
-        {
-          title: "مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز",
-          start: "فروردین ۱۴۰۴",
-          end: "اسفند ۱۴۰۴",
-          description: [
-            "مشارکت در توسعه و نگهداری پروژه‌های متن‌باز با تمرکز بر کیفیت کد و تجربه توسعه‌دهنده",
-
-            "طراحی و پیاده‌سازی ویجت‌ها و ابزارهای کاربردی و سبک برای استفاده در محصولات مختلف ",
-
-            "کار با CDNها و مدیریت انتشار پکیج‌ها در npm",
-
-            "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
-
-            "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
-          ],
-          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
-          link: "https://modochats.com/",
-          linkLabel: "Modochats"
-        }
-      ]
     }
+
+    // {
+    //   company: "Modochats",
+    //   link: "https://modochats.com",
+    //   logo: "/img/projects/modochats-logo.svg",
+    //   location: "گلستان، گرگان - هیبرید",
+    //   type: "پاره‌وقت",
+    //   positions: [
+    //     {
+    //       title: "مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز",
+    //       start: "فروردین ۱۴۰۴",
+    //       end: "اسفند ۱۴۰۴",
+    //       description: [
+    //         "مشارکت در توسعه و نگهداری پروژه‌های متن‌باز با تمرکز بر کیفیت کد و تجربه توسعه‌دهنده",
+
+    //         "طراحی و پیاده‌سازی ویجت‌ها و ابزارهای کاربردی و سبک برای استفاده در محصولات مختلف ",
+
+    //         "کار با CDNها و مدیریت انتشار پکیج‌ها در npm",
+
+    //         "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
+
+    //         "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
+    //       ],
+    //       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
+    //       link: "https://modochats.com/",
+    //       linkLabel: "Modochats"
+    //     }
+    //   ]
+    // }
   ],
 
   education: [
