@@ -16,7 +16,6 @@ export const resumeData: Resume = {
   basics: {
     name: "Abolfazl Shahini",
     label: "Frontend Developer | Vue.js • Nuxt.js • TypeScript",
-    image: "/img/my-profile.jpg",
     email: "abolfazlshahini37@gmail.com",
     phone: "+98 938 578 0203",
     url: "https://abolfazlshahini.vercel.app",
@@ -84,6 +83,45 @@ export const resumeData: Resume = {
     }
   ],
 
+  projects: [
+    {
+      name: "Ephem Chat",
+      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  "
+    },
+    {
+      name: "Modochats",
+      description: "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages."
+    },
+    {
+      name: "Modo Widget",
+      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime"
+    },
+    {
+      name: "Modo Chat & Voice Clients",
+      description: "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing."
+    },
+    {
+      name: "Godfather Meet",
+      description: "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking."
+    },
+    {
+      name: "AR Studio",
+      description: "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
+    },
+    {
+      name: "Esghat Dashboard",
+      description: "Scrapping and Recycling management platform for Golestan province. since it is an admin dashboard, cant provide links"
+    },
+    {
+      name: "Yoozro Dashboard",
+      description: "easy-to-use city to city traveling-service platform for Golestan province. since it is an admin dashboard, cant provide links"
+    },
+    {
+      name: "Multi Connection WebRTC Starter",
+      description: "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants."
+    }
+  ],
+
   education: [
     {
       institution: "University of Khaneh Kargar (Gorgan)",
@@ -132,7 +170,7 @@ export const resumeData: Resume = {
     },
     {
       language: "English",
-      fluency: "Fluent"
+      fluency: "B1"
     }
   ],
 

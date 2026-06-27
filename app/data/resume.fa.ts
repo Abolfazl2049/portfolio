@@ -16,7 +16,6 @@ export const resumeDataFa: Resume = {
   basics: {
     name: "ابولفضل شاهینی",
     label: "توسعه‌دهنده فرانت‌اند",
-    image: "/img/my-profile.jpg",
     email: "abolfazlshahini37@gmail.com",
     phone: "+98 938 578 0203",
     url: "https://abolfazlshahini.vercel.app",
@@ -61,7 +60,7 @@ export const resumeDataFa: Resume = {
     },
     {
       company: "Modochats",
-      position: "مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز",
+      position: "توسعه‌دهندهٔ فرانت‌اند",
       location: "گلستان، گرگان - هیبرید",
       startDate: "2025-04",
       endDate: "2026-03",
@@ -72,6 +71,49 @@ export const resumeDataFa: Resume = {
         "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
         "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
       ]
+    }
+  ],
+
+  projects: [
+    {
+      name: "Ephem Chat",
+      description: "چت ناشناس Realtime مبتنی بر WebRTC با ارتباط Realtime"
+    },
+    {
+      name: "Modochats",
+      description:
+        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مشارکت در لندینگ داشبورد، ویجت، پکیج های کلاینت چت متنی و صوتی."
+    },
+    {
+      name: "Modo Widget",
+      description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime"
+    },
+    {
+      name: "Modo Chat & Voice Clients",
+      description:
+        "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند."
+    },
+    {
+      name: "Godfather Meet",
+      description:
+        "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی."
+    },
+    {
+      name: "AR Studio",
+      description:
+        "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar. به دلیل خصوصی بودن پروژه برای یک ارگان٬ امکان ارائه لینک ندارم ."
+    },
+    {
+      name: "Esghat Dashboard",
+      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
+    },
+    {
+      name: "Yoozro Dashboard",
+      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
+    },
+    {
+      name: "Multi Connection WebRTC Starter",
+      description: "استارتر مینیمال برای برقراری ارتباط هم‌زمان چند peer با WebRTC؛ شامل فرانت‌اند با Nuxt 3 و بک‌اند Express + Socket.IO برای سیگنالینگ."
     }
   ],
 
@@ -115,21 +157,21 @@ export const resumeDataFa: Resume = {
   languages: [
     {
       language: "فارسی",
-      fluency: "مادری"
+      fluency: ""
     },
     {
       language: "انگلیسی",
-      fluency: "روان"
+      fluency: "B1"
     }
   ],
 
   certificates: [
     {
-      name: "کامپیوتر",
-      date: "2025",
+      name: "Duolingo english ",
+      date: "2026",
       issuer: "Duolingo",
       url: "",
-      summary: "در حال انجام"
+      summary: "130 Score (Maximum Score)"
     }
   ]
 };

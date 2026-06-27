@@ -74,6 +74,7 @@ export interface Project {
 export interface Resume {
   basics: ResumeBasics;
   work: WorkExperience[];
+  projects?: Project[];
   education: Education[];
   skills: Skill[];
   languages?: Language[];
