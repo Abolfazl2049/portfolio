@@ -27,6 +27,7 @@ const { t } = useI18n()
         <a v-for="link in project.links" :key="link.url" :href="link.url" target="_blank" rel="noopener noreferrer"
           class="text-xs text-blue-600 hover:underline print:text-blue-700">
           {{ link.label }}
+          <span v-if="link.hint" class="text-gray-400 print:text-gray-500">({{ link.hint }})</span>
         </a>
       </div>
     </div>

@@ -27,17 +27,20 @@ export const resumeDataFa: Resume = {
       {
         network: "LinkedIn",
         url: "https://www.linkedin.com/in/abolfazl-shahini/",
-        icon: "i-mdi-linkedin"
+        icon: "i-mdi-linkedin",
+        hint: "/in/abolfazl-shahini/"
       },
       {
         network: "GitHub",
         url: "https://github.com/Abolfazl2049",
-        icon: "i-mdi-github"
+        icon: "i-mdi-github",
+        hint: "/Abolfazl2049"
       },
       {
         network: "Portfolio",
         url: "https://abolfazlshahini.vercel.app",
-        icon: "i-mdi-web"
+        icon: "i-mdi-web",
+        hint: "abolfazlshahini.vercel.app"
       }
     ],
     summary:
@@ -79,10 +82,10 @@ export const resumeDataFa: Resume = {
       name: "Ephem Chat",
       description: "چت ناشناس Realtime مبتنی بر WebRTC با ارتباط Realtime",
       links: [
-        {label: "GitHub فرانت‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-fronted"},
-        {label: "GitHub بک‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-backend"},
-        {label: "پست dev.to", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78"},
-        {label: "وب‌سایت", url: "https://my-ephem-chat.vercel.app"}
+        {label: "GitHub فرانت‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
+        {label: "GitHub بک‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
+        {label: "پست dev.to", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78", hint: "dev.to/abolfazl2049/..."},
+        {label: "وب‌سایت", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
       ]
     },
     {
@@ -90,57 +93,57 @@ export const resumeDataFa: Resume = {
       description:
         "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مشارکت در لندینگ داشبورد، ویجت، پکیج های کلاینت چت متنی و صوتی.",
       links: [
-        {label: "وب‌سایت", url: "https://modochats.com/"},
-        {label: "GitHub", url: "https://github.com/modochat"}
+        {label: "وب‌سایت", url: "https://modochats.com/", hint: "modochats.com"},
+        {label: "GitHub", url: "https://github.com/modochat", hint: "github.com/modochat"}
       ]
     },
-    {
-      name: "Modo Widget",
-      description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime",
-      links: [
-        {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
-        {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
-      ]
-    },
-    {
-      name: "Modo Chat & Voice Clients",
-      description:
-        "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند.",
-      links: [
-        {label: "GitHub (Chat)", url: "https://github.com/mnodochats/chat_client"},
-        {label: "NPM (Chat)", url: "https://npmjs.com/modochats/chat-client"},
-        {label: "GitHub (Voice)", url: "https://github.com/mnodochats/voice_client"},
-        {label: "NPM (Voice)", url: "https://npmjs.com/modochats/voice-client"}
-      ]
-    },
+    // {
+    //   name: "Modo Widget",
+    //   description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime",
+    //   links: [
+    //     {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
+    //     {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
+    //   ]
+    // },
+    // {
+    //   name: "Modo Chat & Voice Clients",
+    //   description:
+    //     "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند.",
+    //   links: [
+    //     {label: "GitHub (Chat)", url: "https://github.com/mnodochats/chat_client"},
+    //     {label: "NPM (Chat)", url: "https://npmjs.com/modochats/chat-client"},
+    //     {label: "GitHub (Voice)", url: "https://github.com/mnodochats/voice_client"},
+    //     {label: "NPM (Voice)", url: "https://npmjs.com/modochats/voice-client"}
+    //   ]
+    // },
     {
       name: "Godfather Meet",
       description:
         "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی.",
       links: [
-        {label: "وب‌اپلیکیشن", url: "https://meet.godfathergame.ir"},
-        {label: "بات تلگرام", url: "https://t.me/god_father_game_bot"}
+        {label: "وب‌اپلیکیشن", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
+        {label: "بات تلگرام", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
       ]
     },
-    {
-      name: "AR Studio",
-      description:
-        "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar. به دلیل خصوصی بودن پروژه برای یک ارگان٬ امکان ارائه لینک ندارم ."
-    },
-    {
-      name: "Esghat Dashboard",
-      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
-    },
-    {
-      name: "Yoozro Dashboard",
-      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
-    },
+    // {
+    //   name: "AR Studio",
+    //   description:
+    //     "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar. به دلیل خصوصی بودن پروژه برای یک ارگان٬ امکان ارائه لینک ندارم ."
+    // },
+    // {
+    //   name: "Esghat Dashboard",
+    //   description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
+    // },
+    // {
+    //   name: "Yoozro Dashboard",
+    //   description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
+    // },
     {
       name: "Multi Connection WebRTC Starter",
       description: "استارتر مینیمال برای برقراری ارتباط هم‌زمان چند peer با WebRTC؛ شامل فرانت‌اند با Nuxt 3 و بک‌اند Express + Socket.IO برای سیگنالینگ.",
       links: [
-        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter"},
-        {label: "دمو", url: "https://multi-connection-webrtc-starter.vercel.app/"}
+        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"},
+        {label: "دمو", url: "https://multi-connection-webrtc-starter.vercel.app/", hint: "multi-connection-webrtc-starter.vercel.app"}
       ]
     }
   ],
@@ -177,8 +180,8 @@ export const resumeDataFa: Resume = {
       keywords: ["TypeScript Strict Mode", "طراحی واکنش‌گرا", "استانداردهای وب"]
     },
     {
-      name: "بک‌اند (در حد آشنایی)",
-      keywords: ["Express.js", "REST API‌ها", "Sequelize ORM", "طراحی پایگاه داده", "Node.js"]
+      name: "بک‌اند",
+      keywords: ["Express.js", "REST API‌", "Sequelize ORM", "طراحی پایگاه داده", "Node.js"]
     }
   ],
 

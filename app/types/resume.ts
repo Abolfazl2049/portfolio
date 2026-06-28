@@ -18,7 +18,8 @@ export interface ResumeBasics {
   profiles: Array<{
     network: string; // LinkedIn, GitHub, etc.
     url: string;
-    icon?: string; // Iconify icon name
+    icon?: string; // Iconify icon name,
+    hint?: string;
   }>;
   summary: string;
 }
@@ -67,7 +68,7 @@ export interface Project {
   startDate?: string;
   endDate?: string;
   url?: string;
-  links?: { label: string; url: string }[];
+  links?: {label: string; url: string; hint?: string}[];
   roles?: string[];
   type?: string;
 }

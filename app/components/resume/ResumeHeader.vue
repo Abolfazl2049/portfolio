@@ -1,13 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { ResumeBasics } from '~/types/resume'
 
 interface Props {
   basics: ResumeBasics
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const { t } = useI18n()
+
+const linkedinProfile = computed(() => props.basics.profiles?.find(p => p.network === 'LinkedIn'))
+const githubProfile = computed(() => props.basics.profiles?.find(p => p.network === 'GitHub'))
+const portfolioProfile = computed(() => props.basics.profiles?.find(p => p.network === 'Portfolio'))
 </script>
 
 <template>
@@ -31,44 +36,51 @@ const { t } = useI18n()
         </span>
 
         <!-- Phone -->
-        <a  dir="ltr" :href="`tel:${basics.phone}`"
+        <a :href="`tel:${basics.phone}`"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-heroicons-phone" class="text-green-600 flex-shrink-0 w-4 h-4" />
-          {{ basics.phone }}
+          <span dir="ltr">
+
+            {{ basics.phone }}
+          </span>
         </a>
 
         <!-- Email -->
         <a :href="`mailto:${basics.email}`"
-          class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
-          <UIcon name="i-heroicons-envelope" class="text-amber-500 flex-shrink-0 w-4 h-4" />
+          class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap ">
+          <UIcon name="i-heroicons-envelope" class="text-amber-500 flex-shrink-0 w-4 h-4 " />
           {{ basics.email }}
         </a>
 
         <!-- LinkedIn -->
-        <a v-if="basics.profiles?.find(p => p.network === 'LinkedIn')"
-          :href="basics.profiles.find(p => p.network === 'LinkedIn')!.url" target="_blank"
+        <a v-if="linkedinProfile" :href="linkedinProfile.url" target="_blank"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-mdi-linkedin" class="text-[#0A66C2] flex-shrink-0 w-4 h-4" />
-          {{ t('resume.linkedin') }}
+          <!-- {{ t('resume.linkedin') }} -->
+          <span v-if="linkedinProfile.hint" class="text-gray-400 print:text-gray-500  text-[10px]">({{
+            linkedinProfile.hint
+          }})</span>
         </a>
 
         <!-- GitHub -->
-        <a v-if="basics.profiles?.find(p => p.network === 'GitHub')"
-          :href="basics.profiles.find(p => p.network === 'GitHub')!.url" target="_blank"
+        <a v-if="githubProfile" :href="githubProfile.url" target="_blank"
           class="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors whitespace-nowrap">
           <UIcon name="i-mdi-github" class="text-gray-800 flex-shrink-0 w-4 h-4" />
-          {{ t('resume.github') }}
+          <!-- {{ t('resume.github') }} -->
+          <span v-if="githubProfile.hint" class="text-gray-400 print:text-gray-500 text-[10px]">({{ githubProfile.hint
+          }})</span>
         </a>
       </div>
 
       <!-- Line 2: Website Only - Larger & Bolder -->
       <div class="mt-1.5 flex items-center print:mt-1.5">
         <!-- Website (Portfolio) - Prominent Display -->
-        <a v-if="basics.profiles?.find(p => p.network === 'Portfolio')"
-          :href="basics.profiles.find(p => p.network === 'Portfolio')!.url" target="_blank"
+        <a v-if="portfolioProfile" :href="portfolioProfile.url" target="_blank"
           class="inline-flex items-center gap-1.5 text-md font-bold text-blue-600 hover:text-blue-700 transition-colors print:text-md print:font-bold">
           <UIcon name="i-heroicons-globe-alt" class="text-blue-600 flex-shrink-0 w-4 h-4 print:w-4 print:h-4" />
           {{ t('resume.website') }}
+          <span v-if="portfolioProfile.hint" class="font-normal text-gray-400 print:text-gray-500  text-[10px]">({{
+            portfolioProfile.hint }})</span>
         </a>
       </div>
     </div>

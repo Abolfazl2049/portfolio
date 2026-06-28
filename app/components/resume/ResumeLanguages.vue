@@ -37,7 +37,8 @@ const { t } = useI18n()
           <a v-if="cert.url" :href="cert.url" target="_blank" rel="noopener noreferrer"
             class="text-blue-600 hover:underline print:text-blue-700">{{ cert.name }}</a>
           <template v-else>{{ cert.name }}</template>
-          <template v-if="cert.summary"> ({{ cert.summary }})</template><template v-if="idx < certifications.length - 1">, </template>
+          <template v-if="cert.summary"> ({{ cert.summary }})</template><template
+            v-if="idx < certifications.length - 1">, </template>
         </template>
       </span>
     </div>

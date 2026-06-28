@@ -27,17 +27,20 @@ export const resumeData: Resume = {
       {
         network: "LinkedIn",
         url: "https://www.linkedin.com/in/abolfazl-shahini/",
-        icon: "i-mdi-linkedin"
+        icon: "i-mdi-linkedin",
+        hint: "/in/abolfazl-shahini/"
       },
       {
         network: "GitHub",
         url: "https://github.com/Abolfazl2049",
-        icon: "i-mdi-github"
+        icon: "i-mdi-github",
+        hint: "/Abolfazl2049"
       },
       {
         network: "Portfolio",
         url: "https://abolfazlshahini.vercel.app",
-        icon: "i-mdi-web"
+        icon: "i-mdi-web",
+        hint: "abolfazlshahini.vercel.app"
       }
     ],
     summary:
@@ -88,10 +91,10 @@ export const resumeData: Resume = {
       name: "Ephem Chat",
       description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
       links: [
-        {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted"},
-        {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend"},
-        {label: "dev.to Post", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78"},
-        {label: "Website", url: "https://my-ephem-chat.vercel.app"}
+        {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
+        {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
+        {label: "dev.to Post", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78", hint: "dev.to/abolfazl2049/..."},
+        {label: "Website", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
       ]
     },
     {
@@ -99,58 +102,58 @@ export const resumeData: Resume = {
       description:
         "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
       links: [
-        {label: "Website", url: "https://modochats.com/"},
-        {label: "GitHub", url: "https://github.com/modochat"}
+        {label: "Website", url: "https://modochats.com/", hint: "modochats.com"},
+        {label: "GitHub", url: "https://github.com/modochat", hint: "github.com/modochat"}
       ]
     },
-    {
-      name: "Modo Widget",
-      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
-      links: [
-        {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
-        {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
-      ]
-    },
-    {
-      name: "Modo Chat & Voice Clients",
-      description:
-        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
-      links: [
-        {label: "Chat GitHub", url: "https://github.com/mnodochats/chat_client"},
-        {label: "Chat NPM", url: "https://npmjs.com/modochats/chat-client"},
-        {label: "Voice GitHub", url: "https://github.com/mnodochats/voice_client"},
-        {label: "Voice NPM", url: "https://npmjs.com/modochats/voice-client"}
-      ]
-    },
+    // {
+    //   name: "Modo Widget",
+    //   description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
+    //   links: [
+    //     {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
+    //     {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
+    //   ]
+    // },
+    // {
+    //   name: "Modo Chat & Voice Clients",
+    //   description:
+    //     "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
+    //   links: [
+    //     {label: "Chat GitHub", url: "https://github.com/mnodochats/chat_client"},
+    //     {label: "Chat NPM", url: "https://npmjs.com/modochats/chat-client"},
+    //     {label: "Voice GitHub", url: "https://github.com/mnodochats/voice_client"},
+    //     {label: "Voice NPM", url: "https://npmjs.com/modochats/voice-client"}
+    //   ]
+    // },
     {
       name: "Godfather Meet",
       description:
         "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking.",
       links: [
-        {label: "Web Application", url: "https://meet.godfathergame.ir"},
-        {label: "Telegram Bot", url: "https://t.me/god_father_game_bot"}
+        {label: "Web Application", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
+        {label: "Telegram Bot", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
       ]
     },
-    {
-      name: "AR Studio",
-      description:
-        "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
-    },
-    {
-      name: "Esghat Dashboard",
-      description: "Scrapping and Recycling management platform for Golestan province. since it is an admin dashboard, cant provide links"
-    },
-    {
-      name: "Yoozro Dashboard",
-      description: "easy-to-use city to city traveling-service platform for Golestan province. since it is an admin dashboard, cant provide links"
-    },
+    // {
+    //   name: "AR Studio",
+    //   description:
+    //     "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
+    // },
+    // {
+    //   name: "Esghat Dashboard",
+    //   description: "Scrapping and Recycling management platform for Golestan province. since it is an admin dashboard, cant provide links"
+    // },
+    // {
+    //   name: "Yoozro Dashboard",
+    //   description: "easy-to-use city to city traveling-service platform for Golestan province. since it is an admin dashboard, cant provide links"
+    // },
     {
       name: "Multi Connection WebRTC Starter",
       description:
         "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants.",
       links: [
-        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter"},
-        {label: "Demo", url: "https://multi-connection-webrtc-starter.vercel.app/"}
+        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"},
+        {label: "Demo", url: "https://multi-connection-webrtc-starter.vercel.app/", hint: "multi-connection-webrtc-starter.vercel.app"}
       ]
     }
   ],
@@ -179,7 +182,7 @@ export const resumeData: Resume = {
       keywords: ["SSR", "Component Architecture", "Code Splitting", "Lazy Loading", "Performance Optimization", "Scalable Frontend Design"]
     },
     {
-      name: "Backend & APIs (Entry-Level)",
+      name: "Backend & APIs",
       keywords: ["Node.js", "Express.js", "REST APIs", "Sequelize ORM", "Database Design"]
     },
     {
