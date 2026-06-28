@@ -31,7 +31,7 @@ const portfolioProfile = computed(() => props.basics.profiles?.find(p => p.netwo
       <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-gray-700 print:mt-2 print:text-xs print:gap-x-4">
         <!-- Location -->
         <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
-          <UIcon name="i-heroicons-map-pin" class="text-red-500 flex-shrink-0 w-4 h-4" />
+          <!-- <UIcon name="i-heroicons-map-pin" class="text-red-500 flex-shrink-0 w-4 h-4" /> -->
           {{ basics.location.city }}, {{ basics.location.country }}
         </span>
 
