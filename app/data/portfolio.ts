@@ -84,13 +84,13 @@ export const portfolio: PortfolioData = {
   ],
 
   education: [
-    {
-      school: "University of Khaneh Kargar (Gorgan)",
-      degree: "Computer science",
-      start: "2025",
-      end: "ongoing",
-      icons: ["i-material-symbols-school"]
-    }
+    // {
+    //   school: "University of Khaneh Kargar (Gorgan)",
+    //   degree: "Computer science",
+    //   start: "2025",
+    //   end: "ongoing",
+    //   icons: ["i-material-symbols-school"]
+    // }
   ],
 
   projects: [

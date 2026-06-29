@@ -1,5 +1,5 @@
 <template>
-  <section class="section-spacing">
+  <section v-if="portfolio.education.length" class="section-spacing">
     <UContainer>
       <div class="section-header">
         <UIcon name="i-twemoji-graduation-cap" class="text-2xl" />

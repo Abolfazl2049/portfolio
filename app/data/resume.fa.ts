@@ -84,7 +84,11 @@ export const resumeDataFa: Resume = {
       links: [
         {label: "GitHub فرانت‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
         {label: "GitHub بک‌اند", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
-        {label: "پست dev.to", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78", hint: "dev.to/abolfazl2049/..."},
+        {
+          label: "پست dev.to",
+          url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          hint: "dev.to/abolfazl2049/..."
+        },
         {label: "وب‌سایت", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
       ]
     },
@@ -142,20 +146,24 @@ export const resumeDataFa: Resume = {
       name: "Multi Connection WebRTC Starter",
       description: "استارتر مینیمال برای برقراری ارتباط هم‌زمان چند peer با WebRTC؛ شامل فرانت‌اند با Nuxt 3 و بک‌اند Express + Socket.IO برای سیگنالینگ.",
       links: [
-        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"},
+        {
+          label: "GitHub",
+          url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter",
+          hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"
+        },
         {label: "دمو", url: "https://multi-connection-webrtc-starter.vercel.app/", hint: "multi-connection-webrtc-starter.vercel.app"}
       ]
     }
   ],
 
   education: [
-    {
-      institution: "دانشگاه علمی کاربردی خانه کارگر (گرگان)",
-      area: "",
-      studyType: "کاردانی",
-      startDate: "2025-09",
-      courses: []
-    }
+    // {
+    //   institution: "دانشگاه علمی کاربردی خانه کارگر (گرگان)",
+    //   area: "",
+    //   studyType: "کاردانی",
+    //   startDate: "2025-09",
+    //   courses: []
+    // }
   ],
 
   skills: [

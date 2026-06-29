@@ -93,7 +93,11 @@ export const resumeData: Resume = {
       links: [
         {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
         {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
-        {label: "dev.to Post", url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78", hint: "dev.to/abolfazl2049/..."},
+        {
+          label: "dev.to Post",
+          url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          hint: "dev.to/abolfazl2049/..."
+        },
         {label: "Website", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
       ]
     },
@@ -152,20 +156,24 @@ export const resumeData: Resume = {
       description:
         "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants.",
       links: [
-        {label: "GitHub", url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter", hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"},
+        {
+          label: "GitHub",
+          url: "https://github.com/Abolfazl2049/multi-connection-webrtc-starter",
+          hint: "github.com/Abolfazl2049/multi-connection-webrtc-starter"
+        },
         {label: "Demo", url: "https://multi-connection-webrtc-starter.vercel.app/", hint: "multi-connection-webrtc-starter.vercel.app"}
       ]
     }
   ],
 
   education: [
-    {
-      institution: "University of Khaneh Kargar (Gorgan)",
-      area: "Computer Science",
-      studyType: "Bachelor of Science",
-      startDate: "2025-09",
-      courses: ["Software Architecture", "Systems Design", "Web Development", "Database Management"]
-    }
+    // {
+    //   institution: "University of Khaneh Kargar (Gorgan)",
+    //   area: "Computer Science",
+    //   studyType: "Bachelor of Science",
+    //   startDate: "2025-09",
+    //   courses: ["Software Architecture", "Systems Design", "Web Development", "Database Management"]
+    // }
   ],
 
   skills: [
