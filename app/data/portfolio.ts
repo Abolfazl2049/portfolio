@@ -6,7 +6,7 @@ export const portfolio: PortfolioData = {
     title: "Frontend Developer",
     location: "Golestan Province - Iran",
     summary:
-      "Frontend Developer with 2+ years of experience building scalable web applications using Vue.js, Nuxt.js, and TypeScript. Experienced in developing dashboards, PWAs, real-time communication systems, and developer-focused SDKs. Strong background in WebRTC, WebSockets, performance optimization, and maintainable frontend architecture. Active open-source maintainer with experience publishing npm packages and building AI-powered developer tools.",
+      "Frontend Developer with 2+ years of experience building scalable web applications using Vue, Nuxt, React, Next and TypeScript. Experienced in developing dashboards, PWAs, real-time communication systems, and developer-focused SDKs. Strong background in WebRTC, WebSockets, performance optimization, and maintainable frontend architecture.",
     avatar: "/img/my-profile.jpg",
     socials: {
       website: "https://abolfazlshahini.vercel.app",

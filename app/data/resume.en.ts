@@ -44,7 +44,7 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Frontend Developer with 2+ years of experience building scalable web applications using Vue.js, Nuxt.js, and TypeScript. Experienced in developing high-performance dashboards, PWAs, and real-time communication applications. Strong focus on maintainable architecture, developer experience, accessibility, and performance optimization. Active open-source maintainer with experience publishing npm packages and building developer-focused tools."
+      "Frontend Developer with 2+ years of experience building scalable web applications using Vue, Nuxt, React, Next and TypeScript. Experienced in developing dashboards, PWAs, real-time communication systems, and developer-focused SDKs. Strong background in WebRTC, WebSockets, performance optimization, and maintainable frontend architecture."
   },
 
   work: [
