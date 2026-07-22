@@ -88,7 +88,7 @@ const portfolioFa: PortfolioData = {
       opensource: false,
       links: [
         {label: "وب‌سایت", to: "https://modochats.com/", icon: "i-mdi-link"},
-        {label: "GitHub", to: "https://github.com/modochat", icon: "i-mdi-github"}
+        {label: "GitHub", to: "https://github.com/modochats", icon: "i-mdi-github"}
       ],
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-devicon-nodejs"],
       category: "freelance"

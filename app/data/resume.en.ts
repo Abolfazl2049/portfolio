@@ -104,10 +104,10 @@ export const resumeData: Resume = {
     {
       name: "Modochats",
       description:
-        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
+        "Build Agents for your business !. A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .i was responsible for landing, dashboard, dev SDKs such as chat-client, voice-client and widget.",
       links: [
         {label: "Website", url: "https://modochats.com/", hint: "modochats.com"},
-        {label: "GitHub", url: "https://github.com/modochat", hint: "github.com/modochat"}
+        {label: "GitHub", url: "https://github.com/modochats", hint: "github.com/modochats"}
       ]
     },
     // {
@@ -137,6 +137,12 @@ export const resumeData: Resume = {
         {label: "Web Application", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
         {label: "Telegram Bot", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
       ]
+    },
+    {
+      name: "Shenoma",
+      description:
+        "A platform that deliver the Mineral products from the mine owner to the user directly. has the responsibility of landing and admin dashboard of this interesting platform",
+      links: [{label: "Landing", url: "https://shenoma.co", hint: "shenoma.co"}]
     },
     // {
     //   name: "AR Studio",
@@ -178,32 +184,28 @@ export const resumeData: Resume = {
 
   skills: [
     {
-      name: "Frontend",
-      keywords: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Pinia"]
+      name: "Core Frontend Skills",
+      keywords: ["Vue.js", "Nuxt.js", "React", "Next.js", "TypeScript", "JavaScript"]
     },
     {
-      name: "Realtime Communication",
-      keywords: ["WebRTC", "WebSocket", "Socket.io", "Web Audio API"]
+      name: "Preferred Project Architecture",
+      keywords: ["Modular Service Structure", "Component-Based Architecture", "Code Splitting", "Abstraction & Simplification"]
     },
     {
-      name: "Architecture & Performance",
-      keywords: ["SSR", "Component Architecture", "Code Splitting", "Lazy Loading", "Performance Optimization", "Scalable Frontend Design"]
+      name: "Libraries I Commonly Use",
+      keywords: ["Pinia", "Zustand", "Reka UI", "Shadcn", "Radix UI", "Lodash", "Vueuse", "SwiperJs", "Tailwind", "MomentJs", "Nuxt i18n"]
     },
     {
-      name: "Backend & APIs",
-      keywords: ["Node.js", "Express.js", "REST APIs", "Sequelize ORM", "Database Design"]
+      name: "Development, Build & Delivery Tools",
+      keywords: ["Vite", "Rollup", "Terser", "tsx", "Node.js", "GitHub Actions"]
     },
     {
-      name: "Development Tools",
-      keywords: ["Git", "GitHub", "Vite", "Rollup", "npm", "Yarn", "Concurrently", "tsx"]
+      name: "Realtime Systems",
+      keywords: ["WebRTC (Video/Audio/Data)", "WebSocket", "Socket.io", "Web Audio API"]
     },
     {
-      name: "Code Quality",
-      keywords: ["ESLint", "JSDoc", "Type Safety", "Maintainable Code"]
-    },
-    {
-      name: "AI & Developer Productivity",
-      keywords: ["Claude", "Cursor", "OpenCode", "Hermes", "Hugging Face", "Prompt Engineering", "AI-Assisted Development", "Developer Tooling"]
+      name: "Backend Skills from Personal Projects",
+      keywords: ["Express.js", "Sequelize ORM", "Database Design", "Node.js"]
     }
   ],
 

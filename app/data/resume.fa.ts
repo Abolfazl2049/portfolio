@@ -56,28 +56,38 @@ export const resumeDataFa: Resume = {
       endDate: "2026-6",
       highlights: [
         "توسعه و نگهداری داشبوردهای مدیریتی، وب‌اپلیکیشن‌های PWA و وب‌سایت‌های مقیاس‌پذیر",
-        "به‌روز نگه داشتن پروژه- منتقل بخش‌هایی از پروژه از JavaScript به TypeScript برای افزایش پایداری و خوانایی کد",
         "کار با تکنولوژی های محبوب و مدرن  Nuxt.js، Tailwind CSS، API REST و WebRTC",
-        "تمرکز بر بهینه‌سازی عملکرد، تجربه کاربری و ساختار ماژولار در پروژه‌ها"
+        "تمرکز بر بهینه‌سازی عملکرد، تجربه کاربری و ساختار ماژولار در پروژه‌ها",
+        "تجربه‌ی کار تیمی در پیاده سازی سیستم های عظیم اطلاعاتی"
       ]
     }
-    // {
-    //   company: "Modochats",
-    //   position: "توسعه‌دهندهٔ فرانت‌اند",
-    //   location: "گلستان، گرگان - هیبرید",
-    //   startDate: "2025-04",
-    //   endDate: "2026-03",
-    //   highlights: [
-    //     "مشارکت در توسعه و نگهداری پروژه‌های متن‌باز با تمرکز بر کیفیت کد و تجربه توسعه‌دهنده",
-    //     "طراحی و پیاده‌سازی ویجت‌ها و ابزارهای کاربردی و سبک برای استفاده در محصولات مختلف",
-    //     "کار با CDNها و مدیریت انتشار پکیج‌ها در npm",
-    //     "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
-    //     "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
-    //   ]
-    // }
   ],
 
   projects: [
+    {
+      name: "Modochats",
+      description:
+        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مسئولیت اصلی و وظیفه بنده در این پروژه انجام لندینگ٬ داشبورد و اس دی کی های dev از جمله chat client, voice client و widget.",
+      links: [
+        {label: "وب‌سایت", url: "https://modochats.com/", hint: "modochats.com"},
+        {label: "GitHub", url: "https://github.com/modochats", hint: "github.com/modochats"}
+      ]
+    },
+    {
+      name: "Godfather Meet",
+      description:
+        "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی.",
+      links: [
+        {label: "وب‌اپلیکیشن", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
+        {label: "بات تلگرام", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
+      ]
+    },
+    {
+      name: "Shenoma",
+      description:
+        "پلتفرم جامع رساندن محصولات معدنی از معدن دار به کاربر به صورت مستقیم و بدون واسطه. مسئولیت و وظیفه اصلی بنده در این پروژه انجام لندینگ و داشبورد ادمین بود.",
+      links: [{label: "لندینگ", url: "https://shenoma.co", hint: "shenoma.co"}]
+    },
     {
       name: "Ephem Chat",
       description: "چت ناشناس Realtime مبتنی بر WebRTC با ارتباط Realtime",
@@ -93,56 +103,6 @@ export const resumeDataFa: Resume = {
       ]
     },
     {
-      name: "Modochats",
-      description:
-        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مشارکت در لندینگ داشبورد، ویجت، پکیج های کلاینت چت متنی و صوتی.",
-      links: [
-        {label: "وب‌سایت", url: "https://modochats.com/", hint: "modochats.com"},
-        {label: "GitHub", url: "https://github.com/modochat", hint: "github.com/modochat"}
-      ]
-    },
-    // {
-    //   name: "Modo Widget",
-    //   description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime",
-    //   links: [
-    //     {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
-    //     {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
-    //   ]
-    // },
-    // {
-    //   name: "Modo Chat & Voice Clients",
-    //   description:
-    //     "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند.",
-    //   links: [
-    //     {label: "GitHub (Chat)", url: "https://github.com/mnodochats/chat_client"},
-    //     {label: "NPM (Chat)", url: "https://npmjs.com/modochats/chat-client"},
-    //     {label: "GitHub (Voice)", url: "https://github.com/mnodochats/voice_client"},
-    //     {label: "NPM (Voice)", url: "https://npmjs.com/modochats/voice-client"}
-    //   ]
-    // },
-    {
-      name: "Godfather Meet",
-      description:
-        "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی.",
-      links: [
-        {label: "وب‌اپلیکیشن", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
-        {label: "بات تلگرام", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
-      ]
-    },
-    // {
-    //   name: "AR Studio",
-    //   description:
-    //     "ثبت تارگت AR پویا و قرار دادن عناصری در اطراف آن‌ها مانند متن/صدا/ویدیو/تصویر. و اسکن تارگت برای اعمال AR. پیاده‌سازی‌شده با استفاده از Aframe و Mind-ar. به دلیل خصوصی بودن پروژه برای یک ارگان٬ امکان ارائه لینک ندارم ."
-    // },
-    // {
-    //   name: "Esghat Dashboard",
-    //   description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
-    // },
-    // {
-    //   name: "Yoozro Dashboard",
-    //   description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد."
-    // },
-    {
       name: "Multi Connection WebRTC Starter",
       description: "استارتر مینیمال برای برقراری ارتباط هم‌زمان چند peer با WebRTC؛ شامل فرانت‌اند با Nuxt 3 و بک‌اند Express + Socket.IO برای سیگنالینگ.",
       links: [
@@ -156,40 +116,32 @@ export const resumeDataFa: Resume = {
     }
   ],
 
-  education: [
-    // {
-    //   institution: "دانشگاه علمی کاربردی خانه کارگر (گرگان)",
-    //   area: "",
-    //   studyType: "کاردانی",
-    //   startDate: "2025-09",
-    //   courses: []
-    // }
-  ],
+  education: [],
 
   skills: [
     {
-      name: "فرانت‌اند",
-      keywords: ["Vue.js", "Nuxt.js", "React", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Pinia"]
+      name: "مهارت های اصلی فرانت",
+      keywords: ["Vue.js", "Nuxt.js", "React", "Next.js", "TypeScript", "JavaScript"]
+    },
+    {
+      name: "معماری ترجیحی من در پروژه ها",
+      keywords: ["ساختار ماژولار سرویس ها", "معماری کامپوننت محور", "تقسیم کد", "Abstraction و ساده سازی"]
+    },
+    {
+      name: "کتابخانه هایی که عموما استفاده میکنم",
+      keywords: ["Pinia", "Zustand", "Reka UI", "Shadcn", "Radix UI", "Lodash", "Vueuse", "SwiperJs", "Tailwind", "MomentJs", "Nuxt i18n"]
+    },
+    {
+      name: "ابزارهای توسعه و بیلد و دیلوی",
+      keywords: ["Vite", "Rollup", "Terser", "tsx", "Node.js", "گیت هاب اکشن"]
     },
     {
       name: "سیستم‌های ریل-تایم",
-      keywords: ["WebRTC (ویدیو/صدا/داده)", "WebSocket", "Socket.io", "Web Audio API", "ارتباط بلادرنگ", "PWA"]
+      keywords: ["WebRTC (ویدئو/صدا/داده)", "WebSocket", "Socket.io", "Web Audio API"]
     },
     {
-      name: "معماری ",
-      keywords: ["معماری کامپوننت محور", "SSR (رندرینگ سمت سرور)", "تقسیم کد", "بهینه‌سازی عملکرد", "ساختار Monorepo"]
-    },
-    {
-      name: "ابزارهای توسعه و بیلد",
-      keywords: ["Git/GitHub", "npm/pnpm", "Vite", "Rollup", "Node.js", "Concurrently", "tsx", "Web Components"]
-    },
-    {
-      name: "کیفیت و دسترس‌پذیری",
-      keywords: ["TypeScript Strict Mode", "طراحی واکنش‌گرا", "استانداردهای وب"]
-    },
-    {
-      name: "بک‌اند",
-      keywords: ["Express.js", "REST API‌", "Sequelize ORM", "طراحی پایگاه داده", "Node.js"]
+      name: "مهارت های بکندی که در انجام پروژه های شخصی یاد گرفتم",
+      keywords: ["Express.js", "Sequelize ORM", "طراحی پایگاه داده", "Node.js"]
     }
   ],
 
