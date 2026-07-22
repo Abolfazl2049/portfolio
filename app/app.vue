@@ -1,6 +1,6 @@
 <template>
   <UApp :toaster="{ expand: false }">
-    <NuxtLoadingIndicator color="#6366F1" :height="3" :throttle="100" :duration="2000" />
+    <NuxtLoadingIndicator color="var(--ui-color-primary-500)" :height="3" :throttle="100" :duration="2000" />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

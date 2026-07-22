@@ -66,41 +66,9 @@ export const resumeData: Resume = {
         "Implement modern frontend best practices including SSR, code splitting, lazy loading, and performance optimization."
       ]
     }
-    // {
-    //   company: "Modochats",
-    //   position: "Open Source Maintainer & Contributor (Part-time)",
-    //   location: "Remote",
-    //   startDate: "2025-04",
-    //   endDate: "2026-03",
-    //   highlights: [
-    //     "Maintain and contribute to open-source repositories with focus on developer experience, maintainability, and code quality.",
-
-    //     "Design and implement modern AI-powered customer support widgets using TypeScript-first development practices.",
-
-    //     "Manage complex build pipelines and monorepo workflows using Rollup, Node.js, tsx, and Concurrently.",
-
-    //     "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets to simplify AI communication integrations.",
-
-    //     "Develop developer-focused tooling with comprehensive TypeScript support, documentation, examples, and streamlined onboarding experience."
-    //   ]
-    // }
   ],
 
   projects: [
-    {
-      name: "Ephem Chat",
-      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
-      links: [
-        {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
-        {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
-        {
-          label: "dev.to Post",
-          url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
-          hint: "dev.to/abolfazl2049/..."
-        },
-        {label: "Website", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
-      ]
-    },
     {
       name: "Modochats",
       description:
@@ -110,25 +78,6 @@ export const resumeData: Resume = {
         {label: "GitHub", url: "https://github.com/modochats", hint: "github.com/modochats"}
       ]
     },
-    // {
-    //   name: "Modo Widget",
-    //   description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
-    //   links: [
-    //     {label: "GitHub", url: "https://github.com/mnodochats/webcomponent"},
-    //     {label: "NPM", url: "https://npmjs.com/modochats/webcomponent"}
-    //   ]
-    // },
-    // {
-    //   name: "Modo Chat & Voice Clients",
-    //   description:
-    //     "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
-    //   links: [
-    //     {label: "Chat GitHub", url: "https://github.com/mnodochats/chat_client"},
-    //     {label: "Chat NPM", url: "https://npmjs.com/modochats/chat-client"},
-    //     {label: "Voice GitHub", url: "https://github.com/mnodochats/voice_client"},
-    //     {label: "Voice NPM", url: "https://npmjs.com/modochats/voice-client"}
-    //   ]
-    // },
     {
       name: "Godfather Meet",
       description:
@@ -144,19 +93,20 @@ export const resumeData: Resume = {
         "A platform that deliver the Mineral products from the mine owner to the user directly. has the responsibility of landing and admin dashboard of this interesting platform",
       links: [{label: "Landing", url: "https://shenoma.co", hint: "shenoma.co"}]
     },
-    // {
-    //   name: "AR Studio",
-    //   description:
-    //     "Register dynamic AR target and put elements around them like text/audio/video/image. and scan the target to apply the AR. implemented using Aframe and Mind-ar. cause it was for a private organization, cant provide links"
-    // },
-    // {
-    //   name: "Esghat Dashboard",
-    //   description: "Scrapping and Recycling management platform for Golestan province. since it is an admin dashboard, cant provide links"
-    // },
-    // {
-    //   name: "Yoozro Dashboard",
-    //   description: "easy-to-use city to city traveling-service platform for Golestan province. since it is an admin dashboard, cant provide links"
-    // },
+    {
+      name: "Ephem Chat",
+      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
+      links: [
+        {label: "GitHub Frontend", url: "https://github.com/Abolfazl2049/ephem-chat-fronted", hint: "github.com/Abolfazl2049/ephem-chat-fronted"},
+        {label: "GitHub Backend", url: "https://github.com/Abolfazl2049/ephem-chat-backend", hint: "github.com/Abolfazl2049/ephem-chat-backend"},
+        {
+          label: "dev.to Post",
+          url: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          hint: "dev.to/abolfazl2049/..."
+        },
+        {label: "Website", url: "https://my-ephem-chat.vercel.app", hint: "my-ephem-chat.vercel.app"}
+      ]
+    },
     {
       name: "Multi Connection WebRTC Starter",
       description:
@@ -172,15 +122,7 @@ export const resumeData: Resume = {
     }
   ],
 
-  education: [
-    // {
-    //   institution: "University of Khaneh Kargar (Gorgan)",
-    //   area: "Computer Science",
-    //   studyType: "Bachelor of Science",
-    //   startDate: "2025-09",
-    //   courses: ["Software Architecture", "Systems Design", "Web Development", "Database Management"]
-    // }
-  ],
+  education: [],
 
   skills: [
     {
