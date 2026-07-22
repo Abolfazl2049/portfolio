@@ -44,46 +44,9 @@ const portfolioFa: PortfolioData = {
         }
       ]
     }
-
-    // {
-    //   company: "Modochats",
-    //   link: "https://modochats.com",
-    //   logo: "/img/projects/modochats-logo.svg",
-    //   location: "گلستان، گرگان - هیبرید",
-    //   type: "پاره‌وقت",
-    //   positions: [
-    //     {
-    //       title: "مشارکت‌کننده و نگهدارنده پروژه‌های متن‌باز",
-    //       start: "فروردین ۱۴۰۴",
-    //       end: "اسفند ۱۴۰۴",
-    //       description: [
-    //         "مشارکت در توسعه و نگهداری پروژه‌های متن‌باز با تمرکز بر کیفیت کد و تجربه توسعه‌دهنده",
-
-    //         "طراحی و پیاده‌سازی ویجت‌ها و ابزارهای کاربردی و سبک برای استفاده در محصولات مختلف ",
-
-    //         "کار با CDNها و مدیریت انتشار پکیج‌ها در npm",
-
-    //         "طراحی و اجرای فرآیندهای build و توسعه با ابزارهایی مانند Rollup، Node.js و tsx",
-
-    //         "تمرکز بر بهبود تجربه توسعه‌دهنده (DX) و ساده‌سازی استفاده از کتابخانه‌ها"
-    //       ],
-    //       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
-    //       link: "https://modochats.com/",
-    //       linkLabel: "Modochats"
-    //     }
-    //   ]
-    // }
   ],
 
-  education: [
-    // {
-    //   school: "دانشگاه علمی کاربردی خانه کارگر (گرگان)",
-    //   degree: "کامپیوتر",
-    //   start: "۱۴۰۴",
-    //   end: "در حال تحصیل",
-    //   icons: ["i-material-symbols-school"]
-    // }
-  ],
+  education: [],
 
   projects: [
     {
@@ -107,7 +70,7 @@ const portfolioFa: PortfolioData = {
         "i-logos-sequelize",
         "i-logos:webrtc",
         "i-devicon-socketio",
-        "i-logos-supabase",
+        "i-devicon-supabase",
         "i-logos-railway",
         "i-logos-shadcn"
       ],
@@ -119,7 +82,7 @@ const portfolioFa: PortfolioData = {
     {
       name: "Modochats",
       description:
-        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مشارکت در لندینگ داشبورد، ویجت، پکیج های کلاینت چت متنی و صوتی.",
+        "ایجاد agent هوش‌مصنوعی برای کسب‌و‌کارهای شما! پلتفرمی که هر کسی می‌تواند agent خود را ساخت با منبع دانش سفارشی و استفاده از آن به روش‌های مختلف مانند پشتیبانی مشتری - مدیریت فروش - مدیریت رسانه‌های اجتماعی - چت متنی/صوتی. مسئولیت اصلی و وظیفه بنده در این پروژه انجام لندینگ٬ داشبورد و اس دی کی های dev از جمله chat client, voice client و widget.",
       thumbnail: "/img/projects/modochats-logo.svg",
       status: "فعال",
       opensource: false,
@@ -131,40 +94,11 @@ const portfolioFa: PortfolioData = {
       category: "freelance"
     },
     {
-      name: "Modo Widget",
-      description: "ویجت پشتیبانی مشتری هوش‌مصنوعی. قابل‌شخصی‌سازی، واکنش‌گرا، متمرکز بر DX. از چت متنی و صدا پشتیبانی می‌کند - Realtime",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "فعال",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-devicon-nodejs"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Chat & Voice Clients",
-      description:
-        "SDK های کلاینت برای پلتفرم Modo: شامل یک sdk چت و یک sdk صوت. هر دو با TypeScript نوشته شده و متمرکز بر تجربهٔ توسعه‌دهنده هستند. کلاینت صوتی از چت صوتی realtime (بر پایهٔ socket) پشتیبانی می‌کند.",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "فعال",
-      opensource: true,
-      links: [
-        {label: "Github (Chat)", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
-        {label: "NPM (Chat)", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"},
-        {label: "Github (Voice)", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
-        {label: "NPM (Voice)", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-logos-node"],
-      category: "freelance"
-    },
-    {
       name: "Godfather Meet",
       thumbnail: "/img/projects/godfather-meet-logo.png",
       description:
         "یک پلتفرم کامل برای اجرای بازی مافیا به‌صورت آنلاین با امکان ساخت اتاق، انتخاب سناریو، ارتباط صوتی و تصویری، چت نقش‌ها، مدیریت بازی توسط گرداننده، سیستم پاداش و جدول رتبه‌بندی رقابتی.",
-      status: "Active",
+      status: "فعال",
       opensource: false,
       links: [
         {
@@ -179,6 +113,23 @@ const portfolioFa: PortfolioData = {
         }
       ],
       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-webrtc", "i-hugeicons-plug-socket", "i-logos-tailwindcss-icon"],
+      category: "freelance"
+    },
+    {
+      name: "Shenoma",
+      thumbnail: "/img/projects/shenoma-logo.png",
+      description:
+        "پلتفرم جامع رساندن محصولات معدنی از معدن دار به کاربر به صورت مستقیم و بدون     واسطه. مسئولیت و وظیفه اصلی بنده در این پروژه انجام لندینگ و داشبورد ادمین بود.",
+      status: "فعال",
+      opensource: false,
+      links: [
+        {
+          label: "لندینگ",
+          to: "https://shenoma.co",
+          icon: "i-mdi-link"
+        }
+      ],
+      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-tailwindcss-icon"],
       category: "freelance"
     },
     {

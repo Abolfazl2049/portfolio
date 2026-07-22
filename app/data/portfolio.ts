@@ -49,122 +49,23 @@ export const portfolio: PortfolioData = {
         }
       ]
     }
-    // {
-    //   company: "Modochats",
-    //   link: "https://modochats.com",
-    //   logo: "/img/projects/modochats-logo.svg",
-    //   location: "Golestan, Gorgan - hybrid",
-    //   type: "Part-time",
-
-    //   positions: [
-    //     {
-    //       title: "Open Source Maintainer/Contributor",
-    //       start: "April 2025",
-    //       end: "March 2026",
-    //       ongoing: false,
-    //       description: [
-    //         "Maintain and contribute to open-source repositories focused on developer experience, maintainability, and code quality.",
-
-    //         "Design and implement AI-powered customer support widgets supporting text and voice communication.",
-
-    //         "Publish npm packages including Chat Client SDK, Voice Client SDK, and Web Component Widgets used for AI communication integrations.",
-
-    //         "Develop TypeScript-first SDKs with comprehensive documentation, examples, and developer-focused APIs.",
-
-    //         "Manage monorepo workflows and complex build pipelines using Rollup, Node.js, tsx, and Concurrently.",
-
-    //         "Implement custom Web Audio processing and real-time communication functionality for voice-based applications."
-    //       ],
-    //       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-devicon-nodejs"],
-    //       link: "https://modochats.com/",
-    //       linkLabel: "modo chats"
-    //     }
-    //   ]
-    // }
   ],
 
-  education: [
-    // {
-    //   school: "University of Khaneh Kargar (Gorgan)",
-    //   degree: "Computer science",
-    //   start: "2025",
-    //   end: "ongoing",
-    //   icons: ["i-material-symbols-school"]
-    // }
-  ],
+  education: [],
 
   projects: [
     {
-      name: "Ephem Chat",
-      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
-      links: [
-        {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
-        {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
-        {
-          label: "dev.to Post",
-          to: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
-          icon: "i-mdi-linkedin"
-        },
-        {label: "Website", to: "https://my-ephem-chat.vercel.app"}
-      ],
-      icons: [
-        "i-logos-react",
-        "i-devicon:nextjs",
-        "i-logos-typescript-icon",
-        "i-skill-icons:expressjs-light",
-        "i-logos-sequelize",
-        "i-logos:webrtc",
-        "i-devicon-socketio",
-        "i-logos-supabase",
-        "i-logos-railway",
-        "i-logos-shadcn"
-      ],
-      status: "Active",
-      opensource: true,
-      category: "public"
-    },
-
-    {
       name: "Modochats",
       description:
-        "Build Agents for your career !.A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .contributed in landing, dashboard, widget, chat and voice packages.",
+        "Build Agents for your business !. A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .i was responsible for landing, dashboard, dev SDKs such as chat-client, voice-client and widget.",
       thumbnail: "/img/projects/modochats-logo.svg",
       status: "Active",
       opensource: false,
       links: [
         {label: "Website", to: "https://modochats.com/", icon: "i-mdi-link"},
-        {label: "github", to: "https://github.com/modochat", icon: "i-mdi-github"}
+        {label: "github", to: "https://github.com/modochats", icon: "i-mdi-github"}
       ],
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-logos-node"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Widget",
-      description: "Ai Customer Support Chat Widget. customizable, responsive, Dx focused .supports text chat and Voice chat - realtime",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Github", to: "https://github.com/mnodochats/webcomponent", icon: "i-mdi-github"},
-        {label: "NPM", to: "https://npmjs.com/modochats/webcomponent", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-devicon-nodejs"],
-      category: "freelance"
-    },
-    {
-      name: "Modo Chat & Voice Clients",
-      description:
-        "Client SDKs for the Modo platform: a Chat client and a Voice client. Both are written in TypeScript with a focus on developer experience and are published on npm and open-sourced on GitHub. The Voice client supports realtime voice chat (socket-based) and includes custom Web Audio processing for audio parsing.",
-      thumbnail: "/img/projects/modochats-logo.svg",
-      status: "Active",
-      opensource: true,
-      links: [
-        {label: "Chat Github", to: "https://github.com/mnodochats/chat_client", icon: "i-mdi-github"},
-        {label: "Chat NPM", to: "https://npmjs.com/modochats/chat-client", icon: "i-mdi-npm"},
-        {label: "Voice Github", to: "https://github.com/mnodochats/voice_client", icon: "i-mdi-github"},
-        {label: "Voice NPM", to: "https://npmjs.com/modochats/voice-client", icon: "i-mdi-npm"}
-      ],
-      icons: ["i-logos-typescript-icon", "i-logos-node"],
       category: "freelance"
     },
     {
@@ -187,6 +88,23 @@ export const portfolio: PortfolioData = {
         }
       ],
       icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-webrtc", "i-hugeicons-plug-socket", "i-logos-tailwindcss-icon"],
+      category: "freelance"
+    },
+    {
+      name: "Shenoma",
+      thumbnail: "/img/projects/shenoma-logo.png",
+      description:
+        "A platform that deliver the Mineral products from the mine owner to the user directly. has the responsibility of landing and admin dashboard of this interesting platform",
+      status: "Active",
+      opensource: false,
+      links: [
+        {
+          label: "Landing",
+          to: "https://shenoma.co",
+          icon: "i-mdi-link"
+        }
+      ],
+      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-tailwindcss-icon"],
       category: "freelance"
     },
     {
@@ -216,6 +134,35 @@ export const portfolio: PortfolioData = {
       opensource: false,
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
+    },
+    {
+      name: "Ephem Chat",
+      description: "WebRTC Based Ephemeral Anonymous Chat with realtime matching and communication  ",
+      links: [
+        {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
+        {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
+        {
+          label: "dev.to Post",
+          to: "https://dev.to/abolfazl2049/building-an-ephemeral-anonymous-chat-app-with-nextjs-webrtc-and-socketio-5f78",
+          icon: "i-mdi-linkedin"
+        },
+        {label: "Website", to: "https://my-ephem-chat.vercel.app"}
+      ],
+      icons: [
+        "i-logos-react",
+        "i-devicon:nextjs",
+        "i-logos-typescript-icon",
+        "i-skill-icons:expressjs-light",
+        "i-logos-sequelize",
+        "i-logos:webrtc",
+        "i-devicon-socketio",
+        "i-devicon-supabase",
+        "i-logos-railway",
+        "i-logos-shadcn"
+      ],
+      status: "Active",
+      opensource: true,
+      category: "public"
     },
     {
       name: "Multi Connection WebRTC Starter",

@@ -108,7 +108,7 @@ const accordionUi = {
 } as const
 
 type Category = NonNullable<Project['category']>
-const categories: Category[] = ['current', 'public', 'freelance',]
+const categories: Category[] = ['current', 'freelance', 'public',]
 
 const projectsByCategory = computed<Record<Category, Project[]>>(() => {
   const acc: Record<Category, Project[]> = { current: [], freelance: [], public: [] }
