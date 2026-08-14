@@ -20,7 +20,7 @@ const { t } = useI18n()
       <h3 class="text-sm font-bold text-gray-900 break-words hyphens-none">
         {{ project.name }}
       </h3>
-      <p class="text-sm text-gray-700 mt-1.5 leading-relaxed break-words hyphens-none">
+      <p class="text-sm text-gray-700 mt-1.5 leading-relaxed break-words hyphens-none print:rtl:whitespace-pre-line">
         {{ project.description }}
       </p>
       <div v-if="project.links?.length" class="flex flex-wrap gap-x-3 gap-y-1 mt-2">

@@ -18,9 +18,9 @@ const { t } = useI18n()
 
     <!-- Technical Skills (categorized) -->
     <div v-if="skills?.length">
-      <div class="space-y-3 print:space-y-3">
+      <div class="space-y-3 print:space-y-3 print:rtl:pl-16">
         <div v-for="skill in skills" :key="skill.name" class="text-sm">
-          <span class="font-bold text-gray-900">{{ skill.name }}:&nbsp;</span><span class="text-gray-700">{{
+          <span class="font-bold text-gray-900">{{ skill.name }}:&nbsp;</span><span class="text-gray-700 ">{{
             skill.keywords.join(', ') }}</span>
         </div>
       </div>
