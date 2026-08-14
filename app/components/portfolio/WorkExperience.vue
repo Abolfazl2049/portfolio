@@ -10,8 +10,8 @@
         <template #body>
           <UTimeline :items="experiences" :default-value="0" color="primary" size="md" class="max-w-3xl">
             <template #indicator="{ item }">
-              <img v-if="item.logo" :src="item.logo" :alt="`${item.company} logo`" class="h-10 w-10 object-contain"
-                loading="lazy" />
+              <img v-if="item.logo" :src="item.logo" :alt="`${item.company} logo`"
+                class="h-10 min-w-10 w-10 object-cover rounded-xl " loading="lazy" />
             </template>
             <template #title="{ item }">
               <div class="flex flex-col gap-1">

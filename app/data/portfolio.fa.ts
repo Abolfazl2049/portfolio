@@ -21,7 +21,7 @@ const portfolioFa: PortfolioData = {
     {
       company: "Modern Data",
       link: "https://moderndata.ir/",
-      logo: "/img/modern-data-logo.png",
+      logo: "/img/projects/moderndata.png",
       location: "گلستان، گرگان - حضوری",
       type: "تمام‌وقت",
       positions: [
@@ -78,7 +78,80 @@ const portfolioFa: PortfolioData = {
       opensource: true,
       category: "public"
     },
-
+    {
+      name: "Knik",
+      description:
+        "با کینیک از طریق انجام بازی های مختلف درون برنامه و کامل کردن ماموریت ها و یا چالش های مختلف پلتفرم درآمد واقعی کسب کنید !.ایده اصلی برنامه از پروژه نات کوین الهام گرفته شده بود. مسئولیت اصلی بنده در این پروژه انجام لندینگ و پنل ادمین بود",
+      thumbnail: "/img/projects/knik.png",
+      status: "فعال",
+      opensource: false,
+      links: [{label: "وب‌سایت", to: "https://knik.uk", icon: "i-mdi-link"}],
+      icons: [
+        "i-logos-nuxt-icon",
+        "i-logos-vue",
+        "i-logos-typescript-icon",
+        "i-simple-icons:rekaui",
+        "i-logos-tailwindcss-icon",
+        "i-devicon:chartjs",
+        "i-logos:pinia",
+        "i-material-icon-theme:i18n"
+      ],
+      category: "freelance"
+    },
+    {
+      name: "Cheshmak",
+      description:
+        "اپ جامع دوست‌یابی در سطح جهانی همچنین با جامعه کاربران فارسی زبان بزرگ ٬ با بیش از ۵۰۰ هزار کاربر. اولین و تنها اپ رایگان دوستیابی فارسی. وظیفه تیم ما ساخت ورژن دو این برنامه بود و وظیفه اصلی بنده انجام pwa و ادمین پنل بود",
+      thumbnail: "/img/projects/cheshmak.png",
+      status: "فعال",
+      opensource: false,
+      links: [{label: "وب‌سایت", to: "https://cheshmak.co.uk", icon: "i-mdi-link"}],
+      icons: [
+        "i-logos-nuxt-icon",
+        "i-logos-vue",
+        "i-logos-typescript-icon",
+        "i-simple-icons:mediapipe",
+        "i-logos-tailwindcss-icon",
+        "i-devicon:motion",
+        "i-logos:pinia",
+        "i-logos:momentjs",
+        "i-logos:vueuse",
+        "i-vscode-icons:file-type-firebase",
+        "i-material-icon-theme:i18n"
+      ],
+      category: "freelance"
+    },
+    {
+      name: "Hazarat",
+      description:
+        "در حضرات شما میتوانید با خرج سکه درون‌برنامه در قرعه کشی هایی که توسط پلتفرم انجام میشود شرکت کنید و شانس خود را برای بردن جوایز امتحان کنید٬ سکه هم میتوانید از طریق انجام ماموریت ها/چالش های مختلف برنامه یا دیدن تلیغ به دست آورید ٬ کاملا رایگان ! من در این پروژه مسئولیت وبسایت و پنل مدیریت رو داشتم",
+      thumbnail: "/img/projects/hazarat.png",
+      status: "فعال",
+      opensource: false,
+      links: [{label: "وب‌سایت", to: "https://hazarat.uk", icon: "i-mdi-link"}],
+      icons: [
+        "i-logos-nuxt-icon",
+        "i-logos-vue",
+        "i-logos-typescript-icon",
+        "i-logos-tailwindcss-icon",
+        "i-logos:pinia",
+        "i-logos:momentjs",
+        "i-skill-icons:nuxtjs-light",
+        "i-vscode-icons:file-type-firebase",
+        "i-material-icon-theme:i18n"
+      ],
+      category: "freelance"
+    },
+    {
+      name: "ModernData",
+      description: "لندینگ شرکتی که توش دو سال نیم کار کردم . دارای بخش های معرفی شرکت٬ پروژه ها ٬سرویس ها و ارتباط با ما",
+      thumbnail: "/img/projects/moderndata.png",
+      status: "فعال",
+      opensource: false,
+      links: [{label: "وب‌سایت", to: "https://hazarat.uk", icon: "i-mdi-link"}],
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon"],
+      category: "freelance"
+    },
     {
       name: "Modochats",
       description:
@@ -90,7 +163,16 @@ const portfolioFa: PortfolioData = {
         {label: "وب‌سایت", to: "https://modochats.com/", icon: "i-mdi-link"},
         {label: "GitHub", to: "https://github.com/modochats", icon: "i-mdi-github"}
       ],
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-typescript-icon", "i-devicon-nodejs"],
+      icons: [
+        "i-logos-nuxt-icon",
+        "i-logos-vue",
+        "i-logos-typescript-icon",
+        "i-devicon-nodejs",
+        "i-logos:pinia",
+        "i-material-icon-theme:i18n",
+        "i-logos-tailwindcss-icon",
+        "i-devicon:rollup"
+      ],
       category: "freelance"
     },
     {
@@ -112,7 +194,15 @@ const portfolioFa: PortfolioData = {
           icon: "i-mdi-telegram"
         }
       ],
-      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-webrtc", "i-hugeicons-plug-socket", "i-logos-tailwindcss-icon"],
+      icons: [
+        "i-logos-vue",
+        "i-logos-nuxt-icon",
+        "i-logos-typescript-icon",
+        "i-logos-webrtc",
+        "i-hugeicons-plug-socket",
+        "i-logos-tailwindcss-icon",
+        "i-logos:pinia"
+      ],
       category: "freelance"
     },
     {
@@ -129,8 +219,28 @@ const portfolioFa: PortfolioData = {
           icon: "i-mdi-link"
         }
       ],
-      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-tailwindcss-icon"],
+      icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-typescript-icon", "i-logos-tailwindcss-icon", "i-logos:pinia", "i-devicon:chartjs"],
       category: "freelance"
+    },
+    {
+      name: "Esghat Dashboard",
+      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان .",
+      thumbnail: "/img/projects/esghat-logo.png",
+      status: "فعال",
+      opensource: false,
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-pinia"],
+      category: "freelance",
+      links: [{label: "لندینگ", to: "https://e-rahgosha.ir"}]
+    },
+    {
+      name: "Yoozro Dashboard",
+      description: "پلتفرم خدمات سفر شهر به شهر آسان‌.",
+      thumbnail: "/img/projects/yoozro-logo.png",
+      status: "فعال",
+      opensource: false,
+      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
+      category: "freelance",
+      links: [{label: "لندینگ", to: "https://yoozro.ir"}]
     },
     {
       name: "AR Studio",
@@ -140,24 +250,6 @@ const portfolioFa: PortfolioData = {
       opensource: true,
       links: [],
       icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-tailwindcss-icon", "i-logos-mindar"],
-      category: "freelance"
-    },
-    {
-      name: "Esghat Dashboard",
-      description: "پلتفرم مدیریت خودروهای اسقاط و بازیافت آنان. برای استان گلستان . از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد.",
-      thumbnail: "/img/projects/esghat-logo.png",
-      status: "فعال",
-      opensource: false,
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-pinia"],
-      category: "freelance"
-    },
-    {
-      name: "Yoozro Dashboard",
-      description: "پلتفرم خدمات سفر شهر به شهر آسان‌. برای استان گلستان.  از اونجایی که ادمین پنل هست متاسفانه امکان ارائه لینک وجود ندارد.",
-      thumbnail: "/img/projects/yoozro-logo.png",
-      status: "فعال",
-      opensource: false,
-      icons: ["i-logos-nuxt-icon", "i-logos-vue", "i-logos-javascript-icon", "i-logos-flowbite", "i-file-icons:leaflet"],
       category: "freelance"
     },
     {
