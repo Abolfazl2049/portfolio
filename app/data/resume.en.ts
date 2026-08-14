@@ -88,6 +88,24 @@ export const resumeData: Resume = {
       ]
     },
     {
+      name: "Hazarat",
+      description:
+        "A platform for in-app lotteries where users spend coins to join draws and win prizes. Coins are earned via missions/challenges or watching ads. I was responsible for the website and admin panel.",
+      links: [{label: "Website", url: "https://hazarat.uk", hint: "hazarat.uk"}]
+    },
+    {
+      name: "Knik",
+      description:
+        "Earn real income by playing in-app games and completing missions or challenges. The idea was inspired by NutCoin; I worked on the landing and admin panel.",
+      links: [{label: "Website", url: "https://knik.uk", hint: "knik.uk"}]
+    },
+    {
+      name: "Cheshmak",
+      description:
+        "A comprehensive global dating app with a large Persian-speaking user base (500k+ users). Our team built version two; I worked on the PWA and admin panel.",
+      links: [{label: "Website", url: "https://cheshmak.co.uk", hint: "cheshmak.co.uk"}]
+    },
+    {
       name: "Shenoma",
       description:
         "A platform that deliver the Mineral products from the mine owner to the user directly. has the responsibility of landing and admin dashboard of this interesting platform",
