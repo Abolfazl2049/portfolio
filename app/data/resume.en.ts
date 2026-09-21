@@ -20,7 +20,7 @@ export const resumeData: Resume = {
     phone: "+98 938 578 0203",
     url: "https://abolfazlshahini.vercel.app",
     location: {
-      city: "Gorgan",
+      city: "Tehran",
       country: "Iran"
     },
     profiles: [
