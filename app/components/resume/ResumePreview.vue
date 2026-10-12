@@ -14,14 +14,15 @@ const { resume } = useResumeData()
         <!-- Summary -->
         <ResumeSummary :summary="resume.basics.summary" />
 
-        <!-- Skills & Qualifications -->
-        <ResumeAdditionalInfo :skills="resume.skills" />
-
         <!-- Experience -->
         <ResumeExperience :work="resume.work" />
 
+
         <!-- Projects -->
         <ResumeProjects v-if="resume.projects?.length" :projects="resume.projects" />
+
+        <!-- Skills & Qualifications -->
+        <ResumeAdditionalInfo :skills="resume.skills" />
 
         <!-- Education -->
         <ResumeEducation :education="resume.education" />
