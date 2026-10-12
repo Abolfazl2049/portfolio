@@ -7,7 +7,7 @@ const portfolioFa: PortfolioData = {
     location: "استان گلستان - ایران",
     summary:
       "برنامه‌نویس٬ توسعه‌دهنده فرانت‌اند با بیش از دو سال تجربه حرفه‌ای عمدتا با فریمورک Nuxt/Vue و Next/React در پروژه‌هایی در مقیاس کوچک و بزرگ .علاقه‌مند به فعالیت های متن‌باز. همچنان مشتاق یادگیری زبان‌ها/فریم‌ورک/ابزار های جدید و عمیق تر ساختن تخصص .",
-    avatar: "/img/my-profile.jpg",
+    avatar: "/img/my-profile.png",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
       github: "https://github.com/Abolfazl2049",

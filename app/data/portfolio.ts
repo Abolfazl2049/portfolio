@@ -7,7 +7,7 @@ export const portfolio: PortfolioData = {
     location: "Golestan Province - Iran",
     summary:
       "Frontend developer with over two years of professional experience, primarily working with Nuxt/Vue and Next/React on projects of varying scale. I build and maintain dashboards, PWAs, and scalable websites, enjoy contributing to open-source, and am eager to learn new languages, frameworks and tools to deepen my expertise.",
-    avatar: "/img/my-profile.jpg",
+    avatar: "/img/my-profile.png",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
       github: "https://github.com/Abolfazl2049",
