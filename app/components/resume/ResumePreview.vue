@@ -17,7 +17,6 @@ const { resume } = useResumeData()
         <!-- Experience -->
         <ResumeExperience :work="resume.work" />
 
-
         <!-- Projects -->
         <ResumeProjects v-if="resume.projects?.length" :projects="resume.projects" />
 
