@@ -44,26 +44,53 @@ export const resumeData: Resume = {
       }
     ],
     summary:
-      "Frontend Developer with 2+ years of experience building scalable web applications using Vue, Nuxt, React, Next and TypeScript. Experienced in developing dashboards, PWAs, real-time communication systems, and developer-focused SDKs. Strong background in WebRTC, WebSockets, performance optimization, and maintainable frontend architecture."
+      "Frontend developer with 2+ years of professional experience building web applications, admin dashboards, and product websites. \n Experienced with Vue and Nuxt, React and Next, PWAs and WebView-compatible applications, and customizable SDKs and widgets. \n Also experienced in leading web development and collaborating closely with mobile and backend teams."
   },
 
   work: [
     {
       company: "Modern Data",
-      position: "Frontend Developer (On-site)",
-      location: "Gorgan, Golestan - Iran",
+      position: "Frontend Developer",
+      location: "On-site",
       startDate: "2024-02",
       endDate: "2026-06",
       highlights: [
-        "Develop and maintain large-scale dashboards, Progressive Web Applications (PWAs), and business-critical web applications using Nuxt.js, Vue.js, and TypeScript.",
-
-        "Architect scalable frontend applications with modular design principles, leveraging Pinia for state management and Tailwind CSS for maintainable styling.",
-
-        "Integrate modern UI frameworks and component libraries including Reka UI, Nuxt UI, and Maz UI to accelerate development and improve consistency.",
-
-        "Build responsive, accessible, and high-performance user interfaces with strong focus on user experience and cross-device compatibility.",
-
-        "Implement modern frontend best practices including SSR, code splitting, lazy loading, and performance optimization."
+        "This was my first experience working on a team, where I better understood the importance of soft skills.",
+        "Implemented native-like web applications in coordination with the mobile team.",
+        "Led frontend development for the web application, admin panel, and landing page, coordinating web work with the mobile team.",
+        "Developed and adapted the web application for WebView, Windows, and TV.",
+        "Implemented landing pages and websites with a focus on SEO in coordination with the SEO specialist.",
+        "Implemented scalable admin panels for managing large information systems."
+      ]
+    },
+    {
+      company: "Modochats",
+      position: "Frontend Developer",
+      location: "Hybrid",
+      startDate: "2025-05",
+      endDate: "2026-04",
+      highlights: [
+        "Worked with different AI SDKs and APIs, including OpenAI, Google, and ElevenLabs.",
+        "Implemented complex speech-to-text and text-to-speech workflows in collaboration with the backend team.",
+        "Worked with JavaScript ecosystem packages such as Rollup, Terser, and others.",
+        "Published developer-focused packages to npm and jsDelivr.",
+        "Used various GitHub Actions.",
+        "Worked with a professional versioning system and followed semantic versioning principles.",
+        "Built a customizable widget compatible with different environments and frameworks.",
+        "Contributed to bringing the startup idea to revenue."
+      ]
+    },
+    {
+      company: "Knik Ltd",
+      position: "Frontend Developer",
+      location: "Hybrid",
+      startDate: "2025-03",
+      endDate: "2026-01",
+      highlights: [
+        "Revived platforms through redesign and alignment with modern standards.",
+        "Implemented modern, user-friendly interfaces to improve the platforms.",
+        "Delivered refactors, rewrites, and new features in an agile manner.",
+        "Modernized legacy projects and implemented faster, more user-friendly systems."
       ]
     }
   ],
@@ -72,7 +99,7 @@ export const resumeData: Resume = {
     {
       name: "Modochats",
       description:
-        "Build Agents for your business !. A platform that everyone can build their own agent with their custom knowledge source and using it in various ways like customer support - sales management - social media management - text chat/voice chat .i was responsible for landing, dashboard, dev SDKs such as chat-client, voice-client and widget.",
+        "Create AI agents for your business! A platform where anyone can build an agent with a custom knowledge source and use it in various ways, such as customer support, sales management, social media management, and text/voice chat. \n My main responsibility on this project was the landing page, dashboard, and developer SDKs, including the chat client, voice client, \n and widget.",
       links: [
         {label: "Website", url: "https://modochats.com/", hint: "modochats.com"},
         {label: "GitHub", url: "https://github.com/modochats", hint: "github.com/modochats"}
@@ -81,7 +108,7 @@ export const resumeData: Resume = {
     {
       name: "Godfather Meet",
       description:
-        "A full-featured online Mafia game platform with room creation, scenario selection, voice/video communication, role-based chats, game master controls, rewards system, and competitive ranking.",
+        "A complete online Mafia game platform with room creation, scenario selection, voice and video communication, role chats, \n game master controls, a rewards system, and competitive rankings.",
       links: [
         {label: "Web Application", url: "https://meet.godfathergame.ir", hint: "meet.godfathergame.ir"},
         {label: "Telegram Bot", url: "https://t.me/god_father_game_bot", hint: "t.me/god_father_game_bot"}
@@ -90,25 +117,25 @@ export const resumeData: Resume = {
     {
       name: "Hazarat",
       description:
-        "A platform for in-app lotteries where users spend coins to join draws and win prizes. Coins are earned via missions/challenges or watching ads. I was responsible for the website and admin panel.",
+        "On Hazarat, users spend in-app coins to enter platform-run lotteries and try to win prizes. Coins can be earned through \n missions/challenges or by watching ads, at no cost. I was responsible for the website and admin panel.",
       links: [{label: "Website", url: "https://hazarat.uk", hint: "hazarat.uk"}]
     },
     {
       name: "Knik",
       description:
-        "Earn real income by playing in-app games and completing missions or challenges. The idea was inspired by NutCoin; I worked on the landing and admin panel.",
+        "With Knik, users can earn real income by playing in-app games and completing missions or challenges. The idea was inspired \n by NutCoin. My main responsibility on this project was the landing page and admin panel.",
       links: [{label: "Website", url: "https://knik.uk", hint: "knik.uk"}]
     },
     {
       name: "Cheshmak",
       description:
-        "A comprehensive global dating app with a large Persian-speaking user base (500k+ users). Our team built version two; I worked on the PWA and admin panel.",
+        "A global dating app with a large Persian-speaking user base of more than 500,000 users. It is the first and only free Persian \n dating app. Our team built the second version; my main responsibility was the PWA and admin panel.",
       links: [{label: "Website", url: "https://cheshmak.co.uk", hint: "cheshmak.co.uk"}]
     },
     {
       name: "Shenoma",
       description:
-        "A platform that deliver the Mineral products from the mine owner to the user directly. has the responsibility of landing and admin dashboard of this interesting platform",
+        "A platform for delivering mineral products directly from mine owners to users without intermediaries. My main responsibility \n on this project was the landing page and admin dashboard.",
       links: [{label: "Landing", url: "https://shenoma.co", hint: "shenoma.co"}]
     }
   ],

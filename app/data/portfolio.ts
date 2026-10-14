@@ -4,9 +4,9 @@ export const portfolio: PortfolioData = {
   profile: {
     name: "Abolfazl Shahini",
     title: "Frontend Developer",
-    location: "Golestan Province - Iran",
+    location: "Tehran Province - Iran",
     summary:
-      "Frontend developer with over two years of professional experience, primarily working with Nuxt/Vue and Next/React on projects of varying scale. I build and maintain dashboards, PWAs, and scalable websites, enjoy contributing to open-source, and am eager to learn new languages, frameworks and tools to deepen my expertise.",
+      "Frontend developer with over two years of professional experience building web applications, admin dashboards, and product websites. Experienced with Vue/Nuxt and React/Next, PWAs and WebView-compatible applications, and customizable SDKs and widgets. Have also led web development and collaborated closely with mobile and backend teams.",
     avatar: "/img/my-profile.png",
     socials: {
       website: "https://abolfazlshahini.vercel.app",
@@ -22,7 +22,7 @@ export const portfolio: PortfolioData = {
       company: "Modern Data",
       link: "https://moderndata.ir/",
       logo: "/img/projects/moderndata.png",
-      location: "Golestan, Gorgan - On site",
+      location: "On-site",
       type: "Full-time",
       positions: [
         {
@@ -31,17 +31,65 @@ export const portfolio: PortfolioData = {
           end: "June 2026",
           ongoing: false,
           description: [
-            "Develop and maintain admin dashboards, PWAs and scalable websites.",
-
-            "Migrate parts of projects from JavaScript to TypeScript to improve stability and code readability.",
-
-            "Work with modern technologies such as Nuxt.js, Tailwind CSS, REST APIs and WebRTC.",
-
-            "Focus on performance optimization, UX improvements and modular project structure."
+            "This was my first experience working on a team, where I better understood the importance of soft skills.",
+            "Implemented native-like web applications in coordination with the mobile team.",
+            "Led web development for the frontend, admin panel, and landing page, coordinating web work with the mobile team.",
+            "Developed and adapted the web application for WebView, Windows, and TV.",
+            "Implemented landing pages and websites with a focus on SEO in coordination with the SEO specialist.",
+            "Implemented scalable admin panels for managing large information systems."
           ],
           icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
           link: "https://moderndata.ir/",
           linkLabel: "Modern Data"
+        }
+      ]
+    },
+    {
+      company: "Modochats",
+      link: "https://modochats.com/",
+      logo: "/img/projects/modochats-logo.svg",
+      location: "Hybrid",
+      type: "Part-time",
+      positions: [
+        {
+          title: "Frontend Developer",
+          start: "May 2025",
+          end: "April 2026",
+          ongoing: false,
+          description: [
+            "Worked with different AI SDKs and APIs, including OpenAI, Google, and ElevenLabs.",
+            "Implemented complex speech-to-text and text-to-speech workflows in collaboration with the backend team.",
+            "Worked with JavaScript ecosystem packages such as Rollup, Terser, and others.",
+            "Published developer-focused packages to npm and jsDelivr.",
+            "Used various GitHub Actions.",
+            "Worked with a professional versioning system and followed semantic versioning principles.",
+            "Built a customizable widget compatible with different environments and frameworks.",
+            "Contributed to bringing the startup idea to revenue."
+          ],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"],
+          link: "https://modochats.com/",
+          linkLabel: "Modochats"
+        }
+      ]
+    },
+    {
+      company: "Knik Ltd",
+      logo: "/img/projects/knik.png",
+      location: "Hybrid",
+      type: "Part-time",
+      positions: [
+        {
+          title: "Frontend Developer",
+          start: "March 2025",
+          end: "January 2026",
+          ongoing: false,
+          description: [
+            "Revived platforms through redesign and alignment with modern standards.",
+            "Implemented modern, user-friendly interfaces to improve the platforms.",
+            "Delivered refactors, rewrites, and new features in an agile manner.",
+            "Modernized legacy projects and implemented faster, more user-friendly systems."
+          ],
+          icons: ["i-logos-vue", "i-logos-nuxt-icon", "i-logos-javascript", "i-logos-typescript-icon", "i-simple-icons:rekaui", "i-logos-tailwindcss-icon"]
         }
       ]
     }
@@ -52,7 +100,7 @@ export const portfolio: PortfolioData = {
   projects: [
     {
       name: "Ephem Chat",
-      description: "WebRTC based ephemeral anonymous chat with realtime matching and communication",
+      description: "Anonymous real-time chat built with WebRTC and real-time communication.",
       links: [
         {label: "GitHub Frontend", to: "https://github.com/Abolfazl2049/ephem-chat-fronted", icon: "i-mdi-github"},
         {label: "GitHub Backend", to: "https://github.com/Abolfazl2049/ephem-chat-backend", icon: "i-mdi-github"},
@@ -102,7 +150,7 @@ export const portfolio: PortfolioData = {
     {
       name: "Cheshmak",
       description:
-        "A comprehensive global dating app with a large Persian-speaking user base (500k+ users). Our team built version two; I worked on the PWA and admin panel.",
+        "A global dating app with a large Persian-speaking user base of more than 500,000 users, and the first and only free Persian dating app. Our team built version two; I worked on the PWA and admin panel.",
       thumbnail: "/img/projects/cheshmak.png",
       status: "Active",
       opensource: false,
@@ -145,7 +193,8 @@ export const portfolio: PortfolioData = {
     },
     {
       name: "ModernData",
-      description: "Company landing site for Modern Data with sections for company, projects, services and contact.",
+      description:
+        "Company landing site I worked on for more than two years, with sections introducing the company, projects, services, and contact information.",
       thumbnail: "/img/projects/moderndata.png",
       status: "Active",
       opensource: false,
@@ -156,7 +205,7 @@ export const portfolio: PortfolioData = {
     {
       name: "Modochats",
       description:
-        "Create AI agents for businesses. A platform where anyone can build an agent with a custom knowledge source and use it for customer support, sales, social media management, text/voice chat. I led the landing, dashboard and developer SDKs (chat client, voice client, widget).",
+        "Create AI agents for your business! A platform where anyone can build an agent with a custom knowledge source and use it for customer support, sales management, social media management, and text/voice chat. My main responsibility was the landing page, dashboard, and developer SDKs such as the chat client, voice client, and widget.",
       thumbnail: "/img/projects/modochats-logo.svg",
       status: "Active",
       opensource: false,
@@ -240,8 +289,7 @@ export const portfolio: PortfolioData = {
     },
     {
       name: "Multi Connection WebRTC Starter",
-      description:
-        "Minimal multi-peer WebRTC starter with Nuxt 3 frontend and Express + Socket.IO backend. Demonstrates room-based signaling, peer connection management, STUN/TURN support, and a media-grid demo for multiple audio/video participants.",
+      description: "Minimal starter for simultaneous multi-peer WebRTC connections, with a Nuxt 3 frontend and an Express + Socket.IO backend for signaling.",
       status: "Active",
       opensource: true,
       links: [
