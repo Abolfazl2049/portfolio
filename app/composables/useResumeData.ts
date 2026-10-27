@@ -20,13 +20,14 @@ export function useResumeData() {
   }
 
   /**
-   * Format YYYY-MM date string to readable format
-   * @param date - Date string in YYYY-MM format (e.g., "2023-01")
+   * Format a year or YYYY-MM date string to readable format
+   * @param date - Date string in YYYY or YYYY-MM format (e.g., "2023" or "2023-01")
    * @param locale - Locale for formatting (default: 'en')
    * @returns Formatted date string (e.g., "Jan 2023")
    */
   function formatDate(date: string, locale: string = "en"): string {
     if (!date) return "";
+    if (/^\d{4}$/.test(date) || /^[۰-۹]{4}$/.test(date)) return date;
 
     const [year, month] = date.split("-");
     const dateObj = new Date(Number(year), Number(month) - 1);

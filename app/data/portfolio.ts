@@ -95,7 +95,14 @@ export const portfolio: PortfolioData = {
     }
   ],
 
-  education: [],
+  education: [
+    {
+      school: "Shahid Shamsipour College (National Skills University)",
+      degree: "Associate",
+      start: "2026",
+      end: "Present"
+    }
+  ],
 
   projects: [
     {

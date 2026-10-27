@@ -28,7 +28,7 @@ export interface WorkExperience {
   company: string;
   position: string;
   location?: string; // City, Country or Remote
-  startDate: string; // YYYY-MM format
+  startDate: string; // YYYY or YYYY-MM format
   endDate?: string; // YYYY-MM or undefined for "Present"
   highlights: string[]; // Bullet points
 }

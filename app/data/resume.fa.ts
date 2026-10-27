@@ -140,7 +140,14 @@ export const resumeDataFa: Resume = {
     }
   ],
 
-  education: [],
+  education: [
+    {
+      institution: "دانشکده شهید شمسی‌پور (دانشگاه ملی مهارت)",
+      area: "",
+      studyType: "در حال تحصیل",
+      startDate: "۱۴۰۵"
+    }
+  ],
 
   skills: [
     {

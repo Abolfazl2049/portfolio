@@ -140,7 +140,14 @@ export const resumeData: Resume = {
     }
   ],
 
-  education: [],
+  education: [
+    {
+      institution: "Shahid Shamsipour College (National Skills University)",
+      area: "Software",
+      studyType: "Currently studying",
+      startDate: "2026"
+    }
+  ],
 
   skills: [
     {

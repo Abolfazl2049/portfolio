@@ -5,13 +5,13 @@
 
     <!-- Below-the-fold sections rendered on server for SEO (SSR) -->
     <Skills />
-    <AIStack />
-    <SoftSkills />
-    <LanguageSkills />
+    <EducationList />
     <GitHubActivity username="Abolfazl2049" />
     <WorkExperience />
     <ProjectsList />
-    <EducationList />
+    <AIStack />
+    <SoftSkills />
+    <LanguageSkills />
     <RecommendationsCarousel />
   </div>
 </template>

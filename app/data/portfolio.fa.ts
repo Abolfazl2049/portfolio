@@ -92,7 +92,14 @@ const portfolioFa: PortfolioData = {
     }
   ],
 
-  education: [],
+  education: [
+    {
+      school: "دانشکده شهید شمسی‌پور (دانشگاه ملی مهارت)",
+      degree: "کاردانی",
+      start: "۱۴۰۵",
+      end: "اکنون"
+    }
+  ],
 
   projects: [
     {
